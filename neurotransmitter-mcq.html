@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nörotransmitterler - Çoktan Seçmeli Sorular</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .back-link:hover {
+            background: #5a67d8;
+        }
+        .question {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 5px solid #667eea;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.1em;
+        }
+        .question-text {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+        .options {
+            list-style: none;
+            padding: 0;
+        }
+        .options li {
+            padding: 8px 15px;
+            margin: 5px 0;
+            background: #fff;
+            border-radius: 5px;
+            border: 2px solid #e9ecef;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .options li:hover {
+            background: #e3f2fd;
+            border-color: #2196f3;
+        }
+        .solution {
+            background: #e8f5e8;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            border-left: 5px solid #4caf50;
+            display: none;
+        }
+        .solution-title {
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+        .show-solution {
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .show-solution:hover {
+            background: #45a049;
+        }
+        .correct-answer {
+            background: #c8e6c9 !important;
+            border-color: #4caf50 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Ana Sayfaya Dön</a>
+        
+        <div class="header">
+            <h1>🔗 Nörotransmitterler</h1>
+            <h2>Çoktan Seçmeli Sorular</h2>
+            <p><em>Her sorudan sonra "Çözümü Göster" butonuna tıklayarak detaylı açıklamayı görebilirsiniz.</em></p>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 1:</div>
+            <div class="question-text">Aşağıdakilerden hangisi bir uyarıcı nörotransmitterdir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) GABA</li>
+                <li onclick="selectOption(this, false)">B) Glisin</li>
+                <li onclick="selectOption(this, true)">C) Glutamat</li>
+                <li onclick="selectOption(this, false)">D) Adenosin</li>
+                <li onclick="selectOption(this, false)">E) Endorfin</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol1')">Çözümü Göster</button>
+            <div id="sol1" class="solution">
+                <div class="solution-title">Doğru Cevap: C) Glutamat</div>
+                <p><strong>Açıklama:</strong> Glutamat, merkezi sinir sisteminin en yaygın uyarıcı nörotransmitteridir. AMPA, NMDA ve kainat reseptörlerine bağlanarak nöronları uyarır. GABA ve glisin engelleyici, adenosin modülatör, endorfin ise nöropeptit kategorisindedir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 2:</div>
+            <div class="question-text">GABA'nın tam açılımı nedir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Gamma-Aminobenzoik Asit</li>
+                <li onclick="selectOption(this, true)">B) Gamma-Aminobütirik Asit</li>
+                <li onclick="selectOption(this, false)">C) Glutamik Asit Beta Analogu</li>
+                <li onclick="selectOption(this, false)">D) Gamma-Aminobutanol Asit</li>
+                <li onclick="selectOption(this, false)">E) Gliko-Aminobütirik Asit</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol2')">Çözümü Göster</button>
+            <div id="sol2" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Gamma-Aminobütirik Asit</div>
+                <p><strong>Açıklama:</strong> GABA (Gamma-Aminobütirik Asit), merkezi sinir sisteminin ana engelleyici nörotransmitteridir. Beyindeki nöronların yaklaşık %30-40'ında bulunur ve GABA-A ile GABA-B reseptörlerine bağlanarak hiperpolarizasyon yaratır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 3:</div>
+            <div class="question-text">Dopamin hangi beyin bölgesinde yoğun olarak bulunur?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Hipokampus</li>
+                <li onclick="selectOption(this, false)">B) Serebellum</li>
+                <li onclick="selectOption(this, true)">C) Substantia nigra</li>
+                <li onclick="selectOption(this, false)">D) Prefrontal korteks</li>
+                <li onclick="selectOption(this, false)">E) Temporal lob</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol3')">Çözümü Göster</button>
+            <div id="sol3" class="solution">
+                <div class="solution-title">Doğru Cevap: C) Substantia nigra</div>
+                <p><strong>Açıklama:</strong> Substantia nigra (kara madde), dopaminerjik nöronların yoğun olarak bulunduğu beyin sapı bölgesidir. Buradan striatum'a projeksiyonlar gönderir (nigrostriatal pathway). Parkinson hastalığında bu bölgedeki dopaminerjik nöronlar dejenerasyona uğrar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 4:</div>
+            <div class="question-text">Asetilkolin hangi enzim tarafından parçalanır?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, true)">A) Asetilkolinesteraz</li>
+                <li onclick="selectOption(this, false)">B) Monoamin oksidaz</li>
+                <li onclick="selectOption(this, false)">C) Kolin asetiltransferaz</li>
+                <li onclick="selectOption(this, false)">D) Dopamin beta-hidroksilaz</li>
+                <li onclick="selectOption(this, false)">E) Tirosin hidroksilaz</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol4')">Çözümü Göster</button>
+            <div id="sol4" class="solution">
+                <div class="solution-title">Doğru Cevap: A) Asetilkolinesteraz</div>
+                <p><strong>Açıklama:</strong> Asetilkolinesteraz (AChE), asetilkolini kolin ve asetik aside parçalayan enzimdir. Bu enzim sinaptik yarıkta bulunur ve asetilkolinin hızlı eliminasyonunu sağlar. AChE inhibitörleri (fizostigmin, organik fosforlu bileşikler) zehirlenme yapar veya Alzheimer tedavisinde kullanılır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 5:</div>
+            <div class="question-text">Serotonin hangi amino asitten sentezlenir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Tirozin</li>
+                <li onclick="selectOption(this, true)">B) Triptofan</li>
+                <li onclick="selectOption(this, false)">C) Fenilalanin</li>
+                <li onclick="selectOption(this, false)">D) Histidin</li>
+                <li onclick="selectOption(this, false)">E) Glutamat</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol5')">Çözümü Göster</button>
+            <div id="sol5" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Triptofan</div>
+                <p><strong>Açıklama:</strong> Serotonin, triptofan amino asidinden sentezlenir. Triptofan → 5-hidroksitriptofan → serotonin (5-HT) yolu izlenir. Serotonin mood, uyku, iştah, ağrı algısı ve birçok fizyolojik fonksiyonu düzenler. Raphe çekirdeklerinde yoğun olarak bulunur.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 6:</div>
+            <div class="question-text">NMDA reseptörleri hangi nörotransmitter tarafından aktive edilir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) GABA</li>
+                <li onclick="selectOption(this, false)">B) Dopamin</li>
+                <li onclick="selectOption(this, true)">C) Glutamat</li>
+                <li onclick="selectOption(this, false)">D) Asetilkolin</li>
+                <li onclick="selectOption(this, false)">E) Serotonin</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol6')">Çözümü Göster</button>
+            <div id="sol6" class="solution">
+                <div class="solution-title">Doğru Cevap: C) Glutamat</div>
+                <p><strong>Açıklama:</strong> NMDA reseptörleri glutamat tarafından aktive edilen iyonotrop reseptörlerdir. Mg2+ blokajı nedeniyle voltaj-bağımlıdır ve Ca2+ geçirgenliği yüksektir. Öğrenme, hafıza ve sinaptik plastisitede kritik rol oynar. Aşırı aktivasyon eksitotoksisiteye yol açar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 7:</div>
+            <div class="question-text">Norepinefrin hangi nörotransmitterden sentezlenir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, true)">A) Dopamin</li>
+                <li onclick="selectOption(this, false)">B) Serotonin</li>
+                <li onclick="selectOption(this, false)">C) GABA</li>
+                <li onclick="selectOption(this, false)">D) Asetilkolin</li>
+                <li onclick="selectOption(this, false)">E) Histamin</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol7')">Çözümü Göster</button>
+            <div id="sol7" class="solution">
+                <div class="solution-title">Doğru Cevap: A) Dopamin</div>
+                <p><strong>Açıklama:</strong> Norepinefrin, dopaminden dopamin beta-hidroksilaz enzimi ile sentezlenir. Sentez yolu: Tirozin → L-DOPA → Dopamin → Norepinefrin → Epinefrin. Norepinefrin, locus coeruleus'dan yayılan noradrenerjik sistemin ana nörotransmitteridir ve dikkat, uyanıklık ve stres yanıtında rol oynar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 8:</div>
+            <div class="question-text">Endorfin ne tür bir nörotransmitterdir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Monoamin</li>
+                <li onclick="selectOption(this, false)">B) Amino asit</li>
+                <li onclick="selectOption(this, true)">C) Nöropeptit</li>
+                <li onclick="selectOption(this, false)">D) Kolin ester</li>
+                <li onclick="selectOption(this, false)">E) Pürin</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol8')">Çözümü Göster</button>
+            <div id="sol8" class="solution">
+                <div class="solution-title">Doğru Cevap: C) Nöropeptit</div>
+                <p><strong>Açıklama:</strong> Endorfin, opioid reseptörlerine bağlanan nöropeptittir. Beta-endorfin en yaygın formdur ve doğal ağrı kesici olarak görev yapar. Stres, egzersiz ve acı durumlarında salınır. Morfin ve diğer opioidler endorfin reseptörlerine bağlanarak etki eder.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 9:</div>
+            <div class="question-text">Hangi nörotransmitter eksikliği Parkinson hastalığı ile ilişkilidir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, true)">A) Dopamin</li>
+                <li onclick="selectOption(this, false)">B) Serotonin</li>
+                <li onclick="selectOption(this, false)">C) Asetilkolin</li>
+                <li onclick="selectOption(this, false)">D) GABA</li>
+                <li onclick="selectOption(this, false)">E) Glutamat</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol9')">Çözümü Göster</button>
+            <div id="sol9" class="solution">
+                <div class="solution-title">Doğru Cevap: A) Dopamin</div>
+                <p><strong>Açıklama:</strong> Parkinson hastalığı, substantia nigra'daki dopaminerjik nöronların dejenerasyonu sonucu dopamin eksikliği ile karakterizedir. Bu durum tremor, bradikinezi, rijidite ve postural instabiliteye yol açar. Tedavide L-DOPA (dopamin precursoru) kullanılır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 10:</div>
+            <div class="question-text">Glisin hangi tip reseptörlere bağlanır?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Sadece metabotropik</li>
+                <li onclick="selectOption(this, true)">B) Sadece iyonotrop</li>
+                <li onclick="selectOption(this, false)">C) Hem iyonotrop hem metabotropik</li>
+                <li onclick="selectOption(this, false)">D) G-protein bağlı</li>
+                <li onclick="selectOption(this, false)">E) Enzim bağlı</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol10')">Çözümü Göster</button>
+            <div id="sol10" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Sadece iyonotrop</div>
+                <p><strong>Açıklama:</strong> Glisin reseptörleri sadece iyonotrop (ligand-bağlı iyon kanalları) türündedir. Cl- geçirgenliği sağlayarak hiperpolarizasyon yaratır ve engelleyici etki gösterir. Özellikle medulla spinalis ve beyin sapında bulunur. Striknin glisin reseptör antagonistidir.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function selectOption(element, isCorrect) {
+            // Remove previous selections in this question
+            const options = element.parentElement.children;
+            for (let option of options) {
+                option.classList.remove('correct-answer');
+                option.style.background = '';
+                option.style.borderColor = '';
+            }
+            
+            // Highlight selected option
+            if (isCorrect) {
+                element.classList.add('correct-answer');
+            } else {
+                element.style.background = '#ffebee';
+                element.style.borderColor = '#f44336';
+            }
+        }
+
+        function toggleSolution(solutionId) {
+            const solution = document.getElementById(solutionId);
+            if (solution.style.display === 'none' || solution.style.display === '') {
+                solution.style.display = 'block';
+            } else {
+                solution.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uyku ve Bilinç - Boşluk Doldurma</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .back-link:hover {
+            background: #5a67d8;
+        }
+        .question {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 5px solid #673ab7;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #673ab7;
+            font-size: 1.1em;
+        }
+        .question-text {
+            margin: 15px 0;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+        .blank {
+            display: inline-block;
+            min-width: 100px;
+            height: 25px;
+            border-bottom: 2px solid #673ab7;
+            margin: 0 5px;
+            padding: 0 5px;
+            background: transparent;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            outline: none;
+            font-size: 1em;
+            text-align: center;
+        }
+        .blank:focus {
+            background: #ede7f6;
+        }
+        .solution {
+            background: #e8f5e8;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            border-left: 5px solid #4caf50;
+            display: none;
+        }
+        .solution-title {
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+        .show-solution {
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .show-solution:hover {
+            background: #45a049;
+        }
+        .check-answer {
+            background: #673ab7;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+        .check-answer:hover {
+            background: #5e35b1;
+        }
+        .correct {
+            background: #c8e6c9;
+            color: #2e7d32;
+        }
+        .incorrect {
+            background: #ffcdd2;
+            color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Ana Sayfaya Dön</a>
+        
+        <div class="header">
+            <h1>😴 Uyku ve Bilinç</h1>
+            <h2>Boşluk Doldurma Soruları</h2>
+            <p><em>Boşlukları uygun kelimelerle doldurun. "Cevabı Kontrol Et" ile kontrol edebilir, "Çözümü Göster" ile detaylı açıklamayı görebilirsiniz.</em></p>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 1:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="circadian ritm" placeholder="(14)"> yaklaşık 24 saatlik 
+                <input type="text" class="blank" data-answer="biyolojik döngü" placeholder="(16)"> dür.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(1)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol1')">Çözümü Göster</button>
+            <div id="sol1" class="solution">
+                <div class="solution-title">Doğru Cevaplar: circadian ritm, biyolojik döngü</div>
+                <p><strong>Açıklama:</strong> Circadian ritm suprakiazmatik çekirdek tarafından kontrol edilir. Işık-karanlık döngüsü, vücut sıcaklığı, hormon salınımı ve uyku-uyanıklık durumu bu ritimle senkronize olur.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 2:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="suprakiazmatik çekirdek" placeholder="(22)"> hipotalamusta yer alan 
+                <input type="text" class="blank" data-answer="master saat" placeholder="(11)"> tir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(2)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol2')">Çözümü Göster</button>
+            <div id="sol2" class="solution">
+                <div class="solution-title">Doğru Cevaplar: suprakiazmatik çekirdek, master saat</div>
+                <p><strong>Açıklama:</strong> SCN retinadan doğrudan ışık bilgisi alır ve vücudun tüm circadian ritimlerini koordine eder. CLOCK, BMAL1, PER, CRY genleri moleküler saat mekanizmasını oluşturur.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 3:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="melatonin" placeholder="(9)"> pineal bezden salınan ve 
+                <input type="text" class="blank" data-answer="uyku düzenleyen" placeholder="(15)"> hormondur.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(3)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol3')">Çözümü Göster</button>
+            <div id="sol3" class="solution">
+                <div class="solution-title">Doğru Cevaplar: melatonin, uyku düzenleyen</div>
+                <p><strong>Açıklama:</strong> Melatonin karanlıkta üretilir ve uyku başlangıcını sinyaller. Serotoninden sentezlenir ve jet lag tedavisinde kullanılır. Işık melatonin üretimini baskılar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 4:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="REM uyku" placeholder="(8)"> rüya görme ve 
+                <input type="text" class="blank" data-answer="hafıza konsolidasyonu" placeholder="(20)"> ile ilişkili uyku evresidir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(4)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol4')">Çözümü Göster</button>
+            <div id="sol4" class="solution">
+                <div class="solution-title">Doğru Cevaplar: REM uyku, hafıza konsolidasyonu</div>
+                <p><strong>Açıklama:</strong> REM (Rapid Eye Movement) uyku sırasında beyin aktivitesi yüksektir, kaslar atoni gösterir. Prosedürel hafıza konsolidasyonu ve rüya aktivitesi bu evrede yoğunlaşır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 5:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="NREM uyku" placeholder="(9)"> derin uyku olarak bilinir ve 
+                <input type="text" class="blank" data-answer="4 evreden" placeholder="(9)"> oluşur.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(5)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol5')">Çözümü Göster</button>
+            <div id="sol5" class="solution">
+                <div class="solution-title">Doğru Cevaplar: NREM uyku, 4 evreden</div>
+                <p><strong>Açıklama:</strong> NREM (Non-REM) uyku 4 evreden oluşur: N1 (geçiş), N2 (hafif uyku), N3-N4 (derin uyku). Delta dalgaları derin uyku evresini karakterize eder.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 6:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="delta dalgalar" placeholder="(12)"> derin NREM uykusunda görülen 
+                <input type="text" class="blank" data-answer="yavaş beyin dalgalarıdır" placeholder="(22)">
+            </div>
+            <button class="check-answer" onclick="checkAnswers(6)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol6')">Çözümü Göster</button>
+            <div id="sol6" class="solution">
+                <div class="solution-title">Doğru Cevaplar: delta dalgalar, yavaş beyin dalgalarıdır</div>
+                <p><strong>Açıklama:</strong> Delta dalgaları (0.5-4 Hz) derin uyku sırasında görülür. Bu evrede büyüme hormonu salınır, hafıza konsolidasyonu gerçekleşir ve metabolik onarım yapılır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 7:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="uyku iğcikleri" placeholder="(12)"> NREM evre 2'de görülen 
+                <input type="text" class="blank" data-answer="karakteristik EEG" placeholder="(16)"> bulgularıdır.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(7)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol7')">Çözümü Göster</button>
+            <div id="sol7" class="solution">
+                <div class="solution-title">Doğru Cevaplar: uyku iğcikleri, karakteristik EEG</div>
+                <p><strong>Açıklama:</strong> Uyku iğcikleri (sleep spindles) 12-14 Hz frekansta 0.5-2 saniye süren dalga patlamalarıdır. Talamus reticular çekirdeği tarafından üretilir ve uyku korunmasında rol oynar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 8:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="K kompleksleri" placeholder="(13)"> NREM uyku sırasında görülen 
+                <input type="text" class="blank" data-answer="yüksek amplitüdlü" placeholder="(16)"> EEG dalgalarıdır.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(8)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol8')">Çözümü Göster</button>
+            <div id="sol8" class="solution">
+                <div class="solution-title">Doğru Cevaplar: K kompleksleri, yüksek amplitüdlü</div>
+                <p><strong>Açıklama:</strong> K kompleksleri ani yüksek amplitüdlü negatif defleksiyonlardır. Dış uyaranlara yanıt olarak oluşabilir ve uyku korunması mekanizmasının parçasıdır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 9:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="retiküler aktivasyon sistemi" placeholder="(26)"> beyin sapında yer alır ve 
+                <input type="text" class="blank" data-answer="uyanıklığı" placeholder="(10)"> düzenler.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(9)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol9')">Çözümü Göster</button>
+            <div id="sol9" class="solution">
+                <div class="solution-title">Doğru Cevaplar: retiküler aktivasyon sistemi, uyanıklığı</div>
+                <p><strong>Açıklama:</strong> RAS (reticular activating system) beyin sapından talamusa uzanan nöron ağıdır. Uyanıklık, dikkat ve bilinç seviyesinin korunmasında kritik rol oynar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 10:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="narkolepsi" placeholder="(9)"> ani uyku atakları ve 
+                <input type="text" class="blank" data-answer="katapleksi" placeholder="(9)"> ile karakterize uyku bozukluğudur.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(10)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol10')">Çözümü Göster</button>
+            <div id="sol10" class="solution">
+                <div class="solution-title">Doğru Cevaplar: narkolepsi, katapleksi</div>
+                <p><strong>Açıklama:</strong> Narkolepsi hipotalamustaki hipokretin/orexin nöronlarının kaybıyla oluşur. Katapleksi güçlü duygular sırasında ani kas güçsüzlüğüdür ve REM atonisinin yanlış zamanda aktivasyonudur.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 11:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="uyku apnesi" placeholder="(11)"> uyku sırasında 
+                <input type="text" class="blank" data-answer="nefes alma durması" placeholder="(17)"> problemidir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(11)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol11')">Çözümü Göster</button>
+            <div id="sol11" class="solution">
+                <div class="solution-title">Doğru Cevaplar: uyku apnesi, nefes alma durması</div>
+                <p><strong>Açıklama:</strong> Uyku apnesi obstrüktif (hava yolu tıkanması) veya santral (beyin sapı kontrol kaybı) olabilir. Parçalanmış uyku, gündüz uykululuk ve kardiyovasküler risklere neden olur.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 12:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="insomnia" placeholder="(8)"> uyuyamama veya 
+                <input type="text" class="blank" data-answer="uyku sürdürememe" placeholder="(17)"> problemidir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(12)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol12')">Çözümü Göster</button>
+            <div id="sol12" class="solution">
+                <div class="solution-title">Doğru Cevaplar: insomnia, uyku sürdürememe</div>
+                <p><strong>Açıklama:</strong> İnsomnia akut (stres kaynaklı) veya kronik (3 aydan uzun) olabilir. Kognitif davranışçı terapi ve uyku hijyeni etkili tedavi yöntemleridir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 13:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="bilinç" placeholder="(6)"> çevresel uyaranların ve iç durumların 
+                <input type="text" class="blank" data-answer="subjektif farkındalığıdır" placeholder="(22)">
+            </div>
+            <button class="check-answer" onclick="checkAnswers(13)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol13')">Çözümü Göster</button>
+            <div id="sol13" class="solution">
+                <div class="solution-title">Doğru Cevaplar: bilinç, subjektif farkındalığıdır</div>
+                <p><strong>Açıklama:</strong> Bilinç fenomenal deneyim, öz-farkındalık ve istemli kontrol bileşenlerini içerir. Talamokortikal döngüler ve global workspace teorisi bilinç mekanizmalarını açıklar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 14:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="global workspace" placeholder="(14)"> teorisi bilincin 
+                <input type="text" class="blank" data-answer="bilgi entegrasyonu" placeholder="(17)"> modeli olarak önerilmiştir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(14)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol14')">Çözümü Göster</button>
+            <div id="sol14" class="solution">
+                <div class="solution-title">Doğru Cevaplar: global workspace, bilgi entegrasyonu</div>
+                <p><strong>Açıklama:</strong> Global workspace teorisine göre bilinç prefrontal ve parietal kortekslerin bilgiyi tüm beynin erişimine açması sonucu oluşur. Bu "global broadcast" süreci bilinçli algıyı sağlar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 15:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="entegre bilgi teorisi" placeholder="(20)"> bilincin 
+                <input type="text" class="blank" data-answer="matematik modelini" placeholder="(16)"> önerir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(15)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol15')">Çözümü Göster</button>
+            <div id="sol15" class="solution">
+                <div class="solution-title">Doğru Cevaplar: entegre bilgi teorisi, matematik modelini</div>
+                <p><strong>Açıklama:</strong> Integrated Information Theory (IIT) bilinci Φ (phi) ile ölçer. Bu değer sistemin entegre edebildiği bilgi miktarını temsil eder ve bilinç seviyesinin objektif ölçümünü amaçlar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 16:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="koma" placeholder="(4)"> dış uyaranlara yanıtsızlık ve 
+                <input type="text" class="blank" data-answer="bilinç kaybı" placeholder="(11)"> ile karakterize durumdur.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(16)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol16')">Çözümü Göster</button>
+            <div id="sol16" class="solution">
+                <div class="solution-title">Doğru Cevaplar: koma, bilinç kaybı</div>
+                <p><strong>Açıklama:</strong> Koma reticular activating system hasarı sonucu oluşur. Glasgow Koma Skoru ile değerlendirilir ve göz açma, motor yanıt, verbal yanıt kriterlerini içerir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 17:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="vegetatif durum" placeholder="(14)"> uyanıklık var ancak 
+                <input type="text" class="blank" data-answer="farkındalık yok" placeholder="(13)"> olan durumdur.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(17)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol17')">Çözümü Göster</button>
+            <div id="sol17" class="solution">
+                <div class="solution-title">Doğru Cevaplar: vegetatif durum, farkındalık yok</div>
+                <p><strong>Açıklama:</strong> Vegetatif durumda beyin sapı fonksiyonları korunur (uyku-uyanıklık döngüsü var) ancak kortikal farkındalık kaybedilir. Minimally conscious state'den fmRI ile ayırt edilebilir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 18:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="anestezi" placeholder="(8)"> geçici bilinç kaybı yaratarak 
+                <input type="text" class="blank" data-answer="cerrahi müdahale" placeholder="(16)"> imkanı sağlar.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(18)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol18')">Çözümü Göster</button>
+            <div id="sol18" class="solution">
+                <div class="solution-title">Doğru Cevaplar: anestezi, cerrahi müdahale</div>
+                <p><strong>Açıklama:</strong> Genel anestezi GABA reseptörlerini aktive ederek bilinç kaybı yaratır. BIS (bispectral index) monitorizasyonu anestezi derinliğini EEG ile değerlendirir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 19:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="default mode network" placeholder="(19)"> dinlenme durumunda aktif olan 
+                <input type="text" class="blank" data-answer="beyin ağıdır" placeholder="(12)">
+            </div>
+            <button class="check-answer" onclick="checkAnswers(19)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol19')">Çözümü Göster</button>
+            <div id="sol19" class="solution">
+                <div class="solution-title">Doğru Cevaplar: default mode network, beyin ağıdır</div>
+                <p><strong>Açıklama:</strong> DMN medial prefrontal cortex, posterior cingulate ve angular gyrus'u içerir. İçsel odaklı düşünce, otobiyografik hafıza ve zihin wandering ile ilişkilidir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 20:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="uyku yoksunluğu" placeholder="(16)"> dikkat, hafıza ve 
+                <input type="text" class="blank" data-answer="karar verme" placeholder="(11)"> yeteneklerini bozar.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(20)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol20')">Çözümü Göster</button>
+            <div id="sol20" class="solution">
+                <div class="solution-title">Doğru Cevaplar: uyku yoksunluğu, karar verme</div>
+                <p><strong>Açıklama:</strong> Uyku yoksunluğu prefrontal korteks fonksiyonlarını bozar. Adenozin birikimi, metabolik toksin birikim ve hafıza konsolidasyonunun engellenmesi bilişsel performansı azaltır.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function checkAnswers(questionNumber) {
+            const question = document.querySelectorAll('.question')[questionNumber - 1];
+            const blanks = question.querySelectorAll('.blank');
+            
+            blanks.forEach(blank => {
+                const userAnswer = blank.value.toLowerCase().trim();
+                const correctAnswer = blank.getAttribute('data-answer').toLowerCase();
+                
+                blank.classList.remove('correct', 'incorrect');
+                
+                if (userAnswer === correctAnswer) {
+                    blank.classList.add('correct');
+                } else {
+                    blank.classList.add('incorrect');
+                }
+            });
+        }
+
+        function toggleSolution(solutionId) {
+            const solution = document.getElementById(solutionId);
+            if (solution.style.display === 'none' || solution.style.display === '') {
+                solution.style.display = 'block';
+            } else {
+                solution.style.display = 'none';
+            }
+        }
+
+        // Allow Enter key to check answers
+        document.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const question = e.target.closest('.question');
+                if (question) {
+                    const questionIndex = Array.from(document.querySelectorAll('.question')).indexOf(question) + 1;
+                    checkAnswers(questionIndex);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

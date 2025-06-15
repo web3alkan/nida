@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fizyolojik Psikoloji Sınav Soruları</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .topic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .topic-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            border-left: 5px solid #667eea;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .topic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        .topic-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .question-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .question-link {
+            display: inline-block;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            text-align: center;
+            font-weight: 500;
+        }
+        .mcq-link {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+        .mcq-link:hover {
+            background: #1976d2;
+            color: white;
+        }
+        .fill-link {
+            background: #f3e5f5;
+            color: #7b1fa2;
+        }
+        .fill-link:hover {
+            background: #7b1fa2;
+            color: white;
+        }
+        .essay-link {
+            background: #e8f5e8;
+            color: #388e3c;
+        }
+        .essay-link:hover {
+            background: #388e3c;
+            color: white;
+        }
+        .overview {
+            background: #fff3e0;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-left: 5px solid #ff9800;
+        }
+        .overview h2 {
+            color: #e65100;
+            margin-top: 0;
+        }
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            background: #f5f5f5;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 20px;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #667eea;
+        }
+        .stat-label {
+            color: #666;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧠 Fizyolojik Psikoloji Sınav Soruları</h1>
+        
+        <div class="overview">
+            <h2>📚 Sınav Hazırlık Rehberi</h2>
+            <p>Bu sayfada fizyolojik psikoloji dersine ait kapsamlı soru bankası bulunmaktadır. Her konu için üç farklı türde soru hazırlanmıştır:</p>
+            <ul>
+                <li><strong>Çoktan Seçmeli Sorular:</strong> Temel kavramları test eden sorular</li>
+                <li><strong>Boşluk Doldurma:</strong> Anahtar terimleri hatırlatmaya yönelik sorular</li>
+                <li><strong>Klasik Sorular:</strong> Derinlemesine anlama ve sentez gerektiren sorular</li>
+            </ul>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number">12</div>
+                <div class="stat-label">Ana Konu</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">180+</div>
+                <div class="stat-label">Toplam Soru</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">3</div>
+                <div class="stat-label">Soru Tipi</div>
+            </div>
+        </div>
+
+        <div class="topic-grid">
+            <div class="topic-card">
+                <div class="topic-title">🧬 Sinir Sistemi Temelleri</div>
+                <div class="question-links">
+                    <a href="sinir-sistemi-mcq.html" class="question-link mcq-link">Çoktan Seçmeli</a>
+                    <a href="sinir-sistemi-fill.html" class="question-link fill-link">Boşluk Doldurma</a>
+                    <a href="sinir-sistemi-essay.html" class="question-link essay-link">Klasik Sorular</a>
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <div class="topic-title">⚡ Nöron ve Aksiyon Potansiyeli</div>
+                <div class="question-links">
+                    <a href="noron-mcq.html" class="question-link mcq-link">Çoktan Seçmeli</a>
+                    <a href="noron-fill.html" class="question-link fill-link">Boşluk Doldurma</a>
+                    <a href="noron-essay.html" class="question-link essay-link">Klasik Sorular</a>
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <div class="topic-title">🔗 Nörotransmitterler</div>
+                <div class="question-links">
+                    <a href="neurotransmitter-mcq.html" class="question-link mcq-link">Çoktan Seçmeli</a>
+                    <a href="neurotransmitter-fill.html" class="question-link fill-link">Boşluk Doldurma</a>
+                    <a href="neurotransmitter-essay.html" class="question-link essay-link">Klasik Sorular</a>
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <div class="topic-title">🧠 Beyin Anatomisi</div>
+                <div class="question-links">
+                    <a href="beyin-anatomi-mcq.html" class="question-link mcq-link">Çoktan Seçmeli</a>
+                    <a href="beyin-anatomi-fill.html" class="question-link fill-link">Boşluk Doldurma</a>
+                    <a href="beyin-anatomi-essay.html" class="question-link essay-link">Klasik Sorular</a>
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <div class="topic-title">🌐 Limbik Sistem</div>
+                <div class="question-links">
+                    <a href="limbik-sistem-mcq.html" class="question-link mcq-link">Çoktan Seçmeli</a>
+                    <a href="limbik-sistem-fill.html" class="question-link fill-link">Boşluk Doldurma</a>
+                    <a href="limbik-sistem-essay.html" class="question-link essay-link">Klasik Sorular</a>
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <div class="topic-title">👁️ Görme Sistemi</div>
+                <div class="question-links">
+                    <a href="görme-sistemi-mcq.html" class="question-link mcq-link">Çoktan Seçmeli</a>
+                    <a href="görme-sistemi-fill.html" class="question-link fill-link">Boşluk Doldurma</a>
+                    <a href="görme-sistemi-essay.html" class="question-link essay-link">Klasik Sorular</a>
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <div class="topic-title">👂 İşitme Sistemi</div>
+                <div class="question-links">
+                    <a href="işitme-sistemi-mcq.html" class="question-link mcq-link">Çoktan Seçmeli</a>
+                    <a href="işitme-sistemi-fill.html" class="question-link fill-link">Boşluk Doldurma</a>
+                    <a href="işitme-sistemi-essay.html" class="question-link essay-link">Klasik Sorular</a>
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <div class="topic-title">💊 Nöroplastisite</div>
+                <div class="question-links">
+                    <a href="noroplastisite-mcq.html" class="question-link mcq-link">Çoktan Seçmeli</a>
+                    <a href="noroplastisite-fill.html" class="question-link fill-link">Boşluk Doldurma</a>
+                    <a href="noroplastisite-essay.html" class="question-link essay-link">Klasik Sorular</a>
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <div class="topic-title">😴 Uyku ve Bilinç</div>
+                <div class="question-links">
+                    <a href="uyku-bilinc-mcq.html" class="question-link mcq-link">Çoktan Seçmeli</a>
+                    <a href="uyku-bilinc-fill.html" class="question-link fill-link">Boşluk Doldurma</a>
+                    <a href="uyku-bilinc-essay.html" class="question-link essay-link">Klasik Sorular</a>
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <div class="topic-title">🧬 Genetik ve Davranış</div>
+                <div class="question-links">
+                    <a href="genetik-davranis-mcq.html" class="question-link mcq-link">Çoktan Seçmeli</a>
+                    <a href="genetik-davranis-fill.html" class="question-link fill-link">Boşluk Doldurma</a>
+                    <a href="genetik-davranis-essay.html" class="question-link essay-link">Klasik Sorular</a>
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <div class="topic-title">🔬 Araştırma Yöntemleri</div>
+                <div class="question-links">
+                    <a href="arastirma-yontemleri-mcq.html" class="question-link mcq-link">Çoktan Seçmeli</a>
+                    <a href="arastirma-yontemleri-fill.html" class="question-link fill-link">Boşluk Doldurma</a>
+                    <a href="arastirma-yontemleri-essay.html" class="question-link essay-link">Klasik Sorular</a>
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <div class="topic-title">🧠 Gelişimsel Nöropsikoloji</div>
+                <div class="question-links">
+                    <a href="gelisimsel-noropsikoloji-mcq.html" class="question-link mcq-link">Çoktan Seçmeli</a>
+                    <a href="gelisimsel-noropsikoloji-fill.html" class="question-link fill-link">Boşluk Doldurma</a>
+                    <a href="gelisimsel-noropsikoloji-essay.html" class="question-link essay-link">Klasik Sorular</a>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px; padding: 20px; background: #f8f9fa; border-radius: 10px;">
+            <h3>📝 Sınav İpuçları</h3>
+            <p><strong>Her konudan soru çözmeyi unutmayın!</strong> Detaylı çözümler her sayfada mevcuttur.</p>
+            <p style="color: #666; font-size: 0.9em;">İyi çalışmalar! 🎓</p>
+        </div>
+    </div>
+</body>
+</html>

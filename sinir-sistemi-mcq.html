@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sinir Sistemi Temelleri - Çoktan Seçmeli Sorular</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .back-link:hover {
+            background: #5a67d8;
+        }
+        .question {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 5px solid #667eea;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.1em;
+        }
+        .question-text {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+        .options {
+            list-style: none;
+            padding: 0;
+        }
+        .options li {
+            padding: 8px 15px;
+            margin: 5px 0;
+            background: #fff;
+            border-radius: 5px;
+            border: 2px solid #e9ecef;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .options li:hover {
+            background: #e3f2fd;
+            border-color: #2196f3;
+        }
+        .solution {
+            background: #e8f5e8;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            border-left: 5px solid #4caf50;
+            display: none;
+        }
+        .solution-title {
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+        .show-solution {
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .show-solution:hover {
+            background: #45a049;
+        }
+        .correct-answer {
+            background: #c8e6c9 !important;
+            border-color: #4caf50 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Ana Sayfaya Dön</a>
+        
+        <div class="header">
+            <h1>🧬 Sinir Sistemi Temelleri</h1>
+            <h2>Çoktan Seçmeli Sorular</h2>
+            <p><em>Her sorudan sonra "Çözümü Göster" butonuna tıklayarak detaylı açıklamayı görebilirsiniz.</em></p>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 1:</div>
+            <div class="question-text">Merkezi sinir sistemi aşağıdakilerden hangilerini içerir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Beyin ve omurilik</li>
+                <li onclick="selectOption(this, true)">B) Beyin ve omurilik</li>
+                <li onclick="selectOption(this, false)">C) Sadece beyin</li>
+                <li onclick="selectOption(this, false)">D) Beyin, omurilik ve kranyal sinirler</li>
+                <li onclick="selectOption(this, false)">E) Tüm sinir hücreleri</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol1')">Çözümü Göster</button>
+            <div id="sol1" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Beyin ve omurilik</div>
+                <p><strong>Açıklama:</strong> Merkezi sinir sistemi (CNS), beyni ve omurilik soğanını içerir. Kranyal sinirler ve spinal sinirler ise periferik sinir sisteminin (PNS) bir parçasıdır. MSS, bilgi işleme ve koordinasyonun ana merkezi olarak görev yapar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 2:</div>
+            <div class="question-text">Periferik sinir sistemi hangi iki ana bölüme ayrılır?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Somatik ve motor</li>
+                <li onclick="selectOption(this, true)">B) Somatik ve otonom</li>
+                <li onclick="selectOption(this, false)">C) Sempatik ve parasempatik</li>
+                <li onclick="selectOption(this, false)">D) Motor ve duyusal</li>
+                <li onclick="selectOption(this, false)">E) Merkezi ve periferik</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol2')">Çözümü Göster</button>
+            <div id="sol2" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Somatik ve otonom</div>
+                <p><strong>Açıklama:</strong> Periferik sinir sistemi iki ana bölüme ayrılır: Somatik sinir sistemi (bilinçli hareketleri kontrol eder) ve otonom sinir sistemi (iç organları kontrol eder). Otonom sinir sistemi kendi içinde sempatik ve parasempatik olarak ikiye ayrılır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 3:</div>
+            <div class="question-text">Nöronun temel yapısal bileşenleri aşağıdakilerden hangisidir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Soma, dendrit, aksiyom</li>
+                <li onclick="selectOption(this, true)">B) Soma, dendrit, akson</li>
+                <li onclick="selectOption(this, false)">C) Çekirdek, sitoplazma, zar</li>
+                <li onclick="selectOption(this, false)">D) Soma, akson, terminal</li>
+                <li onclick="selectOption(this, false)">E) Dendrit, akson, miyelin</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol3')">Çözümü Göster</button>
+            <div id="sol3" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Soma, dendrit, akson</div>
+                <p><strong>Açıklama:</strong> Nöronun üç temel yapısal bileşeni vardır: Soma (hücre gövdesi - çekirdek ve organelleri içerir), dendritler (sinyal alıcı uzantılar) ve akson (sinyal iletici uzantı). Bu yapılar nöronun temel işlevlerini yerine getirmesini sağlar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 4:</div>
+            <div class="question-text">Glial hücreler hakkında aşağıdakilerden hangisi doğrudur?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Sadece destek sağlarlar</li>
+                <li onclick="selectOption(this, false)">B) Elektriksel sinyal iletirler</li>
+                <li onclick="selectOption(this, true)">C) Nöronları destekler, besler ve korur</li>
+                <li onclick="selectOption(this, false)">D) Sadece miyelin üretirler</li>
+                <li onclick="selectOption(this, false)">E) Nöronlardan daha az sayıdadırlar</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol4')">Çözümü Göster</button>
+            <div id="sol4" class="solution">
+                <div class="solution-title">Doğru Cevap: C) Nöronları destekler, besler ve korur</div>
+                <p><strong>Açıklama:</strong> Glial hücreler çok işlevli hücrelerdir. Nöronlara yapısal destek sağlar, onları besler, korur, zararlı maddeleri temizler, miyelin kılıf üretir ve bağışıklık fonksiyonları gerçekleştirir. Beynin yaklaşık yarısını oluştururlar ve nöronlardan daha fazladırlar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 5:</div>
+            <div class="question-text">Kan-beyin bariyeri hakkında aşağıdakilerden hangisi yanlıştır?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Beyin dokusunu zararlı maddelerden korur</li>
+                <li onclick="selectOption(this, false)">B) Astrositlerin oluşturduğu sıkı bağlantılardan oluşur</li>
+                <li onclick="selectOption(this, false)">C) Selektif geçirgenliğe sahiptir</li>
+                <li onclick="selectOption(this, true)">D) Tüm maddelerin geçişine izin verir</li>
+                <li onclick="selectOption(this, false)">E) Beyin kapillerlerinde bulunur</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol5')">Çözümü Göster</button>
+            <div id="sol5" class="solution">
+                <div class="solution-title">Doğru Cevap: D) Tüm maddelerin geçişine izin verir</div>
+                <p><strong>Açıklama:</strong> Kan-beyin bariyeri selektif geçirgenliğe sahiptir, yani tüm maddelerin geçişine izin vermez. Sadece beynin ihtiyaç duyduğu belirli maddelerin (glukoz, oksijen gibi) geçişine izin verirken, zararlı toksinleri ve birçok ilacı geçirmez. Bu koruyucu bir mekanizmadır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 6:</div>
+            <div class="question-text">Beyin omurilik sıvısı (BOS) hakkında aşağıdakilerden hangisi doğrudur?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Sadece beynin etrafını sarar</li>
+                <li onclick="selectOption(this, true)">B) MSS'yi korur ve besler</li>
+                <li onclick="selectOption(this, false)">C) Katı bir yapıdır</li>
+                <li onclick="selectOption(this, false)">D) Sadece enfeksiyon durumunda üretilir</li>
+                <li onclick="selectOption(this, false)">E) Kan ile aynı bileşimdedir</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol6')">Çözümü Göster</button>
+            <div id="sol6" class="solution">
+                <div class="solution-title">Doğru Cevap: B) MSS'yi korur ve besler</div>
+                <p><strong>Açıklama:</strong> Beyin omurilik sıvısı (BOS), hem beyin hem de omurilik etrafında bulunur. Merkezi sinir sistemini mekanik darbelere karşı korur, besin maddeleri taşır, atık maddeleri uzaklaştırır ve beyin basıncını düzenler. Koroid pleksusda üretilen berrak bir sıvıdır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 7:</div>
+            <div class="question-text">Miyelin kılıfın ana işlevi nedir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Nöronu beslemek</li>
+                <li onclick="selectOption(this, true)">B) Sinyal iletim hızını artırmak</li>
+                <li onclick="selectOption(this, false)">C) Nöron büyümesini sağlamak</li>
+                <li onclick="selectOption(this, false)">D) Toksinleri filtrelemek</li>
+                <li onclick="selectOption(this, false)">E) Sadece koruma sağlamak</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol7')">Çözümü Göster</button>
+            <div id="sol7" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Sinyal iletim hızını artırmak</div>
+                <p><strong>Açıklama:</strong> Miyelin kılıf, aksonları sarar ve saltatory (zıplama) iletimi sağlayarak sinyal iletim hızını önemli ölçüde artırır. Aynı zamanda aksonu yalıtım sağlayarak korur. Miyelin kılıflı aksonlarda sinyal iletimi miyeinsizlere göre 50-100 kat daha hızlıdır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 8:</div>
+            <div class="question-text">Paul Broca'nın bulgularına göre hangi beyin bölgesi konuşma üretiminden sorumludur?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Wernicke alanı</li>
+                <li onclick="selectOption(this, true)">B) Broca alanı</li>
+                <li onclick="selectOption(this, false)">C) Motor korteks</li>
+                <li onclick="selectOption(this, false)">D) Serebellum</li>
+                <li onclick="selectOption(this, false)">E) Hipokampus</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol8')">Çözümü Göster</button>
+            <div id="sol8" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Broca alanı</div>
+                <p><strong>Açıklama:</strong> Paul Broca, sol frontal lobda bulunan bir beyin bölgesinin (Broca alanı) konuşma üretiminden sorumlu olduğunu keşfetti. Bu alan hasar gördüğünde Broca afazisi gelişir - kişi ne söylemek istediğini anlar ancak konuşmayı üretemez.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 9:</div>
+            <div class="question-text">Beyin araştırmalarında kullanılan tekniklerden hangisi beyinle işlevsel aktivitesini gerçek zamanlı olarak görüntüler?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) CT</li>
+                <li onclick="selectOption(this, false)">B) MRI</li>
+                <li onclick="selectOption(this, true)">C) fMRI</li>
+                <li onclick="selectOption(this, false)">D) EEG</li>
+                <li onclick="selectOption(this, false)">E) X-Ray</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol9')">Çözümü Göster</button>
+            <div id="sol9" class="solution">
+                <div class="solution-title">Doğru Cevap: C) fMRI</div>
+                <p><strong>Açıklama:</strong> fMRI (fonksiyonel Manyetik Rezonans Görüntüleme), beyin aktivitesini kan akışındaki değişiklikleri tespit ederek gerçek zamanlı olarak görüntüler. CT ve MRI yapısal görüntüleme sağlar, EEG elektriksel aktiviteyi ölçer ancak lokalizasyonu kısıtlıdır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 10:</div>
+            <div class="question-text">Hematoensefalik bariyerin (kan-beyin bariyeri) başlıca işlevi nedir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Beyn basıncını düzenlemek</li>
+                <li onclick="selectOption(this, false)">B) BOS üretmek</li>
+                <li onclick="selectOption(this, true)">C) Beyin dokusunu zararlı maddelerden korumak</li>
+                <li onclick="selectOption(this, false)">D) Nöron üretimini sağlamak</li>
+                <li onclick="selectOption(this, false)">E) Miyelin sentezlemek</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol10')">Çözümü Göster</button>
+            <div id="sol10" class="solution">
+                <div class="solution-title">Doğru Cevap: C) Beyin dokusunu zararlı maddelerden korumak</div>
+                <p><strong>Açıklama:</strong> Hematoensefalik bariyerin birincil işlevi, beyin dokusunu kan dolaşımındaki zararlı maddelerin, toksinlerin ve patojenlerin girişinden korumaktır. Bu selektif bariyer, beynin hassas nöral çevresini korurken gerekli besin maddelerinin geçişine izin verir.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function selectOption(element, isCorrect) {
+            // Remove previous selections in this question
+            const options = element.parentElement.children;
+            for (let option of options) {
+                option.classList.remove('correct-answer');
+                option.style.background = '';
+                option.style.borderColor = '';
+            }
+            
+            // Highlight selected option
+            if (isCorrect) {
+                element.classList.add('correct-answer');
+            } else {
+                element.style.background = '#ffebee';
+                element.style.borderColor = '#f44336';
+            }
+        }
+
+        function toggleSolution(solutionId) {
+            const solution = document.getElementById(solutionId);
+            if (solution.style.display === 'none' || solution.style.display === '') {
+                solution.style.display = 'block';
+            } else {
+                solution.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

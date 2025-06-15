@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nöron ve Aksiyon Potansiyeli - Çoktan Seçmeli Sorular</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .back-link:hover {
+            background: #5a67d8;
+        }
+        .question {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 5px solid #667eea;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.1em;
+        }
+        .question-text {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+        .options {
+            list-style: none;
+            padding: 0;
+        }
+        .options li {
+            padding: 8px 15px;
+            margin: 5px 0;
+            background: #fff;
+            border-radius: 5px;
+            border: 2px solid #e9ecef;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .options li:hover {
+            background: #e3f2fd;
+            border-color: #2196f3;
+        }
+        .solution {
+            background: #e8f5e8;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            border-left: 5px solid #4caf50;
+            display: none;
+        }
+        .solution-title {
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+        .show-solution {
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .show-solution:hover {
+            background: #45a049;
+        }
+        .correct-answer {
+            background: #c8e6c9 !important;
+            border-color: #4caf50 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Ana Sayfaya Dön</a>
+        
+        <div class="header">
+            <h1>⚡ Nöron ve Aksiyon Potansiyeli</h1>
+            <h2>Çoktan Seçmeli Sorular</h2>
+            <p><em>Her sorudan sonra "Çözümü Göster" butonuna tıklayarak detaylı açıklamayı görebilirsiniz.</em></p>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 1:</div>
+            <div class="question-text">Nöronun dinlenme potansiyeli yaklaşık kaç mV'dir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) -50 mV</li>
+                <li onclick="selectOption(this, true)">B) -70 mV</li>
+                <li onclick="selectOption(this, false)">C) -90 mV</li>
+                <li onclick="selectOption(this, false)">D) +30 mV</li>
+                <li onclick="selectOption(this, false)">E) 0 mV</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol1')">Çözümü Göster</button>
+            <div id="sol1" class="solution">
+                <div class="solution-title">Doğru Cevap: B) -70 mV</div>
+                <p><strong>Açıklama:</strong> Nöronun dinlenme potansiyeli tipik olarak -70 mV civarındadır. Bu değer Na+/K+ ATPaz pompası ve çeşitli iyon kanallarının aktivitesiyle korunur. K+ geçirgenliği yüksek olduğu için potansiyel K+ denge potansiyeline (-90 mV) yakındır ancak Na+ sızıntısı nedeniyle tam olarak bu değere ulaşmaz.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 2:</div>
+            <div class="question-text">Aksiyon potansiyelinin başlatılması için gerekli olan eşik potansiyel genellikle kaçtır?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) -70 mV</li>
+                <li onclick="selectOption(this, true)">B) -55 mV</li>
+                <li onclick="selectOption(this, false)">C) -40 mV</li>
+                <li onclick="selectOption(this, false)">D) -30 mV</li>
+                <li onclick="selectOption(this, false)">E) 0 mV</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol2')">Çözümü Göster</button>
+            <div id="sol2" class="solution">
+                <div class="solution-title">Doğru Cevap: B) -55 mV</div>
+                <p><strong>Açıklama:</strong> Aksiyon potansiyelinin başlatılması için gerekli eşik potansiyel genellikle -55 mV civarındadır. Bu potansiyele ulaşıldığında voltaj-bağımlı Na+ kanalları açılır ve hızlı depolarizasyon başlar. Bu "hep ya da hiç" prensibidir - eşiğe ulaşılmazsa aksiyon potansiyeli oluşmaz.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 3:</div>
+            <div class="question-text">Aksiyon potansiyelinin depolarizasyon fazında hangi iyon kanalları açılır?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, true)">A) Voltaj-bağımlı Na+ kanalları</li>
+                <li onclick="selectOption(this, false)">B) Voltaj-bağımlı K+ kanalları</li>
+                <li onclick="selectOption(this, false)">C) Ca2+ kanalları</li>
+                <li onclick="selectOption(this, false)">D) Cl- kanalları</li>
+                <li onclick="selectOption(this, false)">E) Sızdıran K+ kanalları</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol3')">Çözümü Göster</button>
+            <div id="sol3" class="solution">
+                <div class="solution-title">Doğru Cevap: A) Voltaj-bağımlı Na+ kanalları</div>
+                <p><strong>Açıklama:</strong> Depolarizasyon fazında voltaj-bağımlı Na+ kanalları açılır ve Na+ iyonları hücre içine girer. Bu hızlı Na+ girişi membran potansiyelini +30 mV'a kadar çıkarır. Na+ kanalları daha sonra inaktive olur ve K+ kanalları açılarak repolarizasyon başlar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 4:</div>
+            <div class="question-text">Refrakter dönem boyunca nöron neden yeni bir aksiyon potansiyeli üretemez?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) K+ kanalları kapalı olduğu için</li>
+                <li onclick="selectOption(this, true)">B) Na+ kanalları inaktif durumda olduğu için</li>
+                <li onclick="selectOption(this, false)">C) ATP tükendiği için</li>
+                <li onclick="selectOption(this, false)">D) Ca2+ eksikliği nedeniyle</li>
+                <li onclick="selectOption(this, false)">E) Miyelin hasarı nedeniyle</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol4')">Çözümü Göster</button>
+            <div id="sol4" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Na+ kanalları inaktif durumda olduğu için</div>
+                <p><strong>Açıklama:</strong> Refrakter dönem sırasında Na+ kanalları inaktif durumdadır ve yeniden aktivasyon için dinlenme potansiyeline dönüş gerekir. Mutlak refrakter dönemde hiçbir uyarı aksiyon potansiyeli oluşturamaz, relatif refrakter dönemde ise normalden daha güçlü uyarı gerekir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 5:</div>
+            <div class="question-text">Saltatory iletim hangi tip nöronlarda görülür?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Unmyelinated nöronlarda</li>
+                <li onclick="selectOption(this, true)">B) Myelinated nöronlarda</li>
+                <li onclick="selectOption(this, false)">C) Sadece motor nöronlarda</li>
+                <li onclick="selectOption(this, false)">D) Sadece duyusal nöronlarda</li>
+                <li onclick="selectOption(this, false)">E) Tüm nöronlarda</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol5')">Çözümü Göster</button>
+            <div id="sol5" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Myelinated nöronlarda</div>
+                <p><strong>Açıklama:</strong> Saltatory iletim sadece miyelin kılıflı nöronlarda görülür. Aksiyon potansiyeli Ranvier düğümlerinde oluşur ve bir sonraki düğüme "zıplayarak" geçer. Bu sayede iletim hızı 50-100 kat artar ve enerji tasarrufu sağlanır. Miyelin elektriksel yalıtım sağlar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 6:</div>
+            <div class="question-text">Na+/K+ ATPaz pompası hangi iyon oranında çalışır?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) 2 Na+ çıkarır, 2 K+ alır</li>
+                <li onclick="selectOption(this, true)">B) 3 Na+ çıkarır, 2 K+ alır</li>
+                <li onclick="selectOption(this, false)">C) 3 Na+ çıkarır, 3 K+ alır</li>
+                <li onclick="selectOption(this, false)">D) 2 Na+ çıkarır, 3 K+ alır</li>
+                <li onclick="selectOption(this, false)">E) 1 Na+ çıkarır, 1 K+ alır</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol6')">Çözümü Göster</button>
+            <div id="sol6" class="solution">
+                <div class="solution-title">Doğru Cevap: B) 3 Na+ çıkarır, 2 K+ alır</div>
+                <p><strong>Açıklama:</strong> Na+/K+ ATPaz pompası elektrojenik bir pompadır ve 3 Na+ iyonunu hücre dışına çıkarırken 2 K+ iyonunu hücre içine alır. Bu 3:2 oranı dinlenme potansiyelinin korunmasında önemlidir ve hücre içini daha negatif yapar. Bu pompa hücrenin enerji tüketiminin %30'unu kullanır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 7:</div>
+            <div class="question-text">Ranvier düğümleri arasındaki mesafe genellikle ne kadardır?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) 10-50 μm</li>
+                <li onclick="selectOption(this, false)">B) 100-500 μm</li>
+                <li onclick="selectOption(this, true)">C) 1-2 mm</li>
+                <li onclick="selectOption(this, false)">D) 5-10 mm</li>
+                <li onclick="selectOption(this, false)">E) 1-2 cm</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol7')">Çözümü Göster</button>
+            <div id="sol7" class="solution">
+                <div class="solution-title">Doğru Cevap: C) 1-2 mm</div>
+                <p><strong>Açıklama:</strong> Ranvier düğümleri arasındaki mesafe tipik olarak 1-2 mm'dir. Bu optimum mesafe, aksiyon potansiyelinin bir düğümden diğerine etkili şekilde zıplamasını sağlar. Mesafe akson çapına göre değişir - daha kalın aksonlarda düğümler arası mesafe daha fazladır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 8:</div>
+            <div class="question-text">Aksiyon potansiyelinin pik değeri yaklaşık kaç mV'dir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) 0 mV</li>
+                <li onclick="selectOption(this, false)">B) +10 mV</li>
+                <li onclick="selectOption(this, true)">C) +30 mV</li>
+                <li onclick="selectOption(this, false)">D) +50 mV</li>
+                <li onclick="selectOption(this, false)">E) +70 mV</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol8')">Çözümü Göster</button>
+            <div id="sol8" class="solution">
+                <div class="solution-title">Doğru Cevap: C) +30 mV</div>
+                <p><strong>Açıklama:</strong> Aksiyon potansiyelinin pik değeri genellikle +30 mV civarındadır. Bu değer Na+ denge potansiyeline (+60 mV) tam olarak ulaşmaz çünkü Na+ kanalları hızlıca inaktive olur ve K+ kanalları açılmaya başlar. Pik değer hücre tipine ve iyon konsantrasyonlarına göre değişebilir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 9:</div>
+            <div class="question-text">Aşağıdakilerden hangisi nöronun uyarılabilirliğini artırır?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Hiperpolarizasyon</li>
+                <li onclick="selectOption(this, true)">B) Depolarizasyon</li>
+                <li onclick="selectOption(this, false)">C) K+ konsantrasyonunun artması</li>
+                <li onclick="selectOption(this, false)">D) Na+ konsantrasyonunun azalması</li>
+                <li onclick="selectOption(this, false)">E) Ca2+ konsantrasyonunun azalması</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol9')">Çözümü Göster</button>
+            <div id="sol9" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Depolarizasyon</div>
+                <p><strong>Açıklama:</strong> Depolarizasyon membran potansiyelini eşik değerine yaklaştırarak nöronun uyarılabilirliğini artırır. Hiperpolarizasyon ise tersine etki yapar. Uyarıcı postsinaptik potansiyeller (EPSP) depolarizasyon yaratırken, engelleyici postsinaptik potansiyeller (IPSP) hiperpolarizasyon yaratır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 10:</div>
+            <div class="question-text">Lokal anestezikler hangi mekanizma ile çalışır?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, true)">A) Na+ kanallarını bloke ederler</li>
+                <li onclick="selectOption(this, false)">B) K+ kanallarını bloke ederler</li>
+                <li onclick="selectOption(this, false)">C) Ca2+ kanallarını bloke ederler</li>
+                <li onclick="selectOption(this, false)">D) Na+/K+ pompasını bloke ederler</li>
+                <li onclick="selectOption(this, false)">E) Miyelin tabakasını hasara uğratırlar</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol10')">Çözümü Göster</button>
+            <div id="sol10" class="solution">
+                <div class="solution-title">Doğru Cevap: A) Na+ kanallarını bloke ederler</div>
+                <p><strong>Açıklama:</strong> Lokal anestezikler (lidokain, prokain gibi) voltaj-bağımlı Na+ kanallarını bloke ederek aksiyon potansiyelinin oluşmasını engeller. Bu sayede ağrı sinyallerinin beyne iletilmesi durur. Etki geri dönüşümlüdür ve anestezik metabolize edildiğinde normal işlev geri gelir.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function selectOption(element, isCorrect) {
+            // Remove previous selections in this question
+            const options = element.parentElement.children;
+            for (let option of options) {
+                option.classList.remove('correct-answer');
+                option.style.background = '';
+                option.style.borderColor = '';
+            }
+            
+            // Highlight selected option
+            if (isCorrect) {
+                element.classList.add('correct-answer');
+            } else {
+                element.style.background = '#ffebee';
+                element.style.borderColor = '#f44336';
+            }
+        }
+
+        function toggleSolution(solutionId) {
+            const solution = document.getElementById(solutionId);
+            if (solution.style.display === 'none' || solution.style.display === '') {
+                solution.style.display = 'block';
+            } else {
+                solution.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

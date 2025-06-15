@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nöroplastisite - Boşluk Doldurma</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .back-link:hover {
+            background: #5a67d8;
+        }
+        .question {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 5px solid #2196f3;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #2196f3;
+            font-size: 1.1em;
+        }
+        .question-text {
+            margin: 15px 0;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+        .blank {
+            display: inline-block;
+            min-width: 100px;
+            height: 25px;
+            border-bottom: 2px solid #2196f3;
+            margin: 0 5px;
+            padding: 0 5px;
+            background: transparent;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            outline: none;
+            font-size: 1em;
+            text-align: center;
+        }
+        .blank:focus {
+            background: #e3f2fd;
+        }
+        .solution {
+            background: #e8f5e8;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            border-left: 5px solid #4caf50;
+            display: none;
+        }
+        .solution-title {
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+        .show-solution {
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .show-solution:hover {
+            background: #45a049;
+        }
+        .check-answer {
+            background: #2196f3;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+        .check-answer:hover {
+            background: #1976d2;
+        }
+        .correct {
+            background: #c8e6c9;
+            color: #2e7d32;
+        }
+        .incorrect {
+            background: #ffcdd2;
+            color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Ana Sayfaya Dön</a>
+        
+        <div class="header">
+            <h1>🔄 Nöroplastisite</h1>
+            <h2>Boşluk Doldurma Soruları</h2>
+            <p><em>Boşlukları uygun kelimelerle doldurun. "Cevabı Kontrol Et" ile kontrol edebilir, "Çözümü Göster" ile detaylı açıklamayı görebilirsiniz.</em></p>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 1:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="nöroplastisite" placeholder="(14)"> beynin yaşam boyu 
+                <input type="text" class="blank" data-answer="değişim ve adaptasyon" placeholder="(19)"> kapasitesidir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(1)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol1')">Çözümü Göster</button>
+            <div id="sol1" class="solution">
+                <div class="solution-title">Doğru Cevaplar: nöroplastisite, değişim ve adaptasyon</div>
+                <p><strong>Açıklama:</strong> Nöroplastisite deneyimlere bağlı olarak nöral bağlantıların yeniden düzenlenmesi yeteneğidir. Bu süreç öğrenme, hafıza ve iyileşmenin temelini oluşturur.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 2:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="sinaptik plastisite" placeholder="(17)"> sinaps gücünün deneyimle 
+                <input type="text" class="blank" data-answer="değişmesi" placeholder="(9)"> sürecidir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(2)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol2')">Çözümü Göster</button>
+            <div id="sol2" class="solution">
+                <div class="solution-title">Doğru Cevaplar: sinaptik plastisite, değişmesi</div>
+                <p><strong>Açıklama:</strong> Sinaptik plastisite Hebb kuralını takip eder: "birlikte ateşlenen nöronlar birbirine bağlanır". Bu süreç öğrenme ve hafızanın hücresel temelini oluşturur.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 3:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="LTP" placeholder="(3)"> (uzun süreli potansiyasyon) sinapslarda 
+                <input type="text" class="blank" data-answer="güçlendirme" placeholder="(11)"> mekanizmasıdır.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(3)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol3')">Çözümü Göster</button>
+            <div id="sol3" class="solution">
+                <div class="solution-title">Doğru Cevaplar: LTP, güçlendirme</div>
+                <p><strong>Açıklama:</strong> LTP yüksek frekanslı stimülasyon sonrası sinaptik gücün uzun süreli artışıdır. NMDA ve AMPA reseptörleri aracılığıyla gerçekleşir ve hafıza konsolidasyonunda kritiktir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 4:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="LTD" placeholder="(3)"> (uzun süreli depresyon) sinapslarda 
+                <input type="text" class="blank" data-answer="zayıflatma" placeholder="(10)"> mekanizmasıdır.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(4)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol4')">Çözümü Göster</button>
+            <div id="sol4" class="solution">
+                <div class="solution-title">Doğru Cevaplar: LTD, zayıflatma</div>
+                <p><strong>Açıklama:</strong> LTD düşük frekanslı stimülasyon veya asenkron aktivite sonrası sinaptik gücün uzun süreli azalmasıdır. Gereksiz bağlantıların silinmesinde ve hafıza kapasitesinin korunmasında önemlidir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 5:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="yapısal plastisite" placeholder="(17)"> nöronların fiziksel şekillerinde 
+                <input type="text" class="blank" data-answer="değişiklik" placeholder="(10)"> yapma kapasitesidir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(5)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol5')">Çözümü Göster</button>
+            <div id="sol5" class="solution">
+                <div class="solution-title">Doğru Cevaplar: yapısal plastisite, değişiklik</div>
+                <p><strong>Açıklama:</strong> Yapısal plastisite dendrit uzantıları, akson dallanması ve sinaps sayılarındaki değişiklikleri içerir. Öğrenme sırasında yeni sinaps oluşumu görülür.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 6:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="nörogenez" placeholder="(10)"> yetişkin beyinde yeni 
+                <input type="text" class="blank" data-answer="nöron oluşumu" placeholder="(13)"> sürecidir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(6)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol6')">Çözümü Göster</button>
+            <div id="sol6" class="solution">
+                <div class="solution-title">Doğru Cevaplar: nörogenez, nöron oluşumu</div>
+                <p><strong>Açıklama:</strong> Yetişkin nörogenezi hipokampus (dişli gyrus) ve subventriküler alanda görülür. Öğrenme, egzersiz ve zengin çevre nörogenezi artırır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 7:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="kritik dönem" placeholder="(12)"> gelişim sırasında plastisitenin 
+                <input type="text" class="blank" data-answer="en yüksek" placeholder="(9)"> olduğu zaman penceresidir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(7)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol7')">Çözümü Göster</button>
+            <div id="sol7" class="solution">
+                <div class="solution-title">Doğru Cevaplar: kritik dönem, en yüksek</div>
+                <p><strong>Açıklama:</strong> Kritik dönem sırasında beyin deneyimlere karşı maksimum duyarlılık gösterir. Görsel sistem için 0-8 yaş, dil için 0-puberte arası kritik dönemlerdir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 8:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="miyelin plastisitesi" placeholder="(17)"> akson çevresindeki miyelin kılıfının 
+                <input type="text" class="blank" data-answer="adaptif değişimi" placeholder="(15)"> dir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(8)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol8')">Çözümü Göster</button>
+            <div id="sol8" class="solution">
+                <div class="solution-title">Doğru Cevaplar: miyelin plastisitesi, adaptiv değişimi</div>
+                <p><strong>Açıklama:</strong> Miyelin plastisitesi oligodendrositlerin aktiviteye bağlı olarak miyelin kalınlığını artırması veya yeni miyelin oluşturmasıdır. Bu süreç iletim hızını optimize eder.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 9:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="homeostatik plastisite" placeholder="(20)"> nöral ağların aktivite seviyesini 
+                <input type="text" class="blank" data-answer="dengelemesi" placeholder="(11)"> mekanizmasıdır.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(9)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol9')">Çözümü Göster</button>
+            <div id="sol9" class="solution">
+                <div class="solution-title">Doğru Cevaplar: homeostatik plastisite, dengelemesi</div>
+                <p><strong>Açıklama:</strong> Homeostatik plastisite nöral ağların aşırı aktivasyon veya suskunluğa karşı dengeleyici değişiklikler yapmasıdır. Sinaptik skalöğrenim bu mekanizmanın örneğidir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 10:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="metaplastisite" placeholder="(13)"> plastisitenin plastisitesi olup, 
+                <input type="text" class="blank" data-answer="değişim eşiğinin" placeholder="(15)"> modülasyonudur.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(10)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol10')">Çözümü Göster</button>
+            <div id="sol10" class="solution">
+                <div class="solution-title">Doğru Cevaplar: metaplastisite, değişim eşiğinin</div>
+                <p><strong>Açıklama:</strong> Metaplastisite önceki aktivite geçmişinin sonraki plastisite indüksiyonunu etkilemesidir. Bu mekanizma hafıza konsolidasyonu ve öğrenme kapasitesini düzenler.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 11:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="çapraz eğitim" placeholder="(13)"> bir ekstremitedeki eğitimin 
+                <input type="text" class="blank" data-answer="karşı ekstremiteyi" placeholder="(17)"> etkilemesi fenomenidir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(11)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol11')">Çözümü Göster</button>
+            <div id="sol11" class="solution">
+                <div class="solution-title">Doğru Cevaplar: çapraz eğitim, karşı ekstremiteyi</div>
+                <p><strong>Açıklama:</strong> Çapraz eğitim hemisferler arası bağlantılar ve bilateral motor kontrol devrelerinin plastisitesini yansıtır. Rehabilitasyon programlarında kullanılır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 12:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="fantom organ" placeholder="(11)"> sendromu ampütasyon sonrası 
+                <input type="text" class="blank" data-answer="kortikal yeniden haritalama" placeholder="(25)"> örneğidir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(12)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol12')">Çözümü Göster</button>
+            <div id="sol12" class="solution">
+                <div class="solution-title">Doğru Cevaplar: fantom organ, kortikal yeniden haritalama</div>
+                <p><strong>Açıklama:</strong> Fantom organ hissi ampütasyon sonrası somatosensoriel kortekste yeniden haritalama olduğunu gösterir. Komşu alanlar kayıp bölgenin korteksal alanını işgal eder.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 13:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="kortikal kalınlık" placeholder="(16)"> öğrenme ve deneyimle 
+                <input type="text" class="blank" data-answer="değişebilen" placeholder="(10)"> yapısal parametredir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(13)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol13')">Çözümü Göster</button>
+            <div id="sol13" class="solution">
+                <div class="solution-title">Doğru Cevaplar: kortikal kalınlık, değişebilen</div>
+                <p><strong>Açıklama:</strong> Kortikal kalınlık juggling, müzik öğrenme gibi intensive öğrenme süreçleriyle artabilir. Bu değişiklik dendrit uzantıları ve glial proliferasyonu yansıtabilir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 14:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="spike timing" placeholder="(12)"> bağımlı plastisite sinir hücrelerinin 
+                <input type="text" class="blank" data-answer="ateşleme zamanına" placeholder="(16)"> duyarlı değişimdir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(14)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol14')">Çözümü Göster</button>
+            <div id="sol14" class="solution">
+                <div class="solution-title">Doğru Cevaplar: spike timing, ateşleme zamanına</div>
+                <p><strong>Açıklama:</strong> STDP'de presinaptik spike postsinaptik spike'tan önce gelirse LTP, sonra gelirse LTD indüklenir. Bu mekanizma nedensel öğrenmeyi destekler.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 15:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="moleküler plastisigte" placeholder="(20)"> protein sentezi ve 
+                <input type="text" class="blank" data-answer="gen ekspresyonu" placeholder="(14)"> değişiklikleri önemlidir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(15)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol15')">Çözümü Göster</button>
+            <div id="sol15" class="solution">
+                <div class="solution-title">Doğru Cevaplar: moleküler plastisigte, gen ekspresyonu</div>
+                <p><strong>Açıklama:</strong> Uzun süreli plastisite CREB, c-Fos gibi transkripsiyon faktörlerinin aktivasyonunu gerektirir. Yeni protein sentezi sinaptik değişikliklerin kalıcılığını sağlar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 16:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="epigenetik" placeholder="(10)"> mekanizmalar deneyimler yoluyla 
+                <input type="text" class="blank" data-answer="gen aktivitesini" placeholder="(15)"> kalıcı olarak değiştirebilir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(16)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol16')">Çözümü Göster</button>
+            <div id="sol16" class="solution">
+                <div class="solution-title">Doğru Cevaplar: epigenetik, gen aktivitesini</div>
+                <p><strong>Açıklama:</strong> DNA metilasyonu, histone modifikasyonları gibi epigenetik değişiklikler deneyim kaynaklı nöroplastisiteyi destekler ve nesiller arası aktarım yapabilir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 17:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="glia plastisitesi" placeholder="(15)"> nöroplastisiteye eşlik eden 
+                <input type="text" class="blank" data-answer="glial hücre" placeholder="(11)"> değişimleridir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(17)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol17')">Çözümü Göster</button>
+            <div id="sol17" class="solution">
+                <div class="solution-title">Doğru Cevaplar: glia plastisitesi, glial hücre</div>
+                <p><strong>Açıklama:</strong> Astrosit, mikroglia ve oligodendrositlerin morfolojik ve işlevsel değişiklikleri nöroplastisiteyi destekler. Glial hücreler aktif sinaptik partnerlerdir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 18:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="kullan ya da kaybet" placeholder="(16)"> ilkesi plastisite süreçlerinde 
+                <input type="text" class="blank" data-answer="temel kural" placeholder="(11)"> dır.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(18)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol18')">Çözümü Göster</button>
+            <div id="sol18" class="solution">
+                <div class="solution-title">Doğru Cevaplar: kullan ya da kaybet, temel kural</div>
+                <p><strong>Açıklama:</strong> Aktif kullanılan nöral bağlantılar güçlenir, kullanılmayanlar ise zayıflar veya kesilir. Bu ekonomik prensip beyin verimliliğini optimize eder.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 19:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="rehabilitasyon" placeholder="(13)"> programları beyin hasarı sonrası 
+                <input type="text" class="blank" data-answer="plastisiteyi" placeholder="(11)"> yönlendirerek iyileşme sağlar.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(19)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol19')">Çözümü Göster</button>
+            <div id="sol19" class="solution">
+                <div class="solution-title">Doğru Cevaplar: rehabilitasyon, plastisiteyi</div>
+                <p><strong>Açıklama:</strong> Kontrol edilmiş motor ve kognitif egzersizler hasarlı bölgelerin çevresindeki sağlıklı dokuları harekete geçirir ve işlev geri kazanımını sağlar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 20:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="zengin çevre" placeholder="(11)"> nöroplastisiteyi artıran en etkili 
+                <input type="text" class="blank" data-answer="çevresel faktördür" placeholder="(16)">
+            </div>
+            <button class="check-answer" onclick="checkAnswers(20)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol20')">Çözümü Göster</button>
+            <div id="sol20" class="solution">
+                <div class="solution-title">Doğru Cevaplar: zengin çevre, çevresel faktördür</div>
+                <p><strong>Açıklama:</strong> Zengin çevre (enriched environment) çeşitli uyaranlar, sosyal etkileşim ve fiziksel aktivite içerir. Dendritic spine yoğunluğu, nörogenez ve öğrenme kapasitesini artırır.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function checkAnswers(questionNumber) {
+            const question = document.querySelectorAll('.question')[questionNumber - 1];
+            const blanks = question.querySelectorAll('.blank');
+            
+            blanks.forEach(blank => {
+                const userAnswer = blank.value.toLowerCase().trim();
+                const correctAnswer = blank.getAttribute('data-answer').toLowerCase();
+                
+                blank.classList.remove('correct', 'incorrect');
+                
+                if (userAnswer === correctAnswer) {
+                    blank.classList.add('correct');
+                } else {
+                    blank.classList.add('incorrect');
+                }
+            });
+        }
+
+        function toggleSolution(solutionId) {
+            const solution = document.getElementById(solutionId);
+            if (solution.style.display === 'none' || solution.style.display === '') {
+                solution.style.display = 'block';
+            } else {
+                solution.style.display = 'none';
+            }
+        }
+
+        // Allow Enter key to check answers
+        document.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const question = e.target.closest('.question');
+                if (question) {
+                    const questionIndex = Array.from(document.querySelectorAll('.question')).indexOf(question) + 1;
+                    checkAnswers(questionIndex);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

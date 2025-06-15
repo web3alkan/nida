@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nöron Yapısı ve İşlevi - Boşluk Doldurma</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .back-link:hover {
+            background: #5a67d8;
+        }
+        .question {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 5px solid #e91e63;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #e91e63;
+            font-size: 1.1em;
+        }
+        .question-text {
+            margin: 15px 0;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+        .blank {
+            display: inline-block;
+            min-width: 100px;
+            height: 25px;
+            border-bottom: 2px solid #e91e63;
+            margin: 0 5px;
+            padding: 0 5px;
+            background: transparent;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            outline: none;
+            font-size: 1em;
+            text-align: center;
+        }
+        .blank:focus {
+            background: #fce4ec;
+        }
+        .solution {
+            background: #e8f5e8;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            border-left: 5px solid #4caf50;
+            display: none;
+        }
+        .solution-title {
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+        .show-solution {
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .show-solution:hover {
+            background: #45a049;
+        }
+        .check-answer {
+            background: #e91e63;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+        .check-answer:hover {
+            background: #c2185b;
+        }
+        .correct {
+            background: #c8e6c9;
+            color: #2e7d32;
+        }
+        .incorrect {
+            background: #ffcdd2;
+            color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Ana Sayfaya Dön</a>
+        
+        <div class="header">
+            <h1>⚡ Nöron Yapısı ve İşlevi</h1>
+            <h2>Boşluk Doldurma Soruları</h2>
+            <p><em>Boşlukları uygun kelimelerle doldurun. "Cevabı Kontrol Et" ile kontrol edebilir, "Çözümü Göster" ile detaylı açıklamayı görebilirsiniz.</em></p>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 1:</div>
+            <div class="question-text">
+                Nöronun hücre gövdesi olan <input type="text" class="blank" data-answer="soma" placeholder="(4)"> 
+                çekirdeği ve çoğu <input type="text" class="blank" data-answer="organelleri" placeholder="(10)"> içerir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(1)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol1')">Çözümü Göster</button>
+            <div id="sol1" class="solution">
+                <div class="solution-title">Doğru Cevaplar: soma, organelleri</div>
+                <p><strong>Açıklama:</strong> Soma, nöronun metabolik merkezidir. Çekirdek, ribozomlar, mitokondri, Golgi aygıtı gibi hücresel organellerin çoğunu içerir ve hücrenin yaşamsal fonksiyonlarını yürütür.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 2:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="dendritler" placeholder="(10)"> diğer nöronlardan gelen 
+                <input type="text" class="blank" data-answer="sinyalleri" placeholder="(10)"> alan ağaç benzeri uzantılardır.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(2)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol2')">Çözümü Göster</button>
+            <div id="sol2" class="solution">
+                <div class="solution-title">Doğru Cevaplar: dendritler, sinyalleri</div>
+                <p><strong>Açıklama:</strong> Dendritler nöronun "antenleri" gibi işlev görür. Sinaps boyunca gelen nörotransmitterleri yakalar ve elektriksel sinyallere dönüştürür. Geniş yüzey alanları sayesinde çok sayıda sinaptik bağlantı kurabilirler.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 3:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="akson" placeholder="(5)"> nörondan çıkan sinyalleri 
+                <input type="text" class="blank" data-answer="hedef hücrelere" placeholder="(13)"> ileten uzun projeksiyondur.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(3)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol3')">Çözümü Göster</button>
+            <div id="sol3" class="solution">
+                <div class="solution-title">Doğru Cevaplar: akson, hedef hücrelere</div>
+                <p><strong>Açıklama:</strong> Akson nöronun "iletim kablosu"dur. Aksiyon potansiyellerini soma bölgesinden sinaptik terminallere kadar taşır. Uzunluğu mikrometrelerden bir metreye kadar değişebilir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 4:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="sinaptik terminaller" placeholder="(18)"> aksonun ucunda bulunan ve 
+                <input type="text" class="blank" data-answer="nörotransmitter" placeholder="(14)"> salan yapılardır.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(4)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol4')">Çözümü Göster</button>
+            <div id="sol4" class="solution">
+                <div class="solution-title">Doğru Cevaplar: sinaptik terminaller, nörotransmitter</div>
+                <p><strong>Açıklama:</strong> Sinaptik terminaller aksiyon potansiyeli geldiğinde kalsiyum kanalları açılır, veziküller membranla birleşir ve nörotransmitter salınır. Bu işleme eksositoz denir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 5:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="aksiyon potansiyeli" placeholder="(17)"> nöronun elektriksel sinyali olup, 
+                <input type="text" class="blank" data-answer="hep ya da hiç" placeholder="(12)"> kuralına göre çalışır.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(5)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol5')">Çözümü Göster</button>
+            <div id="sol5" class="solution">
+                <div class="solution-title">Doğru Cevaplar: aksiyon potansiyeli, hep ya da hiç</div>
+                <p><strong>Açıklama:</strong> Aksiyon potansiyeli eşik değere ulaşırsa tam genlikle oluşur, altında kalırsa hiç oluşmaz. Bu dijital sinyal yaklaşık +40mV'a kadar çıkar ve ~1ms sürer.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 6:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="miyelin kılıf" placeholder="(12)"> aksonu sararak sinyal iletimini 
+                <input type="text" class="blank" data-answer="hızlandırır" placeholder="(11)"> ve elektriksel yalıtım sağlar.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(6)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol6')">Çözümü Göster</button>
+            <div id="sol6" class="solution">
+                <div class="solution-title">Doğru Cevaplar: miyelin kılıf, hızlandırır</div>
+                <p><strong>Açıklama:</strong> Miyelin kılıf lipit açısından zengin bir yapıdır. Saltatory iletimi mümkün kılar - aksiyon potansiyeli Ranvier düğümleri arasında "zıplayarak" 100 kata kadar daha hızlı ilerler.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 7:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="Ranvier düğümleri" placeholder="(16)"> miyelin kılıfındaki 
+                <input type="text" class="blank" data-answer="boşluklardır" placeholder="(12)"> ve sodyum kanalları açısından zengindir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(7)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol7')">Çözümı Göster</button>
+            <div id="sol7" class="solution">
+                <div class="solution-title">Doğru Cevaplar: Ranvier düğümleri, boşluklardır</div>
+                <p><strong>Açıklama:</strong> Ranvier düğümleri miyelin kılıfları arasındaki yaklaşık 1μm genişliğindeki açıklıklardır. Yoğun sodyum kanalları içerir ve aksiyon potansiyelinin yenilenmesine olanak sağlar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 8:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="refrakter dönem" placeholder="(15)"> aksiyon potansiyeli sonrası nöronun 
+                <input type="text" class="blank" data-answer="uyarılamaz" placeholder="(10)"> olduğu kısa süredir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(8)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol8')">Çözümü Göster</button>
+            <div id="sol8" class="solution">
+                <div class="solution-title">Doğru Cevaplar: refrakter dönem, uyarılamaz</div>
+                <p><strong>Açıklama:</strong> Refrakter dönem iki aşamada gerçekleşir: Mutlak refrakter dönemde hiçbir uyarı yeni aksiyon potansiyeli oluşturamaz, göreceli refrakter dönemde ise normalden güçlü uyarı gerekir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 9:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="dinlenim potansiyeli" placeholder="(18)"> miyeli nöronlarda yaklaşık 
+                <input type="text" class="blank" data-answer="-70mV" placeholder="(5)"> civarında ölçülür.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(9)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol9')">Çözümü Göster</button>
+            <div id="sol9" class="solution">
+                <div class="solution-title">Doğru Cevaplar: dinlenim potansiyeli, -70mV</div>
+                <p><strong>Açıklama:</strong> Dinlenim potansiyeli sodyum-potasyum pompası ve seçici geçirgen kanallar tarafından korunur. İç ortam dış ortama göre negatif yüklüdür ve bu durum elektrokimyasal gradyan oluşturur.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 10:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="eşik potansiyel" placeholder="(14)"> genellikle <input type="text" class="blank" data-answer="-55mV" placeholder="(5)"> 
+                civarında olup, aksiyon potansiyelinin tetiklenme noktasıdır.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(10)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol10')">Çözümü Göster</button>
+            <div id="sol10" class="solution">
+                <div class="solution-title">Doğru Cevaplar: eşik potansiyel, -55mV</div>
+                <p><strong>Açıklama:</strong> Eşik potansiyele ulaşınca voltaj kapılı sodyum kanalları açılır ve pozitif geri bildirim döngüsü başlar. Bu nokta nöronun "karar verme" anıdır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 11:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="depolarizasyon" placeholder="(14)"> membran potansiyelinin daha 
+                <input type="text" class="blank" data-answer="pozitif" placeholder="(7)"> hale gelmesi işlemidir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(11)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol11')">Çözümü Göster</button>
+            <div id="sol11" class="solution">
+                <div class="solution-title">Doğru Cevaplar: depolarizasyon, pozitif</div>
+                <p><strong>Açıklama:</strong> Depolarizasyon sırasında sodyum kanalları açılır ve Na+ iyonları hücre içine girer. Bu süreç aksiyon potansiyelinin yükselme evresini oluşturur.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 12:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="repolarizasyon" placeholder="(14)"> sırasında <input type="text" class="blank" data-answer="potasyum" placeholder="(8)"> 
+                kanalları açılarak membran potansiyeli dinlenim değerine döner.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(12)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol12')">Çözümü Göster</button>
+            <div id="sol12" class="solution">
+                <div class="solution-title">Doğru Cevaplar: repolarizasyon, potasyum</div>
+                <p><strong>Açıklama:</strong> Repolarizasyon sırasında K+ kanalları açılır ve K+ iyonları hücre dışına çıkar. Aynı zamanda Na+ kanalları inaktive olur ve membran negatif değerlere döner.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 13:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="hiperpolarizasyon" placeholder="(16)"> membran potansiyelinin dinlenim değerinden daha 
+                <input type="text" class="blank" data-answer="negatif" placeholder="(7)"> hale gelmesidir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(13)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol13')">Çözümü Göster</button>
+            <div id="sol13" class="solution">
+                <div class="solution-title">Doğru Cevaplar: hiperpolarizasyon, negatif</div>
+                <p><strong>Açıklama:</strong> Hiperpolarizasyon genellikle repolarizasyon fazında K+ kanallarının geç kapanması sonucu oluşur. Bu durum nöronun bir süre uyarılmasını zorlaştırır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 14:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="sodyum-potasyum pompası" placeholder="(22)"> ATP kullanarak 3 Na+ dışarı, 
+                2 <input type="text" class="blank" data-answer="K+" placeholder="(2)"> içeri pompalar.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(14)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol14')">Çözümü Göster</button>
+            <div id="sol14" class="solution">
+                <div class="solution-title">Doğru Cevaplar: sodyum-potasyum pompası, K+</div>
+                <p><strong>Açıklama:</strong> Na+/K+ ATPaz pompası elektrojenik bir pompadır. 3:2 oranındaki iyon değişimi dinlenim potansiyelinin korunmasına katkıda bulunur ve yaklaşık -5mV'lık elektriksel gradyan yaratır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 15:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="sinapslarda" placeholder="(11)"> elektriksel sinyal 
+                <input type="text" class="blank" data-answer="kimyasal sinyale" placeholder="(16)"> dönüştürülür.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(15)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol15')">Çözümü Göster</button>
+            <div id="sol15" class="solution">
+                <div class="solution-title">Doğru Cevaplar: sinapslarda, kimyasal sinyale</div>
+                <p><strong>Açıklama:</strong> Kimyasal sinapslarda sinyal dönüşümü gerçekleşir: elektriksel → kimyasal → elektriksel. Bu süreç sinaptik iletimin modülasyonuna ve plastisiteye olanak sağlar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 16:</div>
+            <div class="question-text">
+                Motor nöronlar <input type="text" class="blank" data-answer="kas liflerine" placeholder="(12)"> sinyal göndererek 
+                <input type="text" class="blank" data-answer="kasılmaya" placeholder="(9)"> neden olur.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(16)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol16')">Çözümü Göster</button>
+            <div id="sol16" class="solution">
+                <div class="solution-title">Doğru Cevaplar: kas liflerine, kasılmaya</div>
+                <p><strong>Açıklama:</strong> Motor nöronlar nöromüsküler kavşakta asetilkolin salarak kas liflerinin depolarizasyonunu başlatır. Bu süreç kas kontraksiyonunun ilk adımıdır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 17:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="sensory nöronlar" placeholder="(15)"> dış ortamdan aldıkları bilgileri 
+                <input type="text" class="blank" data-answer="merkezi sinir sistemine" placeholder="(21)"> iletir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(17)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol17')">Çözümü Göster</button>
+            <div id="sol17" class="solution">
+                <div class="solution-title">Doğru Cevaplar: sensory nöronlar, merkezi sinir sistemine</div>
+                <p><strong>Açıklama:</strong> Sensory nöronlar çevre uyarılarını (ışık, ses, dokunma, koku, tat) elektriksel sinyallere dönüştürür ve bu bilgileri beyin ve omuriliğe iletir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 18:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="internöronlar" placeholder="(12)"> merkezi sinir sisteminde 
+                <input type="text" class="blank" data-answer="bilgi işleme" placeholder="(12)"> ve entegrasyondan sorumludur.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(18)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol18')">Çözümü Göster</button>
+            <div id="sol18" class="solution">
+                <div class="solution-title">Doğru Cevaplar: internöronlar, bilgi işleme</div>
+                <p><strong>Açıklama:</strong> İnternöronlar sensory ve motor nöronlar arasında köprü görevi görür. Karmaşık düşünce, öğrenme ve karar verme süreçlerinde kritik rol oynar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 19:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="iletim hızı" placeholder="(11)"> akson çapı ve miyelin varlığına bağlı olarak 
+                <input type="text" class="blank" data-answer="0.5-120" placeholder="(7)"> m/s arasında değişir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(19)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol19')">Çözümü Göster</button>
+            <div id="sol19" class="solution">
+                <div class="solution-title">Doğru Cevaplar: iletim hızı, 0.5-120</div>
+                <p><strong>Açıklama:</strong> En yavaş iletim miyelinsiz ince aksonlarda (ağrı sinyalleri), en hızlı iletim kalın miyeli aksonlarda (motor komutlar) gerçekleşir. Bu çeşitlilik farklı fonksiyonel ihtiyaçlara cevap verir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 20:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="akson hillock" placeholder="(12)"> soma ile aksonun birleştiği nokta olup, 
+                aksiyon potansiyelinin <input type="text" class="blank" data-answer="başladığı" placeholder="(9)"> yerdir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(20)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol20')">Çözümü Göster</button>
+            <div id="sol20" class="solution">
+                <div class="solution-title">Doğru Cevaplar: akson hillock, başladığı</div>
+                <p><strong>Açıklama:</strong> Akson hillock en yoğun sodyum kanalı konsantrasyonuna sahip bölgedir. Dendritlerden gelen sinyallerin toplamı burada değerlendirilir ve aksiyon potansiyeli başlatılır.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function checkAnswers(questionNumber) {
+            const question = document.querySelectorAll('.question')[questionNumber - 1];
+            const blanks = question.querySelectorAll('.blank');
+            
+            blanks.forEach(blank => {
+                const userAnswer = blank.value.toLowerCase().trim();
+                const correctAnswer = blank.getAttribute('data-answer').toLowerCase();
+                
+                blank.classList.remove('correct', 'incorrect');
+                
+                if (userAnswer === correctAnswer) {
+                    blank.classList.add('correct');
+                } else {
+                    blank.classList.add('incorrect');
+                }
+            });
+        }
+
+        function toggleSolution(solutionId) {
+            const solution = document.getElementById(solutionId);
+            if (solution.style.display === 'none' || solution.style.display === '') {
+                solution.style.display = 'block';
+            } else {
+                solution.style.display = 'none';
+            }
+        }
+
+        // Allow Enter key to check answers
+        document.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const question = e.target.closest('.question');
+                if (question) {
+                    const questionIndex = Array.from(document.querySelectorAll('.question')).indexOf(question) + 1;
+                    checkAnswers(questionIndex);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

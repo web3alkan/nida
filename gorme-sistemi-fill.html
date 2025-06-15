@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Görme Sistemi - Boşluk Doldurma</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .back-link:hover {
+            background: #5a67d8;
+        }
+        .question {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 5px solid #ffc107;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #ffc107;
+            font-size: 1.1em;
+        }
+        .question-text {
+            margin: 15px 0;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+        .blank {
+            display: inline-block;
+            min-width: 100px;
+            height: 25px;
+            border-bottom: 2px solid #ffc107;
+            margin: 0 5px;
+            padding: 0 5px;
+            background: transparent;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            outline: none;
+            font-size: 1em;
+            text-align: center;
+        }
+        .blank:focus {
+            background: #fff8e1;
+        }
+        .solution {
+            background: #e8f5e8;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            border-left: 5px solid #4caf50;
+            display: none;
+        }
+        .solution-title {
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+        .show-solution {
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .show-solution:hover {
+            background: #45a049;
+        }
+        .check-answer {
+            background: #ffc107;
+            color: black;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+        .check-answer:hover {
+            background: #ffb300;
+        }
+        .correct {
+            background: #c8e6c9;
+            color: #2e7d32;
+        }
+        .incorrect {
+            background: #ffcdd2;
+            color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Ana Sayfaya Dön</a>
+        
+        <div class="header">
+            <h1>👁️ Görme Sistemi</h1>
+            <h2>Boşluk Doldurma Soruları</h2>
+            <p><em>Boşlukları uygun kelimelerle doldurun. "Cevabı Kontrol Et" ile kontrol edebilir, "Çözümü Göster" ile detaylı açıklamayı görebilirsiniz.</em></p>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 1:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="kornea" placeholder="(6)"> gözün en dış şeffaf tabakası olup, 
+                ışığın <input type="text" class="blank" data-answer="kırılmasından" placeholder="(12)"> sorumludur.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(1)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol1')">Çözümü Göster</button>
+            <div id="sol1" class="solution">
+                <div class="solution-title">Doğru Cevaplar: kornea, kırılmasından</div>
+                <p><strong>Açıklama:</strong> Kornea gözün toplam kırıcı gücünün yaklaşık 2/3'ünü sağlar (~43 dioptri). Şeffaflığını korumak için kan damarı içermez ve gözyaşından besini alır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 2:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="iris" placeholder="(4)"> gözün renkli kısmı olup, 
+                <input type="text" class="blank" data-answer="pupil çapını" placeholder="(11)"> kontrol eder.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(2)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol2')">Çözümü Göster</button>
+            <div id="sol2" class="solution">
+                <div class="solution-title">Doğru Cevaplar: iris, pupil çapını</div>
+                <p><strong>Açıklama:</strong> İris sphincter ve dilator kasları aracılığıyla pupil çapını düzenler. Parlak ışıkta daralır (miyoz), karanlıkta genişler (midriyaz). Bu pupil ışık refleksidir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 3:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="lens" placeholder="(4)"> ışığın odaklanmasını sağlayan 
+                <input type="text" class="blank" data-answer="esnek yapıdır" placeholder="(12)"> ve yaşla birlikte sertleşir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(3)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol3')">Çözümü Göster</button>
+            <div id="sol3" class="solution">
+                <div class="solution-title">Doğru Cevaplar: lens, esnek yapıdır</div>
+                <p><strong>Açıklama:</strong> Lens akomodasyon sürecinde şeklini değiştirerek yakın ve uzak nesnelere odaklanmayı sağlar. Ciliary kasların kasılmasıyla lens daha küresel hale gelir (yakın görüş).</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 4:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="retina" placeholder="(6)"> gözün arka duvarında yer alan 
+                <input type="text" class="blank" data-answer="fotoğu işleyen" placeholder="(14)"> sinir dokusudur.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(4)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol4')">Çözümü Göster</button>
+            <div id="sol4" class="solution">
+                <div class="solution-title">Doğru Cevaplar: retina, fotoğu işleyen</div>
+                <p><strong>Açıklama:</strong> Retina çok katmanlı nöral dokudur. Fotoreseptörler, bipolar hücreler, ganglion hücreleri ve destekleyici hücreleri içerir. Işığı elektriksel sinyallere dönüştürür.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 5:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="çubuklar" placeholder="(8)"> düşük ışıkta görmeyi sağlayan 
+                <input type="text" class="blank" data-answer="fotoreseptörlerdir" placeholder="(16)">
+            </div>
+            <button class="check-answer" onclick="checkAnswers(5)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol5')">Çözümü Göster</button>
+            <div id="sol5" class="solution">
+                <div class="solution-title">Doğru Cevaplar: çubuklar, fotoreseptörlerdir</div>
+                <p><strong>Açıklama:</strong> Çubuklar (~120 milyon) rodopsin pigmenti içerir ve skotopik (gece) görümden sorumludur. Yüksek ışık hassasiyetine sahiptir ancak renk ayrımı yapmaz.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 6:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="koniler" placeholder="(7)"> renk görümünden sorumlu 
+                <input type="text" class="blank" data-answer="fotoreseptörlerdir" placeholder="(16)"> ve üç tipi vardır.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(6)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol6')">Çözümü Göster</button>
+            <div id="sol6" class="solution">
+                <div class="solution-title">Doğru Cevaplar: koniler, fotoreseptörlerdir</div>
+                <p><strong>Açıklama:</strong> Koniler (~6 milyon) S-koni (mavi ~420nm), M-koni (yeşil ~530nm), L-koni (kırmızı ~560nm) olmak üzere üç tipte gelir. Fotopik (gündüz) görümden sorumludur.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 7:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="fovea" placeholder="(5)"> retinada en keskin görümün sağlandığı 
+                <input type="text" class="blank" data-answer="merkezi alan" placeholder="(12)"> dır.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(7)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol7')">Çözümü Göster</button>
+            <div id="sol7" class="solution">
+                <div class="solution-title">Doğru Cevaplar: fovea, merkezi alan</div>
+                <p><strong>Açıklama:</strong> Fovea sadece konileri içerir ve 1:1 ganglion hücre oranına sahiptir. Kan damarları foveayı çevreler ancak merkezini kapatmaz, bu da maksimum çözünürlük sağlar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 8:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="kör nokta" placeholder="(9)"> optik sinirin retinadaki 
+                <input type="text" class="blank" data-answer="çıkış yerinde" placeholder="(12)"> oluşur.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(8)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol8')">Çözümü Göster</button>
+            <div id="sol8" class="solution">
+                <div class="solution-title">Doğru Cevaplar: kör nokta, çıkış yerinde</div>
+                <p><strong>Açıklama:</strong> Kör nokta (blind spot) optik diskte yer alır. Burada fotoreseptör yoktur çünkü ganglion aksonları optik siniri oluşturmak için retinayı terk eder.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 9:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="bipolar hücreler" placeholder="(15)"> fotoreseptörler ile ganglion hücreleri arasında 
+                <input type="text" class="blank" data-answer="sinyal iletimi" placeholder="(13)"> sağlar.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(9)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol9')">Çözümü Göster</button>
+            <div id="sol9" class="solution">
+                <div class="solution-title">Doğru Cevaplar: bipolar hücreler, sinyal iletimi</div>
+                <p><strong>Açıklama:</strong> Bipolar hücreler ON ve OFF tipinde gelir. ON bipolarlara ışık depolarize eder, OFF bipolarlara ise hiperpolarize eder. Bu organizasyon kontrast deteksiyonunu artırır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 10:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="ganglion hücreleri" placeholder="(16)"> aksonları 
+                <input type="text" class="blank" data-answer="optik siniri" placeholder="(12)"> oluşturur.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(10)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol10')">Çözümü Göster</button>
+            <div id="sol10" class="solution">
+                <div class="solution-title">Doğru Cevaplar: ganglion hücreleri, optik siniri</div>
+                <p><strong>Açıklama:</strong> Ganglion hücreleri retinadan çıkan tek aksiyon potansiyeli üreten hücrelerdir. M, P ve K tiplerinde gelir ve farklı görsel özellikleri kodlar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 11:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="optik kiazma" placeholder="(12)"> da nasal retina liflerinin 
+                <input type="text" class="blank" data-answer="çaprazlaşması" placeholder="(12)"> gerçekleşir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(11)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol11')">Çözümü Göster</button>
+            <div id="sol11" class="solution">
+                <div class="solution-title">Doğru Cevaplar: optik kiazma, çaprazlaşması</div>
+                <p><strong>Açıklama:</strong> Optik kiazmada nasal retina liflerinin %50'si karşı tarafa geçer. Bu organizasyon her yarımkürenin karşı görsel alanı işlemesini sağlar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 12:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="LGN" placeholder="(3)"> (lateral genikulat çekirdek) talamustaki 
+                <input type="text" class="blank" data-answer="görsel röle" placeholder="(11)"> istasyonudur.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(12)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol12')">Çözümü Göster</button>
+            <div id="sol12" class="solution">
+                <div class="solution-title">Doğru Cevaplar: LGN, görsel röle</div>
+                <p><strong>Açıklama:</strong> LGN altı katmandan oluşur. Magnosellüler (1,2. katmanlar) ve parvosellüler (3-6. katmanlar) yollar farklı görsel bilgi tiplerini işler.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 13:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="V1" placeholder="(2)"> primer görsel korteks olup, 
+                <input type="text" class="blank" data-answer="oksipital lobda" placeholder="(13)"> yer alır.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(13)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol13')">Çözümü Göster</button>
+            <div id="sol13" class="solution">
+                <div class="solution-title">Doğru Cevaplar: V1, oksipital lobda</div>
+                <p><strong>Açıklama:</strong> V1 (striate cortex) retinotopik organizasyona sahiptir. Basit ve kompleks hücreler kenar, yön ve uzamsal frekans deteksiyonu yapar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 14:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="dorsal yol" placeholder="(10)"> "nerede" sorusuna cevap veren 
+                <input type="text" class="blank" data-answer="hareket işleme" placeholder="(14)"> yoludur.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(14)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol14')">Çözümü Göster</button>
+            <div id="sol14" class="solution">
+                <div class="solution-title">Doğru Cevaplar: dorsal yol, hareket işleme</div>
+                <p><strong>Açıklama:</strong> Dorsal yol V1'den parietal kortekse (MT/V5 üzerinden) uzanır. Hareket, derinlik ve uzamsal lokalizasyon işlemlerinden sorumludur.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 15:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="ventral yol" placeholder="(11)"> "ne" sorusuna cevap veren 
+                <input type="text" class="blank" data-answer="nesne tanıma" placeholder="(12)"> yoludur.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(15)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol15')">Çözümü Göster</button>
+            <div id="sol15" class="solution">
+                <div class="solution-title">Doğru Cevaplar: ventral yol, nesne tanıma</div>
+                <p><strong>Açıklama:</strong> Ventral yol V1'den temporal kortekse (V4 üzerinden) uzanır. Renk, şekil, doku ve nesne tanıma işlemlerinden sorumludur.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 16:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="miyopi" placeholder="(6)"> yakın görüde netlik, uzakta 
+                <input type="text" class="blank" data-answer="bulanıklık" placeholder="(10)"> olan refraksiyon kusurudur.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(16)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol16')">Çözümü Göster</button>
+            <div id="sol16" class="solution">
+                <div class="solution-title">Doğru Cevaplar: miyopi, bulanıklık</div>
+                <p><strong>Açıklama:</strong> Miyopi (yakın görüş) göz küresinin uzun olması veya kornea/lensin aşırı kırıcı olmasından kaynaklanır. Uzak nesneler retina önünde odaklanır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 17:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="hipermetropi" placeholder="(12)"> uzak görüde netlik, yakında 
+                <input type="text" class="blank" data-answer="bulanıklık" placeholder="(10)"> olan refraksiyon kusurudur.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(17)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol17')">Çözümü Göster</button>
+            <div id="sol17" class="solution">
+                <div class="solution-title">Doğru Cevaplar: hipermetropi, bulanıklık</div>
+                <p><strong>Açıklama:</strong> Hipermetropi (uzak görüş) göz küresinin kısa olması veya kornea/lensin yetersiz kırıcı olmasından kaynaklanır. Yakın nesneler retina arkasında odaklanır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 18:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="daltonizm" placeholder="(9)"> renk körlüğünün en yaygın türü olup, 
+                <input type="text" class="blank" data-answer="X kromozomunda" placeholder="(14)"> taşınan bir kusurdur.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(18)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol18')">Çözümü Göster</button>
+            <div id="sol18" class="solution">
+                <div class="solution-title">Doğru Cevaplar: daltonizm, X kromozomunda</div>
+                <p><strong>Açıklama:</strong> En yaygın daltonizm kırmızı-yeşil renk körlüğüdür. X'e bağlı resesif kalıtım gösterir, bu nedenle erkeklerde (%8) kadınlardan (%0.5) daha sıktır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 19:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="glokom" placeholder="(7)"> göz içi basıncının artmasıyla 
+                <input type="text" class="blank" data-answer="optik sinir" placeholder="(12)"> hasarına neden olan hastalıktır.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(19)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol19')">Çözümü Göster</button>
+            <div id="sol19" class="solution">
+                <div class="solution-title">Doğru Cevaplar: glokom, optik sinir</div>
+                <p><strong>Açıklama:</strong> Glokom artan göz içi basıncı sonucu ganglion hücrelerinin kademeli ölümüne yol açar. Tedavi edilmezse körlüğe neden olabilir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 20:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="katarakt" placeholder="(8)"> lensin bulanıklaşması olup, 
+                <input type="text" class="blank" data-answer="cerrahi" placeholder="(7)"> yolla tedavi edilir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(20)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol20')">Çözümü Göster</button>
+            <div id="sol20" class="solution">
+                <div class="solution-title">Doğru Cevaplar: katarakt, cerrahi</div>
+                <p><strong>Açıklama:</strong> Katarakt lens proteinlerinin yaşla birlikte bozulması sonucu gelişir. Bulanık lens cerrahi olarak çıkarılır ve yerine yapay lens implante edilir.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function checkAnswers(questionNumber) {
+            const question = document.querySelectorAll('.question')[questionNumber - 1];
+            const blanks = question.querySelectorAll('.blank');
+            
+            blanks.forEach(blank => {
+                const userAnswer = blank.value.toLowerCase().trim();
+                const correctAnswer = blank.getAttribute('data-answer').toLowerCase();
+                
+                blank.classList.remove('correct', 'incorrect');
+                
+                if (userAnswer === correctAnswer) {
+                    blank.classList.add('correct');
+                } else {
+                    blank.classList.add('incorrect');
+                }
+            });
+        }
+
+        function toggleSolution(solutionId) {
+            const solution = document.getElementById(solutionId);
+            if (solution.style.display === 'none' || solution.style.display === '') {
+                solution.style.display = 'block';
+            } else {
+                solution.style.display = 'none';
+            }
+        }
+
+        // Allow Enter key to check answers
+        document.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const question = e.target.closest('.question');
+                if (question) {
+                    const questionIndex = Array.from(document.querySelectorAll('.question')).indexOf(question) + 1;
+                    checkAnswers(questionIndex);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

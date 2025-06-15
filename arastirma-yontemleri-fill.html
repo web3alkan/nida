@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Araştırma Yöntemleri - Boşluk Doldurma</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .back-link:hover {
+            background: #5a67d8;
+        }
+        .question {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 5px solid #ff9800;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #ff9800;
+            font-size: 1.1em;
+        }
+        .question-text {
+            margin: 15px 0;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+        .blank {
+            display: inline-block;
+            min-width: 100px;
+            height: 25px;
+            border-bottom: 2px solid #ff9800;
+            margin: 0 5px;
+            padding: 0 5px;
+            background: transparent;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            outline: none;
+            font-size: 1em;
+            text-align: center;
+        }
+        .blank:focus {
+            background: #fff3e0;
+        }
+        .solution {
+            background: #e8f5e8;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            border-left: 5px solid #4caf50;
+            display: none;
+        }
+        .solution-title {
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+        .show-solution {
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .show-solution:hover {
+            background: #45a049;
+        }
+        .check-answer {
+            background: #ff9800;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+        .check-answer:hover {
+            background: #f57c00;
+        }
+        .correct {
+            background: #c8e6c9;
+            color: #2e7d32;
+        }
+        .incorrect {
+            background: #ffcdd2;
+            color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Ana Sayfaya Dön</a>
+        
+        <div class="header">
+            <h1>🔬 Araştırma Yöntemleri</h1>
+            <h2>Boşluk Doldurma Soruları</h2>
+            <p><em>Boşlukları uygun kelimelerle doldurun. "Cevabı Kontrol Et" ile kontrol edebilir, "Çözümü Göster" ile detaylı açıklamayı görebilirsiniz.</em></p>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 1:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="bilimsel yöntem" placeholder="(14)"> gözlem, hipotez, test ve 
+                <input type="text" class="blank" data-answer="sonuç" placeholder="(5)"> aşamalarından oluşur.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(1)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol1')">Çözümü Göster</button>
+            <div id="sol1" class="solution">
+                <div class="solution-title">Doğru Cevaplar: bilimsel yöntem, sonuç</div>
+                <p><strong>Açıklama:</strong> Bilimsel yöntem objektif, tekrarlanabilir ve yanlışlanabilir araştırma yapma sistemidir. Karl Popper'ın yanlışlanabilirlik ilkesi bilimsel teorilerin temelini oluşturur.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 2:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="deneysel tasarım" placeholder="(15)"> neden-sonuç ilişkilerini kurmak için 
+                <input type="text" class="blank" data-answer="altın standart" placeholder="(13)"> yöntemdir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(2)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol2')">Çözümü Göster</button>
+            <div id="sol2" class="solution">
+                <div class="solution-title">Doğru Cevaplar: deneysel tasarım, altın standart</div>
+                <p><strong>Açıklama:</strong> Deneysel tasarım bağımsız değişkeni manipüle ederek bağımlı değişken üzerindeki etkisini ölçer. Rastgele atama ve kontrol grubu kullanımı nedensellik kurmanın anahtarıdır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 3:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="bağımsız değişken" placeholder="(17)"> araştırmacı tarafından manipüle edilen 
+                <input type="text" class="blank" data-answer="faktördür" placeholder="(9)">
+            </div>
+            <button class="check-answer" onclick="checkAnswers(3)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol3')">Çözümü Göster</button>
+            <div id="sol3" class="solution">
+                <div class="solution-title">Doğru Cevaplar: bağımsız değişken, faktördür</div>
+                <p><strong>Açıklama:</strong> Bağımsız değişken (IV) neden olduğu düşünülen faktördür. Örnekler: ilaç dozu, eğitim yöntemi, stres seviyesi. Araştırmacı bu değişkeni kontrollü şekilde değiştirir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 4:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="bağımlı değişken" placeholder="(16)"> bağımsız değişkenin etkisiyle 
+                <input type="text" class="blank" data-answer="değişen" placeholder="(7)"> ölçülen sonuçtur.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(4)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol4')">Çözümü Göster</button>
+            <div id="sol4" class="solution">
+                <div class="solution-title">Doğru Cevaplar: bağımlı değişken, değişen</div>
+                <p><strong>Açıklama:</strong> Bağımlı değişken (DV) sonuç olarak ölçülen faktördür. Örnekler: test puanları, reaksiyon süresi, beyin aktivitesi. Bu değişkenin ölçümü objektif ve güvenilir olmalıdır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 5:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="kontrol değişkenleri" placeholder="(18)"> sabit tutulan veya kontrol edilen 
+                <input type="text" class="blank" data-answer="karıştırıcı faktörlerdir" placeholder="(21)">
+            </div>
+            <button class="check-answer" onclick="checkAnswers(5)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol5')">Çözümü Göster</button>
+            <div id="sol5" class="solution">
+                <div class="solution-title">Doğru Cevaplar: kontrol değişkenleri, karıştırıcı faktörlerdir</div>
+                <p><strong>Açıklama:</strong> Kontrol değişkenleri sonuçları etkileyebilecek diğer faktörlerdir. Yaş, cinsiyet, eğitim seviyesi gibi demografik özellikler kontrol edilmeli veya dengelenmelidir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 6:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="rastgele atama" placeholder="(13)"> katılımcıları gruplara 
+                <input type="text" class="blank" data-answer="objektif şekilde" placeholder="(14)"> yerleştirme yöntemidir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(6)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol6')">Çözümü Göster</button>
+            <div id="sol6" class="solution">
+                <div class="solution-title">Doğru Cevaplar: rastgele atama, objektif şekilde</div>
+                <p><strong>Açıklama:</strong> Rastgele atama (random assignment) tüm bireysel farklılıkların gruplar arasında eşit dağılmasını sağlar. Bu sayede gruplar karşılaştırılabilir hale gelir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 7:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="çift kör" placeholder="(8)"> tasarımda ne katılımcı ne de 
+                <input type="text" class="blank" data-answer="araştırmacı" placeholder="(11)"> hangi grupta olduğunu bilir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(7)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol7')">Çözümü Göster</button>
+            <div id="sol7" class="solution">
+                <div class="solution-title">Doğru Cevaplar: çift kör, araştırmacı</div>
+                <p><strong>Açıklama:</strong> Çift kör (double-blind) tasarım hem plasebo etkisi hem de araştırmacı yanlılığını kontrol eder. İlaç araştırmalarında etkinliği değerlendirmek için kritiktir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 8:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="gözlemsel çalışma" placeholder="(17)"> müdahale yapmadan doğal ortamda 
+                <input type="text" class="blank" data-answer="veri toplama" placeholder="(12)"> yöntemidir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(8)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol8')">Çözümü Göster</button>
+            <div id="sol8" class="solution">
+                <div class="solution-title">Doğru Cevaplar: gözlemsel çalışma, veri toplama</div>
+                <p><strong>Açıklama:</strong> Gözlemsel çalışmalarda araştırmacı müdahale etmez, mevcut durumu kayeder. Korelasyonel ilişkiler kurabilirsek nedensellik kuramaz.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 9:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="boylamsal çalışma" placeholder="(16)"> aynı katılımcıları uzun süreli 
+                <input type="text" class="blank" data-answer="takip eden" placeholder="(9)"> araştırma desenidir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(9)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol9')">Çözümü Göster</button>
+            <div id="sol9" class="solution">
+                <div class="solution-title">Doğru Cevaplar: boylamsal çalışma, takip eden</div>
+                <p><strong>Açıklama:</strong> Boylamsal (longitudinal) çalışmalar gelişimsel değişimleri ve zaman içindeki değişiklikler incelemek için kullanılır. Ancak katılımcı kaybı (attrition) problemi yaratabilir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 10:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="enine kesit" placeholder="(10)"> çalışması farklı yaş gruplarını 
+                <input type="text" class="blank" data-answer="aynı zamanda" placeholder="(11)"> karşılaştırır.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(10)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol10')">Çözümü Göster</button>
+            <div id="sol10" class="solution">
+                <div class="solution-title">Doğru Cevaplar: enine kesit, aynı zamanda</div>
+                <p><strong>Açıklama:</strong> Enine kesit (cross-sectional) çalışmaları hızlı ve ucuzdur ancak kohort etkileri (aynı kuşağa ait özellikler) nedeniyle yanıltıcı olabilir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 11:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="meta-analiz" placeholder="(11)"> birden fazla çalışmanın sonuçlarını 
+                <input type="text" class="blank" data-answer="birleştiren" placeholder="(10)"> istatistiksel tekniktir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(11)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol11')">Çözümü Göster</button>
+            <div id="sol11" class="solution">
+                <div class="solution-title">Doğru Cevaplar: meta-analiz, birleştiren</div>
+                <p><strong>Açıklama:</strong> Meta-analiz kanıt düzeyi yüksek sonuçlar verir ve etki büyüklüğünü hassas şekilde tahmin eder. Sistematik gözden geçirme süreciyle kaliteli çalışmaları dahil eder.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 12:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="örneklem büyüklüğü" placeholder="(18)"> istatistiksel güç ve 
+                <input type="text" class="blank" data-answer="etki detectörü" placeholder="(14)"> için kritiktir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(12)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol12')">Çözümü Göster</button>
+            <div id="sol12" class="solution">
+                <div class="solution-title">Doğru Cevaplar: örneklem büyüklüğü, etki detectörü</div>
+                <p><strong>Açıklama:</strong> Güç analizi uygun örneklem büyüklüğünü hesaplar. %80 güç, α=0.05 ve beklenen etki büyüklüğü parametreleri kullanılarak N hesaplanır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 13:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="Tip I hata" placeholder="(9)"> gerçekte fark yokken 
+                <input type="text" class="blank" data-answer="fark bulma" placeholder="(10)"> hatasıdır.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(13)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol13')">Çözümü Göster</button>
+            <div id="sol13" class="solution">
+                <div class="solution-title">Doğru Cevaplar: Tip I hata, fark bulma</div>
+                <p><strong>Açıklama:</strong> Tip I hata (α) yanlış pozitif sonuçtur. Genellikle %5 seviyesinde kontrol edilir. Çoklu karşılaştırma problemini önlemek için Bonferroni düzeltmesi kullanılır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 14:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="Tip II hata" placeholder="(10)"> gerçekte fark varken 
+                <input type="text" class="blank" data-answer="bulamama" placeholder="(8)"> hatasıdır.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(14)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol14')">Çözümü Göster</button>
+            <div id="sol14" class="solution">
+                <div class="solution-title">Doğru Cevaplar: Tip II hata, bulamama</div>
+                <p><strong>Açıklama:</strong> Tip II hata (β) yanlış negatif sonuçtur. İstatistiksel güç (1-β) bu hatayı kontrol eder. Düşük güç gerçek etkileri kaçırmaya neden olur.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 15:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="p-hacking" placeholder="(9)"> verileri manipüle ederek 
+                <input type="text" class="blank" data-answer="anlamlı sonuç" placeholder="(13)"> elde etme davranışıdır.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(15)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol15')">Çözümü Göster</button>
+            <div id="sol15" class="solution">
+                <div class="solution-title">Doğru Cevaplar: p-hacking, anlamlı sonuç</div>
+                <p><strong>Açıklama:</strong> P-hacking veya HARKing (Hypothesizing After Results are Known) bilimsel dürüstlüğü bozar. Önceden kayıtlı protokoller (pre-registration) bu problemi önlemede etkilidir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 16:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="replikasyon" placeholder="(11)"> bilimsel bulguların 
+                <input type="text" class="blank" data-answer="tekrarlanabilirliğini" placeholder="(18)"> test eder.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(16)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol16')">Çözümü Göster</button>
+            <div id="sol16" class="solution">
+                <div class="solution-title">Doğru Cevaplar: replikasyon, tekrarlanabilirliğini</div>
+                <p><strong>Açıklama:</strong> Replikasyon krizi psikolojide önemli bir sorundur. Open Science girişimleri şeffaflığı artırarak çözüm ürütmeye çalışır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 17:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="etik kurul" placeholder="(10)"> onayı insan katılımcılı 
+                <input type="text" class="blank" data-answer="araştırmalar için" placeholder="(16)"> zorunludur.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(17)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol17')">Çözümü Göster</button>
+            <div id="sol17" class="solution">
+                <div class="solution-title">Doğru Cevaplar: etik kurul, araştırmalar için</div>
+                <p><strong>Açıklama:</strong> İRB (Institutional Review Board) katılımcı hakları, risk-fayda dengesi ve bilgilendirilmiş onam süreçlerini değerlendirir. Helsinki Deklarasyonu temel etik ilkeleri belirler.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 18:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="bilgilendirilmiş onam" placeholder="(20)"> katılımcıların araştırma hakkında 
+                <input type="text" class="blank" data-answer="tam bilgi" placeholder="(9)"> sahibi olmasını sağlar.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(18)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol18')">Çözümü Göster</button>
+            <div id="sol18" class="solution">
+                <div class="solution-title">Doğru Cevaplar: bilgilendirilmiş onam, tam bilgi</div>
+                <p><strong>Açıklama:</strong> İnformed consent araştırmanın amacı, prosedürü, riskleri ve faydalarını açık şekilde belirtir. Katılımcılar istediği zaman çekilme hakkına sahiptir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 19:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="güvenilirlik" placeholder="(12)"> ölçümün tutarlı ve 
+                <input type="text" class="blank" data-answer="tekrarlanabilir" placeholder="(14)"> olması anlamına gelir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(19)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol19')">Çözümü Göster</button>
+            <div id="sol19" class="solution">
+                <div class="solution-title">Doğru Cevaplar: güvenilirlik, tekrarlanabilir</div>
+                <p><strong>Açıklama:</strong> Güvenilirlik (reliability) iç tutarlılık (Cronbach's α), test-retest güvenilirliği ve değerlendiriciler arası güvenilirlik ile ölçülür.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 20:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="geçerlilik" placeholder="(10)"> ölçümün gerçekten ölçülmek istenen 
+                <input type="text" class="blank" data-answer="yapıyı ölçmesi" placeholder="(13)"> anlamına gelir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(20)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol20')">Çözümü Göster</button>
+            <div id="sol20" class="solution">
+                <div class="solution-title">Doğru Cevaplar: geçerlilik, yapıyı ölçmesi</div>
+                <p><strong>Açıklama:</strong> Geçerlilik (validity) içerik, yapı, ölçüt ve yüzeysel geçerlilik türlerini içerir. İçerik geçerliliği uzman görüşleri, yapı geçerliliği faktör analizi ile değerlendirilir.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function checkAnswers(questionNumber) {
+            const question = document.querySelectorAll('.question')[questionNumber - 1];
+            const blanks = question.querySelectorAll('.blank');
+            
+            blanks.forEach(blank => {
+                const userAnswer = blank.value.toLowerCase().trim();
+                const correctAnswer = blank.getAttribute('data-answer').toLowerCase();
+                
+                blank.classList.remove('correct', 'incorrect');
+                
+                if (userAnswer === correctAnswer) {
+                    blank.classList.add('correct');
+                } else {
+                    blank.classList.add('incorrect');
+                }
+            });
+        }
+
+        function toggleSolution(solutionId) {
+            const solution = document.getElementById(solutionId);
+            if (solution.style.display === 'none' || solution.style.display === '') {
+                solution.style.display = 'block';
+            } else {
+                solution.style.display = 'none';
+            }
+        }
+
+        // Allow Enter key to check answers
+        document.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const question = e.target.closest('.question');
+                if (question) {
+                    const questionIndex = Array.from(document.querySelectorAll('.question')).indexOf(question) + 1;
+                    checkAnswers(questionIndex);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

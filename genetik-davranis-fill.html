@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genetik ve Davranış - Boşluk Doldurma</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .back-link:hover {
+            background: #5a67d8;
+        }
+        .question {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 5px solid #8bc34a;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #8bc34a;
+            font-size: 1.1em;
+        }
+        .question-text {
+            margin: 15px 0;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+        .blank {
+            display: inline-block;
+            min-width: 100px;
+            height: 25px;
+            border-bottom: 2px solid #8bc34a;
+            margin: 0 5px;
+            padding: 0 5px;
+            background: transparent;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            outline: none;
+            font-size: 1em;
+            text-align: center;
+        }
+        .blank:focus {
+            background: #f1f8e9;
+        }
+        .solution {
+            background: #e8f5e8;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            border-left: 5px solid #4caf50;
+            display: none;
+        }
+        .solution-title {
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+        .show-solution {
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .show-solution:hover {
+            background: #45a049;
+        }
+        .check-answer {
+            background: #8bc34a;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+        .check-answer:hover {
+            background: #7cb342;
+        }
+        .correct {
+            background: #c8e6c9;
+            color: #2e7d32;
+        }
+        .incorrect {
+            background: #ffcdd2;
+            color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Ana Sayfaya Dön</a>
+        
+        <div class="header">
+            <h1>🧬 Genetik ve Davranış</h1>
+            <h2>Boşluk Doldurma Soruları</h2>
+            <p><em>Boşlukları uygun kelimelerle doldurun. "Cevabı Kontrol Et" ile kontrol edebilir, "Çözümü Göster" ile detaylı açıklamayı görebilirsiniz.</em></p>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 1:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="kalıtım" placeholder="(7)"> özelliklerin ebeveynlerden 
+                <input type="text" class="blank" data-answer="çocuklara aktarımıdır" placeholder="(20)">
+            </div>
+            <button class="check-answer" onclick="checkAnswers(1)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol1')">Çözümü Göster</button>
+            <div id="sol1" class="solution">
+                <div class="solution-title">Doğru Cevaplar: kalıtım, çocuklara aktarımıdır</div>
+                <p><strong>Açıklama:</strong> Kalıtım genetik materyalin nesiller arası geçişidir. Davranışsal özellikler de DNA, epigenetik faktörler ve çevresel etkileşimler yoluyla aktarılabilir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 2:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="heritabilite" placeholder="(12)"> bir özelliğin ne kadarının 
+                <input type="text" class="blank" data-answer="genetik faktörlere" placeholder="(16)"> bağlı olduğunu ölçer.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(2)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol2')">Çözümü Göster</button>
+            <div id="sol2" class="solution">
+                <div class="solution-title">Doğru Cevaplar: heritabilite, genetik faktörlere</div>
+                <p><strong>Açıklama:</strong> Heritabilite 0-1 arasında değişir ve sadece o popülasyon için geçerlidir. h² = Vg / (Vg + Ve) formülüyle hesaplanır (genetik varyans / toplam varyans).</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 3:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="ikiz çalışmaları" placeholder="(15)"> kalıtım oranlarını hesaplamak için 
+                <input type="text" class="blank" data-answer="altın standart" placeholder="(13)"> yöntemdir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(3)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol3')">Çözümü Göster</button>
+            <div id="sol3" class="solution">
+                <div class="solution-title">Doğru Cevaplar: ikiz çalışmaları, altın standart</div>
+                <p><strong>Açıklama:</strong> Tek yumurta ikizleri %100 gen paylaşır, çift yumurta ikizleri %50. İkisinin benzerlik farklarından heritabilite hesaplanır: h² = 2(rMZ - rDZ).</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 4:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="evlat edinme" placeholder="(13)"> çalışmaları genetik ve 
+                <input type="text" class="blank" data-answer="çevresel faktörleri" placeholder="(17)"> ayırmaya yardımcı olur.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(4)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol4')">Çözümü Göster</button>
+            <div id="sol4" class="solution">
+                <div class="solution-title">Doğru Cevaplar: evlat edinme, çevresel faktörleri</div>
+                <p><strong>Açıklama:</strong> Evlat edinme çalışmaları çocuğun biyolojik ve evlat edinen ebeveynleriyle benzerliklerini karşılaştırır. Bu doğa-beslenme etkileşimini anlamada kritiktir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 5:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="GWAS" placeholder="(5)"> genom çapında ilişkilendirme çalışmaları olup, 
+                <input type="text" class="blank" data-answer="hastalık genleri" placeholder="(14)"> bulmak için kullanılır.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(5)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol5')">Çözümü Göster</button>
+            <div id="sol5" class="solution">
+                <div class="solution-title">Doğru Cevaplar: GWAS, hastalık genleri</div>
+                <p><strong>Açıklama:</strong> GWAS milyonlarca SNP'yi (single nucleotide polymorphism) analiz eder. Şizofreni, depresyon, ADHD gibi psikiyatrik bozuklukların genetik temellerini araştırmada kullanılır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 6:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="epigenetik" placeholder="(10)"> DNA dizilimini değiştirmeden 
+                <input type="text" class="blank" data-answer="gen ekspresyonunu" placeholder="(16)"> etkileyen mekanizmalardır.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(6)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol6')">Çözümü Göster</button>
+            <div id="sol6" class="solution">
+                <div class="solution-title">Doğru Cevaplar: epigenetik, gen ekspresyonunu</div>
+                <p><strong>Açıklama:</strong> DNA metilasyonu, histone modifikasyonları ve non-coding RNA'lar epigenetik mekanizmalardır. Çevresel stres, beslenme ve deneyimler epigenetik değişiklikler yaratabilir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 7:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="transgenerasyonel" placeholder="(17)"> kalıtım travmaların nesiller arası 
+                <input type="text" class="blank" data-answer="aktarımını" placeholder="(10)"> açıklar.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(7)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol7')">Çözümü Göster</button>
+            <div id="sol7" class="solution">
+                <div class="solution-title">Doğru Cevaplar: transgenerasyonel, aktarımını</div>
+                <p><strong>Açıklama:</strong> Aşırı stres yaşayan anne-babaların çocuklarında stres yanıt sistemlerinde değişiklikler görülür. Bu epigenetik markalar sperm/yumurta hücrelerine aktarılabilir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 8:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="tek gen bozuklukları" placeholder="(18)"> Huntington ve 
+                <input type="text" class="blank" data-answer="fenilketonüri" placeholder="(12)"> gibi hastalıklardır.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(8)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol8')">Çözümü Göster</button>
+            <div id="sol8" class="solution">
+                <div class="solution-title">Doğru Cevaplar: tek gen bozuklukları, fenilketonüri</div>
+                <p><strong>Açıklama:</strong> Monojenik bozukluklar tek gen mutasyonu sonucu oluşur. Huntington dominant, PKU resesif kalıtım gösterir. PKU tedavi edilmezse mental retardasyona neden olur.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 9:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="çok gen bozuklukları" placeholder="(18)"> şizofreni ve 
+                <input type="text" class="blank" data-answer="depresyon" placeholder="(9)"> gibi kompleks hastalıklardır.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(9)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol9')">Çözümü Göster</button>
+            <div id="sol9" class="solution">
+                <div class="solution-title">Doğru Cevaplar: çok gen bozuklukları, depresyon</div>
+                <p><strong>Açıklama:</strong> Polijenik bozukluklar birçok gen ve çevresel faktörün etkileşimi sonucu oluşur. Her gene küçük etki büyüklüğüne sahiptir ve risk kümülatiftir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 10:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="poligenik skor" placeholder="(13)"> bireysel genetik risk 
+                <input type="text" class="blank" data-answer="hesaplaması" placeholder="(11)"> için kullanılan yöntemdir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(10)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol10')">Çözümü Göster</button>
+            <div id="sol10" class="solution">
+                <div class="solution-title">Doğru Cevaplar: poligenik skor, hesaplaması</div>
+                <p><strong>Açıklama:</strong> Polygenic Risk Score (PRS) kişinin sahip olduğu risk allellerinin ağırlıklı toplamıdır. Hastalık önceden kestirimi ve kişiselleştirilmiş tıp uygulamalarında kullanılır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 11:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="gen-çevre etkileşimi" placeholder="(20)"> aynı genin farklı çevrelerde 
+                <input type="text" class="blank" data-answer="farklı etkiler" placeholder="(13)"> yaratmasıdır.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(11)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol11')">Çözümü Göster</button>
+            <div id="sol11" class="solution">
+                <div class="solution-title">Doğru Cevaplar: gen-çevre etkileşimi, farklı etkiler</div>
+                <p><strong>Açıklama:</strong> G×E etkileşimi genetik yatkınlığın çevresel tetikleyicilerle birleşince hastalık riskini artırmasıdır. Stres duyarlılığı genleri travma yaşayanlar da depresyon riskini artırır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 12:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="5-HTTLPR" placeholder="(9)"> serotonin taşıyıcı gen polimorfizmi olup, 
+                <input type="text" class="blank" data-answer="depresyon riski" placeholder="(14)"> ile ilişkilidir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(12)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol12')">Çözümü Göster</button>
+            <div id="sol12" class="solution">
+                <div class="solution-title">Doğru Cevaplar: 5-HTTLPR, depresyon riski</div>
+                <p><strong>Açıklama:</strong> 5-HTTLPR kısa alleli stres duyarlılığı artırır. Kısa allele sahip kişilerde stresli yaşam olayları depresyon riskini daha fazla artırır (G×E etkileşimi).</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 13:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="COMT geni" placeholder="(9)"> dopamin metabolizmasını düzenler ve 
+                <input type="text" class="blank" data-answer="kognitif işlevleri" placeholder="(16)"> etkiler.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(13)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol13')">Çözümü Göster</button>
+            <div id="sol13" class="solution">
+                <div class="solution-title">Doğru Cevaplar: COMT geni, kognitif işlevleri</div>
+                <p><strong>Açıklama:</strong> COMT Val158Met polimorfizmi prefrontal dopamin seviyelerini etkiler. Met/Met genotipi yüksek dopamin ve iyi çalışma hafızası, Val/Val ise düşük dopamin ve stres dayanıklılığı sağlar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 14:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="MAOA geni" placeholder="(9)"> monoamin oksidaz enzimini kodlar ve 
+                <input type="text" class="blank" data-answer="saldırganlık" placeholder="(11)"> ile ilişkilidir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(14)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol14')">Çözümü Göster</button>
+            <div id="sol14" class="solution">
+                <div class="solution-title">Doğru Cevaplar: MAOA geni, saldırganlık</div>
+                <p><strong>Açıklama:</strong> MAOA düşük aktivite alleli "warrior gene" olarak bilinir. Çocuklukta kötü muamele gören ve bu allele sahip erkeklerde saldırgan davranış riski artar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 15:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="moleküler genetik" placeholder="(16)"> DNA, RNA ve protein seviyesinde 
+                <input type="text" class="blank" data-answer="gen işlevini" placeholder="(12)"> inceler.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(15)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol15')">Çözümü Göster</button>
+            <div id="sol15" class="solution">
+                <div class="solution-title">Doğru Cevaplar: moleküler genetik, gen işlevini</div>
+                <p><strong>Açıklama:</strong> Moleküler genetik genlerin protein ürünlerini, ekspresyon paternlerini ve düzenleme mekanizmalarını araştırır. İşlevsel genomik ve proteomik bu alanın parçalarıdır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 16:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="knock-out fareler" placeholder="(16)"> belirli genlerin 
+                <input type="text" class="blank" data-answer="fonksiyonunu" placeholder="(11)"> anlamak için kullanılan model organizmadır.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(16)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol16')">Çözümü Göster</button>
+            <div id="sol16" class="solution">
+                <div class="solution-title">Doğru Cevaplar: knock-out fareler, fonksiyonunu</div>
+                <p><strong>Açıklama:</strong> Knockout fareler belirli genler devre dışı bırakılarak oluşturulur. Bu sayede genin davranış, fizyoloji ve gelişim üzerindeki etkileri incelenir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 17:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="farmakogenetik" placeholder="(14)"> genetik varyasyonların 
+                <input type="text" class="blank" data-answer="ilaç yanıtını" placeholder="(13)"> nasıl etkilediğini inceler.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(17)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol17')">Çözümü Göster</button>
+            <div id="sol17" class="solution">
+                <div class="solution-title">Doğru Cevaplar: farmakogenetik, ilaç yanıtını</div>
+                <p><strong>Açıklama:</strong> Farmakogenetik kişiselleştirilmiş tedavi için kritiktir. CYP2D6 geni antidepresan metabolizmasını etkiler, bu nedenle doz ayarlamaları gerekebilir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 18:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="optogenetik" placeholder="(11)"> ışıkla nöronları kontrol ederek 
+                <input type="text" class="blank" data-answer="davranış değiştirme" placeholder="(17)"> imkanı sağlar.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(18)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol18')">Çözümü Göster</button>
+            <div id="sol18" class="solution">
+                <div class="solution-title">Doğru Cevaplar: optogenetik, davranış değiştirme</div>
+                <p><strong>Açıklama:</strong> Optogenetik belirli nöron tiplerini ışıkla aktive/inaktive eder. ChR2 (channelrhodopsin) ve NpHR gibi protein kullanır ve nöral devrelerin işlevini anlamada devrimsel etkisi vardır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 19:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="CRISPR" placeholder="(6)"> gen düzenleme teknolojisi ile 
+                <input type="text" class="blank" data-answer="hastalık genlerini" placeholder="(16)"> düzeltmek mümkün olabilir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(19)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol19')">Çözümü Göster</button>
+            <div id="sol19" class="solution">
+                <div class="solution-title">Doğru Cevaplar: CRISPR, hastalık genlerini</div>
+                <p><strong>Açıklama:</strong> CRISPR-Cas9 sistemi preciz gen düzenleme sağlar. Genetik hastalıkların tedavisi, araştırma modellerinin oluşturulması ve gen terapisi uygulamalarında kullanılır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 20:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="etik konular" placeholder="(12)"> genetik araştırmaların 
+                <input type="text" class="blank" data-answer="toplumsal etkilerini" placeholder="(18)"> düzenler.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(20)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol20')">Çözümü Göster</button>
+            <div id="sol20" class="solution">
+                <div class="solution-title">Doğru Cevaplar: etik konular, toplumsal etkilerini</div>
+                <p><strong>Açıklama:</strong> Genetik ayrımcılık, gizlilik, rıza süreci ve eugenics riski gibi etik konular vardır. Genetik danışmanlık ve yasalarla bu riskler minimize edilmeye çalışılır.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function checkAnswers(questionNumber) {
+            const question = document.querySelectorAll('.question')[questionNumber - 1];
+            const blanks = question.querySelectorAll('.blank');
+            
+            blanks.forEach(blank => {
+                const userAnswer = blank.value.toLowerCase().trim();
+                const correctAnswer = blank.getAttribute('data-answer').toLowerCase();
+                
+                blank.classList.remove('correct', 'incorrect');
+                
+                if (userAnswer === correctAnswer) {
+                    blank.classList.add('correct');
+                } else {
+                    blank.classList.add('incorrect');
+                }
+            });
+        }
+
+        function toggleSolution(solutionId) {
+            const solution = document.getElementById(solutionId);
+            if (solution.style.display === 'none' || solution.style.display === '') {
+                solution.style.display = 'block';
+            } else {
+                solution.style.display = 'none';
+            }
+        }
+
+        // Allow Enter key to check answers
+        document.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const question = e.target.closest('.question');
+                if (question) {
+                    const questionIndex = Array.from(document.querySelectorAll('.question')).indexOf(question) + 1;
+                    checkAnswers(questionIndex);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

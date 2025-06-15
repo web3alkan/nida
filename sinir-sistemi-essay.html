@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sinir Sistemi Temelleri - Klasik Sorular</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .back-link:hover {
+            background: #5a67d8;
+        }
+        .question {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-left: 5px solid #388e3c;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #388e3c;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .question-text {
+            margin: 15px 0;
+            font-size: 1.1em;
+            font-weight: 500;
+            color: #333;
+        }
+        .essay-area {
+            width: 100%;
+            min-height: 150px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 1em;
+            font-family: Arial, sans-serif;
+            resize: vertical;
+            margin-top: 10px;
+        }
+        .essay-area:focus {
+            border-color: #388e3c;
+            outline: none;
+            box-shadow: 0 0 5px rgba(56, 142, 60, 0.3);
+        }
+        .solution {
+            background: #e8f5e8;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 15px;
+            border-left: 5px solid #4caf50;
+            display: none;
+        }
+        .solution-title {
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        .solution-content {
+            line-height: 1.8;
+        }
+        .solution h4 {
+            color: #2e7d32;
+            margin-top: 15px;
+            margin-bottom: 8px;
+        }
+        .solution ul {
+            margin-left: 20px;
+        }
+        .solution li {
+            margin-bottom: 5px;
+        }
+        .show-solution {
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-size: 1em;
+        }
+        .show-solution:hover {
+            background: #45a049;
+        }
+        .difficulty-indicator {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .easy { background: #c8e6c9; color: #2e7d32; }
+        .medium { background: #fff3e0; color: #ef6c00; }
+        .hard { background: #ffcdd2; color: #d32f2f; }
+        .word-count {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+        .tips {
+            background: #e3f2fd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 25px;
+            border-left: 5px solid #2196f3;
+        }
+        .tips-title {
+            font-weight: bold;
+            color: #1976d2;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Ana Sayfaya Dön</a>
+        
+        <div class="header">
+            <h1>🧬 Sinir Sistemi Temelleri</h1>
+            <h2>Klasik Sorular (Uzun Cevaplı)</h2>
+        </div>
+
+        <div class="tips">
+            <div class="tips-title">💡 Cevaplama İpuçları:</div>
+            <ul>
+                <li>Her soruyu dikkatlice okuyun ve ana konuları belirleyin</li>
+                <li>Cevabınızı giriş, gelişme ve sonuç bölümlerinde yapılandırın</li>
+                <li>Örnekler ve bilimsel kanıtlarla destekleyin</li>
+                <li>Teknik terimleri doğru kullanın ve gerektiğinde açıklayın</li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <div class="difficulty-indicator easy">Kolay</div>
+            <div class="question-number">Soru 1:</div>
+            <div class="question-text">
+                Merkezi sinir sistemi ve periferik sinir sistemi arasındaki temel farkları açıklayınız. Her sistemin anatomik yapısı, işlevleri ve alt bölümleri hakkında detaylı bilgi veriniz.
+            </div>
+            <textarea class="essay-area" placeholder="Cevabınızı buraya yazın..." onkeyup="updateWordCount(this)"></textarea>
+            <div class="word-count">Kelime sayısı: 0 (Tavsiye edilen: 300-400 kelime)</div>
+            <button class="show-solution" onclick="toggleSolution('sol1')">Örnek Cevabı Göster</button>
+            <div id="sol1" class="solution">
+                <div class="solution-title">Örnek Cevap ve Değerlendirme Kriterleri:</div>
+                <div class="solution-content">
+                    <h4>Mükemmel bir cevap şunları içermelidir:</h4>
+                    
+                    <h4>1. Merkezi Sinir Sistemi (MSS):</h4>
+                    <ul>
+                        <li><strong>Anatomik yapı:</strong> Beyin ve omurilik soğanından oluşur</li>
+                        <li><strong>Korunma:</strong> Kafatası, omurga, menenksler ve BOS ile korunur</li>
+                        <li><strong>İşlevler:</strong> Bilgi işleme, koordinasyon, üst düzey kognitif fonksiyonlar</li>
+                        <li><strong>Hücre türleri:</strong> Nöronlar ve glial hücreler (astrosit, oligodendrosit, mikroglia)</li>
+                    </ul>
+
+                    <h4>2. Periferik Sinir Sistemi (PSS):</h4>
+                    <ul>
+                        <li><strong>Anatomik yapı:</strong> MSS dışındaki tüm sinir yapıları</li>
+                        <li><strong>Alt bölümleri:</strong>
+                            <ul>
+                                <li>Somatik sinir sistemi: Bilinçli hareketler, duyusal algı</li>
+                                <li>Otonom sinir sistemi: İç organların kontrolü (sempatik ve parasempatik)</li>
+                            </ul>
+                        </li>
+                        <li><strong>İşlevler:</strong> MSS ile çevre arasında bilgi iletimi</li>
+                    </ul>
+
+                    <h4>3. Temel Farklar:</h4>
+                    <ul>
+                        <li><strong>Konum:</strong> MSS merkezi, PSS çevresel</li>
+                        <li><strong>Koruma:</strong> MSS kemik yapılarla korunur, PSS daha az korunur</li>
+                        <li><strong>Rejenerasyon:</strong> PSS'de sınırlı rejenerasyon mümkün, MSS'de çok zor</li>
+                        <li><strong>Kan-beyin bariyeri:</strong> MSS'de var, PSS'de yok</li>
+                    </ul>
+
+                    <h4>Değerlendirme:</h4>
+                    <p><strong>Mükemmel (90-100):</strong> Tüm anatomik yapılar, işlevler ve farklar detaylı açıklanmış</p>
+                    <p><strong>İyi (70-89):</strong> Ana konular açıklanmış, bazı detaylar eksik</p>
+                    <p><strong>Orta (50-69):</strong> Temel bilgiler var, sistematik eksiklik</p>
+                    <p><strong>Zayıf (0-49):</strong> Önemli kavram hataları veya büyük eksiklikler</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="difficulty-indicator medium">Orta</div>
+            <div class="question-number">Soru 2:</div>
+            <div class="question-text">
+                Nöronların yapısal özelliklerini ve her bir bileşeninin işlevlerini detaylı olarak açıklayınız. Aksiyon potansiyelinin nöron boyunca nasıl iletildiğini ve miyelin kılıfın bu süreçteki rolünü anlatınız.
+            </div>
+            <textarea class="essay-area" placeholder="Cevabınızı buraya yazın..." onkeyup="updateWordCount(this)"></textarea>
+            <div class="word-count">Kelime sayısı: 0 (Tavsiye edilen: 400-500 kelime)</div>
+            <button class="show-solution" onclick="toggleSolution('sol2')">Örnek Cevabı Göster</button>
+            <div id="sol2" class="solution">
+                <div class="solution-title">Örnek Cevap ve Değerlendirme Kriterleri:</div>
+                <div class="solution-content">
+                    <h4>1. Nöronun Yapısal Bileşenleri:</h4>
+                    <ul>
+                        <li><strong>Soma (Hücre Gövdesi):</strong>
+                            <ul>
+                                <li>Çekirdek, organel ve metabolik aktiviteler</li>
+                                <li>Protein sentezi ve hücresel bakım</li>
+                                <li>Gelen sinyallerin entegrasyonu</li>
+                            </ul>
+                        </li>
+                        <li><strong>Dendritler:</strong>
+                            <ul>
+                                <li>Dallanmış uzantılar, sinaptik alıcılar</li>
+                                <li>Diğer nöronlardan gelen sinyalleri alma</li>
+                                <li>Elektrik tonisitesi değişimi</li>
+                            </ul>
+                        </li>
+                        <li><strong>Akson:</strong>
+                            <ul>
+                                <li>Uzun projeksiyon, aksiyon potansiyeli iletimi</li>
+                                <li>Akson hillock (başlangıç segmenti)</li>
+                                <li>Terminal dallanmalar ve sinaptik uçlar</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>2. Aksiyon Potansiyели İletimi:</h4>
+                    <ul>
+                        <li><strong>Başlatma:</strong> Akson hillock'ta eşik potansiyele ulaşma</li>
+                        <li><strong>Depolarizasyon:</strong> Na+ kanallarının açılması</li>
+                        <li><strong>Repolarizasyon:</strong> K+ kanallarının açılması</li>
+                        <li><strong>Refrakter dönem:</strong> Geçici uyarılamazlık</li>
+                    </ul>
+
+                    <h4>3. Miyelin Kılıfın Rolü:</h4>
+                    <ul>
+                        <li><strong>Saltatory iletim:</strong> Ranvier düğümleri arası zıplama</li>
+                        <li><strong>Hız artışı:</strong> 50-100 kat daha hızlı iletim</li>
+                        <li><strong>Enerji tasarrufu:</strong> Daha az metabolik enerji</li>
+                        <li><strong>İzolasyon:</strong> Sinyal kaybının önlenmesi</li>
+                    </ul>
+
+                    <h4>4. Miyelin Üretimi:</h4>
+                    <ul>
+                        <li><strong>MSS'de:</strong> Oligodendrositler</li>
+                        <li><strong>PSS'de:</strong> Schwann hücreleri</li>
+                        <li><strong>Gelişim:</strong> Maturasyon süreci</li>
+                    </ul>
+
+                    <h4>Değerlendirme Kriterleri:</h4>
+                    <p><strong>Mükemmel:</strong> Tüm yapısal bileşenler, aksiyon potansiyeli mekanizması ve miyelin detayları</p>
+                    <p><strong>İyi:</strong> Ana konular doğru, bazı mekanistik detaylar eksik</p>
+                    <p><strong>Orta:</strong> Temel yapı bilgisi var, fizyolojik süreçlerde eksiklik</p>
+                    <p><strong>Zayıf:</strong> Yapısal veya işlevsel önemli hatalar</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="difficulty-indicator hard">Zor</div>
+            <div class="question-number">Soru 3:</div>
+            <div class="question-text">
+                Glial hücrelerin sinir sistemi içindeki çok yönlü rollerini analiz ediniz. Kan-beyin bariyerinin oluşumu, işlevi ve klinik önemini detaylı olarak tartışınız. Nörodejeneratif hastalıklarda glial hücrelerin rolü nasıldır?
+            </div>
+            <textarea class="essay-area" placeholder="Cevabınızı buraya yazın..." onkeyup="updateWordCount(this)"></textarea>
+            <div class="word-count">Kelime sayısı: 0 (Tavsiye edilen: 500-600 kelime)</div>
+            <button class="show-solution" onclick="toggleSolution('sol3')">Örnek Cevabı Göster</button>
+            <div id="sol3" class="solution">
+                <div class="solution-title">Örnek Cevap ve Değerlendirme Kriterleri:</div>
+                <div class="solution-content">
+                    <h4>1. Glial Hücre Türleri ve İşlevleri:</h4>
+                    <ul>
+                        <li><strong>Astrositlerin:</strong>
+                            <ul>
+                                <li>Kan-beyin bariyeri oluşturma</li>
+                                <li>Nörotransmitter temizleme</li>
+                                <li>K+ homeostazı</li>
+                                <li>Metabolik destek (laktat sağlama)</li>
+                                <li>Skar tissue oluşumu</li>
+                            </ul>
+                        </li>
+                        <li><strong>Oligodendrositler (MSS) / Schwann Hücreleri (PSS):</strong>
+                            <ul>
+                                <li>Miyelin üretimi ve bakımı</li>
+                                <li>Aksiyon potansiyeli hız artışı</li>
+                                <li>Nöronal destek</li>
+                            </ul>
+                        </li>
+                        <li><strong>Mikroglia:</strong>
+                            <ul>
+                                <li>İmmun savunma</li>
+                                <li>Fagositoz ve inflamasyon</li>
+                                <li>Sinaptik budama</li>
+                                <li>Nöroproteksiyon</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>2. Kan-Beyin Bariyeri:</h4>
+                    <ul>
+                        <li><strong>Yapısal Oluşum:</strong>
+                            <ul>
+                                <li>Endotel hücreler arası sıkı bağlantılar</li>
+                                <li>Astrosit end-feet processes</li>
+                                <li>Pericytes ve basement membrane</li>
+                            </ul>
+                        </li>
+                        <li><strong>Selektif Geçirgenlik:</strong>
+                            <ul>
+                                <li>Glukoz, oksijen, amino asitler (taşıyıcı aracılı)</li>
+                                <li>Yağda çözünür küçük moleküller (pasif)</li>
+                                <li>Protein, bakteriler, çoğu ilaç (engellenmiş)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Klinik Önemi:</strong>
+                            <ul>
+                                <li>Nörofarmakoloji zorlukları</li>
+                                <li>İlaç geliştirme engelleri</li>
+                                <li>Hastalık durumlarında permeabilite artışı</li>
+                                <li>Genetik bozukluklar ve bariyer hasarı</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>3. Nörodejeneratif Hastalıklarda Glial Roller:</h4>
+                    <ul>
+                        <li><strong>Alzheimer Hastalığı:</strong>
+                            <ul>
+                                <li>Mikroglial aktivasyon ve inflamasyon</li>
+                                <li>Amiloid plak temizleme yetersizliği</li>
+                                <li>Astrosit reaktivitesi</li>
+                            </ul>
+                        </li>
+                        <li><strong>Parkinson Hastalığı:</strong>
+                            <ul>
+                                <li>Mikroglial nörotoksisite</li>
+                                <li>Lewy body oluşumu</li>
+                                <li>Oligodendrosit disfonksiyonu</li>
+                            </ul>
+                        </li>
+                        <li><strong>Multipl Skleroz:</strong>
+                            <ul>
+                                <li>Oligodendrosit hasarı</li>
+                                <li>Miyelin kaybı</li>
+                                <li>Immun sistem aktivasyonu</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>4. Yeni Araştırma Alanları:</h4>
+                    <ul>
+                        <li>Glial hücre reprogramming</li>
+                        <li>Nöroplastisite ve glial katkı</li>
+                        <li>Bariyer geçirgenliği modulasyonu</li>
+                        <li>Glial-nöronal crosstalk</li>
+                    </ul>
+
+                    <h4>Değerlendirme:</h4>
+                    <p><strong>Mükemmel:</strong> Tüm glial türler, bariyer mekanizması, hastalık ilişkisi ve güncel araştırma</p>
+                    <p><strong>İyi:</strong> Ana glial işlevler, bariyer özellikleri, temel hastalık bilgisi</p>
+                    <p><strong>Orta:</strong> Glial hücreler tanımlanmış, bariyer basit açıklanmış</p>
+                    <p><strong>Zayıf:</strong> Yetersiz detay, kavram karışıklıkları</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="difficulty-indicator medium">Orta</div>
+            <div class="question-number">Soru 4:</div>
+            <div class="question-text">
+                Paul Broca'nın keşiflerinin sinir sistemi bilimi üzerindeki etkilerini değerlendiriniz. Lokalizasyon teorisi nedir ve modern beyin görüntüleme teknikleri bu teoriye nasıl katkı sağlamıştır?
+            </div>
+            <textarea class="essay-area" placeholder="Cevabınızı buraya yazın..." onkeyup="updateWordCount(this)"></textarea>
+            <div class="word-count">Kelime sayısı: 0 (Tavsiye edilen: 400-500 kelime)</div>
+            <button class="show-solution" onclick="toggleSolution('sol4')">Örnek Cevabı Göster</button>
+            <div id="sol4" class="solution">
+                <div class="solution-title">Örnek Cevap ve Değerlendirme Kriterleri:</div>
+                <div class="solution-content">
+                    <h4>1. Paul Broca'nın Tarihi Keşifleri:</h4>
+                    <ul>
+                        <li><strong>1861 Vakası:</strong> "Tan" hastası - konuşma üretimi kaybı</li>
+                        <li><strong>Anatomik Bulgular:</strong> Sol frontal lob hasarı</li>
+                        <li><strong>Fonksiyonel Çıkarım:</strong> Konuşma üretimi lokalizasyonu</li>
+                        <li><strong>Broca Afazisi:</strong> Anlama korunmuş, üretim bozulmuş</li>
+                    </ul>
+
+                    <h4>2. Lokalizasyon Teorisinin Gelişimi:</h4>
+                    <ul>
+                        <li><strong>Temel Prensip:</strong> Beyin fonksiyonlarının anatomik bölgelere lokalize olması</li>
+                        <li><strong>Wernicke'nin Katkısı:</strong> Dil anlama alanı keşfi</li>
+                        <li><strong>Motor ve Duyusal Haritalar:</strong> Penfield'in korteksi haritalandırması</li>
+                        <li><strong>Modern Anlayış:</strong> Dağıtılmış ağ modelleri</li>
+                    </ul>
+
+                    <h4>3. Modern Görüntüleme Teknikleri:</h4>
+                    <ul>
+                        <li><strong>fMRI (Fonksiyonel MRI):</strong>
+                            <ul>
+                                <li>Gerçek zamanlı aktivite görüntüleme</li>
+                                <li>BOLD sinyal ve kan akışı</li>
+                                <li>Bilişsel görevler sırasında aktivasyon</li>
+                            </ul>
+                        </li>
+                        <li><strong>PET (Pozitron Emisyon Tomografi):</strong>
+                            <ul>
+                                <li>Metabolik aktivite ölçümü</li>
+                                <li>Nörotransmitter sistem haritalandırma</li>
+                                <li>Hastalık patolojisi görselleştirme</li>
+                            </ul>
+                        </li>
+                        <li><strong>DTI (Diffusion Tensor Imaging):</strong>
+                            <ul>
+                                <li>Beyaz madde traktları</li>
+                                <li>Bağlantısal anatomik</li>
+                                <li>Mikrostrüktürel bütünlük</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>4. Çağdaş Lokalizasyon Anlayışı:</h4>
+                    <ul>
+                        <li><strong>Ağ Yaklaşımı:</strong> Fonksiyonlar dağıtılmış ağlarda</li>
+                        <li><strong>Plastissite:</strong> Dinamik reorganizasyon kapasitesi</li>
+                        <li><strong>Bağlantısallık:</strong> Bölgeler arası iletişim</li>
+                        <li><strong>Default Mode Network:</strong> Dinlenme durumu aktivitesi</li>
+                    </ul>
+
+                    <h4>5. Klinik Uygulamalar:</h4>
+                    <ul>
+                        <li><strong>Cerrahi Planlama:</strong> Kritik alanların korunması</li>
+                        <li><strong>Rehabilitasyon:</strong> Plastisite tabanlı tedaviler</li>
+                        <li><strong>Tanı:</strong> Fonksiyonel bozuklukların belirlenmesi</li>
+                        <li><strong>İlaç Geliştirme:</strong> Hedef bölge identifikasyonu</li>
+                    </ul>
+
+                    <h4>Değerlendirme Kriterleri:</h4>
+                    <p><strong>Mükemmel:</strong> Tarihi perspektif, teorik gelişim, modern teknoloji ve klinik uygulamalar</p>
+                    <p><strong>İyi:</strong> Broca'nın katkısı, lokalizasyon prensibi, temel görüntüleme</p>
+                    <p><strong>Orta:</strong> Tarhi bilgi eksik, teknoloji yüzeysel</p>
+                    <p><strong>Zayıf:</strong> Kavramsal karışıklık, yetersiz detay</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="difficulty-indicator hard">Zor</div>
+            <div class="question-number">Soru 5:</div>
+            <div class="question-text">
+                Beyin omurilik sıvısının (BOS) üretimi, dolaşımı ve işlevlerini kapsamlı olarak açıklayınız. BOS'ta görülen anormallikler hangi patolojik durumları yansıtır ve bunların tanısal önemi nedir?
+            </div>
+            <textarea class="essay-area" placeholder="Cevabınızı buraya yazın..." onkeyup="updateWordCount(this)"></textarea>
+            <div class="word-count">Kelime sayısı: 0 (Tavsiye edilen: 500-600 kelime)</div>
+            <button class="show-solution" onclick="toggleSolution('sol5')">Örnek Cevabı Göster</button>
+            <div id="sol5" class="solution">
+                <div class="solution-title">Örnek Cevap ve Değerlendirme Kriterleri:</div>
+                <div class="solution-content">
+                    <h4>1. BOS Üretimi ve Anatomisi:</h4>
+                    <ul>
+                        <li><strong>Koroid Pleksus:</strong>
+                            <ul>
+                                <li>Lateral ventriküllerde %65</li>
+                                <li>Üçüncü ve dördüncü ventriküllerde %35</li>
+                                <li>Özelleşmiş ependimal hücreler</li>
+                                <li>Günlük 500-750 mL üretim</li>
+                            </ul>
+                        </li>
+                        <li><strong>BOS Bileşimi:</strong>
+                            <ul>
+                                <li>%99 su, elektrolit dengesi</li>
+                                <li>Glukoz (kan glukozunun 2/3'ü)</li>
+                                <li>Protein (<40 mg/dL)</li>
+                                <li>Laktik asit, aminoasitler</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>2. BOS Dolaşım Sistemi:</h4>
+                    <ul>
+                        <li><strong>Ventriküler Sistem:</strong>
+                            <ul>
+                                <li>Lateral ventriküllerden → 3. ventrikül</li>
+                                <li>Sylvius aqueduktu → 4. ventrikül</li>
+                                <li>Foramen Magendie ve Luschka</li>
+                                <li>Subaraknoid boşluğa çıkış</li>
+                            </ul>
+                        </li>
+                        <li><strong>Emilim Mekanizması:</strong>
+                            <ul>
+                                <li>Araknoid granülasyonlar</li>
+                                <li>Venöz sinüslere drenaj</li>
+                                <li>Basınç gradientine bağlı emilim</li>
+                                <li>Limfatik sistem katkısı</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>3. BOS'un Fizyolojik İşlevleri:</h4>
+                    <ul>
+                        <li><strong>Mekanik Koruma:</strong>
+                            <ul>
+                                <li>Hidrostatik yanağı</li>
+                                <li>Darbe emilimi</li>
+                                <li>Beyin ağırlığının azaltılması</li>
+                            </ul>
+                        </li>
+                        <li><strong>Homeostaz:</strong>
+                            <ul>
+                                <li>İntrakraniyal basınç düzenleme</li>
+                                <li>Ion ve pH dengesi</li>
+                                <li>Osmotik denge</li>
+                            </ul>
+                        </li>
+                        <li><strong>Metabolik Fonksiyonlar:</strong>
+                            <ul>
+                                <li>Besin maddesi taşınması</li>
+                                <li>Metabolik artık madde uzaklaştırma</li>
+                                <li>Hormon ve faktör dağılımı</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>4. Patolojik Durumlar ve BOS Anormallikleri:</h4>
+                    <ul>
+                        <li><strong>Hidrosefali:</strong>
+                            <ul>
+                                <li>Obstrüktif: Dolaşım engellemesi</li>
+                                <li>Comunicating: Emilim bozukluğu</li>
+                                <li>Normal basınçlı hidrosefali</li>
+                                <li>Klinik: Triad (yürüme, inkontinans, demans)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Enfeksiyöz Durumlar:</strong>
+                            <ul>
+                                <li>Bakteriyel menejit: Pleositoz, protein artışı, glukoz azalması</li>
+                                <li>Viral menejit: Lenfositik pleositoz</li>
+                                <li>Fungal enfeksiyonlar: Kronik inflamasyon</li>
+                            </ul>
+                        </li>
+                        <li><strong>Neoplazmalar:</strong>
+                            <ul>
+                                <li>Malign hücreler varlığı</li>
+                                <li>Protein elevasyonu</li>
+                                <li>Obstrüktif hidrosefali</li>
+                            </ul>
+                        </li>
+                        <li><strong>Hemoraji:</strong>
+                            <ul>
+                                <li>Subaraknoid kanama</li>
+                                <li>İntraventrikular hemoraji</li>
+                                <li>Xanthochromia</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>5. Tanısal Önem ve Lumbar Ponksiyon:</h4>
+                    <ul>
+                        <li><strong>Endikasyonlar:</strong>
+                            <ul>
+                                <li>Santral sinir sistemi enfeksiyonları</li>
+                                <li>Subaraknoid hemoraji şüphesi</li>
+                                <li>Multiple skleroz tanısı</li>
+                                <li>Neoplastik meningitis</li>
+                            </ul>
+                        </li>
+                        <li><strong>Kontraendikasyonlar:</strong>
+                            <ul>
+                                <li>Artmış intrakraniyal basınç</li>
+                                <li>Koagülasyon bozuklukları</li>
+                                <li>Enfeşiksiyon yerinde lokal</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Değerlendirme Kriterleri:</h4>
+                    <p><strong>Mükemmel:</strong> Komplet anatomik bilgi, fizyoloji, patoloji ve klinik korelasyon</p>
+                    <p><strong>İyi:</strong> BOS sistemi iyi tanımlanmış, temel patolojiler bilinir</p>
+                    <p><strong>Orta:</strong> Temel anatomi ve işlev, sınırlı patoloji bilgisi</p>
+                    <p><strong>Zayıf:</strong> Yetersiz anatomi, hatalı fizyoloji</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function updateWordCount(textarea) {
+            const words = textarea.value.trim().split(/\s+/).filter(word => word.length > 0);
+            const wordCount = words.length;
+            const wordCountElement = textarea.nextElementSibling;
+            wordCountElement.textContent = `Kelime sayısı: ${wordCount} (Tavsiye edilen: ${wordCountElement.textContent.match(/\d+-\d+/)[0]} kelime)`;
+        }
+
+        function toggleSolution(solutionId) {
+            const solution = document.getElementById(solutionId);
+            if (solution.style.display === 'none' || solution.style.display === '') {
+                solution.style.display = 'block';
+            } else {
+                solution.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

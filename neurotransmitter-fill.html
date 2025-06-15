@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nörotransmitterler - Boşluk Doldurma</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .back-link:hover {
+            background: #5a67d8;
+        }
+        .question {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 5px solid #ff5722;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #ff5722;
+            font-size: 1.1em;
+        }
+        .question-text {
+            margin: 15px 0;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+        .blank {
+            display: inline-block;
+            min-width: 100px;
+            height: 25px;
+            border-bottom: 2px solid #ff5722;
+            margin: 0 5px;
+            padding: 0 5px;
+            background: transparent;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            outline: none;
+            font-size: 1em;
+            text-align: center;
+        }
+        .blank:focus {
+            background: #fff3e0;
+        }
+        .solution {
+            background: #e8f5e8;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            border-left: 5px solid #4caf50;
+            display: none;
+        }
+        .solution-title {
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+        .show-solution {
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .show-solution:hover {
+            background: #45a049;
+        }
+        .check-answer {
+            background: #ff5722;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+        .check-answer:hover {
+            background: #e64a19;
+        }
+        .correct {
+            background: #c8e6c9;
+            color: #2e7d32;
+        }
+        .incorrect {
+            background: #ffcdd2;
+            color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Ana Sayfaya Dön</a>
+        
+        <div class="header">
+            <h1>🧪 Nörotransmitterler</h1>
+            <h2>Boşluk Doldurma Soruları</h2>
+            <p><em>Boşlukları uygun kelimelerle doldurun. "Cevabı Kontrol Et" ile kontrol edebilir, "Çözümü Göster" ile detaylı açıklamayı görebilirsiniz.</em></p>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 1:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="asetilkolin" placeholder="(10)"> ilk keşfedilen nörotransmitter olup, 
+                <input type="text" class="blank" data-answer="kas kasılmasında" placeholder="(15)"> kritik rol oynar.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(1)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol1')">Çözümü Göster</button>
+            <div id="sol1" class="solution">
+                <div class="solution-title">Doğru Cevaplar: asetilkolin, kas kasılmasında</div>
+                <p><strong>Açıklama:</strong> Asetilkolin (ACh) 1921'de Otto Loewi tarafından keşfedildi. Nöromüsküler kavşakta ve parasempatik sistemde başlıca nörotransmitterdir. Alzheimer hastalığında ACh eksikliği görülür.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 2:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="dopamin" placeholder="(7)"> hareket kontrolü ve 
+                <input type="text" class="blank" data-answer="ödül sisteminde" placeholder="(14)"> önemli rol oynayan nörotransmitterdir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(2)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol2')">Çözümü Göster</button>
+            <div id="sol2" class="solution">
+                <div class="solution-title">Doğru Cevaplar: dopamin, ödül sisteminde</div>
+                <p><strong>Açıklama:</strong> Dopamin substantia nigra ve ventral tegmental area'da üretilir. Parkinson hastalığında dopamin eksikliği, şizofrenide ise dopamin fazlalığı/duyarlılığı görülür.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 3:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="serotonin" placeholder="(9)"> ruh hali, uyku ve 
+                <input type="text" class="blank" data-answer="iştah düzenlemesinde" placeholder="(18)"> rol oynar.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(3)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol3')">Çözümü Göster</button>
+            <div id="sol3" class="solution">
+                <div class="solution-title">Doğru Cevaplar: serotonin, iştah düzenlemesinde</div>
+                <p><strong>Açıklama:</strong> Serotonin (5-HT) raphe çekirdeklerinde üretilir. Depresyonda serotonin eksikliği görülür bu nedenle SSRI antidepresanları kullanılır. Ayrıca bağırsak hareketlerini de düzenler.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 4:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="noradrenalin" placeholder="(11)"> dikkat ve 
+                <input type="text" class="blank" data-answer="stres yanıtında" placeholder="(14)"> önemli nörotransmitterdir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(4)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol4')">Çözümü Göster</button>
+            <div id="sol4" class="solution">
+                <div class="solution-title">Doğru Cevaplar: noradrenalin, stres yanıtında</div>
+                <p><strong>Açıklama:</strong> Noradrenalin (norepinefrin) locus coeruleus'ta üretilir. Sempatik sinir sisteminde ve "savaş ya da kaç" tepkisinde kritik rol oynar. DEHB'de eksikliği görülür.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 5:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="GABA" placeholder="(4)"> beynin başlıca 
+                <input type="text" class="blank" data-answer="inhibitör" placeholder="(9)"> nörotransmitteridir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(5)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol5')">Çözümü Göster</button>
+            <div id="sol5" class="solution">
+                <div class="solution-title">Doğru Cevaplar: GABA, inhibitör</div>
+                <p><strong>Açıklama:</strong> GABA (gamma-aminobütirik asit) nöronların aktivitesini azaltır. Anksiyete bozukluklarında GABA eksikliği görülür. Benzodiazepinler GABA etkisini artırır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 6:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="glutamat" placeholder="(8)"> beynin en yaygın 
+                <input type="text" class="blank" data-answer="eksitör" placeholder="(7)"> nörotransmitteridir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(6)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol6')">Çözümü Göster</button>
+            <div id="sol6" class="solution">
+                <div class="solution-title">Doğru Cevaplar: glutamat, eksitör</div>
+                <p><strong>Açıklama:</strong> Glutamat öğrenme ve hafızada kritik rol oynar. Aşırı glutamat aktivitesi eksitotoksisiteye ve nöron ölümüne yol açabilir. Alzheimer ve ALS gibi hastalıklarda rol oynar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 7:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="glisinin" placeholder="(8)"> spinal kord ve beyin sapında 
+                <input type="text" class="blank" data-answer="inhibisyon" placeholder="(10)"> sağlayan nörotransmitterdir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(7)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol7')">Çözümü Göster</button>
+            <div id="sol7" class="solution">
+                <div class="solution-title">Doğru Cevaplar: glisinin, inhibisyon</div>
+                <p><strong>Açıklama:</strong> Glisin motor kontrolde ve reflekslerin düzenlenmesinde önemlidir. Strychinine zehirlenmesi glisin reseptörlerini bloke eder ve kasılmalara neden olur.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 8:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="endorfinler" placeholder="(10)"> vücudun doğal 
+                <input type="text" class="blank" data-answer="ağrı kesicileri" placeholder="(13)"> olarak işlev görür.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(8)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol8')">Çözümü Göster</button>
+            <div id="sol8" class="solution">
+                <div class="solution-title">Doğru Cevaplar: endorfinler, ağrı kesicileri</div>
+                <p><strong>Açıklama:</strong> Endorfinler opioid peptitlerdir. Stres, egzersiz ve ağrı sırasında salınır. Morfin gibi dış opioidlerin etkisini taklit ederler ve "koşucu yüksekliği" oluştururlar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 9:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="histamin" placeholder="(8)"> uyanıklık durumunu koruyan ve 
+                <input type="text" class="blank" data-answer="alerjik tepkilerde" placeholder="(16)"> rol oynayan maddedir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(9)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol9')">Çözümü Göster</button>
+            <div id="sol9" class="solution">
+                <div class="solution-title">Doğru Cevaplar: histamin, alerjik tepkilerde</div>
+                <p><strong>Açıklama:</strong> Histamin tuberomammillary nucleus'ta üretilir. Antihistaminler (alerjie ilaçları) bu reseptörleri bloklayarak hem alerjik tepkileri hem de uykuyu indükler.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 10:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="ATP" placeholder="(3)"> bazı sinapslarda nörotransmitter olarak görev yapan 
+                <input type="text" class="blank" data-answer="enerji molekülüdür" placeholder="(17)">
+            </div>
+            <button class="check-answer" onclick="checkAnswers(10)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol10')">Çözümü Göster</button>
+            <div id="sol10" class="solution">
+                <div class="solution-title">Doğru Cevaplar: ATP, enerji molekülüdür</div>
+                <p><strong>Açıklama:</strong> ATP purinerjik sinapslarda nörotransmitter olarak çalışır. Özellikle otonom sinapslarda ve ağrı sinyalizasyonunda rol oynar. Bu çift işlev ATP'yi benzersiz kılar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 11:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="asetilkolinesteraz" placeholder="(17)"> sinaptik yarıkta asetilkolini 
+                <input type="text" class="blank" data-answer="parçalayan" placeholder="(10)"> enzimdir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(11)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol11')">Çözümü Göster</button>
+            <div id="sol11" class="solution">
+                <div class="solution-title">Doğru Cevaplar: asetilkolinesteraz, parçalayan</div>
+                <p><strong>Açıklama:</strong> AChE asetilkolini asetik asit ve koline parçalayarak sinaptik iletimi sonlandırır. Organofosfat zehirler bu enzimi bloke ederek asetilkolin birikimi ve overstimülasyona neden olur.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 12:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="re-uptake" placeholder="(9)"> nörotransmitterin presinaptik terminale 
+                <input type="text" class="blank" data-answer="geri alınması" placeholder="(13)"> işlemidir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(12)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol12')">Çözümü Göster</button>
+            <div id="sol12" class="solution">
+                <div class="solution-title">Doğru Cevaplar: re-uptake, geri alınması</div>
+                <p><strong>Açıklama:</strong> Re-uptake sinaptik iletimi sonlandırmanın en yaygın yoludur. SSRI antidepresanları serotonin re-uptake'ını bloke ederek sinaptik serotonin düzeyini artırır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 13:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="MAO" placeholder="(3)"> enzimi monoamin nörotransmitterleri 
+                <input type="text" class="blank" data-answer="degrada eder" placeholder="(12)"> ve inaktif hale getirir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(13)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol13')">Çözümü Göster</button>
+            <div id="sol13" class="solution">
+                <div class="solution-title">Doğru Cevaplar: MAO, degrada eder</div>
+                <p><strong>Açıklama:</strong> Monoamin oksidaz (MAO) dopamin, serotonin, noradrenalin gibi monoaminleri parçalar. MAO inhibitörleri bu süreci engelleyerek antidepresan etki gösterir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 14:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="nikotin" placeholder="(6)"> asetilkolin reseptörlerini 
+                <input type="text" class="blank" data-answer="aktive eden" placeholder="(11)"> dış madde (agonist) dir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(14)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol14')">Çözümü Göster</button>
+            <div id="sol14" class="solution">
+                <div class="solution-title">Doğru Cevaplar: nikotin, aktive eden</div>
+                <p><strong>Açıklama:</strong> Nikotin nikotinik asetilkolin reseptörlerine bağlanır ve eksitasyon yaratır. Bu etki özellikle ödül sisteminde dopamin salınımını artırır ve bağımlılık yapar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 15:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="atropin" placeholder="(7)"> muskarinik asetilkolin reseptörlerini 
+                <input type="text" class="blank" data-answer="bloke eden" placeholder="(9)"> (antagonist) ilaçtır.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(15)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol15')">Çözümü Göster</button>
+            <div id="sol15" class="solution">
+                <div class="solution-title">Doğru Cevaplar: atropin, bloke eden</div>
+                <p><strong>Açıklama:</strong> Atropin (belladonna bitkisinden) muskarinik ACh reseptörlerini antagonize eder. Pupilları genişletir, kalp hızını artırır ve salivasyon azaltır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 16:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="L-DOPA" placeholder="(6)"> Parkinson hastalığında dopamin eksikliğini gidermek için 
+                <input type="text" class="blank" data-answer="öncü madde" placeholder="(11)"> olarak kullanılır.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(16)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol16')">Çözümü Göster</button>
+            <div id="sol16" class="solution">
+                <div class="solution-title">Doğru Cevaplar: L-DOPA, öncü madde</div>
+                <p><strong>Açıklama:</strong> L-DOPA (levodopa) kan-beyin bariyerini geçebilen dopamin öncüsüdür. Beyinde dopamine dönüştürülerek Parkinson semptomlarını iyileştirir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 17:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="kofein" placeholder="(6)"> adenozin reseptörlerini bloke ederek 
+                <input type="text" class="blank" data-answer="uyanıklık" placeholder="(9)"> sağlar.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(17)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol17')">Çözümü Göster</button>
+            <div id="sol17" class="solution">
+                <div class="solution-title">Doğru Cevaplar: kofein, uyanıklık</div>
+                <p><strong>Açıklama:</strong> Kofein adenozin A2A reseptörlerini antagonize eder. Adenozin normalde yorgunluk ve uyku hissi yaratır, kofein bu etkiyi bloke ederek uyanıklık sağlar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 18:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="LTP" placeholder="(3)"> (uzun süreli potansiyasyon) sinapslarda 
+                <input type="text" class="blank" data-answer="öğrenme ve hafızanın" placeholder="(17)"> temelini oluşturur.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(18)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol18')">Çözümü Göster</button>
+            <div id="sol18" class="solution">
+                <div class="solution-title">Doğru Cevaplar: LTP, öğrenme ve hafızanın</div>
+                <p><strong>Açıklama:</strong> LTP özellikle glutamaterjik sinapslarda görülür. NMDA ve AMPA reseptörleri aracılığıyla sinaptik gücün uzun süreli artışını sağlar ve hafıza konsolidasyonunda kritiktir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 19:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="melatonin" placeholder="(9)"> pineal bezden salınan ve 
+                <input type="text" class="blank" data-answer="uyku-uyanıklık döngüsünü" placeholder="(23)"> düzenleyen hormondur.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(19)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol19')">Çözümü Göster</button>
+            <div id="sol19" class="solution">
+                <div class="solution-title">Doğru Cevaplar: melatonin, uyku-uyanıklık döngüsünü</div>
+                <p><strong>Açıklama:</strong> Melatonin karanlıkta salınır ve circadian ritmi düzenler. Serotoninden sentezlenir ve jet lag tedavisinde kullanılır. Işık melatonin üretimini baskılar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 20:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="nitrik oksit" placeholder="(12)"> gazla iletim yapan ve 
+                <input type="text" class="blank" data-answer="kan damarlarını" placeholder="(14)"> genişleten atipik nörotransmitterdir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(20)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol20')">Çözümü Göster</button>
+            <div id="sol20" class="solution">
+                <div class="solution-title">Doğru Cevaplar: nitrik oksit, kan damarlarını</div>
+                <p><strong>Açıklama:</strong> NO (nitrik oksit) veziküllerde depolanmaz, ihtiyaç halinde sentezlenir. Diffüzyonla yayılır ve cGMP yoluyla etki eder. Viagra gibi ilaçlar bu yolağı etkiler.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function checkAnswers(questionNumber) {
+            const question = document.querySelectorAll('.question')[questionNumber - 1];
+            const blanks = question.querySelectorAll('.blank');
+            
+            blanks.forEach(blank => {
+                const userAnswer = blank.value.toLowerCase().trim();
+                const correctAnswer = blank.getAttribute('data-answer').toLowerCase();
+                
+                blank.classList.remove('correct', 'incorrect');
+                
+                if (userAnswer === correctAnswer) {
+                    blank.classList.add('correct');
+                } else {
+                    blank.classList.add('incorrect');
+                }
+            });
+        }
+
+        function toggleSolution(solutionId) {
+            const solution = document.getElementById(solutionId);
+            if (solution.style.display === 'none' || solution.style.display === '') {
+                solution.style.display = 'block';
+            } else {
+                solution.style.display = 'none';
+            }
+        }
+
+        // Allow Enter key to check answers
+        document.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const question = e.target.closest('.question');
+                if (question) {
+                    const questionIndex = Array.from(document.querySelectorAll('.question')).indexOf(question) + 1;
+                    checkAnswers(questionIndex);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

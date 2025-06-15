@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İşitme Sistemi - Boşluk Doldurma</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .back-link:hover {
+            background: #5a67d8;
+        }
+        .question {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 5px solid #00bcd4;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #00bcd4;
+            font-size: 1.1em;
+        }
+        .question-text {
+            margin: 15px 0;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+        .blank {
+            display: inline-block;
+            min-width: 100px;
+            height: 25px;
+            border-bottom: 2px solid #00bcd4;
+            margin: 0 5px;
+            padding: 0 5px;
+            background: transparent;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            outline: none;
+            font-size: 1em;
+            text-align: center;
+        }
+        .blank:focus {
+            background: #e0f2f1;
+        }
+        .solution {
+            background: #e8f5e8;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            border-left: 5px solid #4caf50;
+            display: none;
+        }
+        .solution-title {
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+        .show-solution {
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .show-solution:hover {
+            background: #45a049;
+        }
+        .check-answer {
+            background: #00bcd4;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+        .check-answer:hover {
+            background: #00acc1;
+        }
+        .correct {
+            background: #c8e6c9;
+            color: #2e7d32;
+        }
+        .incorrect {
+            background: #ffcdd2;
+            color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Ana Sayfaya Dön</a>
+        
+        <div class="header">
+            <h1>👂 İşitme Sistemi</h1>
+            <h2>Boşluk Doldurma Soruları</h2>
+            <p><em>Boşlukları uygun kelimelerle doldurun. "Cevabı Kontrol Et" ile kontrol edebilir, "Çözümü Göster" ile detaylı açıklamayı görebilirsiniz.</em></p>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 1:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="kulak kepçesi" placeholder="(12)"> ses dalgalarını toplayarak 
+                dış kulak <input type="text" class="blank" data-answer="kanalına" placeholder="(8)"> yönlendirir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(1)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol1')">Çözümü Göster</button>
+            <div id="sol1" class="solution">
+                <div class="solution-title">Doğru Cevaplar: kulak kepçesi, kanalına</div>
+                <p><strong>Açıklama:</strong> Kulak kepçesi (aurikula) ses dalgalarını toplar ve amplifikasyon sağlar. Özellikle yüksek frekanslı seslerin toplanmasında etkilidir ve ses kaynağının yönünün belirlenmesine yardımcı olur.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 2:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="timpan zarı" placeholder="(10)"> ses dalgalarını mekanik titreşimlere 
+                dönüştüren <input type="text" class="blank" data-answer="ince membrandır" placeholder="(15)">
+            </div>
+            <button class="check-answer" onclick="checkAnswers(2)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol2')">Çözümü Göster</button>
+            <div id="sol2" class="solution">
+                <div class="solution-title">Doğru Cevaplar: timpan zarı, ince membrandır</div>
+                <p><strong>Açıklama:</strong> Timpan zarı (eardrum) dış kulakla orta kulağı ayırır. Ses dalgalarının basınç değişikliklerini mekanik titreşimlere çevirir ve orta kulak kemikçiklerine iletir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 3:</div>
+            <div class="question-text">
+                Orta kulaktaki üç kemikçik <input type="text" class="blank" data-answer="malleus" placeholder="(7)">, 
+                <input type="text" class="blank" data-answer="incus" placeholder="(5)"> ve <input type="text" class="blank" data-answer="stapes" placeholder="(6)"> dir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(3)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol3')">Çözümü Göster</button>
+            <div id="sol3" class="solution">
+                <div class="solution-title">Doğru Cevaplar: malleus, incus, stapes</div>
+                <p><strong>Açıklama:</strong> Malleus (çekiç), incus (örs) ve stapes (üzengi) kemikçikleri titreşimleri amplifikasyon yaparak iç kulağa iletir. Bu kemikçikler vücuttaki en küçük kemiklerdir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 4:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="koklea" placeholder="(6)"> salyangoz şeklindeki iç kulak yapısı olup, 
+                ses dalgalarını <input type="text" class="blank" data-answer="elektriksel sinyallere" placeholder="(19)"> dönüştürür.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(4)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol4')">Çözümü Göster</button>
+            <div id="sol4" class="solution">
+                <div class="solution-title">Doğru Cevaplar: koklea, elektriksel sinyallere</div>
+                <p><strong>Açıklama:</strong> Koklea mechanotransduction sürecini gerçekleştirir. İçindeki Corti organı ses titreşimlerini nöral sinyallere dönüştürerek işitme siniri vasıtasıyla beyne iletir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 5:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="Corti organı" placeholder="(12)"> koklea içindeki 
+                <input type="text" class="blank" data-answer="işitme reseptörlerini" placeholder="(19)"> içeren yapıdır.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(5)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol5')">Çözümü Göster</button>
+            <div id="sol5" class="solution">
+                <div class="solution-title">Doğru Cevaplar: Corti organı, işitme reseptörlerini</div>
+                <p><strong>Açıklama:</strong> Corti organı basilar membran üzerinde yer alır ve iç/dış saç hücrelerini içerir. Bu organ mekanik titreşimleri elektriksel sinyallere dönüştüren transduksiyon merkezidir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 6:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="iç saç hücreleri" placeholder="(16)"> asıl işitme reseptörleri olup, 
+                <input type="text" class="blank" data-answer="tek sıra" placeholder="(8)"> halinde dizilmiştir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(6)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol6')">Çözümü Göster</button>
+            <div id="sol6" class="solution">
+                <div class="solution-title">Doğru Cevaplar: iç saç hücreleri, tek sıra</div>
+                <p><strong>Açıklama:</strong> İç saç hücreleri (~3500 adet) işitme siniri liflerinin %95'ine bağlanır. Bunlar asıl ses algılama hücreleridir ve spiral ganglion nöronlarıyla sinaps yapar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 7:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="dış saç hücreleri" placeholder="(17)"> kokleanın 
+                <input type="text" class="blank" data-answer="amplifikasyon" placeholder="(13)"> ve ayarlama işlevini yerine getirir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(7)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol7')">Çözümü Göster</button>
+            <div id="sol7" class="solution">
+                <div class="solution-title">Doğru Cevaplar: dış saç hücreleri, amplifikasyon</div>
+                <p><strong>Açıklama:</strong> Dış saç hücreleri (~12000 adet) elektromotilik gösterir. Prestin proteini aracılığıyla uzayıp kısalarak kokleanın hassasiyetini 100 kata kadar artırırlar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 8:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="basilar membran" placeholder="(15)"> kokleanın uzunluğu boyunca uzanır ve 
+                <input type="text" class="blank" data-answer="frekans ayrımını" placeholder="(15)"> sağlar.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(8)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol8')">Çözümü Göster</button>
+            <div id="sol8" class="solution">
+                <div class="solution-title">Doğru Cevaplar: basilar membran, frekans ayrımını</div>
+                <p><strong>Açıklama:</strong> Basilar membran tabanından apekse doğru genişler ve esnekleşir. Yüksek frekanslar tabanda, alçak frekanslar apekste maksimum titreşim yapar (tonotopik organizasyon).</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 9:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="tonotopik organizasyon" placeholder="(21)"> kokleanın frekans 
+                <input type="text" class="blank" data-answer="haritalamasının" placeholder="(14)"> düzenli dizilimini ifade eder.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(9)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol9')">Çözümü Göster</button>
+            <div id="sol9" class="solution">
+                <div class="solution-title">Doğru Cevaplar: tonotopik organizasyon, haritalamasının</div>
+                <p><strong>Açıklama:</strong> Tonotopik organizasyon kokladan beyin korteksine kadar korunur. Her frekans belirli bir yerde maksimum yanıt verir, bu da frekans ayrımının temelini oluşturur.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 10:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="işitme siniri" placeholder="(13)"> kokleal bilgileri 
+                <input type="text" class="blank" data-answer="beyin sapına" placeholder="(12)"> ileten 8. kranial sinirdir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(10)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol10')">Çözümü Göster</button>
+            <div id="sol10" class="solution">
+                <div class="solution-title">Doğru Cevaplar: işitme siniri, beyin sapına</div>
+                <p><strong>Açıklama:</strong> İşitme siniri (vestibulokokleal sinir/CN VIII) spiral ganglion nöronlarının aksonlarından oluşur ve kokleal çekirdeklerde sonlanır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 11:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="kokleal çekirdekler" placeholder="(17)"> beyin sapındaki 
+                <input type="text" class="blank" data-answer="ilk işitme merkezi" placeholder="(17)"> olup, ses bilgisini işler.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(11)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol11')">Çözümü Göster</button>
+            <div id="sol11" class="solution">
+                <div class="solution-title">Doğru Cevaplar: kokleal çekirdekler, ilk işitme merkezi</div>
+                <p><strong>Açıklama:</strong> Kokleal çekirdekler (ventral ve dorsal) işitme sinirinin tüm liflerini alır. Burada tonotopik organizasyon korunur ve ses bilgisi çeşitli beyin bölgelerine dağıtılır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 12:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="superior olive" placeholder="(13)"> ses <input type="text" class="blank" data-answer="lokalizasyonunda" placeholder="(15)"> 
+                kritik rol oynayan beyin sapı yapısıdır.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(12)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol12')">Çözümü Göster</button>
+            <div id="sol12" class="solution">
+                <div class="solution-title">Doğru Cevaplar: superior olive, lokalizasyonunda</div>
+                <p><strong>Açıklama:</strong> Superior olive kompleksi iki kulak arası zaman ve şiddet farklarını hesaplayarak ses kaynağının yönünü belirler. MSO ve LSO alt çekirdekleri farklı lokalizasyon stratejileri kullanır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 13:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="inferior colliculus" placeholder="(17)"> midbrain'deki 
+                <input type="text" class="blank" data-answer="işitme integrasyonu" placeholder="(18)"> merkezidir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(13)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol13')">Çözümü Göster</button>
+            <div id="sol13" class="solution">
+                <div class="solution-title">Doğru Cevaplar: inferior colliculus, işitme integrasyonu</div>
+                <p><strong>Açıklama:</strong> Inferior colliculus tüm alt işitme merkezlerinden bilgi alır ve kompleks ses analizini yapar. Ayrıca işitme-motor koordinasyonunda da rol oynar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 14:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="medial geniculate" placeholder="(16)"> talamustaki işitme 
+                <input type="text" class="blank" data-answer="röle istasyonudur" placeholder="(16)">
+            </div>
+            <button class="check-answer" onclick="checkAnswers(14)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol14')">Çözümü Göster</button>
+            <div id="sol14" class="solution">
+                <div class="solution-title">Doğru Cevaplar: medial geniculate, röle istasyonudur</div>
+                <p><strong>Açıklama:</strong> Medial geniculate body (MGB) işitme bilgisini primer işitme korteksine ileten talamik çekirdektir. Burada da tonotopik organizasyon korunur.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 15:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="primer işitme korteksi" placeholder="(21)"> temporal lobda yer alır ve 
+                <input type="text" class="blank" data-answer="A1" placeholder="(2)"> alanı olarak bilinir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(15)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol15')">Çözümü Göster</button>
+            <div id="sol15" class="solution">
+                <div class="solution-title">Doğru Cevaplar: primer işitme korteksi, A1</div>
+                <p><strong>Açıklama:</strong> Primer işitme korteksi (A1) Heschl gyrus'ta yer alır. Tonotopik organizasyona sahiptir ve kompleks ses işleme için sekonder işitme alanlarıyla bağlantılıdır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 16:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="Wernicke alanı" placeholder="(13)"> sol temporal lobda yer alır ve 
+                <input type="text" class="blank" data-answer="dil anlama" placeholder="(10)"> işlevinden sorumludur.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(16)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol16')">Çözümü Göster</button>
+            <div id="sol16" class="solution">
+                <div class="solution-title">Doğru Cevaplar: Wernicke alanı, dil anlama</div>
+                <p><strong>Açıklama:</strong> Wernicke alanı (posterior superior temporal gyrus) işitsel dil anlamasında kritiktir. Hasarında akıcı afazi gelişir - konuşma akıcı ama anlamsızdır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 17:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="vestibüler sistem" placeholder="(16)"> iç kulakta yer alır ve 
+                <input type="text" class="blank" data-answer="denge" placeholder="(5)"> kontrolünden sorumludur.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(17)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol17')">Çözümü Göster</button>
+            <div id="sol17" class="solution">
+                <div class="solution-title">Doğru Cevaplar: vestibüler sistem, denge</div>
+                <p><strong>Açıklama:</strong> Vestibüler sistem 3 yarı dairesel kanal (rotasyonel hareket) ve 2 otolit organ (doğrusal hareket ve yerçekimi) içerir. Vestibüler nükleuslara bağlanır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 18:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="otoskleroz" placeholder="(10)"> stapes kemikçiğinin 
+                <input type="text" class="blank" data-answer="hareketsizleşmesine" placeholder="(17)"> neden olan hastalıktır.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(18)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol18')">Çözümü Göster</button>
+            <div id="sol18" class="solution">
+                <div class="solution-title">Doğru Cevaplar: otoskleroz, hareketsizleşmesine</div>
+                <p><strong>Açıklama:</strong> Otoskleroz stapes footplate'inin oval pencereye yapışmasıyla gelişen iletim tipi işitme kaybıdır. Stapedektomi ameliyatıyla tedavi edilebilir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 19:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="presbiyakuzi" placeholder="(12)"> yaşla birlikte gelişen 
+                <input type="text" class="blank" data-answer="işitme kaybıdır" placeholder="(14)">
+            </div>
+            <button class="check-answer" onclick="checkAnswers(19)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol19')">Çözümü Göster</button>
+            <div id="sol19" class="solution">
+                <div class="solution-title">Doğru Cevaplar: presbiyakuzi, işitme kaybıdır</div>
+                <p><strong>Açıklama:</strong> Presbiyakuzi özellikle yüksek frekanslarda başlayan, dış saç hücrelerinin kaybıyla karakterize yaşa bağlı sensorinöral işitme kaybıdır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 20:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="kokleal implant" placeholder="(15)"> işitme sinirini doğrudan 
+                <input type="text" class="blank" data-answer="elektriksel olarak" placeholder="(16)"> uyaran cihazdır.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(20)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol20')">Çözümü Göster</button>
+            <div id="sol20" class="solution">
+                <div class="solution-title">Doğru Cevaplar: kokleal implant, elektriksel olarak</div>
+                <p><strong>Açıklama:</strong> Kokleal implant hasarlı saç hücrelerini bypass ederek spiral ganglion nöronlarını doğrudan stimüle eder. Tonotopik organizasyonu taklit eden çoklu elektrot dizisi kullanır.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function checkAnswers(questionNumber) {
+            const question = document.querySelectorAll('.question')[questionNumber - 1];
+            const blanks = question.querySelectorAll('.blank');
+            
+            blanks.forEach(blank => {
+                const userAnswer = blank.value.toLowerCase().trim();
+                const correctAnswer = blank.getAttribute('data-answer').toLowerCase();
+                
+                blank.classList.remove('correct', 'incorrect');
+                
+                if (userAnswer === correctAnswer) {
+                    blank.classList.add('correct');
+                } else {
+                    blank.classList.add('incorrect');
+                }
+            });
+        }
+
+        function toggleSolution(solutionId) {
+            const solution = document.getElementById(solutionId);
+            if (solution.style.display === 'none' || solution.style.display === '') {
+                solution.style.display = 'block';
+            } else {
+                solution.style.display = 'none';
+            }
+        }
+
+        // Allow Enter key to check answers
+        document.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const question = e.target.closest('.question');
+                if (question) {
+                    const questionIndex = Array.from(document.querySelectorAll('.question')).indexOf(question) + 1;
+                    checkAnswers(questionIndex);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limbik Sistem - Boşluk Doldurma</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .back-link:hover {
+            background: #5a67d8;
+        }
+        .question {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 5px solid #4caf50;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #4caf50;
+            font-size: 1.1em;
+        }
+        .question-text {
+            margin: 15px 0;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+        .blank {
+            display: inline-block;
+            min-width: 100px;
+            height: 25px;
+            border-bottom: 2px solid #4caf50;
+            margin: 0 5px;
+            padding: 0 5px;
+            background: transparent;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            outline: none;
+            font-size: 1em;
+            text-align: center;
+        }
+        .blank:focus {
+            background: #e8f5e8;
+        }
+        .solution {
+            background: #e8f5e8;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            border-left: 5px solid #4caf50;
+            display: none;
+        }
+        .solution-title {
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+        .show-solution {
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .show-solution:hover {
+            background: #45a049;
+        }
+        .check-answer {
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+        .check-answer:hover {
+            background: #45a049;
+        }
+        .correct {
+            background: #c8e6c9;
+            color: #2e7d32;
+        }
+        .incorrect {
+            background: #ffcdd2;
+            color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Ana Sayfaya Dön</a>
+        
+        <div class="header">
+            <h1>💚 Limbik Sistem</h1>
+            <h2>Boşluk Doldurma Soruları</h2>
+            <p><em>Boşlukları uygun kelimelerle doldurun. "Cevabı Kontrol Et" ile kontrol edebilir, "Çözümü Göster" ile detaylı açıklamayı görebilirsiniz.</em></p>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 1:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="limbik sistem" placeholder="(13)"> duygu, motivasyon ve 
+                <input type="text" class="blank" data-answer="hafızadan" placeholder="(9)"> sorumlu beyin yapılarının koleksiyonudur.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(1)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol1')">Çözümü Göster</button>
+            <div id="sol1" class="solution">
+                <div class="solution-title">Doğru Cevaplar: limbik sistem, hafızadan</div>
+                <p><strong>Açıklama:</strong> Limbik sistem primitif beyin olarak da bilinir. Amigdala, hipokampus, hipotalamus, cingulate korteks gibi yapıları içerir ve duygusal işlemleme ile hafıza konsolidasyonunda kritiktir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 2:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="amigdala" placeholder="(8)"> korku ve diğer güçlü 
+                <input type="text" class="blank" data-answer="duygusal tepkilerin" placeholder="(17)"> işlenmesinde merkezi rol oynar.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(2)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol2')">Çözümü Göster</button>
+            <div id="sol2" class="solution">
+                <div class="solution-title">Doğru Cevaplar: amigdala, duygusal tepkilerin</div>
+                <p><strong>Açıklama:</strong> Amigdala temporal lobda yer alır ve "savaş ya da kaç" tepkisini koordine eder. Korku koşullanması ve duygusal hafızanın oluşumunda kritik rol oynar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 3:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="hipokampus" placeholder="(10)"> yeni hafızaların 
+                <input type="text" class="blank" data-answer="konsolidasyonunda" placeholder="(16)"> vazgeçilmez rol oynar.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(3)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol3')">Çözümü Göster</button>
+            <div id="sol3" class="solution">
+                <div class="solution-title">Doğru Cevaplar: hipokampus, konsolidasyonunda</div>
+                <p><strong>Açıklama:</strong> Hipokampus kısa süreli hafızayı uzun süreli hafızaya dönüştürür. Uzamsal navigasyon ve episodik hafızada da kritiktir. Alzheimer'da erken etkilenen bölgelerdendir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 4:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="hipotalamus" placeholder="(12)"> temel fizyolojik ihtiyaçları düzenleyen ve 
+                <input type="text" class="blank" data-answer="homeostazı" placeholder="(10)"> koruyan limbik yapıdır.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(4)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol4')">Çözümü Göster</button>
+            <div id="sol4" class="solution">
+                <div class="solution-title">Doğru Cevaplar: hipotalamus, homeostazı</div>
+                <p><strong>Açıklama:</strong> Hipotalamus açlık, susuzluk, vücut sıcaklığı, uyku ve cinsel davranışları kontrol eder. Hipofizle bağlantılıdır ve hormon salınımını düzenler.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 5:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="anterior cingulate" placeholder="(16)"> dikkat, empati ve 
+                <input type="text" class="blank" data-answer="ağrı işlemeden" placeholder="(13)"> sorumlu limbik bölgedir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(5)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol5')">Çözümü Göster</button>
+            <div id="sol5" class="solution">
+                <div class="solution-title">Doğru Cevaplar: anterior cingulate, ağrı işlemeden</div>
+                <p><strong>Açıklama:</strong> Anterior cingulate cortex duygusal ağrı işleme, çatışma monitorizasyonu ve empati düzenlenmesinde rol oynar. Sosyal ağrıyı da fiziksel ağrı gibi işler.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 6:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="septum" placeholder="(6)"> ödül ve 
+                <input type="text" class="blank" data-answer="zevk işlemelerinde" placeholder="(17)"> rol oynayan limbik yapıdır.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(6)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol6')">Çözümü Göster</button>
+            <div id="sol6" class="solution">
+                <div class="solution-title">Doğru Cevaplar: septum, zevk işlemelerinde</div>
+                <p><strong>Açıklama:</strong> Septum ödül sisteminin parçasıdır ve elektriksel stimülasyonu zevk yaratır. Sosyal bağlanma ve maternal davranışlarda da rol oynar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 7:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="mamiller cisimler" placeholder="(16)"> hipotalamusta yer alır ve 
+                <input type="text" class="blank" data-answer="hafıza devrelerinde" placeholder="(16)"> önemli bağlantı noktasıdır.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(7)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol7')">Çözümü Göster</button>
+            <div id="sol7" class="solution">
+                <div class="solution-title">Doğru Cevaplar: mamiller cisimler, hafıza devrelerinde</div>
+                <p><strong>Açıklama:</strong> Mamiller cisimler (mammillary bodies) Papez devresinin parçasıdır. Hipokampus-anterior talamus bağlantısında kritik rol oynar ve uzamsal hafızada önemlidir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 8:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="Papez devresi" placeholder="(12)"> hafıza ve duyguyu bağlayan 
+                <input type="text" class="blank" data-answer="nöral döngüdür" placeholder="(13)">
+            </div>
+            <button class="check-answer" onclick="checkAnswers(8)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol8')">Çözümü Göster</button>
+            <div id="sol8" class="solution">
+                <div class="solution-title">Doğru Cevaplar: Papez devresi, nöral döngüdür</div>
+                <p><strong>Açıklama:</strong> Papez devresi hipokampus → forniks → mamiller cisimler → anterior talamus → cingulate korteks → hipokampus döngüsünü içerir. Duygusal hafıza oluşumunda kritiktir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 9:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="forniks" placeholder="(7)"> hipokampusu mamiller cisimlere bağlayan 
+                <input type="text" class="blank" data-answer="beyaz cevher" placeholder="(11)"> yapısıdır.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(9)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol9')">Çözümü Göster</button>
+            <div id="sol9" class="solution">
+                <div class="solution-title">Doğru Cevaplar: forniks, beyaz cevher</div>
+                <p><strong>Açıklama:</strong> Forniks C şeklindeki akson demetidir. Hipokampus çıkışlarını septum ve mamiller cisimlere taşır. Hafıza konsolidasyonunda kritik yoldur.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 10:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="orbitofrontal korteks" placeholder="(19)"> ödül değerlendirmesi ve 
+                <input type="text" class="blank" data-answer="davranış kontrolünde" placeholder="(17)"> önemli limbik bölgedir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(10)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol10')">Çözümü Göster</button>
+            <div id="sol10" class="solution">
+                <div class="solution-title">Doğru Cevaplar: orbitofrontal korteks, davranış kontrolünde</div>
+                <p><strong>Açıklama:</strong> Orbitofrontal korteks ödül-ceza değerlendirmesi yapar ve dürtü kontrolünü sağlar. Amigdala ile güçlü bağlantıları vardır ve sosyal davranışta kritiktir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 11:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="anterior talamus" placeholder="(15)"> limbik hafıza devrelerinin 
+                <input type="text" class="blank" data-answer="röle istasyonudur" placeholder="(16)">
+            </div>
+            <button class="check-answer" onclick="checkAnswers(11)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol11')">Çözümü Göster</button>
+            <div id="sol11" class="solution">
+                <div class="solution-title">Doğru Cevaplar: anterior talamus, röle istasyonudur</div>
+                <p><strong>Açıklama:</strong> Anterior talamus mamiller cisimlerden bilgi alır ve cingulate kortekse iletir. Uzamsal hafıza ve navigasyonda Papez devresinin kritik bileşenidir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 12:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="entorinal korteks" placeholder="(16)"> hipokampusun ana 
+                <input type="text" class="blank" data-answer="giriş kapısıdır" placeholder="(14)"> ve grid hücreleri içerir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(12)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol12')">Çözümü Göster</button>
+            <div id="sol12" class="solution">
+                <div class="solution-title">Doğru Cevaplar: entorinal korteks, giriş kapısıdır</div>
+                <p><strong>Açıklama:</strong> Entorinal korteks neokorteks ve hipokampus arasında köprü görevi görür. Grid hücreleri uzamsal navigasyon için altıgen koordinat sistemi sağlar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 13:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="piriform korteks" placeholder="(15)"> koku algısının 
+                <input type="text" class="blank" data-answer="primer işleme" placeholder="(13)"> merkezidir ve limbik sistemin parçasıdır.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(13)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol13')">Çözümü Göster</button>
+            <div id="sol13" class="solution">
+                <div class="solution-title">Doğru Cevaplar: piriform korteks, primer işleme</div>
+                <p><strong>Açıklama:</strong> Piriform korteks koku bulbu ile doğrudan bağlantılıdır. Talamusu bypass eden tek duyusal sistem koku sistemidir, bu nedenle güçlü duygusal hatıraları tetikleyebilir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 14:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="klaustrum" placeholder="(9)"> limbik sistem ile neokorteks arasında 
+                <input type="text" class="blank" data-answer="bağlantı sağlayan" placeholder="(16)"> gizemli beyin yapısıdır.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(14)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol14')">Çözümü Göster</button>
+            <div id="sol14" class="solution">
+                <div class="solution-title">Doğru Cevaplar: klaustrum, bağlantı sağlayan</div>
+                <p><strong>Açıklama:</strong> Klaustrum korteksin neredeyse tüm alanlarıyla çift yönlü bağlantıları olan ince yapıdır. Bilinç ve duyusal bütünleşmede rol oynayabileceği düşünülür.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 15:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="nucleus accumbens" placeholder="(17)"> ödül sisteminin merkezi olup, 
+                <input type="text" class="blank" data-answer="bağımlılık" placeholder="(10)"> gelişiminde kritik rol oynar.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(15)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol15')">Çözümü Göster</button>
+            <div id="sol15" class="solution">
+                <div class="solution-title">Doğru Cevaplar: nucleus accumbens, bağımlılık</div>
+                <p><strong>Açıklama:</strong> Nucleus accumbens VTA'dan dopamin alır ve ödül işlemede kritiktir. Kokain, alkol gibi bağımlılık yapan maddelerin hedefidir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 16:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="bed nucleus" placeholder="(11)"> stres tepkilerinin düzenlenmesinde ve 
+                <input type="text" class="blank" data-answer="anksiyetede" placeholder="(10)"> rol oynayan limbik yapıdır.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(16)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol16')">Çözümü Göster</button>
+            <div id="sol16" class="solution">
+                <div class="solution-title">Doğru Cevaplar: bed nucleus, anksiyetede</div>
+                <p><strong>Açıklama:</strong> Bed nucleus of stria terminalis (BNST) amigdala ve hipotalamus arasında yer alır. Kronik stres ve anksiyete bozukluklarında merkezi rol oynar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 17:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="posterior cingulate" placeholder="(17)"> default mode network'ün parçası olup, 
+                <input type="text" class="blank" data-answer="öz-referansiyel" placeholder="(14)"> düşüncelerde aktiftir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(17)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol17')">Çözümü Göster</button>
+            <div id="sol17" class="solution">
+                <div class="solution-title">Doğru Cevaplar: posterior cingulate, öz-referansiyel</div>
+                <p><strong>Açıklama:</strong> Posterior cingulate cortex zihin wandering, otobiyografik hafıza hatırlama ve benlik ile ilgili düşüncelerde aktiftir. Meditasyonda azalan aktivite gösterir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 18:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="Klüver-Bucy sendromu" placeholder="(20)"> bilateral amigdala 
+                <input type="text" class="blank" data-answer="hasarında" placeholder="(9)"> gelişen duygusal bozukluktur.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(18)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol18')">Çözümü Göster</button>
+            <div id="sol18" class="solution">
+                <div class="solution-title">Doğru Cevaplar: Klüver-Bucy sendromu, hasarında</div>
+                <p><strong>Açıklama:</strong> Klüver-Bucy sendromunda korku kaybı, hiperseksüalite, ağza götürme davranışı (oral exploratory behavior) ve duygusal küntlük görülür.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 19:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="HM vakası" placeholder="(9)"> hipokampus çıkarımının 
+                <input type="text" class="blank" data-answer="hafıza üzerindeki" placeholder="(15)"> etkilerini gösteren ünlü vaka çalışmasıdır.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(19)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol19')">Çözümü Göster</button>
+            <div id="sol19" class="solution">
+                <div class="solution-title">Doğru Cevaplar: HM vakası, hafıza üzerindeki</div>
+                <p><strong>Açıklama:</strong> Henry Molaison (HM) epilepsi ameliyatı sonrası yeni hafıza oluşturamadı ama eski hafızaları korundu. Bu vaka hafıza türlerinin ayrılığını gösterdi.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 20:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="duygusal hafıza" placeholder="(15)"> amigdala ve hipokampusun 
+                <input type="text" class="blank" data-answer="işbirliğiyle" placeholder="(11)"> oluşan güçlü hafıza türüdür.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(20)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol20')">Çözümü Göster</button>
+            <div id="sol20" class="solution">
+                <div class="solution-title">Doğru Cevaplar: duygusal hafıza, işbirliğiyle</div>
+                <p><strong>Açıklama:</strong> Duygusal olaylar daha güçlü hafızalar oluşturur çünkü amigdala noradrenalin salınımını artırır ve hipokampustaki konsolidasyonu güçlendirir.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function checkAnswers(questionNumber) {
+            const question = document.querySelectorAll('.question')[questionNumber - 1];
+            const blanks = question.querySelectorAll('.blank');
+            
+            blanks.forEach(blank => {
+                const userAnswer = blank.value.toLowerCase().trim();
+                const correctAnswer = blank.getAttribute('data-answer').toLowerCase();
+                
+                blank.classList.remove('correct', 'incorrect');
+                
+                if (userAnswer === correctAnswer) {
+                    blank.classList.add('correct');
+                } else {
+                    blank.classList.add('incorrect');
+                }
+            });
+        }
+
+        function toggleSolution(solutionId) {
+            const solution = document.getElementById(solutionId);
+            if (solution.style.display === 'none' || solution.style.display === '') {
+                solution.style.display = 'block';
+            } else {
+                solution.style.display = 'none';
+            }
+        }
+
+        // Allow Enter key to check answers
+        document.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const question = e.target.closest('.question');
+                if (question) {
+                    const questionIndex = Array.from(document.querySelectorAll('.question')).indexOf(question) + 1;
+                    checkAnswers(questionIndex);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

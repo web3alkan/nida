@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gelişimsel Nöropsikoloji - Boşluk Doldurma</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .back-link:hover {
+            background: #5a67d8;
+        }
+        .question {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 5px solid #3f51b5;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #3f51b5;
+            font-size: 1.1em;
+        }
+        .question-text {
+            margin: 15px 0;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+        .blank {
+            display: inline-block;
+            min-width: 100px;
+            height: 25px;
+            border-bottom: 2px solid #3f51b5;
+            margin: 0 5px;
+            padding: 0 5px;
+            background: transparent;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            outline: none;
+            font-size: 1em;
+            text-align: center;
+        }
+        .blank:focus {
+            background: #e8eaf6;
+        }
+        .solution {
+            background: #e8f5e8;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            border-left: 5px solid #4caf50;
+            display: none;
+        }
+        .solution-title {
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+        .show-solution {
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .show-solution:hover {
+            background: #45a049;
+        }
+        .check-answer {
+            background: #3f51b5;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+        .check-answer:hover {
+            background: #3949ab;
+        }
+        .correct {
+            background: #c8e6c9;
+            color: #2e7d32;
+        }
+        .incorrect {
+            background: #ffcdd2;
+            color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Ana Sayfaya Dön</a>
+        
+        <div class="header">
+            <h1>🧒 Gelişimsel Nöropsikoloji</h1>
+            <h2>Boşluk Doldurma Soruları</h2>
+            <p><em>Boşlukları uygun kelimelerle doldurun. "Cevabı Kontrol Et" ile kontrol edebilir, "Çözümü Göster" ile detaylı açıklamayı görebilirsiniz.</em></p>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 1:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="nörogenez" placeholder="(10)"> embriyonik dönemde yeni 
+                <input type="text" class="blank" data-answer="nöron oluşumu" placeholder="(13)"> sürecidir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(1)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol1')">Çözümü Göster</button>
+            <div id="sol1" class="solution">
+                <div class="solution-title">Doğru Cevaplar: nörogenez, nöron oluşumu</div>
+                <p><strong>Açıklama:</strong> Nörogenez embriyonik dönemde ventriküler zondan başlar. İnsanlarda 18. gestasyon haftasında hızla artar ve doğuma kadar milyarlarca nöron üretilir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 2:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="migrasyon" placeholder="(10)"> yeni oluşan nöronların 
+                <input type="text" class="blank" data-answer="hedef bölgelerine" placeholder="(15)"> taşınma sürecidir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(2)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol2')">Çözümü Göster</button>
+            <div id="sol2" class="solution">
+                <div class="solution-title">Doğru Cevaplar: migrasyon, hedef bölgelerine</div>
+                <p><strong>Açıklama:</strong> Radial glial hücreler nöronların kortikal tabakalara migrasyonunda rehberlik eder. Bu süreç korteksin inside-out (içten-dışa) organizasyonunu oluşturur.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 3:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="diferansiyasyon" placeholder="(15)"> nöronların özelleşmiş 
+                <input type="text" class="blank" data-answer="hücre tiplerini" placeholder="(14)"> geliştirme sürecidir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(3)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol3')">Çözümü Göster</button>
+            <div id="sol3" class="solution">
+                <div class="solution-title">Doğru Cevaplar: diferansiyasyon, hücre tiplerini</div>
+                <p><strong>Açıklama:</strong> Diferansiyasyon sırasında nöronlar morfolojik ve fizyolojik özelliklerini kazanır. Transkripsiyon faktörleri hücre kaderini belirler.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 4:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="sinaptogenez" placeholder="(12)"> nöronlar arasında 
+                <input type="text" class="blank" data-answer="sinaps oluşumu" placeholder="(13)"> sürecidir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(4)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol4')">Çözümü Göster</button>
+            <div id="sol4" class="solution">
+                <div class="solution-title">Doğru Cevaplar: sinaptogenez, sinaps oluşumu</div>
+                <p><strong>Açıklama:</strong> Sinaptogenez doğum öncesi başlar ve ergenlik döneminde tamamlanır. İlk aşırı sinaps üretimi, sonra selektif eliminasyon "use it or lose it" ilkesi ile gerçekleşir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 5:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="miyeninasyon" placeholder="(13)"> aksonların miyelin kılıfla 
+                <input type="text" class="blank" data-answer="kaplanması" placeholder="(10)"> sürecidir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(5)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol5')">Çözümü Göster</button>
+            <div id="sol5" class="solution">
+                <div class="solution-title">Doğru Cevaplar: miyeninasyon, kaplanması</div>
+                <p><strong>Açıklama:</strong> Miyeninasyon posterior-anterior ve inferior-superior yönde ilerler. Prefrontal korteks en son miyeline olur (20'li yaşlarda), bu da yönetici işlevlerin geç gelişimini açıklar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 6:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="sinaptik budama" placeholder="(14)"> gereksiz sinapsların 
+                <input type="text" class="blank" data-answer="elenmesi" placeholder="(8)"> sürecidir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(6)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol6')">Çözümü Göster</button>
+            <div id="sol6" class="solution">
+                <div class="solution-title">Doğru Cevaplar: sinaptik budama, elenmesi</div>
+                <p><strong>Açıklama:</strong> Sinaptik budama (synaptic pruning) ergenlikte özellikle prefrontal kortekste yoğunlaşır. Mikroglia apoptotik sinapsları temizler ve beyin verimliliğini artırır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 7:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="kritik dönem" placeholder="(12)"> gelişim sırasında çevresel uyaranların 
+                <input type="text" class="blank" data-answer="maksimum etkili" placeholder="(13)"> olduğu zaman penceresidir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(7)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol7')">Çözümü Göster</button>
+            <div id="sol7" class="solution">
+                <div class="solution-title">Doğru Cevaplar: kritik dönem, maksimum etkili</div>
+                <p><strong>Açıklama:</strong> Kritik dönemler görsel sistem (0-8 yaş), dil (0-puberte), sosyal bağlanma (0-2 yaş) için tanımlanmıştır. Bu dönemlerde plastisisite maksimum seviyededir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 8:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="epigenetik" placeholder="(10)"> faktörler beyin gelişimini 
+                <input type="text" class="blank" data-answer="çevresel etkilerle" placeholder="(16)"> şekillendirirler.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(8)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol8')">Çözümü Göster</button>
+            <div id="sol8" class="solution">
+                <div class="solution-title">Doğru Cevaplar: epigenetik, çevresel etkilerle</div>
+                <p><strong>Açıklama:</strong> DNA metilasyonu, histone modifikasyonları gelişim sırasında gen ekspresyonunu düzenler. Stres, beslenme ve maternal bakım epigenetik değişikliklere neden olur.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 9:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="nöral tüp defektleri" placeholder="(19)"> folat eksikliğinden kaynaklanan 
+                <input type="text" class="blank" data-answer="gelişim bozukluklarıdır" placeholder="(20)">
+            </div>
+            <button class="check-answer" onclick="checkAnswers(9)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol9')">Çözümü Göster</button>
+            <div id="sol9" class="solution">
+                <div class="solution-title">Doğru Cevaplar: nöral tüp defektleri, gelişim bozukluklarıdır</div>
+                <p><strong>Açıklama:</strong> Spina bifida ve anencephaly nöral tüpün kapanmaması sonucu oluşur. Gebelik öncesi ve sırasında folik asit takviyesi bu riskleri önemli ölçüde azaltır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 10:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="prefrontal korteks" placeholder="(17)"> en son olgunlaşan beyin bölgesi olup, 
+                <input type="text" class="blank" data-answer="25 yaşına" placeholder="(9)"> kadar gelişmeye devam eder.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(10)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol10')">Çözümü Göster</button>
+            <div id="sol10" class="solution">
+                <div class="solution-title">Doğru Cevaplar: prefrontal korteks, 25 yaşına</div>
+                <p><strong>Açıklama:</strong> Prefrontal korteksin geç olgunlaşması ergenlik dönemindeki risikli davranışları açıklar. Yönetici işlevler, dürtü kontrolü ve karar verme 25 yaşında tamamlanır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 11:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="adolescence" placeholder="(11)"> limbik sistemin erken, prefrontal korteksin 
+                <input type="text" class="blank" data-answer="geç olgunlaştığı" placeholder="(15)"> gelişim dönemidir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(11)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol11')">Çözümü Göster</button>
+            <div id="sol11" class="solution">
+                <div class="solution-title">Doğru Cevaplar: adolescence, geç olgunlaştığı</div>
+                <p><strong>Açıklama:</strong> Ergenlikte limbik sistem (duygu) prefrontal korteksten (kontrol) önce olgunlaşır. Bu "maturational imbalance" risk alma davranışını açıklar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 12:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="dil edinimi" placeholder="(11)"> kritik dönemde daha kolay gerçekleşir ve 
+                <input type="text" class="blank" data-answer="sol hemisfer" placeholder="(12)"> de lateralleşir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(12)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol12')">Çözümü Göster</button>
+            <div id="sol12" class="solution">
+                <div class="solution-title">Doğru Cevaplar: dil edinimi, sol hemisfer</div>
+                <p><strong>Açıklama:</strong> Dil edinimi puberte öncesi en optimal dönemdir. Sol hemisfer dominansı gelişir (Broca, Wernicke alanları). Erken beyin hasarında sağ hemisfer dil işlevini üstlenebilir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 13:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="motor gelişim" placeholder="(13)"> sefalo-kaudal ve 
+                <input type="text" class="blank" data-answer="prokso-distal" placeholder="(13)"> ilkeleri takip eder.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(13)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol13')">Çözümü Göster</button>
+            <div id="sol13" class="solution">
+                <div class="solution-title">Doğru Cevaplar: motor gelişim, prokso-distal</div>
+                <p><strong>Açıklama:</strong> Sefalo-kaudal: kafa-kuyruk yönünde (baş kontrolü → yürüme). Prokso-distal: merkez-çevre yönünde (omuz → el-parmak kontrolü). Bu ilkeler miyeninasyon sırasını yansıtır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 14:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="kognitif rezerv" placeholder="(14)"> beyin hasarına karşı 
+                <input type="text" class="blank" data-answer="koruyucu faktördür" placeholder="(17)"> ve eğitimle artırılabilir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(14)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol14')">Çözümü Göster</button>
+            <div id="sol14" class="solution">
+                <div class="solution-title">Doğru Cevaplar: kognitif rezerv, koruyucu faktördür</div>
+                <p><strong>Açıklama:</strong> Kognitif rezerv zengin çevre, eğitim ve sosyal etkileşimle oluşur. Alzheimer gibi nörodejeneratif hastalıklarda semptom başlangıcını geciktirir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 15:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="erken müdahale" placeholder="(14)"> gelişimsel gecikmelerde 
+                <input type="text" class="blank" data-answer="plastisiteden yararlanır" placeholder="(21)">
+            </div>
+            <button class="check-answer" onclick="checkAnswers(15)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol15')">Çözümü Göster</button>
+            <div id="sol15" class="solution">
+                <div class="solution-title">Doğru Cevaplar: erken müdahale, plastisiteden yararlanır</div>
+                <p><strong>Açıklama:</strong> Erken müdahale programları 0-3 yaş arası kritik dönemlerde yoğun terapi sağlar. Plastisitenin yüksek olduğu bu dönemde müdahale en etkilidir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 16:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="otizm spektrum bozukluğu" placeholder="(24)"> erken beyin gelişiminde 
+                <input type="text" class="blank" data-answer="anormalliklerle" placeholder="(14)"> karakterize edilir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(16)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol16')">Çözümü Göster</button>
+            <div id="sol16" class="solution">
+                <div class="solution-title">Doğru Cevaplar: otizm spektrum bozukluğu, anormalliklerle</div>
+                <p><strong>Açıklama:</strong> OSB'de aşırı beyin büyümesi, bozulmuş sinaptik budama ve bağlantı problemleri görülür. Genetik ve çevresel faktörlerin etkileşimi kritik dönemde etkili olur.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 17:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="ADHD" placeholder="(4)"> prefrontal korteks ve 
+                <input type="text" class="blank" data-answer="bazal gangliya" placeholder="(13)"> gelişim farklılıkları ile ilişkilidir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(17)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol17')">Çözümü Göster</button>
+            <div id="sol17" class="solution">
+                <div class="solution-title">Doğru Cevaplar: ADHD, bazal gangliya</div>
+                <p><strong>Açıklama:</strong> ADHD'de dikkat ağları ve inhibisyon kontrolünde gecikme görülür. Prefrontal korteks olgunlaşması 2-3 yıl geriden gelir. Dopamin yolakları da etkilenmiştir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 18:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="disleksi" placeholder="(8)"> okuma becerilerinde güçlük olup, 
+                <input type="text" class="blank" data-answer="fonolojik işlemleme" placeholder="(18)"> bozuklukları içerir.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(18)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol18')">Çözümü Göster</button>
+            <div id="sol18" class="solution">
+                <div class="solution-title">Doğru Cevaplar: disleksi, fonolojik işlemleme</div>
+                <p><strong>Açıklama:</strong> Disleksi sol hemisfer dil alanlarında farklı aktivasyon paterni gösterir. Fonolojik farkındalık eksikliği okuma güçlüğünün temelini oluşturur.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 19:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="maternal stres" placeholder="(13)"> gebelik sırasında bebekte 
+                <input type="text" class="blank" data-answer="HPA ekseni" placeholder="(10)"> programlamasını etkiler.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(19)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol19')">Çözümü Göster</button>
+            <div id="sol19" class="solution">
+                <div class="solution-title">Doğru Cevaplar: maternal stres, HPA ekseni</div>
+                <p><strong>Açıklama:</strong> Prenatal stres hipotalamo-hipofiz-adrenal eksenini programlar. Kortizol seviyeleri yüksek olan bebeklerde ileride anksiyete ve depresyon riski artar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 20:</div>
+            <div class="question-text">
+                <input type="text" class="blank" data-answer="nörogelişimsel" placeholder="(15)"> bozukluklar erken yaşamda başlar ve 
+                <input type="text" class="blank" data-answer="yaşam boyu" placeholder="(9)"> etkilerini sürdürür.
+            </div>
+            <button class="check-answer" onclick="checkAnswers(20)">Cevabı Kontrol Et</button>
+            <button class="show-solution" onclick="toggleSolution('sol20')">Çözümü Göster</button>
+            <div id="sol20" class="solution">
+                <div class="solution-title">Doğru Cevaplar: nörogelişimsel, yaşam boyu</div>
+                <p><strong>Açıklama:</strong> Nörogelişimsel bozukluklar (OSB, ADHD, disleksi) erken beyin gelişimindeki problemlerden kaynaklanır. Erken tanı ve müdahale prognozu önemli ölçüde iyileştirir.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function checkAnswers(questionNumber) {
+            const question = document.querySelectorAll('.question')[questionNumber - 1];
+            const blanks = question.querySelectorAll('.blank');
+            
+            blanks.forEach(blank => {
+                const userAnswer = blank.value.toLowerCase().trim();
+                const correctAnswer = blank.getAttribute('data-answer').toLowerCase();
+                
+                blank.classList.remove('correct', 'incorrect');
+                
+                if (userAnswer === correctAnswer) {
+                    blank.classList.add('correct');
+                } else {
+                    blank.classList.add('incorrect');
+                }
+            });
+        }
+
+        function toggleSolution(solutionId) {
+            const solution = document.getElementById(solutionId);
+            if (solution.style.display === 'none' || solution.style.display === '') {
+                solution.style.display = 'block';
+            } else {
+                solution.style.display = 'none';
+            }
+        }
+
+        // Allow Enter key to check answers
+        document.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const question = e.target.closest('.question');
+                if (question) {
+                    const questionIndex = Array.from(document.querySelectorAll('.question')).indexOf(question) + 1;
+                    checkAnswers(questionIndex);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
