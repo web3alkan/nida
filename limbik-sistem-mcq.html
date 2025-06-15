@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limbik Sistem - Çoktan Seçmeli Sorular</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .back-link:hover {
+            background: #5a67d8;
+        }
+        .question {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 5px solid #667eea;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.1em;
+        }
+        .question-text {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+        .options {
+            list-style: none;
+            padding: 0;
+        }
+        .options li {
+            padding: 8px 15px;
+            margin: 5px 0;
+            background: #fff;
+            border-radius: 5px;
+            border: 2px solid #e9ecef;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .options li:hover {
+            background: #e3f2fd;
+            border-color: #2196f3;
+        }
+        .solution {
+            background: #e8f5e8;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            border-left: 5px solid #4caf50;
+            display: none;
+        }
+        .solution-title {
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+        .show-solution {
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .show-solution:hover {
+            background: #45a049;
+        }
+        .correct-answer {
+            background: #c8e6c9 !important;
+            border-color: #4caf50 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Ana Sayfaya Dön</a>
+        
+        <div class="header">
+            <h1>💭 Limbik Sistem</h1>
+            <h2>Çoktan Seçmeli Sorular</h2>
+            <p><em>Her sorudan sonra "Çözümü Göster" butonuna tıklayarak detaylı açıklamayı görebilirsiniz.</em></p>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 1:</div>
+            <div class="question-text">Amigdala'nın temel işlevi aşağıdakilerden hangisidir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Motor kontrol</li>
+                <li onclick="selectOption(this, true)">B) Korku ve duygusal işleme</li>
+                <li onclick="selectOption(this, false)">C) Görsel algı</li>
+                <li onclick="selectOption(this, false)">D) Dil üretimi</li>
+                <li onclick="selectOption(this, false)">E) Denge kontrolü</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol1')">Çözümü Göster</button>
+            <div id="sol1" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Korku ve duygusal işleme</div>
+                <p><strong>Açıklama:</strong> Amigdala, özellikle korku olmak üzere duygusal tepkilerin işlenmesi ve düzenlenmesinde kritik rol oynar. Tehdit algısı, korku koşullanması, duygusal hafıza oluşumu ve otonom sinir sistemi tepkilerinin başlatılmasında merkezi öneme sahiptir. Ayrıca ödül işleme ve sosyal davranışlarda da rol oynar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 2:</div>
+            <div class="question-text">Hipokampusun bilateral hasarı sonucu ortaya çıkan durum hangisidir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Retrograd amnezi</li>
+                <li onclick="selectOption(this, true)">B) Anterograd amnezi</li>
+                <li onclick="selectOption(this, false)">C) Prosopagnozi</li>
+                <li onclick="selectOption(this, false)">D) Afazi</li>
+                <li onclick="selectOption(this, false)">E) Apraksi</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol2')">Çözümü Göster</button>
+            <div id="sol2" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Anterograd amnezi</div>
+                <p><strong>Açıklama:</strong> Hipokampusun bilateral hasarı, yeni anıların oluşturulamaması anlamına gelen anterograd amneziye yol açar. Ünlü hasta H.M. (Henry Molaison) bunun klasik örneğidir. Eski anılar (özellikle uzak geçmiş) genellikle korunur, ancak yeni bilgiler uzun süreli hafızaya aktarılamaz.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 3:</div>
+            <div class="question-text">Papez devresi hangi işlevle ilişkilidir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Motor koordinasyon</li>
+                <li onclick="selectOption(this, false)">B) Görsel işleme</li>
+                <li onclick="selectOption(this, true)">C) Duygusal deneyim ve hafıza</li>
+                <li onclick="selectOption(this, false)">D) İşitsel algı</li>
+                <li onclick="selectOption(this, false)">E) Tat alma</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol3')">Çözümü Göster</button>
+            <div id="sol3" class="solution">
+                <div class="solution-title">Doğru Cevap: C) Duygusal deneyim ve hafıza</div>
+                <p><strong>Açıklama:</strong> Papez devresi, hipokampus → forniks → mamiller cisimler → anterior talamus → singulat girus → entorinal korteks → hipokampus şeklinde bir halka oluşturur. Bu devre duygusal deneyimlerin işlenmesi ve hafıza oluşumunda kritik rol oynar. Özellikle duygusal olayların hafızaya kodlanmasında önemlidir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 4:</div>
+            <div class="question-text">Hipotalamus hangi sistemi kontrol etmez?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Endokrin sistem</li>
+                <li onclick="selectOption(this, false)">B) Otonom sinir sistemi</li>
+                <li onclick="selectOption(this, true)">C) Somatik motor sistem</li>
+                <li onclick="selectOption(this, false)">D) Sirkadiyen ritimler</li>
+                <li onclick="selectOption(this, false)">E) Vücut sıcaklığı</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol4')">Çözümü Göster</button>
+            <div id="sol4" class="solution">
+                <div class="solution-title">Doğru Cevap: C) Somatik motor sistem</div>
+                <p><strong>Açıklama:</strong> Hipotalamus homeostaz merkezi olarak endokrin sistem (hipofiz yoluyla), otonom sinir sistemi, sirkadiyen ritimler, vücut sıcaklığı, açlık-tokluk, susuzluk ve cinsel davranışları düzenler. Ancak istemli kas hareketlerini kontrol eden somatik motor sistem, motor korteks ve ilgili yapılar tarafından yönetilir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 5:</div>
+            <div class="question-text">Klüver-Bucy sendromu hangi yapının bilateral hasarı sonucu oluşur?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Hipokampus</li>
+                <li onclick="selectOption(this, true)">B) Amigdala ve temporal lob</li>
+                <li onclick="selectOption(this, false)">C) Hipotalamus</li>
+                <li onclick="selectOption(this, false)">D) Singulat girus</li>
+                <li onclick="selectOption(this, false)">E) Septal çekirdekler</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol5')">Çözümü Göster</button>
+            <div id="sol5" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Amigdala ve temporal lob</div>
+                <p><strong>Açıklama:</strong> Klüver-Bucy sendromu, bilateral amigdala ve anterior temporal lob hasarı sonucu gelişir. Belirtileri arasında görsel agnozi, hiperoralite (her şeyi ağza götürme), hiperseksüalite, sakinlik (korku kaybı), ve yeme davranışında değişiklikler bulunur. Bu sendrom amigdalanın duygusal değerlendirmedeki rolünü gösterir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 6:</div>
+            <div class="question-text">Singulat girus'un anterior bölümü hangi işlevlerle ilişkilidir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Görsel algı</li>
+                <li onclick="selectOption(this, true)">B) Ağrı algısı, empati ve çatışma izleme</li>
+                <li onclick="selectOption(this, false)">C) İşitsel işleme</li>
+                <li onclick="selectOption(this, false)">D) Motor planlama</li>
+                <li onclick="selectOption(this, false)">E) Tat alma</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol6')">Çözümü Göster</button>
+            <div id="sol6" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Ağrı algısı, empati ve çatışma izleme</div>
+                <p><strong>Açıklama:</strong> Anterior singulat korteks (ACC) ağrının duygusal bileşeni, empati, sosyal ağrı (reddedilme), bilişsel çatışma izleme ve hata tespiti gibi işlevlerde kritik rol oynar. Depresyon ve anksiyete bozukluklarında da aktivite değişiklikleri gösterir. Singulotomi ameliyatı şiddetli ağrı ve OKB tedavisinde kullanılabilir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 7:</div>
+            <div class="question-text">Orbitofrontal korteks hasarı sonucu görülen değişiklik hangisidir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Hafıza kaybı</li>
+                <li onclick="selectOption(this, false)">B) Görme kaybı</li>
+                <li onclick="selectOption(this, true)">C) Kişilik değişikliği ve dürtü kontrolü kaybı</li>
+                <li onclick="selectOption(this, false)">D) Konuşma bozukluğu</li>
+                <li onclick="selectOption(this, false)">E) Hareket bozukluğu</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol7')">Çözümü Göster</button>
+            <div id="sol7" class="solution">
+                <div class="solution-title">Doğru Cevap: C) Kişilik değişikliği ve dürtü kontrolü kaybı</div>
+                <p><strong>Açıklama:</strong> Orbitofrontal korteks hasarı, sosyal olarak uygunsuz davranışlar, dürtü kontrolü kaybı, empati eksikliği ve karar verme bozukluklarına yol açar. Ünlü Phineas Gage vakası bunun klasik örneğidir. Hastalar sonuçları değerlendirmekte güçlük çeker ve riskli davranışlar sergileyebilir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 8:</div>
+            <div class="question-text">Mesolimbik dopamin yolu hangi yapılar arasında uzanır?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Substantia nigra → Striatum</li>
+                <li onclick="selectOption(this, true)">B) Ventral tegmental alan → Nukleus akkumbens</li>
+                <li onclick="selectOption(this, false)">C) Hipotalamus → Hipofiz</li>
+                <li onclick="selectOption(this, false)">D) Talamus → Korteks</li>
+                <li onclick="selectOption(this, false)">E) Amigdala → Hipokampus</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol8')">Çözümü Göster</button>
+            <div id="sol8" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Ventral tegmental alan → Nukleus akkumbens</div>
+                <p><strong>Açıklama:</strong> Mesolimbik dopamin yolu (ödül yolu) ventral tegmental alandan (VTA) başlar ve nukleus akkumbens başta olmak üzere limbik yapılara projeksiyon yapar. Bu yol ödül, motivasyon ve bağımlılıkta kritik rol oynar. Tüm bağımlılık yapıcı maddeler bu yolu doğrudan veya dolaylı olarak etkiler.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 9:</div>
+            <div class="question-text">HPA (Hipotalamus-Hipofiz-Adrenal) ekseni stres yanıtında hangi hormonu salgılar?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) İnsülin</li>
+                <li onclick="selectOption(this, false)">B) Tiroksin</li>
+                <li onclick="selectOption(this, true)">C) Kortizol</li>
+                <li onclick="selectOption(this, false)">D) Melatonin</li>
+                <li onclick="selectOption(this, false)">E) Oksitosin</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol9')">Çözümü Göster</button>
+            <div id="sol9" class="solution">
+                <div class="solution-title">Doğru Cevap: C) Kortizol</div>
+                <p><strong>Açıklama:</strong> Stres durumunda hipotalamus CRH (kortikotropin salgılatıcı hormon) salgılar, bu hipofizden ACTH (adrenokortikotropik hormon) salınımını uyarır, ACTH da adrenal korteksten kortizol salınımına yol açar. Kortizol, stres hormonu olarak enerji mobilizasyonu sağlar ancak kronik yüksekliği hipokampal hasar ve depresyonla ilişkilidir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 10:</div>
+            <div class="question-text">Limbik sistem ile ilgili aşağıdaki ifadelerden hangisi yanlıştır?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Evrimsel olarak eski beyin yapılarını içerir</li>
+                <li onclick="selectOption(this, false)">B) Duygular ve hafıza ile ilişkilidir</li>
+                <li onclick="selectOption(this, true)">C) Sadece negatif duygularla ilgilenir</li>
+                <li onclick="selectOption(this, false)">D) Otonom sinir sistemi ile yakın bağlantıları vardır</li>
+                <li onclick="selectOption(this, false)">E) Homeostaz düzenlenmesinde rol oynar</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol10')">Çözümü Göster</button>
+            <div id="sol10" class="solution">
+                <div class="solution-title">Doğru Cevap: C) Sadece negatif duygularla ilgilenir</div>
+                <p><strong>Açıklama:</strong> Limbik sistem hem pozitif (zevk, ödül, bağlanma) hem de negatif (korku, öfke, üzüntü) duygularla ilgilenir. Örneğin, nukleus akkumbens ve VTA ödül ve zevk ile ilişkiliyken, amigdala korku işleme yanında pozitif duygusal değerlendirmede de rol oynar. Limbik sistem duygusal deneyimin tüm spektrumunu kapsar.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function selectOption(element, isCorrect) {
+            // Remove previous selections in this question
+            const options = element.parentElement.children;
+            for (let option of options) {
+                option.classList.remove('correct-answer');
+                option.style.background = '';
+                option.style.borderColor = '';
+            }
+            
+            // Highlight selected option
+            if (isCorrect) {
+                element.classList.add('correct-answer');
+            } else {
+                element.style.background = '#ffebee';
+                element.style.borderColor = '#f44336';
+            }
+        }
+
+        function toggleSolution(solutionId) {
+            const solution = document.getElementById(solutionId);
+            if (solution.style.display === 'none' || solution.style.display === '') {
+                solution.style.display = 'block';
+            } else {
+                solution.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

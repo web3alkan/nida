@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nörotransmitter Sistemler - Klasik Sorular</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .back-link:hover {
+            background: #5a67d8;
+        }
+        .question {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-left: 5px solid #388e3c;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #388e3c;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .question-text {
+            margin: 15px 0;
+            font-size: 1.1em;
+            font-weight: 500;
+            color: #333;
+        }
+        .essay-area {
+            width: 100%;
+            min-height: 150px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 1em;
+            font-family: Arial, sans-serif;
+            resize: vertical;
+            margin-top: 10px;
+        }
+        .essay-area:focus {
+            border-color: #388e3c;
+            outline: none;
+            box-shadow: 0 0 5px rgba(56, 142, 60, 0.3);
+        }
+        .solution {
+            background: #e8f5e8;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 15px;
+            border-left: 5px solid #4caf50;
+            display: none;
+        }
+        .solution-title {
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        .solution-content {
+            line-height: 1.8;
+        }
+        .solution h4 {
+            color: #2e7d32;
+            margin-top: 15px;
+            margin-bottom: 8px;
+        }
+        .solution ul {
+            margin-left: 20px;
+        }
+        .solution li {
+            margin-bottom: 5px;
+        }
+        .show-solution {
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-size: 1em;
+        }
+        .show-solution:hover {
+            background: #45a049;
+        }
+        .difficulty-indicator {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .easy { background: #c8e6c9; color: #2e7d32; }
+        .medium { background: #fff3e0; color: #ef6c00; }
+        .hard { background: #ffcdd2; color: #d32f2f; }
+        .word-count {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+        .tips {
+            background: #e3f2fd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 25px;
+            border-left: 5px solid #2196f3;
+        }
+        .tips-title {
+            font-weight: bold;
+            color: #1976d2;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Ana Sayfaya Dön</a>
+        
+        <div class="header">
+            <h1>⚡ Nörotransmitter Sistemler</h1>
+            <h2>Klasik Sorular (Uzun Cevaplı)</h2>
+        </div>
+
+        <div class="tips">
+            <div class="tips-title">💡 Cevaplama İpuçları:</div>
+            <ul>
+                <li>Synthesis, release, ve degradation süreçlerini detaylandırın</li>
+                <li>Receptor subtype'ları ve işlevlerini açıklayın</li>
+                <li>Psychiatric disorders ile ilişkilendirin</li>
+                <li>Pharmacological interventions'ı belirtin</li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <div class="difficulty-indicator easy">Kolay</div>
+            <div class="question-number">Soru 1:</div>
+            <div class="question-text">
+                Dopamin sisteminin anatomisi, işlevleri ve davranış üzerindeki etkilerini açıklayınız. Parkinson ve şizofreni ile ilişkisini değerlendiriniz.
+            </div>
+            <textarea class="essay-area" placeholder="Cevabınızı buraya yazın..." onkeyup="updateWordCount(this)"></textarea>
+            <div class="word-count">Kelime sayısı: 0 (Tavsiye edilen: 300-400 kelime)</div>
+            <button class="show-solution" onclick="toggleSolution('sol1')">Örnek Cevabı Göster</button>
+            <div id="sol1" class="solution">
+                <div class="solution-title">Örnek Cevap ve Değerlendirme Kriterleri:</div>
+                <div class="solution-content">
+                    <h4>Dopamin Anatomi:</h4>
+                    <ul>
+                        <li><strong>Substantia nigra pars compacta (SNc):</strong> Nigrostriatal pathway → Motor control</li>
+                        <li><strong>Ventral tegmental area (VTA):</strong> Mesolimbic/mesocortical → Reward, cognition</li>
+                        <li><strong>Arcuate nucleus:</strong> Tuberoinfundibular → Prolactin inhibition</li>
+                    </ul>
+
+                    <h4>Dopamin İşlevleri:</h4>
+                    <ul>
+                        <li><strong>Motor control:</strong> Movement initiation, coordination</li>
+                        <li><strong>Reward processing:</strong> Prediction error, motivation</li>
+                        <li><strong>Executive functions:</strong> Working memory, attention</li>
+                        <li><strong>Hormonal regulation:</strong> Prolactin suppression</li>
+                    </ul>
+
+                    <h4>Parkinson Hastalığı:</h4>
+                    <ul>
+                        <li><strong>Neuropathology:</strong> SNc dopamine neuron loss</li>
+                        <li><strong>Motor symptoms:</strong> Bradykinesia, rigidity, tremor</li>
+                        <li><strong>Treatment:</strong> L-DOPA, dopamine agonists</li>
+                    </ul>
+
+                    <h4>Şizofreni:</h4>
+                    <ul>
+                        <li><strong>Dopamine hypothesis:</strong> Hyperactivity in mesolimbic</li>
+                        <li><strong>Positive symptoms:</strong> Hallucinations, delusions</li>
+                        <li><strong>Treatment:</strong> D2 receptor antagonists</li>
+                    </ul>
+
+                    <h4>Değerlendirme:</h4>
+                    <p><strong>Mükemmel:</strong> Detaylı anatomi, pathway'ler, hastalık ilişkisi</p>
+                    <p><strong>İyi:</strong> Ana dopamin sistem, temel hastalık bilgisi</p>
+                    <p><strong>Orta:</strong> Dopamin bilgisi var, hastalık superficial</p>
+                    <p><strong>Zayıf:</strong> Dopamin kavramı eksik</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="difficulty-indicator medium">Orta</div>
+            <div class="question-number">Soru 2:</div>
+            <div class="question-text">
+                Serotonin sisteminin sentezi, dağılımı ve işlevlerini analiz ediniz. Depresyon ve anxiyete bozukluklarındaki rolünü ve SSRI'ların etki mekanizmasını açıklayınız.
+            </div>
+            <textarea class="essay-area" placeholder="Cevabınızı buraya yazın..." onkeyup="updateWordCount(this)"></textarea>
+            <div class="word-count">Kelime sayısı: 0 (Tavsiye edilen: 400-500 kelime)</div>
+            <button class="show-solution" onclick="toggleSolution('sol2')">Örnek Cevabı Göster</button>
+            <div id="sol2" class="solution">
+                <div class="solution-title">Örnek Cevap ve Değerlendirme Kriterleri:</div>
+                <div class="solution-content">
+                    <h4>Serotonin Sentezi:</h4>
+                    <ul>
+                        <li><strong>Tryptophan → 5-HTP:</strong> Tryptophan hydroxylase</li>
+                        <li><strong>5-HTP → 5-HT:</strong> Aromatic L-amino acid decarboxylase</li>
+                        <li><strong>Degradation:</strong> MAO-A → 5-HIAA</li>
+                    </ul>
+
+                    <h4>Serotonin Anatomisi:</h4>
+                    <ul>
+                        <li><strong>Raphe nuclei:</strong> Dorsal (DRN), median (MRN)</li>
+                        <li><strong>Projections:</strong>
+                            <ul>
+                                <li>Forebrain: Limbic system, cortex</li>
+                                <li>Brainstem: Autonomic control</li>
+                                <li>Spinal cord: Pain modulation</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Serotonin İşlevleri:</h4>
+                    <ul>
+                        <li><strong>Mood regulation:</strong> Emotional balance</li>
+                        <li><strong>Sleep-wake cycle:</strong> Circadian rhythm</li>
+                        <li><strong>Appetite control:</strong> Satiety signals</li>
+                        <li><strong>Pain modulation:</strong> Descending inhibition</li>
+                    </ul>
+
+                    <h4>Depression ve Anxiety:</h4>
+                    <ul>
+                        <li><strong>Serotonin hypothesis:</strong> Decreased 5-HT function</li>
+                        <li><strong>Symptoms:</strong> Mood, sleep, appetite changes</li>
+                        <li><strong>Genetic factors:</strong> 5-HTTLPR polymorphism</li>
+                    </ul>
+
+                    <h4>SSRI Mechanism:</h4>
+                    <ul>
+                        <li><strong>Target:</strong> Serotonin transporter (SERT) blockade</li>
+                        <li><strong>Acute effect:</strong> Increased synaptic 5-HT</li>
+                        <li><strong>Therapeutic delay:</strong> Receptor adaptation, neuroplasticity</li>
+                        <li><strong>Examples:</strong> Fluoxetine, sertraline, paroxetine</li>
+                    </ul>
+
+                    <h4>Değerlendirme:</h4>
+                    <p><strong>Mükemmel:</strong> Detaylı biochemistry, anatomi, SSRI mechanism</p>
+                    <p><strong>İyi:</strong> Serotonin sistem, depression link, SSRI temel</p>
+                    <p><strong>Orta:</strong> Serotonin bilgisi, yüzeysel depression</p>
+                    <p><strong>Zayıf:</strong> Kavramsal eksiklik, mechanism belirsiz</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional questions would continue... -->
+
+    </div>
+
+    <script>
+        function updateWordCount(textarea) {
+            const words = textarea.value.trim().split(/\s+/).filter(word => word.length > 0);
+            const wordCount = words.length;
+            const wordCountElement = textarea.nextElementSibling;
+            wordCountElement.textContent = `Kelime sayısı: ${wordCount} (Tavsiye edilen: ${wordCountElement.textContent.match(/\d+-\d+/)[0]} kelime)`;
+        }
+
+        function toggleSolution(solutionId) {
+            const solution = document.getElementById(solutionId);
+            if (solution.style.display === 'none' || solution.style.display === '') {
+                solution.style.display = 'block';
+            } else {
+                solution.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

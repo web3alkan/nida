@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genetik ve Davranış - Çoktan Seçmeli Sorular</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .back-link:hover {
+            background: #5a67d8;
+        }
+        .question {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 5px solid #667eea;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.1em;
+        }
+        .question-text {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+        .options {
+            list-style: none;
+            padding: 0;
+        }
+        .options li {
+            padding: 8px 15px;
+            margin: 5px 0;
+            background: #fff;
+            border-radius: 5px;
+            border: 2px solid #e9ecef;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .options li:hover {
+            background: #e3f2fd;
+            border-color: #2196f3;
+        }
+        .solution {
+            background: #e8f5e8;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            border-left: 5px solid #4caf50;
+            display: none;
+        }
+        .solution-title {
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+        .show-solution {
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .show-solution:hover {
+            background: #45a049;
+        }
+        .correct-answer {
+            background: #c8e6c9 !important;
+            border-color: #4caf50 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Ana Sayfaya Dön</a>
+        
+        <div class="header">
+            <h1>🧬 Genetik ve Davranış</h1>
+            <h2>Çoktan Seçmeli Sorular</h2>
+            <p><em>Her sorudan sonra "Çözümü Göster" butonuna tıklayarak detaylı açıklamayı görebilirsiniz.</em></p>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 1:</div>
+            <div class="question-text">Kalıtımsal davranış özellikleri ile ilgili aşağıdakilerden hangisi doğrudur?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Tüm davranışlar tek bir gen tarafından belirlenir</li>
+                <li onclick="selectOption(this, true)">B) Çoğu davranış özelliği poligenik kalıtım gösterir</li>
+                <li onclick="selectOption(this, false)">C) Davranışlar sadece çevreden etkilenir</li>
+                <li onclick="selectOption(this, false)">D) Genetik faktörler davranışı etkilemez</li>
+                <li onclick="selectOption(this, false)">E) Davranışsal özellikler Mendel kalıtımı gösterir</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol1')">Çözümü Göster</button>
+            <div id="sol1" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Çoğu davranış özelliği poligenik kalıtım gösterir</div>
+                <p><strong>Açıklama:</strong> Davranışsal özellikler genellikle birçok genin küçük etkilerinin birleşimi sonucu ortaya çıkar (poligenik kalıtım). Zeka, kişilik özellikleri, psikiyatrik bozukluklar gibi karmaşık davranışlar, yüzlerce hatta binlerce genin ve çevresel faktörlerin etkileşimi sonucu şekillenir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 2:</div>
+            <div class="question-text">İkiz çalışmaları davranış genetiği araştırmalarında neden önemlidir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) İkizler her zaman aynı davranışları gösterir</li>
+                <li onclick="selectOption(this, true)">B) Genetik ve çevresel etkileri ayırt etmeye yardımcı olur</li>
+                <li onclick="selectOption(this, false)">C) Sadece tek yumurta ikizleri incelenir</li>
+                <li onclick="selectOption(this, false)">D) İkizlerde genetik farklılık yoktur</li>
+                <li onclick="selectOption(this, false)">E) Çevresel faktörleri tamamen dışlar</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol2')">Çözümü Göster</button>
+            <div id="sol2" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Genetik ve çevresel etkileri ayırt etmeye yardımcı olur</div>
+                <p><strong>Açıklama:</strong> İkiz çalışmaları, tek yumurta ikizlerinin (genetik olarak %100 aynı) ve çift yumurta ikizlerinin (genetik olarak %50 benzer) karşılaştırılması yoluyla, belirli bir özellikte genetik ve çevresel faktörlerin göreceli katkılarını belirlemeye yardımcı olur. Kalıtımsal katsayı (heritability) bu şekilde hesaplanır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 3:</div>
+            <div class="question-text">Dopamin reseptör D4 (DRD4) genindeki varyasyonlar hangi davranışsal özellikle ilişkilendirilmiştir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Uyku düzeni</li>
+                <li onclick="selectOption(this, false)">B) Görsel algı</li>
+                <li onclick="selectOption(this, true)">C) Yenilik arama ve DEHB</li>
+                <li onclick="selectOption(this, false)">D) Dil gelişimi</li>
+                <li onclick="selectOption(this, false)">E) Motor koordinasyon</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol3')">Çözümü Göster</button>
+            <div id="sol3" class="solution">
+                <div class="solution-title">Doğru Cevap: C) Yenilik arama ve DEHB</div>
+                <p><strong>Açıklama:</strong> DRD4 genindeki belirli varyantlar (özellikle 7-tekrar aleli) yenilik arama davranışı, risk alma eğilimi ve dikkat eksikliği hiperaktivite bozukluğu (DEHB) ile ilişkilendirilmiştir. Bu varyantlar dopamin sinyallemesini etkileyerek ödül işleme ve dürtü kontrolünde değişikliklere yol açabilir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 4:</div>
+            <div class="question-text">Serotonin taşıyıcı gen (5-HTT) polimorfizmi hangi durumla ilişkilidir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Boy uzunluğu</li>
+                <li onclick="selectOption(this, true)">B) Strese karşı duyarlılık ve depresyon riski</li>
+                <li onclick="selectOption(this, false)">C) Göz rengi</li>
+                <li onclick="selectOption(this, false)">D) Kan grubu</li>
+                <li onclick="selectOption(this, false)">E) Saç dökülmesi</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol4')">Çözümü Göster</button>
+            <div id="sol4" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Strese karşı duyarlılık ve depresyon riski</div>
+                <p><strong>Açıklama:</strong> 5-HTT genindeki kısa (S) alel, uzun (L) alele göre daha az serotonin taşıyıcı üretimine yol açar. S aleli taşıyan bireyler, stresli yaşam olaylarına maruz kaldıklarında depresyon geliştirme riskinin daha yüksek olduğu gösterilmiştir. Bu, gen-çevre etkileşiminin klasik bir örneğidir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 5:</div>
+            <div class="question-text">Fenilketonüri (PKU) hastalığı genetik-çevre etkileşimini nasıl gösterir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Tedavisi yoktur</li>
+                <li onclick="selectOption(this, true)">B) Genetik bir hastalık olmasına rağmen diyet ile kontrol edilebilir</li>
+                <li onclick="selectOption(this, false)">C) Sadece çevresel faktörlerden kaynaklanır</li>
+                <li onclick="selectOption(this, false)">D) Kalıtımsal değildir</li>
+                <li onclick="selectOption(this, false)">E) Beyin gelişimini etkilemez</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol5')">Çözümü Göster</button>
+            <div id="sol5" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Genetik bir hastalık olmasına rağmen diyet ile kontrol edilebilir</div>
+                <p><strong>Açıklama:</strong> PKU, fenilalanin hidroksilaz enzimindeki genetik defekt sonucu oluşur. Tedavi edilmezse zihinsel gerilik gelişir. Ancak erken tanı ve fenilalaninden fakir diyet ile normal zeka gelişimi sağlanabilir. Bu, genetik yatkınlığın çevresel müdahale ile değiştirilebileceğinin mükemmel bir örneğidir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 6:</div>
+            <div class="question-text">COMT (katekol-O-metiltransferaz) gen varyasyonları hangi bilişsel işlevle ilişkilidir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) İşitme duyusu</li>
+                <li onclick="selectOption(this, false)">B) Tat alma</li>
+                <li onclick="selectOption(this, true)">C) Çalışma belleği ve yürütücü işlevler</li>
+                <li onclick="selectOption(this, false)">D) Refleks hareketler</li>
+                <li onclick="selectOption(this, false)">E) Uyku döngüsü</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol6')">Çözümü Göster</button>
+            <div id="sol6" class="solution">
+                <div class="solution-title">Doğru Cevap: C) Çalışma belleği ve yürütücü işlevler</div>
+                <p><strong>Açıklama:</strong> COMT enzimi, prefrontal kortekste dopamini parçalar. Val158Met polimorfizminde, Met aleli taşıyanlar daha yavaş dopamin parçalanması nedeniyle daha iyi çalışma belleği performansı gösterirken, Val aleli taşıyanlar daha hızlı dopamin parçalanması nedeniyle stres altında daha iyi performans gösterebilir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 7:</div>
+            <div class="question-text">Genom boyu ilişkilendirme çalışmaları (GWAS) ile ilgili aşağıdakilerden hangisi doğrudur?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Tek bir genin etkisini inceler</li>
+                <li onclick="selectOption(this, false)">B) Sadece nadir hastalıkları araştırır</li>
+                <li onclick="selectOption(this, true)">C) Tüm genomda hastalık veya özelliklerle ilişkili varyantları tarar</li>
+                <li onclick="selectOption(this, false)">D) Çevresel faktörleri değerlendirir</li>
+                <li onclick="selectOption(this, false)">E) Sadece kodlayan bölgeleri inceler</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol7')">Çözümü Göster</button>
+            <div id="sol7" class="solution">
+                <div class="solution-title">Doğru Cevap: C) Tüm genomda hastalık veya özelliklerle ilişkili varyantları tarar</div>
+                <p><strong>Açıklama:</strong> GWAS, binlerce bireyin genomlarını tarayarak belirli hastalıklar veya özelliklerle ilişkili genetik varyantları (SNP'ler) belirler. Bu yöntem şizofreni, bipolar bozukluk, otizm gibi karmaşık psikiyatrik hastalıklarda yüzlerce risk geninin keşfedilmesini sağlamıştır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 8:</div>
+            <div class="question-text">MAO-A (monoamin oksidaz A) genindeki düşük aktivite varyantı ve erken dönem travma birlikteliği neyle ilişkilidir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Yüksek zeka</li>
+                <li onclick="selectOption(this, true)">B) Antisosyal davranış riski</li>
+                <li onclick="selectOption(this, false)">C) Müzikal yetenek</li>
+                <li onclick="selectOption(this, false)">D) Atletik performans</li>
+                <li onclick="selectOption(this, false)">E) Uyku bozuklukları</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol8')">Çözümü Göster</button>
+            <div id="sol8" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Antisosyal davranış riski</div>
+                <p><strong>Açıklama:</strong> MAO-A geninin düşük aktivite varyantını taşıyan erkekler, çocuklukta istismar veya ihmal yaşadıklarında antisosyal davranış geliştirme riski yüksektir. İstismar yaşamayan düşük MAO-A taşıyıcıları normal davranış gösterir. Bu, gen-çevre etkileşiminin davranışsal sonuçları nasıl şekillendirdiğinin önemli bir örneğidir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 9:</div>
+            <div class="question-text">Optogenetik tekniği davranış genetiği araştırmalarında nasıl kullanılır?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) DNA dizilimini değiştirir</li>
+                <li onclick="selectOption(this, true)">B) Işıkla belirli nöron gruplarını kontrol eder</li>
+                <li onclick="selectOption(this, false)">C) Genetik hastalıkları tedavi eder</li>
+                <li onclick="selectOption(this, false)">D) Protein sentezini durdurur</li>
+                <li onclick="selectOption(this, false)">E) Kromozom sayısını artırır</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol9')">Çözümü Göster</button>
+            <div id="sol9" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Işıkla belirli nöron gruplarını kontrol eder</div>
+                <p><strong>Açıklama:</strong> Optogenetik, ışığa duyarlı iyon kanallarını (opsins) belirli nöron tiplerine eksprese ettirerek, bu nöronların aktivitesini milisaniye hassasiyetiyle kontrol etmeyi sağlar. Bu teknik, belirli nöron gruplarının davranışsal çıktılardaki rolünü anlamak için güçlü bir araçtır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 10:</div>
+            <div class="question-text">Davranışsal özelliklerde kalıtımsal katsayı (heritability) neyi gösterir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Bir özelliğin anne veya babadan geçme olasılığı</li>
+                <li onclick="selectOption(this, true)">B) Popülasyondaki varyansın genetik faktörlerden kaynaklanan oranı</li>
+                <li onclick="selectOption(this, false)">C) Bir genin mutasyon oranı</li>
+                <li onclick="selectOption(this, false)">D) DNA'nın kalıtılma şekli</li>
+                <li onclick="selectOption(this, false)">E) Çevresel faktörlerin toplam etkisi</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol10')">Çözümü Göster</button>
+            <div id="sol10" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Popülasyondaki varyansın genetik faktörlerden kaynaklanan oranı</div>
+                <p><strong>Açıklama:</strong> Kalıtımsal katsayı (h²), belirli bir popülasyonda, bir özellikteki toplam varyansın ne kadarının genetik farklılıklardan kaynaklandığını gösterir. Örneğin, zeka için h²=0.5 ise, popülasyondaki zeka farklılıklarının %50'si genetik faktörlerden kaynaklanır. Bu değer popülasyona ve çevreye göre değişebilir.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function selectOption(element, isCorrect) {
+            // Remove previous selections in this question
+            const options = element.parentElement.children;
+            for (let option of options) {
+                option.classList.remove('correct-answer');
+                option.style.background = '';
+                option.style.borderColor = '';
+            }
+            
+            // Highlight selected option
+            if (isCorrect) {
+                element.classList.add('correct-answer');
+            } else {
+                element.style.background = '#ffebee';
+                element.style.borderColor = '#f44336';
+            }
+        }
+
+        function toggleSolution(solutionId) {
+            const solution = document.getElementById(solutionId);
+            if (solution.style.display === 'none' || solution.style.display === '') {
+                solution.style.display = 'block';
+            } else {
+                solution.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

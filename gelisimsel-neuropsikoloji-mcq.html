@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gelişimsel Nöropsikoloji - Çoktan Seçmeli Sorular</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .back-link:hover {
+            background: #5a67d8;
+        }
+        .question {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 5px solid #667eea;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.1em;
+        }
+        .question-text {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+        .options {
+            list-style: none;
+            padding: 0;
+        }
+        .options li {
+            padding: 8px 15px;
+            margin: 5px 0;
+            background: #fff;
+            border-radius: 5px;
+            border: 2px solid #e9ecef;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .options li:hover {
+            background: #e3f2fd;
+            border-color: #2196f3;
+        }
+        .solution {
+            background: #e8f5e8;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            border-left: 5px solid #4caf50;
+            display: none;
+        }
+        .solution-title {
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+        .show-solution {
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .show-solution:hover {
+            background: #45a049;
+        }
+        .correct-answer {
+            background: #c8e6c9 !important;
+            border-color: #4caf50 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Ana Sayfaya Dön</a>
+        
+        <div class="header">
+            <h1>👶 Gelişimsel Nöropsikoloji</h1>
+            <h2>Çoktan Seçmeli Sorular</h2>
+            <p><em>Her sorudan sonra "Çözümü Göster" butonuna tıklayarak detaylı açıklamayı görebilirsiniz.</em></p>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 1:</div>
+            <div class="question-text">Nöral tüp oluşumu (nörülasyon) gebeliğin hangi döneminde gerçekleşir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) 1-2. hafta</li>
+                <li onclick="selectOption(this, true)">B) 3-4. hafta</li>
+                <li onclick="selectOption(this, false)">C) 5-6. hafta</li>
+                <li onclick="selectOption(this, false)">D) 7-8. hafta</li>
+                <li onclick="selectOption(this, false)">E) 9-10. hafta</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol1')">Çözümü Göster</button>
+            <div id="sol1" class="solution">
+                <div class="solution-title">Doğru Cevap: B) 3-4. hafta</div>
+                <p><strong>Açıklama:</strong> Nöral tüp oluşumu (nörülasyon) gebeliğin 3-4. haftasında gerçekleşir. Bu süreçte ektoderm tabakasının bir kısmı kalınlaşarak nöral plak oluşturur, sonra kıvrılarak nöral tüpü meydana getirir. Bu yapı ileride beyin ve omurilik haline gelecektir. Folik asit eksikliği bu dönemde spina bifida gibi nöral tüp defektlerine yol açabilir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 2:</div>
+            <div class="question-text">Sinaptogenez (sinaps oluşumu) en yoğun olarak hangi dönemde gerçekleşir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Prenatal dönemin ilk trimesteri</li>
+                <li onclick="selectOption(this, false)">B) Prenatal dönemin son trimesteri</li>
+                <li onclick="selectOption(this, true)">C) Doğumdan sonraki ilk 2 yıl</li>
+                <li onclick="selectOption(this, false)">D) 3-5 yaş arası</li>
+                <li onclick="selectOption(this, false)">E) Ergenlik dönemi</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol2')">Çözümü Göster</button>
+            <div id="sol2" class="solution">
+                <div class="solution-title">Doğru Cevap: C) Doğumdan sonraki ilk 2 yıl</div>
+                <p><strong>Açıklama:</strong> Sinaptogenez prenatal dönemin son aylarında başlasa da, en yoğun olarak doğumdan sonraki ilk 2 yılda gerçekleşir. Bu dönemde saniyede yaklaşık 1.8 milyon yeni sinaps oluşur. 2 yaşındaki bir çocuğun beyni yetişkin beyninden daha fazla sinaps içerir. Sonrasında sinaptik budama süreci ile kullanılmayan bağlantılar elimine edilir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 3:</div>
+            <div class="question-text">Kritik dönem kavramı ile ilgili aşağıdakilerden hangisi yanlıştır?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Belirli becerilerin gelişimi için optimal zaman aralıklarıdır</li>
+                <li onclick="selectOption(this, false)">B) Bu dönemde beyin belirli uyaranlara karşı özellikle duyarlıdır</li>
+                <li onclick="selectOption(this, true)">C) Kritik dönem geçtikten sonra öğrenme tamamen imkansızdır</li>
+                <li onclick="selectOption(this, false)">D) Dil gelişimi için kritik dönem vardır</li>
+                <li onclick="selectOption(this, false)">E) Görme gelişimi için kritik dönem erken çocukluk dönemindedir</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol3')">Çözümü Göster</button>
+            <div id="sol3" class="solution">
+                <div class="solution-title">Doğru Cevap: C) Kritik dönem geçtikten sonra öğrenme tamamen imkansızdır</div>
+                <p><strong>Açıklama:</strong> Kritik dönem geçtikten sonra öğrenme tamamen imkansız değildir, ancak çok daha zor hale gelir. Bu nedenle günümüzde "kritik dönem" yerine "hassas dönem" terimi tercih edilmektedir. Örneğin, ergenlik sonrası yeni bir dil öğrenmek mümkündür ancak ana dil gibi akıcı konuşmak genellikle daha zordur.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 4:</div>
+            <div class="question-text">Miyelinizasyon süreci ile ilgili aşağıdaki ifadelerden hangisi doğrudur?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Doğumda tamamlanır</li>
+                <li onclick="selectOption(this, false)">B) Sadece prenatal dönemde gerçekleşir</li>
+                <li onclick="selectOption(this, false)">C) Tüm beyin bölgelerinde aynı anda gerçekleşir</li>
+                <li onclick="selectOption(this, true)">D) Yirmili yaşlara kadar devam edebilir</li>
+                <li onclick="selectOption(this, false)">E) Sadece motor alanlarda görülür</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol4')">Çözümü Göster</button>
+            <div id="sol4" class="solution">
+                <div class="solution-title">Doğru Cevap: D) Yirmili yaşlara kadar devam edebilir</div>
+                <p><strong>Açıklama:</strong> Miyelinizasyon süreci prenatal dönemde başlar ancak yirmili yaşların ortalarına kadar devam eder. Özellikle prefrontal korteks gibi yüksek bilişsel işlevlerden sorumlu alanlarda miyelinizasyon en son tamamlanır. Bu, ergenlerde risk alma davranışları ve dürtü kontrolü zorluklarını açıklamaya yardımcı olur.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 5:</div>
+            <div class="question-text">Beyin gelişiminde "içten dışa" (inside-out) kuralı neyi ifade eder?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Nöronlar dıştan içe doğru göç eder</li>
+                <li onclick="selectOption(this, true)">B) Korteksin derin tabakaları önce, yüzeysel tabakalar sonra oluşur</li>
+                <li onclick="selectOption(this, false)">C) Beyin önce dış kısımlardan gelişir</li>
+                <li onclick="selectOption(this, false)">D) Sinapslar içten dışa doğru oluşur</li>
+                <li onclick="selectOption(this, false)">E) Miyelinizasyon içten dışa doğru ilerler</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol5')">Çözümü Göster</button>
+            <div id="sol5" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Korteksin derin tabakaları önce, yüzeysel tabakalar sonra oluşur</div>
+                <p><strong>Açıklama:</strong> Korteks gelişiminde "içten dışa" kuralı, nöronların göçü sırasında önce derin tabakaların (6. tabaka), sonra daha yüzeysel tabakaların (2-3. tabakalar) oluştuğunu ifade eder. Yeni oluşan nöronlar önceden yerleşmiş nöronların arasından geçerek daha yüzeysel tabakalara yerleşir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 6:</div>
+            <div class="question-text">Ergenlik döneminde prefrontal kortekste görülen değişiklikler aşağıdakilerden hangisiyle ilişkili değildir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Yürütücü işlevlerin gelişimi</li>
+                <li onclick="selectOption(this, false)">B) Risk değerlendirme becerisinin artması</li>
+                <li onclick="selectOption(this, false)">C) Dürtü kontrolünün iyileşmesi</li>
+                <li onclick="selectOption(this, true)">D) Motor becerilerin kazanılması</li>
+                <li onclick="selectOption(this, false)">E) Planlama yeteneğinin gelişimi</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol6')">Çözümü Göster</button>
+            <div id="sol6" class="solution">
+                <div class="solution-title">Doğru Cevap: D) Motor becerilerin kazanılması</div>
+                <p><strong>Açıklama:</strong> Motor becerilerin kazanılması öncelikle motor korteks, serebellum ve bazal ganglionlarla ilişkilidir, prefrontal korteksle değil. Prefrontal korteks ergenlik döneminde yürütücü işlevler, risk değerlendirme, dürtü kontrolü, planlama ve karar verme gibi yüksek bilişsel işlevlerin gelişiminde kritik rol oynar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 7:</div>
+            <div class="question-text">Nöral progenitör hücrelerin çoğalması hangi bölgede gerçekleşir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Korteks yüzeyi</li>
+                <li onclick="selectOption(this, true)">B) Ventriküler ve subventriküler zon</li>
+                <li onclick="selectOption(this, false)">C) Beyaz madde</li>
+                <li onclick="selectOption(this, false)">D) Hipokampus</li>
+                <li onclick="selectOption(this, false)">E) Korpus kallozum</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol7')">Çözümü Göster</button>
+            <div id="sol7" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Ventriküler ve subventriküler zon</div>
+                <p><strong>Açıklama:</strong> Nöral progenitör hücreler ventriküler zon (VZ) ve subventriküler zon (SVZ) adı verilen germinal bölgelerde çoğalır. Bu hücreler bölünme sonrası radyal glial hücrelerin uzantıları boyunca göç ederek korteksin uygun tabakalarına yerleşir. Bu süreç kortikal gelişimin temelini oluşturur.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 8:</div>
+            <div class="question-text">Teratojenler beyin gelişimine en fazla hangi dönemde zarar verir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, true)">A) Gebeliğin ilk trimesteri</li>
+                <li onclick="selectOption(this, false)">B) Gebeliğin ikinci trimesteri</li>
+                <li onclick="selectOption(this, false)">C) Gebeliğin son trimesteri</li>
+                <li onclick="selectOption(this, false)">D) Doğum sırası</li>
+                <li onclick="selectOption(this, false)">E) Doğum sonrası ilk ay</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol8')">Çözümü Göster</button>
+            <div id="sol8" class="solution">
+                <div class="solution-title">Doğru Cevap: A) Gebeliğin ilk trimesteri</div>
+                <p><strong>Açıklama:</strong> Teratojenler (alkol, nikotin, bazı ilaçlar, enfeksiyonlar) beyin gelişimine en fazla ilk trimesterde zarar verir çünkü bu dönem nörülasyon, nöron üretimi ve temel beyin yapılarının oluşumu gibi kritik gelişimsel olayların gerçekleştiği dönemdir. Fetal alkol sendromu bunun en bilinen örneğidir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 9:</div>
+            <div class="question-text">Yaşlanma sürecinde beyinde görülen normal değişiklikler arasında hangisi yer almaz?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Beyin hacminde azalma</li>
+                <li onclick="selectOption(this, false)">B) Beyaz madde bütünlüğünde azalma</li>
+                <li onclick="selectOption(this, false)">C) İşlem hızında yavaşlama</li>
+                <li onclick="selectOption(this, true)">D) Kristalize zekanın belirgin azalması</li>
+                <li onclick="selectOption(this, false)">E) Nörotransmitter düzeylerinde değişiklik</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol9')">Çözümü Göster</button>
+            <div id="sol9" class="solution">
+                <div class="solution-title">Doğru Cevap: D) Kristalize zekanın belirgin azalması</div>
+                <p><strong>Açıklama:</strong> Kristalize zeka (birikmiş bilgi ve deneyim) yaşlanmayla genellikle korunur veya artabilir. Aksine, akışkan zeka (problem çözme, işlem hızı) yaşla birlikte azalma eğilimindedir. Normal yaşlanmada beyin hacmi azalır, beyaz madde bütünlüğü bozulur, işlem hızı yavaşlar ve nörotransmitter düzeyleri değişir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 10:</div>
+            <div class="question-text">Beyin gelişiminde epigenetik faktörlerin rolü ile ilgili aşağıdakilerden hangisi doğrudur?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Sadece genetik faktörler beyin gelişimini belirler</li>
+                <li onclick="selectOption(this, true)">B) Çevresel faktörler gen ifadesini etkileyerek beyin gelişimini şekillendirir</li>
+                <li onclick="selectOption(this, false)">C) Epigenetik değişiklikler kalıcı değildir</li>
+                <li onclick="selectOption(this, false)">D) Stres beyin gelişimini etkilemez</li>
+                <li onclick="selectOption(this, false)">E) Beslenme beyin gelişiminde rol oynamaz</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol10')">Çözümü Göster</button>
+            <div id="sol10" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Çevresel faktörler gen ifadesini etkileyerek beyin gelişimini şekillendirir</div>
+                <p><strong>Açıklama:</strong> Epigenetik mekanizmalar, çevresel faktörlerin (stres, beslenme, toksinler, sosyal deneyimler) DNA dizisini değiştirmeden gen ifadesini nasıl etkilediğini açıklar. Erken dönem stresi, yetersiz beslenme veya zengin uyaran ortamı gibi faktörler, beyin gelişimini epigenetik değişiklikler yoluyla kalıcı olarak etkileyebilir.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function selectOption(element, isCorrect) {
+            // Remove previous selections in this question
+            const options = element.parentElement.children;
+            for (let option of options) {
+                option.classList.remove('correct-answer');
+                option.style.background = '';
+                option.style.borderColor = '';
+            }
+            
+            // Highlight selected option
+            if (isCorrect) {
+                element.classList.add('correct-answer');
+            } else {
+                element.style.background = '#ffebee';
+                element.style.borderColor = '#f44336';
+            }
+        }
+
+        function toggleSolution(solutionId) {
+            const solution = document.getElementById(solutionId);
+            if (solution.style.display === 'none' || solution.style.display === '') {
+                solution.style.display = 'block';
+            } else {
+                solution.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

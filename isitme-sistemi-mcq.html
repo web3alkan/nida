@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İşitme Sistemi - Çoktan Seçmeli Sorular</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .back-link:hover {
+            background: #5a67d8;
+        }
+        .question {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 5px solid #667eea;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.1em;
+        }
+        .question-text {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+        .options {
+            list-style: none;
+            padding: 0;
+        }
+        .options li {
+            padding: 8px 15px;
+            margin: 5px 0;
+            background: #fff;
+            border-radius: 5px;
+            border: 2px solid #e9ecef;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .options li:hover {
+            background: #e3f2fd;
+            border-color: #2196f3;
+        }
+        .solution {
+            background: #e8f5e8;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            border-left: 5px solid #4caf50;
+            display: none;
+        }
+        .solution-title {
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+        .show-solution {
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .show-solution:hover {
+            background: #45a049;
+        }
+        .correct-answer {
+            background: #c8e6c9 !important;
+            border-color: #4caf50 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Ana Sayfaya Dön</a>
+        
+        <div class="header">
+            <h1>👂 İşitme Sistemi</h1>
+            <h2>Çoktan Seçmeli Sorular</h2>
+            <p><em>Her sorudan sonra "Çözümü Göster" butonuna tıklayarak detaylı açıklamayı görebilirsiniz.</em></p>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 1:</div>
+            <div class="question-text">Ses dalgalarının mekanik enerjiden elektriksel sinyallere dönüştürüldüğü yer neresidir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Dış kulak</li>
+                <li onclick="selectOption(this, false)">B) Orta kulak kemikçikleri</li>
+                <li onclick="selectOption(this, true)">C) Korti organı</li>
+                <li onclick="selectOption(this, false)">D) Östaki borusu</li>
+                <li onclick="selectOption(this, false)">E) Kulak zarı</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol1')">Çözümü Göster</button>
+            <div id="sol1" class="solution">
+                <div class="solution-title">Doğru Cevap: C) Korti organı</div>
+                <p><strong>Açıklama:</strong> Korti organı kokleanın içinde bulunur ve işitsel transdüksiyonun gerçekleştiği yerdir. İç ve dış tüylü hücreler burada mekanik enerjiyi (ses titreşimlerini) elektriksel sinyallere dönüştürür. Ses dalgaları baziler membranı titreştirdiğinde, tüylü hücrelerin stereosiliası bükülür ve iyon kanalları açılarak depolarizasyon oluşur.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 2:</div>
+            <div class="question-text">Orta kulak kemikçiklerinin doğru sıralaması hangisidir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Örs - Çekiç - Üzengi</li>
+                <li onclick="selectOption(this, true)">B) Çekiç - Örs - Üzengi</li>
+                <li onclick="selectOption(this, false)">C) Üzengi - Örs - Çekiç</li>
+                <li onclick="selectOption(this, false)">D) Çekiç - Üzengi - Örs</li>
+                <li onclick="selectOption(this, false)">E) Örs - Üzengi - Çekiç</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol2')">Çözümü Göster</button>
+            <div id="sol2" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Çekiç - Örs - Üzengi</div>
+                <p><strong>Açıklama:</strong> Orta kulak kemikçikleri kulak zarından oval pencereye doğru şu sırayı izler: Çekiç (malleus) kulak zarına bağlıdır, örs (incus) ortada köprü görevi görür, üzengi (stapes) ise oval pencereye bağlanır. Bu kemikçikler ses titreşimlerini yaklaşık 22 kat güçlendirerek iç kulağa iletir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 3:</div>
+            <div class="question-text">Tonotopik organizasyon nedir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Sesin yön tayini</li>
+                <li onclick="selectOption(this, true)">B) Farklı frekansların kokleada farklı bölgelerde işlenmesi</li>
+                <li onclick="selectOption(this, false)">C) Ses şiddetinin ölçülmesi</li>
+                <li onclick="selectOption(this, false)">D) İşitsel hafızanın organizasyonu</li>
+                <li onclick="selectOption(this, false)">E) Konuşma seslerinin ayrıştırılması</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol3')">Çözümü Göster</button>
+            <div id="sol3" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Farklı frekansların kokleada farklı bölgelerde işlenmesi</div>
+                <p><strong>Açıklama:</strong> Tonotopik organizasyon, farklı ses frekanslarının koklea boyunca farklı lokasyonlarda işlenmesidir. Yüksek frekanslar kokleanın tabanında (oval pencere yakını), düşük frekanslar ise apekste (helikotrema yakını) maksimal titreşim oluşturur. Bu organizasyon işitsel sistemin tüm seviyelerinde (koklear çekirdek, inferior kollikulus, işitsel korteks) korunur.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 4:</div>
+            <div class="question-text">İşitsel bilginin beyindeki ilk durağı neresidir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Medial genikulat nukleus</li>
+                <li onclick="selectOption(this, true)">B) Koklear çekirdekler</li>
+                <li onclick="selectOption(this, false)">C) Superior olivary kompleks</li>
+                <li onclick="selectOption(this, false)">D) İnferior kollikulus</li>
+                <li onclick="selectOption(this, false)">E) İşitsel korteks</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol4')">Çözümü Göster</button>
+            <div id="sol4" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Koklear çekirdekler</div>
+                <p><strong>Açıklama:</strong> İşitsel sinir lifleri beyin sapında ilk olarak koklear çekirdeklerde (ventral ve dorsal) sonlanır. Buradan bilgi superior olivary kompleks, lateral lemniskus, inferior kollikulus, medial genikulat nukleus yoluyla işitsel kortekse ulaşır. Her seviyede ses özellikleri (frekans, şiddet, lokalizasyon) işlenir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 5:</div>
+            <div class="question-text">Ses lokalizasyonunda kullanılan iki temel ipucu nedir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Frekans ve genlik</li>
+                <li onclick="selectOption(this, true)">B) Zamanlama farkı (ITD) ve şiddet farkı (ILD)</li>
+                <li onclick="selectOption(this, false)">C) Yankı ve reverberasyon</li>
+                <li onclick="selectOption(this, false)">D) Harmonikler ve temel frekans</li>
+                <li onclick="selectOption(this, false)">E) Faz ve dalga boyu</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol5')">Çözümü Göster</button>
+            <div id="sol5" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Zamanlama farkı (ITD) ve şiddet farkı (ILD)</div>
+                <p><strong>Açıklama:</strong> Ses lokalizasyonu iki ana ipucuna dayanır: İnteroral zamanlama farkı (ITD) - sesin iki kulağa ulaşma zamanı farkı, düşük frekanslarda etkilidir. İnteroral seviye/şiddet farkı (ILD) - kafa gölgesi nedeniyle oluşan şiddet farkı, yüksek frekanslarda etkilidir. Bu ipuçları superior olivary komplekste işlenir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 6:</div>
+            <div class="question-text">Presbyakuzi (yaşa bağlı işitme kaybı) öncelikle hangi frekansları etkiler?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Düşük frekanslar</li>
+                <li onclick="selectOption(this, true)">B) Yüksek frekanslar</li>
+                <li onclick="selectOption(this, false)">C) Orta frekanslar</li>
+                <li onclick="selectOption(this, false)">D) Tüm frekanslar eşit</li>
+                <li onclick="selectOption(this, false)">E) Sadece konuşma frekansları</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol6')">Çözümü Göster</button>
+            <div id="sol6" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Yüksek frekanslar</div>
+                <p><strong>Açıklama:</strong> Presbyakuzi tipik olarak yüksek frekanslardan başlayarak ilerler. Bunun nedeni kokleanın bazal bölgesindeki (yüksek frekans bölgesi) tüylü hücrelerin yaşla birlikte daha fazla hasar görmesidir. Bu durum konuşmayı anlamada güçlük, özellikle gürültülü ortamlarda ve ünsüz seslerin algılanmasında sorun yaratır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 7:</div>
+            <div class="question-text">Olivokoklear efferent sistem hangi işleve sahiptir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Ses üretimi</li>
+                <li onclick="selectOption(this, false)">B) Denge kontrolü</li>
+                <li onclick="selectOption(this, true)">C) Koklear amplifikasyonun modülasyonu ve gürültüde konuşma algısı</li>
+                <li onclick="selectOption(this, false)">D) Orta kulak refleksi</li>
+                <li onclick="selectOption(this, false)">E) Vestibüler fonksiyon</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol7')">Çözümü Göster</button>
+            <div id="sol7" class="solution">
+                <div class="solution-title">Doğru Cevap: C) Koklear amplifikasyonun modülasyonu ve gürültüde konuşma algısı</div>
+                <p><strong>Açıklama:</strong> Olivokoklear efferent sistem, özellikle medial olivokoklear (MOC) sistem, dış tüylü hücrelerin aktivitesini modüle eder. Bu sistem koklear amplifikasyonu azaltarak yüksek seslere karşı koruma sağlar ve gürültülü ortamlarda konuşma algısını iyileştirir. Ayrıca seçici dikkat ve işitsel plastisite süreçlerinde rol oynar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 8:</div>
+            <div class="question-text">Wernicke alanı ile Broca alanı arasındaki bağlantıyı sağlayan beyaz madde yolu hangisidir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Korpus kallozum</li>
+                <li onclick="selectOption(this, true)">B) Arkuat fasikülüs</li>
+                <li onclick="selectOption(this, false)">C) İnternal kapsül</li>
+                <li onclick="selectOption(this, false)">D) Singulum</li>
+                <li onclick="selectOption(this, false)">E) Unkinate fasikülüs</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol8')">Çözümü Göster</button>
+            <div id="sol8" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Arkuat fasikülüs</div>
+                <p><strong>Açıklama:</strong> Arkuat fasikülüs, temporal lobdaki Wernicke alanı (dil anlama) ile frontal lobdaki Broca alanı (konuşma üretimi) arasında bağlantı sağlayan beyaz madde yoludur. Bu yolun hasarı kondüksiyon afazisine yol açar - kişi konuşmayı anlar ve konuşabilir ancak kelimeleri tekrar etmekte güçlük çeker.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 9:</div>
+            <div class="question-text">Tinnitus (kulak çınlaması) ile ilgili aşağıdakilerden hangisi doğrudur?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Sadece dış kulak hastalıklarında görülür</li>
+                <li onclick="selectOption(this, false)">B) Her zaman objektif bir ses kaynağı vardır</li>
+                <li onclick="selectOption(this, true)">C) Santral işitsel sistemdeki anormal nöral aktiviteden kaynaklanabilir</li>
+                <li onclick="selectOption(this, false)">D) Tedavisi mümkün değildir</li>
+                <li onclick="selectOption(this, false)">E) Sadece yaşlılarda görülür</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol9')">Çözümü Göster</button>
+            <div id="sol9" class="solution">
+                <div class="solution-title">Doğru Cevap: C) Santral işitsel sistemdeki anormal nöral aktiviteden kaynaklanabilir</div>
+                <p><strong>Açıklama:</strong> Tinnitus genellikle periferik işitme kaybından sonra santral işitsel sistemde gelişen maladaptif plastisiteyle ilişkilidir. Azalan periferik girdi, santral kazancın artmasına ve spontan nöral aktiviteye yol açar. Bu durum fantom ağrıya benzer bir mekanizmadır. Ses terapisi, bilişsel davranışçı terapi ve nöromodülasyon gibi tedaviler kullanılabilir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 10:</div>
+            <div class="question-text">Koklear implant hangi tip işitme kaybında endikedir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) İletim tipi işitme kaybı</li>
+                <li onclick="selectOption(this, true)">B) Ağır-çok ağır sensörinöral işitme kaybı</li>
+                <li onclick="selectOption(this, false)">C) Hafif işitme kaybı</li>
+                <li onclick="selectOption(this, false)">D) Santral işitsel işleme bozukluğu</li>
+                <li onclick="selectOption(this, false)">E) Orta kulak enfeksiyonu</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol10')">Çözümü Göster</button>
+            <div id="sol10" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Ağır-çok ağır sensörinöral işitme kaybı</div>
+                <p><strong>Açıklama:</strong> Koklear implantlar, işitme cihazlarından fayda görmeyen ağır-çok ağır sensörinöral işitme kayıplı hastalarda endikedir. İmplant, hasarlı tüylü hücreleri atlayarak işitsel siniri doğrudan elektriksel olarak uyarır. Erken implantasyon (özellikle çocuklarda) dil gelişimi için kritiktir. İşitsel sinirin sağlam olması gereklidir.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function selectOption(element, isCorrect) {
+            // Remove previous selections in this question
+            const options = element.parentElement.children;
+            for (let option of options) {
+                option.classList.remove('correct-answer');
+                option.style.background = '';
+                option.style.borderColor = '';
+            }
+            
+            // Highlight selected option
+            if (isCorrect) {
+                element.classList.add('correct-answer');
+            } else {
+                element.style.background = '#ffebee';
+                element.style.borderColor = '#f44336';
+            }
+        }
+
+        function toggleSolution(solutionId) {
+            const solution = document.getElementById(solutionId);
+            if (solution.style.display === 'none' || solution.style.display === '') {
+                solution.style.display = 'block';
+            } else {
+                solution.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

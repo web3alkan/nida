@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Araştırma Yöntemleri - Klasik Sorular</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .back-link:hover {
+            background: #5a67d8;
+        }
+        .question {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-left: 5px solid #388e3c;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #388e3c;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .question-text {
+            margin: 15px 0;
+            font-size: 1.1em;
+            font-weight: 500;
+            color: #333;
+        }
+        .essay-area {
+            width: 100%;
+            min-height: 150px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 1em;
+            font-family: Arial, sans-serif;
+            resize: vertical;
+            margin-top: 10px;
+        }
+        .essay-area:focus {
+            border-color: #388e3c;
+            outline: none;
+            box-shadow: 0 0 5px rgba(56, 142, 60, 0.3);
+        }
+        .solution {
+            background: #e8f5e8;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 15px;
+            border-left: 5px solid #4caf50;
+            display: none;
+        }
+        .solution-title {
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        .solution-content {
+            line-height: 1.8;
+        }
+        .solution h4 {
+            color: #2e7d32;
+            margin-top: 15px;
+            margin-bottom: 8px;
+        }
+        .solution ul {
+            margin-left: 20px;
+        }
+        .solution li {
+            margin-bottom: 5px;
+        }
+        .show-solution {
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-size: 1em;
+        }
+        .show-solution:hover {
+            background: #45a049;
+        }
+        .difficulty-indicator {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .easy { background: #c8e6c9; color: #2e7d32; }
+        .medium { background: #fff3e0; color: #ef6c00; }
+        .hard { background: #ffcdd2; color: #d32f2f; }
+        .word-count {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+        .tips {
+            background: #e3f2fd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 25px;
+            border-left: 5px solid #2196f3;
+        }
+        .tips-title {
+            font-weight: bold;
+            color: #1976d2;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Ana Sayfaya Dön</a>
+        
+        <div class="header">
+            <h1>🔬 Araştırma Yöntemleri</h1>
+            <h2>Klasik Sorular (Uzun Cevaplı)</h2>
+        </div>
+
+        <div class="tips">
+            <div class="tips-title">💡 Cevaplama İpuçları:</div>
+            <ul>
+                <li>Bilimsel yöntem adımlarını detaylarıyla açıklayın</li>
+                <li>Araştırma türleri arasındaki farkları belirtin</li>
+                <li>Etik kuralları ve önemini vurgulayın</li>
+                <li>Örneklerle destekleyerek somutlaştırın</li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <div class="difficulty-indicator easy">Kolay</div>
+            <div class="question-number">Soru 1:</div>
+            <div class="question-text">
+                Bilimsel yöntemin temel ilkelerini açıklayınız. Fizyolojik psikoloji araştırmalarında bilimsel yöntemin nasıl uygulandığını örneklerle gösteriniz.
+            </div>
+            <textarea class="essay-area" placeholder="Cevabınızı buraya yazın..." onkeyup="updateWordCount(this)"></textarea>
+            <div class="word-count">Kelime sayısı: 0 (Tavsiye edilen: 300-400 kelime)</div>
+            <button class="show-solution" onclick="toggleSolution('sol1')">Örnek Cevabı Göster</button>
+            <div id="sol1" class="solution">
+                <div class="solution-title">Örnek Cevap ve Değerlendirme Kriterleri:</div>
+                <div class="solution-content">
+                    <h4>Bilimsel Yöntemin Temel İlkeleri:</h4>
+                    <ul>
+                        <li><strong>Gözlemlenebilirlik:</strong> Fenomenler objektif olarak gözlemlenebilir olmalı</li>
+                        <li><strong>Ölçülebilirlik:</strong> Veriler nicel veya nitel olarak ölçülmeli</li>
+                        <li><strong>Tekrarlanabilirlik:</strong> Deneyler farklı araştırmacılar tarafından tekrarlanabilmeli</li>
+                        <li><strong>Yanlışlanabilirlik:</strong> Hipotezler test edilebilir ve yanlışlanabilir olmalı</li>
+                        <li><strong>Objektiflik:</strong> Araştırmacı önyargıları minimuma indirilmeli</li>
+                    </ul>
+
+                    <h4>Bilimsel Yöntem Adımları:</h4>
+                    <ul>
+                        <li><strong>Problem Tanımlama:</strong> Araştırma sorusunun netleştirilmesi</li>
+                        <li><strong>Literatür Tarama:</strong> Mevcut bilgilerin incelenmesi</li>
+                        <li><strong>Hipotez Oluşturma:</strong> Test edilebilir öngörülerin geliştirilmesi</li>
+                        <li><strong>Araştırma Tasarımı:</strong> Metodolojinin belirlenmesi</li>
+                        <li><strong>Veri Toplama:</strong> Sistematik gözlem ve ölçüm</li>
+                        <li><strong>Analiz:</strong> İstatistiksel değerlendirme</li>
+                        <li><strong>Sonuç:</strong> Hipotezin kabul veya ret edilmesi</li>
+                    </ul>
+
+                    <h4>Fizyolojik Psikolojide Uygulamalar:</h4>
+                    <ul>
+                        <li><strong>Örnek 1:</strong> Stres hormonlarının hafıza üzerindeki etkisi
+                            <ul>
+                                <li>Hipotez: Kortizol seviyeleri yüksek olduğunda hafıza performansı düşer</li>
+                                <li>Değişkenler: Bağımsız (kortizol seviyesi), Bağımlı (hafıza testi skoru)</li>
+                                <li>Kontrol: Placebo grubu, standardize testler</li>
+                            </ul>
+                        </li>
+                        <li><strong>Örnek 2:</strong> Beyin hasarının davranış üzerindeki etkisi
+                            <ul>
+                                <li>Doğal deneyler ve vaka çalışmaları</li>
+                                <li>Nöropsikologik testler ve görüntüleme</li>
+                                <li>Fonksiyon-yapı ilişkilerinin belirlenmesi</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Değerlendirme Kriterleri:</h4>
+                    <p><strong>Mükemmel (90-100):</strong> Tüm ilkeler açık, adımlar detaylı, örnekler uygun</p>
+                    <p><strong>İyi (70-89):</strong> Ana ilkeler doğru, bazı detaylar eksik</p>
+                    <p><strong>Orta (50-69):</strong> Temel bilgi var, sistematik eksiklik</p>
+                    <p><strong>Zayıf (0-49):</strong> Kavramsal hatalar, yetersiz açıklama</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="difficulty-indicator medium">Orta</div>
+            <div class="question-number">Soru 2:</div>
+            <div class="question-text">
+                Deneysel, korelasyonel ve betimsel araştırma yöntemlerini karşılaştırınız. Her birinin avantaj ve dezavantajlarını nörobilim araştırmaları bağlamında değerlendiriniz.
+            </div>
+            <textarea class="essay-area" placeholder="Cevabınızı buraya yazın..." onkeyup="updateWordCount(this)"></textarea>
+            <div class="word-count">Kelime sayısı: 0 (Tavsiye edilen: 400-500 kelime)</div>
+            <button class="show-solution" onclick="toggleSolution('sol2')">Örnek Cevabı Göster</button>
+            <div id="sol2" class="solution">
+                <div class="solution-title">Örnek Cevap ve Değerlendirme Kriterleri:</div>
+                <div class="solution-content">
+                    <h4>1. Deneysel Araştırma Yöntemi:</h4>
+                    <ul>
+                        <li><strong>Özellik:</strong> Bağımsız değişkenin manipüle edildiği kontrollü çalışma</li>
+                        <li><strong>Avantajlar:</strong>
+                            <ul>
+                                <li>Neden-sonuç ilişkisi kurulabilir</li>
+                                <li>Yüksek iç geçerlilik</li>
+                                <li>Kontrol grubu kullanımı</li>
+                                <li>Değişkenlerin kontrol edilmesi</li>
+                            </ul>
+                        </li>
+                        <li><strong>Dezavantajlar:</strong>
+                            <ul>
+                                <li>Etik sınırlamalar (özellikle beyin müdahaleleri)</li>
+                                <li>Yapay laboratuvar ortamı</li>
+                                <li>Dış geçerlilik sorunları</li>
+                                <li>Yüksek maliyet</li>
+                            </ul>
+                        </li>
+                        <li><strong>Nörobilim Örneği:</strong> İlaç etkilerinin fMRI ile değerlendirilmesi</li>
+                    </ul>
+
+                    <h4>2. Korelasyonel Araştırma Yöntemi:</h4>
+                    <ul>
+                        <li><strong>Özellik:</strong> Değişkenler arası ilişkinin incelenmesi</li>
+                        <li><strong>Avantajlar:</strong>
+                            <ul>
+                                <li>Etik açıdan uygun</li>
+                                <li>Doğal ortamda gözlem</li>
+                                <li>Büyük örneklemler mümkün</li>
+                                <li>Maliyet etkin</li>
+                            </ul>
+                        </li>
+                        <li><strong>Dezavantajlar:</strong>
+                            <ul>
+                                <li>Neden-sonuç kurulamaz</li>
+                                <li>Üçüncü değişken etkisi</li>
+                                <li>Yönlülük belirsizliği</li>
+                                <li>Spurious korelasyon riski</li>
+                            </ul>
+                        </li>
+                        <li><strong>Nörobilim Örneği:</strong> Beyin hacmi ile yaş arasındaki ilişki</li>
+                    </ul>
+
+                    <h4>3. Betimsel Araştırma Yöntemi:</h4>
+                    <ul>
+                        <li><strong>Özellik:</strong> Fenomenlerin sistematik tanımlanması</li>
+                        <li><strong>Alt Türleri:</strong>
+                            <ul>
+                                <li>Vaka çalışmaları (case studies)</li>
+                                <li>Gözlemsel çalışmalar</li>
+                                <li>Anket ve taramalar</li>
+                            </ul>
+                        </li>
+                        <li><strong>Avantajlar:</strong>
+                            <ul>
+                                <li>Nadir olayların incelenmesi mümkün</li>
+                                <li>Derinlemesine analiz</li>
+                                <li>Hipotez geliştirmeye katkı</li>
+                                <li>Doğal gözlem</li>
+                            </ul>
+                        </li>
+                        <li><strong>Dezavantajlar:</strong>
+                            <ul>
+                                <li>Genelleme sorunu</li>
+                                <li>Öznellik riski</li>
+                                <li>Nedensellik kurulamaz</li>
+                                <li>Örneklem temsil sorunu</li>
+                            </ul>
+                        </li>
+                        <li><strong>Nörobilim Örneği:</strong> Phineas Gage vakası (frontal lob hasarı)</li>
+                    </ul>
+
+                    <h4>Nörobilimde Karşılaştırmalı Değerlendirme:</h4>
+                    <ul>
+                        <li><strong>Deneysel:</strong> Hayvan modelleri, ilaç denemeleri</li>
+                        <li><strong>Korelasyonel:</strong> Beyin yapısı-davranış ilişkileri</li>
+                        <li><strong>Betimsel:</strong> Nörolojik vakalar, sendrom tanımlamaları</li>
+                    </ul>
+
+                    <h4>Metodolojik Tamamlayıcılık:</h4>
+                    <ul>
+                        <li>Üçlü yaklaşım kombinasyonu</li>
+                        <li>Çoklu veri kaynaklarının entegrasyonu</li>
+                        <li>Replikasyon ve validasyon</li>
+                    </ul>
+
+                    <h4>Değerlendirme:</h4>
+                    <p><strong>Mükemmel:</strong> Tüm yöntemler detaylı karşılaştırılmış, nörobilim örnekleri uygun</p>
+                    <p><strong>İyi:</strong> Ana yöntemler açık, bazı karşılaştırma eksik</p>
+                    <p><strong>Orta:</strong> Yöntemler tanımlanmış, analiz yüzeysel</p>
+                    <p><strong>Zayıf:</strong> Metodolojik kavramlar karışık</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="difficulty-indicator hard">Zor</div>
+            <div class="question-number">Soru 3:</div>
+            <div class="question-text">
+                Beyin görüntüleme tekniklerinin (fMRI, PET, EEG, MEG) çalışma prensiplerini, temporal ve spatial çözünürlüklerini analiz ediniz. Bu tekniklerin sınırlılıkları ve gelecekteki gelişim potansiyelleri nelerdir?
+            </div>
+            <textarea class="essay-area" placeholder="Cevabınızı buraya yazın..." onkeyup="updateWordCount(this)"></textarea>
+            <div class="word-count">Kelime sayısı: 0 (Tavsiye edilen: 500-600 kelime)</div>
+            <button class="show-solution" onclick="toggleSolution('sol3')">Örnek Cevabı Göster</button>
+            <div id="sol3" class="solution">
+                <div class="solution-title">Örnek Cevap ve Değerlendirme Kriterleri:</div>
+                <div class="solution-content">
+                    <h4>1. fMRI (Fonksiyonel Manyetik Rezonans Görüntüleme):</h4>
+                    <ul>
+                        <li><strong>Çalışma Prensibi:</strong>
+                            <ul>
+                                <li>BOLD (Blood Oxygen Level Dependent) sinyal</li>
+                                <li>Deoksijenize hemoglobinin paramanyetik özellikleri</li>
+                                <li>Nöronal aktivite artışı → Kan akışı artışı → BOLD sinyal değişimi</li>
+                            </ul>
+                        </li>
+                        <li><strong>Çözünürlük:</strong>
+                            <ul>
+                                <li>Spatial: 1-3 mm³ (yüksek)</li>
+                                <li>Temporal: 2-3 saniye (düşük)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Avantajlar:</strong> Non-invazif, iyi spatial çözünürlük, tüm beyin analizi</li>
+                        <li><strong>Sınırlılıklar:</strong> Zayıf temporal çözünürlük, hemodynamik gecikme, hareket artefaktları</li>
+                    </ul>
+
+                    <h4>2. PET (Pozitron Emisyon Tomografi):</h4>
+                    <ul>
+                        <li><strong>Çalışma Prensibi:</strong>
+                            <ul>
+                                <li>Radyoaktif izotop enjeksiyonu (FDG, oksigen-15)</li>
+                                <li>Pozitron emisyonu ve annihilasyon</li>
+                                <li>Gamma ışını çiftlerinin deteksiyonu</li>
+                            </ul>
+                        </li>
+                        <li><strong>Çözünürlük:</strong>
+                            <ul>
+                                <li>Spatial: 4-6 mm (orta)</li>
+                                <li>Temporal: 30-60 saniye (çok düşük)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Avantajlar:</strong> Metabolik aktivite ölçümü, nörotransmitter sistemleri</li>
+                        <li><strong>Sınırlılıklar:</strong> Radyasyon maruziyeti, pahalı, zayıf temporal çözünürlük</li>
+                    </ul>
+
+                    <h4>3. EEG (Elektroensefalografi):</h4>
+                    <ul>
+                        <li><strong>Çalışma Prensibi:</strong>
+                            <ul>
+                                <li>Nöronların postsinaptik potansiyellerinin ölçümü</li>
+                                <li>Kafa derisinden elektriksel aktivite kaydı</li>
+                                <li>Korteksi piramidal nöronların senkron aktivitesi</li>
+                            </ul>
+                        </li>
+                        <li><strong>Çözünürlük:</strong>
+                            <ul>
+                                <li>Spatial: 1-3 cm (düşük)</li>
+                                <li>Temporal: Milisaniye (çok yüksek)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Avantajlar:</strong> Mükemmel temporal çözünürlük, ucuz, portatif</li>
+                        <li><strong>Sınırlılıklar:</strong> Zayıf spatial lokalizasyon, artefakt duyarlılığı</li>
+                    </ul>
+
+                    <h4>4. MEG (Magnetoensefalografi):</h4>
+                    <ul>
+                        <li><strong>Çalışma Prensibi:</strong>
+                            <ul>
+                                <li>Nöronların elektriksel aktivitesinin manyetik alanı</li>
+                                <li>SQUID (Superconducting Quantum Interference Device) sensörleri</li>
+                                <li>Tangensiyel akımların manyetik dipol oluşturması</li>
+                            </ul>
+                        </li>
+                        <li><strong>Çözünürlük:</strong>
+                            <ul>
+                                <li>Spatial: 2-5 mm (yüksek)</li>
+                                <li>Temporal: Milisaniye (çok yüksek)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Avantajlar:</strong> EEG'den daha iyi lokalizasyon, referans gerektirmez</li>
+                        <li><strong>Sınırlılıklar:</strong> Çok pahalı, çevresel manyetik gürültü</li>
+                    </ul>
+
+                    <h4>Karşılaştırmalı Analiz:</h4>
+                    <ul>
+                        <li><strong>Spatial Çözünürlük:</strong> fMRI > MEG > PET > EEG</li>
+                        <li><strong>Temporal Çözünürlük:</strong> EEG = MEG > fMRI > PET</li>
+                        <li><strong>Maliyet:</strong> EEG < fMRI < PET < MEG</li>
+                        <li><strong>Invaziflik:</strong> EEG = MEG = fMRI < PET</li>
+                    </ul>
+
+                    <h4>Mevcut Sınırlılıklar:</h4>
+                    <ul>
+                        <li><strong>Trade-off Problemi:</strong> Temporal vs. spatial çözünürlük</li>
+                        <li><strong>Artefaktlar:</strong> Hareket, elektriksel, fizyolojik</li>
+                        <li><strong>İndirekt Ölçüm:</strong> Nöronal aktiviteden farklı sinyaller</li>
+                        <li><strong>Maliyet ve Erişilebilirlik:</strong> Özellikle MEG ve yüksek alan fMRI</li>
+                    </ul>
+
+                    <h4>Gelecek Gelişim Potansiyelleri:</h4>
+                    <ul>
+                        <li><strong>Multimodal Entegrasyon:</strong> fMRI+EEG, PET+MRI hibrit sistemleri</li>
+                        <li><strong>Teknolojik İlerleme:</strong>
+                            <ul>
+                                <li>7T ve üzeri ultra-yüksek alan MRI</li>
+                                <li>Optik tamamlayıcılık (optogenetics+fMRI)</li>
+                                <li>Yapay zeka tabanlı artefakt temizleme</li>
+                            </ul>
+                        </li>
+                        <li><strong>Yeni Modaliteler:</strong>
+                            <ul>
+                                <li>fNIRS (functional Near-Infrared Spectroscopy)</li>
+                                <li>Ultrasound neuromodulation</li>
+                                <li>Quantum sensors</li>
+                            </ul>
+                        </li>
+                        <li><strong>Real-time Uygulamalar:</strong> Nörofeedback, beyin-bilgisayar arayüzleri</li>
+                    </ul>
+
+                    <h4>Değerlendirme:</h4>
+                    <p><strong>Mükemmel:</strong> Tüm teknikler detaylı, çözünürlükler doğru, gelecek perspektifi</p>
+                    <p><strong>İyi:</strong> Ana teknikler açık, bazı karşılaştırma eksik</p>
+                    <p><strong>Orta:</strong> Temel teknik bilgi, analiz yüzeysel</p>
+                    <p><strong>Zayıf:</strong> Teknik kavramlar karışık, yetersiz analiz</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="difficulty-indicator medium">Orta</div>
+            <div class="question-number">Soru 4:</div>
+            <div class="question-text">
+                Araştırma etiğinin fizyolojik psikoloji çalışmalarındaki önemini açıklayınız. İnsan ve hayvan deneylerinde uyulması gereken etik ilkeler nelerdir? Etik komitelerinin rolü ve sorumluluklarını tartışınız.
+            </div>
+            <textarea class="essay-area" placeholder="Cevabınızı buraya yazın..." onkeyup="updateWordCount(this)"></textarea>
+            <div class="word-count">Kelime sayısı: 0 (Tavsiye edilen: 400-500 kelime)</div>
+            <button class="show-solution" onclick="toggleSolution('sol4')">Örnek Cevabı Göster</button>
+            <div id="sol4" class="solution">
+                <div class="solution-title">Örnek Cevap ve Değerlendirme Kriterleri:</div>
+                <div class="solution-content">
+                    <h4>Araştırma Etiğinin Önemi:</h4>
+                    <ul>
+                        <li><strong>İnsan Onuru:</strong> Katılımcıların haklarının korunması</li>
+                        <li><strong>Bilimsel Güvenilirlik:</strong> Etik standartlar güvenilir araştırma sağlar</li>
+                        <li><strong>Toplumsal Güven:</strong> Bilime olan güvenin sürdürülmesi</li>
+                        <li><strong>Yasal Uyumluluk:</strong> Ulusal ve uluslararası düzenlemelere uyum</li>
+                    </ul>
+
+                    <h4>İnsan Deneyleri İçin Etik İlkeler:</h4>
+                    <ul>
+                        <li><strong>Özerklik Saygısı:</strong>
+                            <ul>
+                                <li>Bilgilendirilmiş onam (informed consent)</li>
+                                <li>Katılımın gönüllü olması</li>
+                                <li>Çekilme hakkı</li>
+                                <li>Karar verme kapasitesi değerlendirmesi</li>
+                            </ul>
+                        </li>
+                        <li><strong>Zarar Vermeme (Non-maleficence):</strong>
+                            <ul>
+                                <li>Fiziksel zarar risklerinin minimizasyonu</li>
+                                <li>Psikolojik travma önleme</li>
+                                <li>Uzun dönem yan etki değerlendirmesi</li>
+                            </ul>
+                        </li>
+                        <li><strong>Yarar Sağlama (Beneficence):</strong>
+                            <ul>
+                                <li>Toplumsal yararın maksimizasyonu</li>
+                                <li>Katılımcı refahının korunması</li>
+                                <li>Risk-yarar dengesinin kurulması</li>
+                            </ul>
+                        </li>
+                        <li><strong>Adalet:</strong>
+                            <ul>
+                                <li>Adil katılımcı seçimi</li>
+                                <li>Savunmasız grupların korunması</li>
+                                <li>Yararların eşit dağılımı</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Hayvan Deneyleri İçin Etik İlkeler (3R Prensibi):</h4>
+                    <ul>
+                        <li><strong>Replacement (Yerine Koyma):</strong>
+                            <ul>
+                                <li>Alternatif yöntemlerin kullanımı</li>
+                                <li>In vitro modellemeler</li>
+                                <li>Bilgisayar simülasyonları</li>
+                                <li>İnsan gönüllü çalışmaları</li>
+                            </ul>
+                        </li>
+                        <li><strong>Reduction (Azaltma):</strong>
+                            <ul>
+                                <li>Minimum hayvan sayısının kullanımı</li>
+                                <li>İstatistiksel güç analizleri</li>
+                                <li>Optimal deney tasarımı</li>
+                                <li>Veri paylaşımı ve meta-analizler</li>
+                            </ul>
+                        </li>
+                        <li><strong>Refinement (İyileştirme):</strong>
+                            <ul>
+                                <li>Acı ve stresin minimizasyonu</li>
+                                <li>Uygun anestezi/analjezi</li>
+                                <li>Bakım koşullarının iyileştirilmesi</li>
+                                <li>Humane sonlandırma yöntemleri</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Özel Etik Durumlar:</h4>
+                    <ul>
+                        <li><strong>Nöro-etik Konular:</strong>
+                            <ul>
+                                <li>Bilişsel geliştirme (cognitive enhancement)</li>
+                                <li>Beyin stimülasyonu (TMS, DBS)</li>
+                                <li>Nörofarmakolojik müdahaleler</li>
+                                <li>Beyin-bilgisayar arayüzleri</li>
+                            </ul>
+                        </li>
+                        <li><strong>Savunmasız Popülasyonlar:</strong>
+                            <ul>
+                                <li>Çocuklar ve ergenler</li>
+                                <li>Zihinsel engeliler</li>
+                                <li>Psikiyatrik hastalar</li>
+                                <li>Yaşlılar</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Etik Komitelerinin Rolü ve Sorumlulukları:</h4>
+                    <ul>
+                        <li><strong>İnsan Araştırmaları Etik Kurulu (İAEK):</strong>
+                            <ul>
+                                <li>Protokol değerlendirmesi</li>
+                                <li>Risk-yarar analizi</li>
+                                <li>Onam formlarının incelenmesi</li>
+                                <li>Sürekli izleme ve denetim</li>
+                            </ul>
+                        </li>
+                        <li><strong>Hayvan Deneyleri Yerel Etik Kurulu (HADYEK):</strong>
+                            <ul>
+                                <li>3R prensiplerine uyum değerlendirmesi</li>
+                                <li>Hayvan refahı standardları</li>
+                                <li>Araştırmacı yetkinlik kontrolü</li>
+                                <li>Tesis denetimleri</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Güncel Etik Zorluklar:</h4>
+                    <ul>
+                        <li><strong>Teknolojik Gelişmeler:</strong> Yeni görüntüleme teknikleri</li>
+                        <li><strong>Genetik Müdahaleler:</strong> CRISPR ve gen terapisi</li>
+                        <li><strong>Veri Gizliliği:</strong> Büyük veri ve nörodata</li>
+                        <li><strong>Uluslararası Standartlar:</strong> Küresel araştırma iş birliği</li>
+                    </ul>
+
+                    <h4>Değerlendirme:</h4>
+                    <p><strong>Mükemmel:</strong> Tüm etik ilkeler detaylı, komite rolleri açık, güncel konular</p>
+                    <p><strong>İyi:</strong> Ana etik prensipler doğru, bazı detaylar eksik</p>
+                    <p><strong>Orta:</strong> Temel etik bilgisi, yüzeysel analiz</p>
+                    <p><strong>Zayıf:</strong> Etik kavramlar karışık, yetersiz açıklama</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="difficulty-indicator hard">Zor</div>
+            <div class="question-number">Soru 5:</div>
+            <div class="question-text">
+                İstatistiksel analizin nörobilim araştırmalarındaki rolünü ve önemini analiz ediniz. Tip I ve Tip II hataları, çoklu karşılaştırma problemi ve çözüm yolları nelerdir? P-hacking ve tekrarlanabilirlik krizine yönelik çözüm önerilerinizi sunmaz.
+            </div>
+            <textarea class="essay-area" placeholder="Cevabınızı buraya yazın..." onkeyup="updateWordCount(this)"></textarea>
+            <div class="word-count">Kelime sayısı: 0 (Tavsiye edilen: 500-600 kelime)</div>
+            <button class="show-solution" onclick="toggleSolution('sol5')">Örnek Cevabı Göster</button>
+            <div id="sol5" class="solution">
+                <div class="solution-title">Örnek Cevap ve Değerlendirme Kriterleri:</div>
+                <div class="solution-content">
+                    <h4>İstatistiksel Analizin Nörobilimde Rolü:</h4>
+                    <ul>
+                        <li><strong>Veri İndirgemesi:</strong> Karmaşık nöral verinin anlamlı örüntülere dönüştürülmesi</li>
+                        <li><strong>Hipotez Testi:</strong> Teorik öngörülerin ampirik verilerle test edilmesi</li>
+                        <li><strong>Karar Verme:</strong> Bilimsel sonuçların güvenilirliğinin değerlendirilmesi</li>
+                        <li><strong>Genelleme:</strong> Örneklemden popülasyona çıkarım yapma</li>
+                    </ul>
+
+                    <h4>Tip I ve Tip II Hataları:</h4>
+                    <ul>
+                        <li><strong>Tip I Hatası (α):</strong>
+                            <ul>
+                                <li>Doğru null hipotezinin yanlışlıkla reddedilmesi</li>
+                                <li>"Yanlış pozitif" - gerçekte olmayan bir etkiyi anlamlı bulma</li>
+                                <li>Geleneksel α = 0.05 kriteri</li>
+                                <li>Örnek: fMRI'da rastlantısal aktivasyonu anlamlı bulma</li>
+                            </ul>
+                        </li>
+                        <li><strong>Tip II Hatası (β):</strong>
+                            <ul>
+                                <li>Yanlış null hipotezinin kabul edilmesi</li>
+                                <li>"Yanlış negatif" - gerçek bir etkiyi kaçırma</li>
+                                <li>İstatistiksel güç = 1-β (geleneksel 0.80)</li>
+                                <li>Örnek: Küçük örneklemde gerçek beyin aktivasyonunu kaçırma</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Çoklu Karşılaştırma Problemi:</h4>
+                    <ul>
+                        <li><strong>Problemin Kaynağı:</strong>
+                            <ul>
+                                <li>Çok sayıda hipotez testinin aynı anda yapılması</li>
+                                <li>Familywise error rate artışı</li>
+                                <li>fMRI'da binlerce voksel, EEG'de çok sayıda elektrot</li>
+                            </ul>
+                        </li>
+                        <li><strong>Matematiksel Açıklama:</strong>
+                            <ul>
+                                <li>n bağımsız test için Tip I hata olasılığı: 1-(1-α)^n</li>
+                                <li>20 test için %64 yanlış pozitif olasılığı</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Çoklu Karşılaştırma Çözümleri:</h4>
+                    <ul>
+                        <li><strong>Bonferroni Düzeltmesi:</strong>
+                            <ul>
+                                <li>α/n formülü (n = test sayısı)</li>
+                                <li>Konservatif yaklaşım</li>
+                                <li>Tip II hata riskini artırır</li>
+                            </ul>
+                        </li>
+                        <li><strong>False Discovery Rate (FDR):</strong>
+                            <ul>
+                                <li>Benjamini-Hochberg prosedürü</li>
+                                <li>Bonferroni'den daha liberal</li>
+                                <li>Genomik ve nöroimaging'de yaygın kullanım</li>
+                            </ul>
+                        </li>
+                        <li><strong>Cluster-Based Düzeltme:</strong>
+                            <ul>
+                                <li>Komşu voksellerin gruplanması</li>
+                                <li>Random field theory</li>
+                                <li>Anatomik anlamlılığı korur</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>P-Hacking Problemi:</h4>
+                    <ul>
+                        <li><strong>Tanımı:</strong> p<0.05 elde etmek için manipülatif analizler</li>
+                        <li><strong>Yaygın Uygulamalar:</strong>
+                            <ul>
+                                <li>Seçici veri raporlama</li>
+                                <li>Çoklu analiz stratejileri</li>
+                                <li>Post-hoc hipotez oluşturma</li>
+                                <li>Örneklem büyüklüğünü sonuca göre belirleme</li>
+                            </ul>
+                        </li>
+                        <li><strong>Nörobilimde Örnekler:</strong>
+                            <ul>
+                                <li>fMRI'da farklı preprocessing pipelines</li>
+                                <li>EEG'de farklı zaman penceresi seçimi</li>
+                                <li>ROI (Region of Interest) seçiminde önyargı</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Tekrarlanabilirlik Krizi:</h4>
+                    <ul>
+                        <li><strong>Sorunun Boyutları:</strong>
+                            <ul>
+                                <li>Düşük replikasyon oranları (%30-50)</li>
+                                <li>Küçük etki büyüklükleri</li>
+                                <li>Publikasyon yanlılığı</li>
+                                <li>Dosya çekmecesi problemi</li>
+                            </ul>
+                        </li>
+                        <li><strong>Nörobilime Özgü Faktörler:</strong>
+                            <ul>
+                                <li>Metodolojik heterojenlik</li>
+                                <li>Kompleks analiz pipelines</li>
+                                <li>Software versiyonu farklılıkları</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Çözüm Önerileri:</h4>
+                    <ul>
+                        <li><strong>Metodolojik İyileştirmeler:</strong>
+                            <ul>
+                                <li>Güç analizi ve uygun örneklem büyüklüğü</li>
+                                <li>Ön-kayıtlı araştırma protokolleri (preregistration)</li>
+                                <li>Açık bilim uygulamaları (open science)</li>
+                                <li>Registered reports yayın modeli</li>
+                            </ul>
+                        </li>
+                        <li><strong>İstatistiksel Yaklaşımlar:</strong>
+                            <ul>
+                                <li>Bayesian istatistik kullanımı</li>
+                                <li>Etki büyüklüğü raporlama</li>
+                                <li>Güven aralıkları (confidence intervals)</li>
+                                <li>Meta-analiz yöntemleri</li>
+                            </ul>
+                        </li>
+                        <li><strong>Veri ve Kod Paylaşımı:</strong>
+                            <ul>
+                                <li>Açık veri arşivleri (OpenNeuro, NIMH Data Archive)</li>
+                                <li>Reproducible analysis workflows</li>
+                                <li>Containerization (Docker, Singularity)</li>
+                                <li>Version control systems (Git)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Eğitim ve Farkındalık:</strong>
+                            <ul>
+                                <li>İstatistik eğitiminin güçlendirilmesi</li>
+                                <li>Research integrity eğitimleri</li>
+                                <li>Mentor-mentee kalite kontrolü</li>
+                                <li>Hakemlik sürecinin iyileştirilmesi</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Değerlendirme:</h4>
+                    <p><strong>Mükemmel:</strong> Tüm kavramlar detaylı, çözüm önerileri kapsamlı ve uygulanabilir</p>
+                    <p><strong>İyi:</strong> Ana istatistiksel kavramlar doğru, çözümler temel düzeyde</p>
+                    <p><strong>Orta:</strong> İstatistik bilgisi var, analiz yüzeysel</p>
+                    <p><strong>Zayıf:</strong> Kavramsal hatalar, yetersiz çözüm önerileri</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="difficulty-indicator medium">Orta</div>
+            <div class="question-number">Soru 6:</div>
+            <div class="question-text">
+                Longitudinal ve cross-sectional araştırma tasarımlarını karşılaştırınız. Gelişimsel nörobilim çalışmalarında hangi tasarımın ne zaman tercih edilmesi gerektiğini örneklerle açıklayınız.
+            </div>
+            <textarea class="essay-area" placeholder="Cevabınızı buraya yazın..." onkeyup="updateWordCount(this)"></textarea>
+            <div class="word-count">Kelime sayısı: 0 (Tavsiye edilen: 400-500 kelime)</div>
+            <button class="show-solution" onclick="toggleSolution('sol6')">Örnek Cevabı Göster</button>
+            <div id="sol6" class="solution">
+                <div class="solution-title">Örnek Cevap ve Değerlendirme Kriterleri:</div>
+                <div class="solution-content">
+                    <h4>Cross-Sectional Tasarım:</h4>
+                    <ul>
+                        <li><strong>Tanım:</strong> Farklı yaş gruplarının aynı zamanda incelenmesi</li>
+                        <li><strong>Avantajlar:</strong>
+                            <ul>
+                                <li>Hızlı veri toplama</li>
+                                <li>Maliyet etkinliği</li>
+                                <li>Katılımcı kaybı riski yok</li>
+                                <li>Kohort efektlerini görebilme</li>
+                            </ul>
+                        </li>
+                        <li><strong>Dezavantajlar:</strong>
+                            <ul>
+                                <li>Bireysel değişim bilgisi yok</li>
+                                <li>Yaş konfounders</li>
+                                <li>Kohort efektleri</li>
+                                <li>Nedensellik kurulamaz</li>
+                            </ul>
+                        </li>
+                        <li><strong>Örnek:</strong> 5-25 yaş arası prefrontal korteks hacmi gelişimi</li>
+                    </ul>
+
+                    <h4>Longitudinal Tasarım:</h4>
+                    <ul>
+                        <li><strong>Tanım:</strong> Aynı bireylerin zaman içinde takip edilmesi</li>
+                        <li><strong>Avantajlar:</strong>
+                            <ul>
+                                <li>Bireysel değişim траекторилeri</li>
+                                <li>Nedensellik çıkarımı</li>
+                                <li>Gelişimsel örüntüler</li>
+                                <li>Yaş efektlerinin kontrolü</li>
+                            </ul>
+                        </li>
+                        <li><strong>Dezavantajlar:</strong>
+                            <ul>
+                                <li>Yüksek maliyet</li>
+                                <li>Uzun süre gereksinimi</li>
+                                <li>Katılımcı kaybı (attrition)</li>
+                                <li>Practice effects</li>
+                            </ul>
+                        </li>
+                        <li><strong>Örnek:</strong> Adolesanlarda beyin matürasyon ve risk alma davranışı</li>
+                    </ul>
+
+                    <h4>Gelişimsel Nörobilimde Tercih Kriterleri:</h4>
+                    <ul>
+                        <li><strong>Cross-sectional Tercih Durumları:</strong>
+                            <ul>
+                                <li>Genel gelişimsel trendlerin belirlenmesi</li>
+                                <li>Normative veriler oluşturma</li>
+                                <li>Pilot çalışmalar</li>
+                                <li>Kısıtlı bütçe ve zaman</li>
+                            </ul>
+                        </li>
+                        <li><strong>Longitudinal Tercih Durumları:</strong>
+                            <ul>
+                                <li>Bireysel farklılıkların incelenmesi</li>
+                                <li>Neden-sonuç ilişkileri</li>
+                                <li>Kritik dönem hipotezleri</li>
+                                <li>İntervention etkinliği</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Hibrit Yaklaşımlar:</h4>
+                    <ul>
+                        <li><strong>Cross-sequential Design:</strong> Her iki yaklaşımın kombinasyonu</li>
+                        <li><strong>Accelerated Longitudinal:</strong> Örtüşen yaş kohortları</li>
+                        <li><strong>Micro-longitudinal:</strong> Kısa süreli yoğun takip</li>
+                    </ul>
+
+                    <h4>Örneklerle Uygulamalar:</h4>
+                    <ul>
+                        <li><strong>Örnek 1 - Dil Gelişimi:</strong>
+                            <ul>
+                                <li>Cross-sectional: 2-6 yaş dil alanı aktivasyonu</li>
+                                <li>Longitudinal: Bireysel dil edinim traektorileri</li>
+                            </ul>
+                        </li>
+                        <li><strong>Örnek 2 - Beyin Plastisitesi:</strong>
+                            <ul>
+                                <li>Longitudinal: Müzik eğitimi sonrası structural değişimler</li>
+                                <li>Cross-sectional: Müzisyen vs. non-müzisyen beyin farkları</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Değerlendirme:</h4>
+                    <p><strong>Mükemmel:</strong> Her iki tasarım detaylı, tercih kriterleri açık, uygun örnekler</p>
+                    <p><strong>İyi:</strong> Temel farklar doğru, bazı kriterler eksik</p>
+                    <p><strong>Orta:</strong> Tasarımlar tanımlanmış, analiz yüzeysel</p>
+                    <p><strong>Zayıf:</strong> Kavramsal karışıklık, yetersiz karşılaştırma</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="difficulty-indicator easy">Kolay</div>
+            <div class="question-number">Soru 7:</div>
+            <div class="question-text">
+                Meta-analiz ve sistematik derleme yöntemlerini açıklayınız. Bu yöntemlerin nörobilim literatürüne katkıları ve sınırlılıkları nelerdir?
+            </div>
+            <textarea class="essay-area" placeholder="Cevabınızı buraya yazın..." onkeyup="updateWordCount(this)"></textarea>
+            <div class="word-count">Kelime sayısı: 0 (Tavsiye edilen: 350-450 kelime)</div>
+            <button class="show-solution" onclick="toggleSolution('sol7')">Örnek Cevabı Göster</button>
+            <div id="sol7" class="solution">
+                <div class="solution-title">Örnek Cevap ve Değerlendirme Kriterleri:</div>
+                <div class="solution-content">
+                    <h4>Sistematik Derleme:</h4>
+                    <ul>
+                        <li><strong>Tanım:</strong> Belirli bir araştırma sorusuna sistematik ve kapsamlı literatür taraması</li>
+                        <li><strong>Özellikler:</strong>
+                            <ul>
+                                <li>Önceden belirlenmiş protokol (PROSPERO)</li>
+                                <li>Kapsamlı arama stratejisi</li>
+                                <li>Dahil etme/dışlama kriterleri</li>
+                                <li>Kalite değerlendirmesi</li>
+                                <li>PRISMA raporlama standartları</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Meta-Analiz:</h4>
+                    <ul>
+                        <li><strong>Tanım:</strong> Sistematik derlemeye istatistiksel analiz eklenmesi</li>
+                        <li><strong>İstatistiksel Süreç:</strong>
+                            <ul>
+                                <li>Etki büyüklüğü hesaplama (Cohen's d, r)</li>
+                                <li>Ağırlıklandırma (örneklem büyüklüğü)</li>
+                                <li>Heterojenlik testi (I² statistik)</li>
+                                <li>Forest plot görselleştirme</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Nörobilime Katkıları:</h4>
+                    <ul>
+                        <li><strong>Kanıt Sentezi:</strong>
+                            <ul>
+                                <li>Farklı çalışmaların birleştirilmesi</li>
+                                <li>Daha güçlü sonuçlar elde etme</li>
+                                <li>Etki büyüklüğünün netleştirilmesi</li>
+                            </ul>
+                        </li>
+                        <li><strong>Methodological Insights:</strong>
+                            <ul>
+                                <li>Çalışma kalitesinin değerlendirilmesi</li>
+                                <li>Metodolojik farklılıkların etkisi</li>
+                                <li>Optimal tasarım önerisi</li>
+                            </ul>
+                        </li>
+                        <li><strong>Klinik Uygulamalar:</strong>
+                            <ul>
+                                <li>Tedavi etkinliği kanıtları</li>
+                                <li>Tanısal doğruluk değerlendirmesi</li>
+                                <li>Evidence-based practice</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Nörobilimde Örnekler:</h4>
+                    <ul>
+                        <li><strong>Neuroimaging Meta-analiz:</strong> ALE (Activation Likelihood Estimation)</li>
+                        <li><strong>Cognitive Functions:</strong> Working memory ağları</li>
+                        <li><strong>Clinical Applications:</strong> Antidepresan etkinliği</li>
+                        <li><strong>Developmental Studies:</strong> Yaş ile beyin hacmi ilişkisi</li>
+                    </ul>
+
+                    <h4>Sınırlılıklar:</h4>
+                    <ul>
+                        <li><strong>Publikasyon Yanlılığı:</strong>
+                            <ul>
+                                <li>Pozitif sonuçların daha çok yayınlanması</li>
+                                <li>Funnel plot asimetrisi</li>
+                                <li>File drawer problem</li>
+                            </ul>
+                        </li>
+                        <li><strong>Heterojenlik Sorunları:</strong>
+                            <ul>
+                                <li>Farklı metodolojiler</li>
+                                <li>Popülasyon farklılıkları</li>
+                                <li>Ölçüm araçları farkı</li>
+                            </ul>
+                        </li>
+                        <li><strong>Nörobilime Özgü Zorluklar:</strong>
+                            <ul>
+                                <li>Koordinat tabanlı veriler</li>
+                                <li>Preprocessing farklılıkları</li>
+                                <li>ROI tanımı belirsizlikleri</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Kalite Kriterleri:</h4>
+                    <ul>
+                        <li><strong>Sistematik Derleme İçin:</strong>
+                            <ul>
+                                <li>AMSTAR-2 kontrol listesi</li>
+                                <li>Çoklu veritabanı araması</li>
+                                <li>İki bağımsız değerlendirici</li>
+                            </ul>
+                        </li>
+                        <li><strong>Meta-analiz İçin:</strong>
+                            <ul>
+                                <li>Random vs. fixed effects modeli</li>
+                                <li>Sensitivity analysis</li>
+                                <li>Subgroup analysis</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Gelecek Yönelimler:</h4>
+                    <ul>
+                        <li><strong>Individual Patient Data (IPD) Meta-analiz</strong></li>
+                        <li><strong>Network Meta-analiz</strong></li>
+                        <li><strong>Machine Learning Entegrasyonu</strong></li>
+                        <li><strong>Real-time Meta-analiz</strong></li>
+                    </ul>
+
+                    <h4>Değerlendirme:</h4>
+                    <p><strong>Mükemmel:</strong> Her iki yöntem detaylı, katkı ve sınırlılıklar nörobilim bağlamında</p>
+                    <p><strong>İyi:</strong> Ana kavramlar doğru, bazı spesifik detaylar eksik</p>
+                    <p><strong>Orta:</strong> Temel tanımlar var, analiz yüzeysel</p>
+                    <p><strong>Zayıf:</strong> Kavramsal karışıklık, yetersiz açıklama</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="difficulty-indicator hard">Zor</div>
+            <div class="question-number">Soru 8:</div>
+            <div class="question-text">
+                Açık bilim (open science) hareketinin nörobilim araştırmalarına etkilerini değerlendiriniz. Veri paylaşımı, kod erişilebilirliği ve açık erişim yayıncılığın yararları ve zorluklarını tartışınız. Türkiye'deki mevcut durum ve geliştirilmesi gereken alanlar nelerdir?
+            </div>
+            <textarea class="essay-area" placeholder="Cevabınızı buraya yazın..." onkeyup="updateWordCount(this)"></textarea>
+            <div class="word-count">Kelime sayısı: 0 (Tavsiye edilen: 500-600 kelime)</div>
+            <button class="show-solution" onclick="toggleSolution('sol8')">Örnek Cevabı Göster</button>
+            <div id="sol8" class="solution">
+                <div class="solution-title">Örnek Cevap ve Değerlendirme Kriterleri:</div>
+                <div class="solution-content">
+                    <h4>Açık Bilim Hareketinin Temel İlkeleri:</h4>
+                    <ul>
+                        <li><strong>Açık Erişim:</strong> Bilimsel yayınlara ücretsiz erişim</li>
+                        <li><strong>Açık Veri:</strong> Araştırma verilerinin paylaşılması</li>
+                        <li><strong>Açık Kaynak:</strong> Analiz kodlarının erişilebilirliği</li>
+                        <li><strong>Açık Metodoloji:</strong> Detaylı yöntem paylaşımı</li>
+                        <li><strong>Açık Değerlendirme:</strong> Şeffaf hakemlik süreçleri</li>
+                    </ul>
+
+                    <h4>Nörobilime Etkiler:</h4>
+                    <ul>
+                        <li><strong>Pozitif Etkiler:</strong>
+                            <ul>
+                                <li>Tekrarlanabilirlik artışı</li>
+                                <li>Veri kullanımında verimlilik</li>
+                                <li>Araştırma hızının artması</li>
+                                <li>Küresel iş birliği gelişimi</li>
+                                <li>Metodolojik şeffaflık</li>
+                            </ul>
+                        </li>
+                        <li><strong>Zorluklar:</strong>
+                            <ul>
+                                <li>Gizlilik ve etik kaygılar</li>
+                                <li>Teknik altyapı gereksinimleri</li>
+                                <li>Standardizasyon eksikliği</li>
+                                <li>Kalite kontrol sorunları</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Veri Paylaşımı:</h4>
+                    <ul>
+                        <li><strong>Platformlar:</strong>
+                            <ul>
+                                <li>OpenNeuro: Neuroimaging verileri</li>
+                                <li>NIMH Data Archive: Geniş kapsamlı</li>
+                                <li>Human Connectome Project</li>
+                                <li>EBRAINS: Avrupa beyin atlası</li>
+                            </ul>
+                        </li>
+                        <li><strong>Yararlar:</strong>
+                            <ul>
+                                <li>Büyük örneklem meta-analizleri</li>
+                                <li>Çoklu kohort validasyonu</li>
+                                <li>Makine öğrenmesi için büyük veri</li>
+                                <li>Nadir hastalık çalışmaları</li>
+                            </ul>
+                        </li>
+                        <li><strong>Zorluklar:</strong>
+                            <ul>
+                                <li>GDPR ve gizlilik düzenlemeleri</li>
+                                <li>Anonimizasyon zorlukları</li>
+                                <li>Metadata standardizasyonu</li>
+                                <li>Depolama ve bandwidth maliyetleri</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Kod Erişilebilirliği:</h4>
+                    <ul>
+                        <li><strong>Platformlar:</strong>
+                            <ul>
+                                <li>GitHub: Kod repository</li>
+                                <li>Zenodo: DOI ile kod arşivleme</li>
+                                <li>Code Ocean: Executable papers</li>
+                                <li>Binder: İnteraktif notebook</li>
+                            </ul>
+                        </li>
+                        <li><strong>Reproducible Research Tools:</strong>
+                            <ul>
+                                <li>Jupyter Notebooks</li>
+                                <li>R Markdown</li>
+                                <li>Docker konteynerları</li>
+                                <li>Singularity (HPC için)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Nörobilim-Spesifik:</strong>
+                            <ul>
+                                <li>BIDS (Brain Imaging Data Structure)</li>
+                                <li>COBRA (Computational Biology Research Article)</li>
+                                <li>Neuroimaging pipelines (fMRIPrep, FreeSurfer)</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Açık Erişim Yayıncılık:</h4>
+                    <ul>
+                        <li><strong>Modeller:</strong>
+                            <ul>
+                                <li>Gold OA: Tamamen açık dergiler</li>
+                                <li>Hybrid: Geleneksel dergilerde OA seçenek</li>
+                                <li>Green OA: Self-archiving (arXiv, bioRxiv)</li>
+                                <li>Diamond OA: Yazar ve okuyucu ücretsiz</li>
+                            </ul>
+                        </li>
+                        <li><strong>Avantajlar:</strong>
+                            <ul>
+                                <li>Küresel erişim eşitliği</li>
+                                <li>Atıf sayısında artış</li>
+                                <li>Araştırma etkisinin genişlemesi</li>
+                                <li>Kamu fonlu araştırmalara açık erişim</li>
+                            </ul>
+                        </li>
+                        <li><strong>Challenges:</strong>
+                            <ul>
+                                <li>APC (Article Processing Charge) maliyetleri</li>
+                                <li>Predatory journal sorunu</li>
+                                <li>Kalite kaygıları</li>
+                                <li>Akademik değerlendirme sistemlerinde direnç</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Türkiye'deki Mevcut Durum:</h4>
+                    <ul>
+                        <li><strong>İlerleme Alanları:</strong>
+                            <ul>
+                                <li>TÜBİTAK açık erişim politikası</li>
+                                <li>Üniversitelerde institutional repositories</li>
+                                <li>TR-Index ve ULAKBİM veri tabanları</li>
+                                <li>Açık erişim farkındalık artışı</li>
+                            </ul>
+                        </li>
+                        <li><strong>Sınırlılıklar:</strong>
+                            <ul>
+                                <li>Veri paylaşımı kültürü eksikliği</li>
+                                <li>Altyapı yetersizlikleri</li>
+                                <li>Yasal düzenleme belirsizlikleri</li>
+                                <li>Dil bariyerleri (Türkçe-İngilizce)</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Geliştirilmesi Gereken Alanlar:</h4>
+                    <ul>
+                        <li><strong>Altyapı Geliştirme:</strong>
+                            <ul>
+                                <li>Ulusal veri arşivi oluşturma</li>
+                                <li>Yüksek performanslı hesaplama kapasitesi</li>
+                                <li>Güvenli veri paylaşım platformları</li>
+                            </ul>
+                        </li>
+                        <li><strong>Politika ve Düzenlemeler:</strong>
+                            <ul>
+                                <li>Ulusal açık bilim stratejisi</li>
+                                <li>Fonlama kuruluşları mandaları</li>
+                                <li>Etik kurul standartları güncelleme</li>
+                                <li>Akademik teşvik sistemi revizyonu</li>
+                            </ul>
+                        </li>
+                        <li><strong>Eğitim ve Kapasite:</strong>
+                            <ul>
+                                <li>Araştırmacılar için açık bilim eğitimi</li>
+                                <li>Veri yönetimi planları</li>
+                                <li>Reproducible research workshops</li>
+                                <li>Bilgi teknolojileri desteği</li>
+                            </ul>
+                        </li>
+                        <li><strong>İş birliği ve Ağ Oluşturma:</strong>
+                            <ul>
+                                <li>Uluslararası konsorsiyumlarla entegrasyon</li>
+                                <li>Sektör-akademi iş birliği</li>
+                                <li>Bölgesel ağlar kurulması</li>
+                                <li>Disiplinler arası çalışma platformları</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Değerlendirme:</h4>
+                    <p><strong>Mükemmel:</strong> Açık bilim detaylı analiz, Türkiye durumu gerçekçi, somut öneriler</p>
+                    <p><strong>İyi:</strong> Ana kavramlar doğru, kısmi durum analizi</p>
+                    <p><strong>Orta:</strong> Temel bilgi var, yerel bağlam eksik</p>
+                    <p><strong>Zayıf:</strong> Kavramsal eksiklik, analiz yüzeysel</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function updateWordCount(textarea) {
+            const words = textarea.value.trim().split(/\s+/).filter(word => word.length > 0);
+            const wordCount = words.length;
+            const wordCountElement = textarea.nextElementSibling;
+            wordCountElement.textContent = `Kelime sayısı: ${wordCount} (Tavsiye edilen: ${wordCountElement.textContent.match(/\d+-\d+/)[0]} kelime)`;
+        }
+
+        function toggleSolution(solutionId) {
+            const solution = document.getElementById(solutionId);
+            if (solution.style.display === 'none' || solution.style.display === '') {
+                solution.style.display = 'block';
+            } else {
+                solution.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

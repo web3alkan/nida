@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nöron Fizyolojisi - Klasik Sorular</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .back-link:hover {
+            background: #5a67d8;
+        }
+        .question {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-left: 5px solid #388e3c;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #388e3c;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .question-text {
+            margin: 15px 0;
+            font-size: 1.1em;
+            font-weight: 500;
+            color: #333;
+        }
+        .essay-area {
+            width: 100%;
+            min-height: 150px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 1em;
+            font-family: Arial, sans-serif;
+            resize: vertical;
+            margin-top: 10px;
+        }
+        .essay-area:focus {
+            border-color: #388e3c;
+            outline: none;
+            box-shadow: 0 0 5px rgba(56, 142, 60, 0.3);
+        }
+        .solution {
+            background: #e8f5e8;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 15px;
+            border-left: 5px solid #4caf50;
+            display: none;
+        }
+        .solution-title {
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        .solution-content {
+            line-height: 1.8;
+        }
+        .solution h4 {
+            color: #2e7d32;
+            margin-top: 15px;
+            margin-bottom: 8px;
+        }
+        .solution ul {
+            margin-left: 20px;
+        }
+        .solution li {
+            margin-bottom: 5px;
+        }
+        .show-solution {
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-size: 1em;
+        }
+        .show-solution:hover {
+            background: #45a049;
+        }
+        .difficulty-indicator {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .easy { background: #c8e6c9; color: #2e7d32; }
+        .medium { background: #fff3e0; color: #ef6c00; }
+        .hard { background: #ffcdd2; color: #d32f2f; }
+        .word-count {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+        .tips {
+            background: #e3f2fd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 25px;
+            border-left: 5px solid #2196f3;
+        }
+        .tips-title {
+            font-weight: bold;
+            color: #1976d2;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Ana Sayfaya Dön</a>
+        
+        <div class="header">
+            <h1>⚡ Nöron Fizyolojisi</h1>
+            <h2>Klasik Sorular (Uzun Cevaplı)</h2>
+        </div>
+
+        <div class="tips">
+            <div class="tips-title">💡 Cevaplama İpuçları:</div>
+            <ul>
+                <li>Membran potansiyeli değişimlerini açıklayın</li>
+                <li>Ion kanallarının rollerini detaylandırın</li>
+                <li>Sinaptik transmisyon aşamalarını belirtin</li>
+                <li>Plastisyte mekanizmalarını örneklendirin</li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <div class="difficulty-indicator easy">Kolay</div>
+            <div class="question-number">Soru 1:</div>
+            <div class="question-text">
+                Resting membrane potential oluşumu ve aksiyon potansiyelinin üretilme mekanizmasını detaylarıyla açıklayınız. Na+/K+ pompasının ve voltage-gated ion kanallarının rollerini belirtiniz.
+            </div>
+            <textarea class="essay-area" placeholder="Cevabınızı buraya yazın..." onkeyup="updateWordCount(this)"></textarea>
+            <div class="word-count">Kelime sayısı: 0 (Tavsiye edilen: 300-400 kelime)</div>
+            <button class="show-solution" onclick="toggleSolution('sol1')">Örnek Cevabı Göster</button>
+            <div id="sol1" class="solution">
+                <div class="solution-title">Örnek Cevap ve Değerlendirme Kriterleri:</div>
+                <div class="solution-content">
+                    <h4>Resting Membrane Potential:</h4>
+                    <ul>
+                        <li><strong>Değer:</strong> ~-70 mV (inside negative)</li>
+                        <li><strong>Na+/K+ ATPase:</strong> 3 Na+ out, 2 K+ in (electrogenic)</li>
+                        <li><strong>K+ leak channels:</strong> K+ efflux dominance</li>
+                        <li><strong>Protein anions:</strong> Impermeant negative charges</li>
+                    </ul>
+
+                    <h4>Aksiyon Potansiyeli Aşamaları:</h4>
+                    <ul>
+                        <li><strong>Threshold (-55 mV):</strong> Voltage-gated Na+ channel activation</li>
+                        <li><strong>Depolarization:</strong> Rapid Na+ influx</li>
+                        <li><strong>Peak (+30 mV):</strong> Na+ equilibrium potential approach</li>
+                        <li><strong>Repolarization:</strong> Na+ inactivation, K+ channels open</li>
+                        <li><strong>Afterhyperpolarization:</strong> K+ channels slow closure</li>
+                    </ul>
+
+                    <h4>Voltage-Gated Channels:</h4>
+                    <ul>
+                        <li><strong>Na+ channels:</strong>
+                            <ul>
+                                <li>Activation: Fast, voltage-dependent</li>
+                                <li>Inactivation: Time-dependent, creates refractory period</li>
+                                <li>TTX-sensitive</li>
+                            </ul>
+                        </li>
+                        <li><strong>K+ channels:</strong>
+                            <ul>
+                                <li>Delayed rectifier: Slow activation</li>
+                                <li>Repolarization dominant</li>
+                                <li>TEA-sensitive</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Refractory Periods:</h4>
+                    <ul>
+                        <li><strong>Absolute:</strong> Na+ channels inactivated</li>
+                        <li><strong>Relative:</strong> Higher threshold due to K+ conductance</li>
+                    </ul>
+
+                    <h4>Değerlendirme:</h4>
+                    <p><strong>Mükemmel:</strong> Detaylı ionic mechanism, channel properties</p>
+                    <p><strong>İyi:</strong> Ana aksiyon potansiyeli aşamaları</p>
+                    <p><strong>Orta:</strong> Temel depolarization/repolarization</p>
+                    <p><strong>Zayıf:</strong> Ion channel kavramı eksik</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="difficulty-indicator medium">Orta</div>
+            <div class="question-number">Soru 2:</div>
+            <div class="question-text">
+                Sinaptik transmisyon sürecini vesicle cycle ile birlikte açıklayınız. SNARE proteinleri ve kalsiyum sensörlerinin rollerini değerlendiriniz.
+            </div>
+            <textarea class="essay-area" placeholder="Cevabınızı buraya yazın..." onkeyup="updateWordCount(this)"></textarea>
+            <div class="word-count">Kelime sayısı: 0 (Tavsiye edilen: 400-500 kelime)</div>
+            <button class="show-solution" onclick="toggleSolution('sol2')">Örnek Cevabı Göster</button>
+            <div id="sol2" class="solution">
+                <div class="solution-title">Örnek Cevap ve Değerlendirme Kriterleri:</div>
+                <div class="solution-content">
+                    <h4>Sinaptik Transmisyon Aşamaları:</h4>
+                    <ul>
+                        <li><strong>AP arrival:</strong> Presynaptic terminal depolarization</li>
+                        <li><strong>Ca2+ influx:</strong> Voltage-gated Ca2+ channels (N, P/Q-type)</li>
+                        <li><strong>Vesicle fusion:</strong> SNARE-mediated exocytosis</li>
+                        <li><strong>NT release:</strong> Quantal release, diffusion</li>
+                        <li><strong>Receptor activation:</strong> Postsynaptic response</li>
+                        <li><strong>Termination:</strong> Reuptake, degradation</li>
+                    </ul>
+
+                    <h4>SNARE Protein Kompleksi:</h4>
+                    <ul>
+                        <li><strong>v-SNARE (synaptobrevin):</strong> Vesicle membrane</li>
+                        <li><strong>t-SNAREs:</strong>
+                            <ul>
+                                <li>Syntaxin-1: Plasma membrane</li>
+                                <li>SNAP-25: Membrane-associated</li>
+                            </ul>
+                        </li>
+                        <li><strong>SNARE complex formation:</strong> Zipper-like assembly</li>
+                        <li><strong>NSF/SNAP:</strong> Complex disassembly</li>
+                    </ul>
+
+                    <h4>Kalsiyum Sensörleri:</h4>
+                    <ul>
+                        <li><strong>Synaptotagmin-1:</strong>
+                            <ul>
+                                <li>Major Ca2+ sensor for fast release</li>
+                                <li>C2A, C2B domains: Ca2+/phospholipid binding</li>
+                                <li>Synchronous release trigger</li>
+                            </ul>
+                        </li>
+                        <li><strong>Doc2:</strong> Asynchronous release</li>
+                        <li><strong>Complexins:</strong> Fusion clamping/facilitation</li>
+                    </ul>
+
+                    <h4>Vesicle Cycle:</h4>
+                    <ul>
+                        <li><strong>Docking:</strong> Active zone positioning</li>
+                        <li><strong>Priming:</strong> SNARE complex partial assembly</li>
+                        <li><strong>Ca2+-triggered fusion:</strong> Pore formation</li>
+                        <li><strong>Retrieval mechanisms:</strong>
+                            <ul>
+                                <li>Clathrin-mediated endocytosis</li>
+                                <li>Kiss-and-run</li>
+                                <li>Bulk endocytosis</li>
+                            </ul>
+                        </li>
+                        <li><strong>Recycling:</strong> Vesicle reformation, refilling</li>
+                    </ul>
+
+                    <h4>Plastisyte Mekanizmaları:</h4>
+                    <ul>
+                        <li><strong>Short-term:</strong>
+                            <ul>
+                                <li>Facilitation: Residual Ca2+</li>
+                                <li>Depression: Vesicle depletion</li>
+                                <li>Post-tetanic potentiation</li>
+                            </ul>
+                        </li>
+                        <li><strong>Long-term:</strong>
+                            <ul>
+                                <li>LTP/LTD: Activity-dependent changes</li>
+                                <li>Structural modifications</li>
+                                <li>Gene expression changes</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Değerlendirme:</h4>
+                    <p><strong>Mükemmel:</strong> Detaylı vesicle cycle, SNARE mechanism, Ca2+ sensing</p>
+                    <p><strong>İyi:</strong> Ana transmisyon aşamaları, temel protein rolleri</p>
+                    <p><strong>Orta:</strong> Sinaptik transmisyon süreç, yüzeysel molecular</p>
+                    <p><strong>Zayıf:</strong> Transmisyon kavramı eksik, protein bilgisi yok</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional questions would continue... -->
+
+    </div>
+
+    <script>
+        function updateWordCount(textarea) {
+            const words = textarea.value.trim().split(/\s+/).filter(word => word.length > 0);
+            const wordCount = words.length;
+            const wordCountElement = textarea.nextElementSibling;
+            wordCountElement.textContent = `Kelime sayısı: ${wordCount} (Tavsiye edilen: ${wordCountElement.textContent.match(/\d+-\d+/)[0]} kelime)`;
+        }
+
+        function toggleSolution(solutionId) {
+            const solution = document.getElementById(solutionId);
+            if (solution.style.display === 'none' || solution.style.display === '') {
+                solution.style.display = 'block';
+            } else {
+                solution.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

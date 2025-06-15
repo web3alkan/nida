@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Görme Sistemi - Çoktan Seçmeli Sorular</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .back-link:hover {
+            background: #5a67d8;
+        }
+        .question {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 5px solid #667eea;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.1em;
+        }
+        .question-text {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+        .options {
+            list-style: none;
+            padding: 0;
+        }
+        .options li {
+            padding: 8px 15px;
+            margin: 5px 0;
+            background: #fff;
+            border-radius: 5px;
+            border: 2px solid #e9ecef;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .options li:hover {
+            background: #e3f2fd;
+            border-color: #2196f3;
+        }
+        .solution {
+            background: #e8f5e8;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            border-left: 5px solid #4caf50;
+            display: none;
+        }
+        .solution-title {
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+        .show-solution {
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .show-solution:hover {
+            background: #45a049;
+        }
+        .correct-answer {
+            background: #c8e6c9 !important;
+            border-color: #4caf50 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Ana Sayfaya Dön</a>
+        
+        <div class="header">
+            <h1>👁️ Görme Sistemi</h1>
+            <h2>Çoktan Seçmeli Sorular</h2>
+            <p><em>Her sorudan sonra "Çözümü Göster" butonuna tıklayarak detaylı açıklamayı görebilirsiniz.</em></p>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 1:</div>
+            <div class="question-text">Retinada bulunan fotoreseptör hücreler ve işlevleri ile ilgili aşağıdakilerden hangisi yanlıştır?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Çubuk hücreler düşük ışıkta görmeyi sağlar</li>
+                <li onclick="selectOption(this, false)">B) Koni hücreler renk görmeden sorumludur</li>
+                <li onclick="selectOption(this, true)">C) Çubuk hücreler foveada yoğunlaşmıştır</li>
+                <li onclick="selectOption(this, false)">D) Koni hücreler keskin görmeyi sağlar</li>
+                <li onclick="selectOption(this, false)">E) Rodopsin çubuk hücrelerde bulunur</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol1')">Çözümü Göster</button>
+            <div id="sol1" class="solution">
+                <div class="solution-title">Doğru Cevap: C) Çubuk hücreler foveada yoğunlaşmıştır</div>
+                <p><strong>Açıklama:</strong> Foveada sadece koni hücreler bulunur, çubuk hücreler yoktur. Fovea, retinada en keskin görmenin sağlandığı merkezi bölgedir. Çubuk hücreler retinanın periferik bölgelerinde yoğunlaşmıştır ve karanlıkta görmeyi (skotopik görme) sağlar. Koni hücreler ise aydınlıkta (fotopik görme) ve renk görmeden sorumludur.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 2:</div>
+            <div class="question-text">Görsel bilginin retinadan beyine iletim yolu aşağıdakilerden hangisidir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Fotoreseptör → Bipolar hücre → Amakrin hücre → Gangliyon hücre</li>
+                <li onclick="selectOption(this, true)">B) Fotoreseptör → Bipolar hücre → Gangliyon hücre → Optik sinir</li>
+                <li onclick="selectOption(this, false)">C) Gangliyon hücre → Bipolar hücre → Fotoreseptör → Optik sinir</li>
+                <li onclick="selectOption(this, false)">D) Fotoreseptör → Horizontal hücre → Optik sinir</li>
+                <li onclick="selectOption(this, false)">E) Bipolar hücre → Fotoreseptör → Gangliyon hücre</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol2')">Çözümü Göster</button>
+            <div id="sol2" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Fotoreseptör → Bipolar hücre → Gangliyon hücre → Optik sinir</div>
+                <p><strong>Açıklama:</strong> Görsel bilgi retinada şu yolu izler: Işık önce fotoreseptörleri (çubuk ve koni) uyarır, buradan bipolar hücrelere, oradan da gangliyon hücrelerine iletilir. Gangliyon hücrelerinin aksonları optik siniri oluşturur ve görsel bilgiyi beyne taşır. Horizontal ve amakrin hücreler lateral bağlantılar sağlayarak görsel işlemeyi modüle eder.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 3:</div>
+            <div class="question-text">Optik kiazma düzeyinde hangi lifler çaprazlaşır?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Tüm optik sinir lifleri</li>
+                <li onclick="selectOption(this, true)">B) Nazal (burun tarafı) retinadan gelen lifler</li>
+                <li onclick="selectOption(this, false)">C) Temporal (şakak tarafı) retinadan gelen lifler</li>
+                <li onclick="selectOption(this, false)">D) Hiçbir lif çaprazlaşmaz</li>
+                <li onclick="selectOption(this, false)">E) Sadece renk bilgisi taşıyan lifler</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol3')">Çözümü Göster</button>
+            <div id="sol3" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Nazal (burun tarafı) retinadan gelen lifler</div>
+                <p><strong>Açıklama:</strong> Optik kiazmada nazal retinadan gelen lifler karşı tarafa geçer (çaprazlaşır), temporal retinadan gelen lifler ise aynı tarafta kalır. Bu düzenleme sayesinde sağ görme alanından gelen bilgi sol hemisfer tarafından, sol görme alanından gelen bilgi ise sağ hemisfer tarafından işlenir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 4:</div>
+            <div class="question-text">Lateral genikulat nukleus (LGN) hangi görsel bilgiyi işler?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Sadece hareket bilgisi</li>
+                <li onclick="selectOption(this, false)">B) Sadece renk bilgisi</li>
+                <li onclick="selectOption(this, true)">C) Hem renk hem de kontrast bilgisi</li>
+                <li onclick="selectOption(this, false)">D) Sadece derinlik algısı</li>
+                <li onclick="selectOption(this, false)">E) Sadece parlaklık bilgisi</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol4')">Çözümü Göster</button>
+            <div id="sol4" class="solution">
+                <div class="solution-title">Doğru Cevap: C) Hem renk hem de kontrast bilgisi</div>
+                <p><strong>Açıklama:</strong> LGN, talamusta bulunan görsel bilgi işleme merkezidir ve 6 tabakadan oluşur. Magnoselüler tabakalar (1-2) hareket ve kontrast bilgisini, parvoselüler tabakalar (3-6) ise renk ve ince detay bilgisini işler. Konioselüler hücreler ise mavi-sarı renk bilgisini işler. LGN'den bilgi primer görme korteksine (V1) iletilir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 5:</div>
+            <div class="question-text">Primer görme korteksi (V1) ile ilgili aşağıdakilerden hangisi doğrudur?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Temporal lobda bulunur</li>
+                <li onclick="selectOption(this, true)">B) Oryantasyon seçici hücreler içerir</li>
+                <li onclick="selectOption(this, false)">C) Sadece renk bilgisini işler</li>
+                <li onclick="selectOption(this, false)">D) Yüz tanımadan sorumludur</li>
+                <li onclick="selectOption(this, false)">E) Hareket algısından sorumlu değildir</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol5')">Çözümü Göster</button>
+            <div id="sol5" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Oryantasyon seçici hücreler içerir</div>
+                <p><strong>Açıklama:</strong> V1 (Brodmann alanı 17), oksipital lobda bulunur ve belirli oryantasyonlardaki çizgilere tepki veren basit ve kompleks hücreler içerir. Hubel ve Wiesel'in çığır açan çalışmaları, bu hücrelerin görsel uyaranların kenar ve oryantasyonlarını tespit ettiğini göstermiştir. V1 ayrıca oküler dominans kolonları ve blob yapıları ile organize edilmiştir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 6:</div>
+            <div class="question-text">Dorsal görme yolu ("nerede" yolu) hangi bilgiyi işler?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Nesne tanıma</li>
+                <li onclick="selectOption(this, false)">B) Renk algısı</li>
+                <li onclick="selectOption(this, true)">C) Hareket ve mekansal konum</li>
+                <li onclick="selectOption(this, false)">D) Yüz tanıma</li>
+                <li onclick="selectOption(this, false)">E) Kelime okuma</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol6')">Çözümü Göster</button>
+            <div id="sol6" class="solution">
+                <div class="solution-title">Doğru Cevap: C) Hareket ve mekansal konum</div>
+                <p><strong>Açıklama:</strong> Dorsal yol V1'den parietal loba uzanır ve hareket, derinlik, mekansal ilişkiler ve görsel rehberlikli hareketleri işler. Bu yol "nerede" veya "nasıl" yolu olarak bilinir. Ventral yol ise temporal loba uzanır ve nesne tanıma, renk ve form işleme ile ilgilidir ("ne" yolu).</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 7:</div>
+            <div class="question-text">Akinetopsi (hareket körlüğü) hangi beyin bölgesinin hasarıyla ilişkilidir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) V1</li>
+                <li onclick="selectOption(this, false)">B) V2</li>
+                <li onclick="selectOption(this, false)">C) V4</li>
+                <li onclick="selectOption(this, true)">D) V5/MT</li>
+                <li onclick="selectOption(this, false)">E) FFA</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol7')">Çözümü Göster</button>
+            <div id="sol7" class="solution">
+                <div class="solution-title">Doğru Cevap: D) V5/MT</div>
+                <p><strong>Açıklama:</strong> V5 (MT - medial temporal alan) hareket algısından sorumludur. Bu alanın bilateral hasarı akinetopsiye yol açar - hastalar nesneleri görebilir ancak hareketlerini algılayamaz. Dünya bir dizi durağan görüntü gibi algılanır. V4 renk algısından, FFA (fusiform yüz alanı) ise yüz tanımadan sorumludur.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 8:</div>
+            <div class="question-text">Retinal gangliyon hücrelerinden hangisi sirkadiyen ritim düzenlemesinde rol oynar?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Midget hücreler</li>
+                <li onclick="selectOption(this, false)">B) Parasol hücreler</li>
+                <li onclick="selectOption(this, true)">C) İntrinsik ışığa duyarlı gangliyon hücreler (ipRGC)</li>
+                <li onclick="selectOption(this, false)">D) Bistratifiye hücreler</li>
+                <li onclick="selectOption(this, false)">E) Amakrin hücreler</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol8')">Çözümü Göster</button>
+            <div id="sol8" class="solution">
+                <div class="solution-title">Doğru Cevap: C) İntrinsik ışığa duyarlı gangliyon hücreler (ipRGC)</div>
+                <p><strong>Açıklama:</strong> ipRGC'ler melanopsin fotopigmenti içerir ve doğrudan ışığa duyarlıdır. Bu hücreler görsel algı oluşturmaz ancak suprakiazmatik nukleusa projeksiyon yaparak sirkadiyen ritimleri düzenler, pupil refleksini kontrol eder ve melatonin salgısını etkiler. Görme dışı (non-visual) fotoresepsiyonun önemli bir parçasıdır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 9:</div>
+            <div class="question-text">Binoküler görme ve derinlik algısı için aşağıdakilerden hangisi gereklidir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Sadece bir göz</li>
+                <li onclick="selectOption(this, false)">B) Renk görme yeteneği</li>
+                <li onclick="selectOption(this, true)">C) İki gözden gelen görüntülerin füzyonu</li>
+                <li onclick="selectOption(this, false)">D) Sadece çubuk hücreler</li>
+                <li onclick="selectOption(this, false)">E) Hareket algısı</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol9')">Çözümü Göster</button>
+            <div id="sol9" class="solution">
+                <div class="solution-title">Doğru Cevap: C) İki gözden gelen görüntülerin füzyonu</div>
+                <p><strong>Açıklama:</strong> Binoküler derinlik algısı (stereopsis), iki gözün hafifça farklı açılardan gördüğü görüntülerin beyinde birleştirilmesiyle oluşur. Bu retinal disparite, V1'deki binoküler hücreler tarafından işlenir. Monoküler derinlik ipuçları (perspektif, gölgeleme, hareket paralaksı) tek gözle de derinlik algısı sağlayabilir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 10:</div>
+            <div class="question-text">Kortikal renk körlüğü (akromatopsi) hangi görsel alanın hasarıyla oluşur?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) V1</li>
+                <li onclick="selectOption(this, false)">B) V2</li>
+                <li onclick="selectOption(this, false)">C) V3</li>
+                <li onclick="selectOption(this, true)">D) V4</li>
+                <li onclick="selectOption(this, false)">E) V5</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol10')">Çözümü Göster</button>
+            <div id="sol10" class="solution">
+                <div class="solution-title">Doğru Cevap: D) V4</div>
+                <p><strong>Açıklama:</strong> V4 alanı renk algısında kritik rol oynar. Bu alanın bilateral hasarı serebral akromatopsiye (kortikal renk körlüğü) yol açar. Hastalar dünyayı gri tonlarında görür. Retinal renk körlüğünden farklı olarak, bu durumda koni hücreler normaldir ancak kortikal renk işleme bozulmuştur. V4 ayrıca şekil ve doku algısında da rol oynar.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function selectOption(element, isCorrect) {
+            // Remove previous selections in this question
+            const options = element.parentElement.children;
+            for (let option of options) {
+                option.classList.remove('correct-answer');
+                option.style.background = '';
+                option.style.borderColor = '';
+            }
+            
+            // Highlight selected option
+            if (isCorrect) {
+                element.classList.add('correct-answer');
+            } else {
+                element.style.background = '#ffebee';
+                element.style.borderColor = '#f44336';
+            }
+        }
+
+        function toggleSolution(solutionId) {
+            const solution = document.getElementById(solutionId);
+            if (solution.style.display === 'none' || solution.style.display === '') {
+                solution.style.display = 'block';
+            } else {
+                solution.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uyku ve Bilinç - Çoktan Seçmeli Sorular</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .back-link:hover {
+            background: #5a67d8;
+        }
+        .question {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 5px solid #667eea;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.1em;
+        }
+        .question-text {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+        .options {
+            list-style: none;
+            padding: 0;
+        }
+        .options li {
+            padding: 8px 15px;
+            margin: 5px 0;
+            background: #fff;
+            border-radius: 5px;
+            border: 2px solid #e9ecef;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .options li:hover {
+            background: #e3f2fd;
+            border-color: #2196f3;
+        }
+        .solution {
+            background: #e8f5e8;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            border-left: 5px solid #4caf50;
+            display: none;
+        }
+        .solution-title {
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+        .show-solution {
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .show-solution:hover {
+            background: #45a049;
+        }
+        .correct-answer {
+            background: #c8e6c9 !important;
+            border-color: #4caf50 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Ana Sayfaya Dön</a>
+        
+        <div class="header">
+            <h1>😴 Uyku ve Bilinç</h1>
+            <h2>Çoktan Seçmeli Sorular</h2>
+            <p><em>Her sorudan sonra "Çözümü Göster" butonuna tıklayarak detaylı açıklamayı görebilirsiniz.</em></p>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 1:</div>
+            <div class="question-text">REM uykusu hangi özelliklerle karakterizedir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Yavaş beyin dalgaları ve kas tonusu artışı</li>
+                <li onclick="selectOption(this, true)">B) Hızlı göz hareketleri ve kas atonisi</li>
+                <li onclick="selectOption(this, false)">C) Delta dalgaları ve yüksek uyanma eşiği</li>
+                <li onclick="selectOption(this, false)">D) Alpha dalgaları ve normale yakın kas tonusu</li>
+                <li onclick="selectOption(this, false)">E) Theta dalgaları ve hipervigilans</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol1')">Çözümü Göster</button>
+            <div id="sol1" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Hızlı göz hareketleri ve kas atonisi</div>
+                <p><strong>Açıklama:</strong> REM (Rapid Eye Movement) uykusu, karakteristik hızlı göz hareketleri, kasların geçici felci (atoni), paradoksal uyanık benzeri EEG aktivitesi ve canlı rüyalarla karakterizedir. Beyin sapındaki kolinerjik nöronlar REM uykusunu başlatır ve motor nöronları inhibe ederek kas atonisine yol açar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 2:</div>
+            <div class="question-text">Sirkadiyen ritmin ana düzenleyicisi hangi beyin yapısıdır?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Hipotalamus - Paraventriküler çekirdek</li>
+                <li onclick="selectOption(this, true)">B) Hipotalamus - Suprakiazmatik çekirdek</li>
+                <li onclick="selectOption(this, false)">C) Talamus - Lateral genikulat nukleus</li>
+                <li onclick="selectOption(this, false)">D) Beyin sapı - Locus coeruleus</li>
+                <li onclick="selectOption(this, false)">E) Epifiz bezi</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol2')">Çözümü Göster</button>
+            <div id="sol2" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Hipotalamus - Suprakiazmatik çekirdek</div>
+                <p><strong>Açıklama:</strong> Suprakiazmatik çekirdek (SCN), vücudun ana sirkadiyen saatidir. Retinadan gelen ışık bilgisini alır ve melatonin, kortizol, vücut sıcaklığı gibi sirkadiyen ritimleri düzenler. SCN'deki clock genleri yaklaşık 24 saatlik döngüler oluşturur. Hasarı sirkadiyen ritimlerin tamamen bozulmasına yol açar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 3:</div>
+            <div class="question-text">NREM (Non-REM) uykunun en derin evresi hangisidir ve hangi dalgalar görülür?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Evre 1 - Theta dalgalar</li>
+                <li onclick="selectOption(this, false)">B) Evre 2 - Sleep spindle ve K kompleksleri</li>
+                <li onclick="selectOption(this, true)">C) Evre 3-4 - Delta dalgalar</li>
+                <li onclick="selectOption(this, false)">D) REM - Beta dalgalar</li>
+                <li onclick="selectOption(this, false)">E) Uyanıklık - Alpha dalgalar</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol3')">Çözümü Göster</button>
+            <div id="sol3" class="solution">
+                <div class="solution-title">Doğru Cevap: C) Evre 3-4 - Delta dalgalar</div>
+                <p><strong>Açıklama:</strong> NREM Evre 3-4 (yavaş dalga uykusu), en derin uyku evresidir ve yüksek amplitüdlü, düşük frekanslı delta dalgalarla karakterizedir. Bu evrede uyanma en zordur, büyüme hormonu salgılanır, bağışıklık sistemi güçlenir ve hafıza konsolidasyonu gerçekleşir. Günümüzde Evre 3 ve 4 birleştirilmiştir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 4:</div>
+            <div class="question-text">Melatonin hormonu ile ilgili aşağıdakilerden hangisi yanlıştır?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Epifiz bezinden salgılanır</li>
+                <li onclick="selectOption(this, false)">B) Karanlıkta salgısı artar</li>
+                <li onclick="selectOption(this, true)">C) Uyanıklığı artırır</li>
+                <li onclick="selectOption(this, false)">D) Sirkadiyen ritmin düzenlenmesinde rol oynar</li>
+                <li onclick="selectOption(this, false)">E) Yaşla birlikte azalır</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol4')">Çözümü Göster</button>
+            <div id="sol4" class="solution">
+                <div class="solution-title">Doğru Cevap: C) Uyanıklığı artırır</div>
+                <p><strong>Açıklama:</strong> Melatonin uyanıklığı artırmaz, aksine uyku eğilimini artırır. Epifiz bezinden karanlıkta salgılanan melatonin, vücut sıcaklığını düşürür ve uykuya hazırlık sinyalleri gönderir. Işık maruziyeti melatonin salgısını baskılar. Jet lag ve vardiya çalışmasında melatonin takviyesi kullanılır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 5:</div>
+            <div class="question-text">Uyku yoksunluğunun bilişsel etkilerinden hangisi en belirgindir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Uzun süreli hafıza kaybı</li>
+                <li onclick="selectOption(this, true)">B) Dikkat ve reaksiyon süresinde bozulma</li>
+                <li onclick="selectOption(this, false)">C) Dil yeteneklerinde kalıcı kayıp</li>
+                <li onclick="selectOption(this, false)">D) Motor becerilerin tamamen kaybı</li>
+                <li onclick="selectOption(this, false)">E) Görme keskinliğinde azalma</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol5')">Çözümü Göster</button>
+            <div id="sol5" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Dikkat ve reaksiyon süresinde bozulma</div>
+                <p><strong>Açıklama:</strong> Uyku yoksunluğu en çok dikkat, konsantrasyon ve reaksiyon süresini etkiler. Prefrontal korteksin aktivitesi azalır, mikro-uyku dönemleri yaşanır ve dikkat dalgınlıkları artar. Bu durum özellikle araç kullanma gibi dikkat gerektiren görevlerde tehlikelidir. Yeterli uyku sonrası bu etkiler genellikle tersine döner.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 6:</div>
+            <div class="question-text">Narkolepsi hastalığının temel nedeni nedir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Melatonin eksikliği</li>
+                <li onclick="selectOption(this, true)">B) Hipokretin/Oreksin nöron kaybı</li>
+                <li onclick="selectOption(this, false)">C) GABA eksikliği</li>
+                <li onclick="selectOption(this, false)">D) Dopamin fazlalığı</li>
+                <li onclick="selectOption(this, false)">E) Serotonin yetersizliği</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol6')">Çözümü Göster</button>
+            <div id="sol6" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Hipokretin/Oreksin nöron kaybı</div>
+                <p><strong>Açıklama:</strong> Narkolepsi Tip 1, hipotalamustaki hipokretin/oreksin üreten nöronların otoimmün yıkımı sonucu gelişir. Bu nörotransmitter uyanıklığı sürdürmede kritiktir. Kaybı aşırı gündüz uykululuğu, katapleksi (ani kas zayıflığı), uyku felci ve hipnagojik halüsinasyonlara yol açar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 7:</div>
+            <div class="question-text">Uykunun hafıza konsolidasyonundaki rolü ile ilgili aşağıdakilerden hangisi doğrudur?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Sadece REM uykusu hafızaya faydalıdır</li>
+                <li onclick="selectOption(this, false)">B) Uyku hafıza oluşumunu engeller</li>
+                <li onclick="selectOption(this, true)">C) Hem NREM hem REM uykusu farklı hafıza türlerini destekler</li>
+                <li onclick="selectOption(this, false)">D) Sadece motorsal hafıza uyku sırasında güçlenir</li>
+                <li onclick="selectOption(this, false)">E) Hafıza konsolidasyonu sadece uyanıklıkta gerçekleşir</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol7')">Çözümü Göster</button>
+            <div id="sol7" class="solution">
+                <div class="solution-title">Doğru Cevap: C) Hem NREM hem REM uykusu farklı hafıza türlerini destekler</div>
+                <p><strong>Açıklama:</strong> NREM uykusu (özellikle yavaş dalga uykusu) deklaratif hafızanın (olaylar, gerçekler) konsolidasyonunu desteklerken, REM uykusu prosedürel hafıza (beceriler) ve duygusal hafıza işlemesinde rol oynar. Her iki uyku evresi de hafıza izlerinin güçlenmesi ve gereksiz bilgilerin temizlenmesi için gereklidir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 8:</div>
+            <div class="question-text">Bilinç durumları arasında hangisi "normal uyanık bilincin" dışında kalan durumlardır?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Sadece uyku</li>
+                <li onclick="selectOption(this, true)">B) Uyku, anestezi, koma, meditasyon</li>
+                <li onclick="selectOption(this, false)">C) Sadece REM uykusu</li>
+                <li onclick="selectOption(this, false)">D) Sadece derin meditasyon</li>
+                <li onclick="selectOption(this, false)">E) Hiçbiri, sadece normal uyanıklık vardır</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol8')">Çözümü Göster</button>
+            <div id="sol8" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Uyku, anestezi, koma, meditasyon</div>
+                <p><strong>Açıklama:</strong> Bilinç spektrumu geniş bir aralığı kapsar: Normal uyanık bilinç, uykulu haller, REM uykusu (rüya bilinci), anestezi altındaki bilinç durumları, koma, vegetatif durum, minimal bilinç durumu, meditasyon ve derin meditasyon durumları gibi değişik bilinç halleri bulunur.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 9:</div>
+            <div class="question-text">Kafein uyku üzerindeki etkisini nasıl gösterir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Melatonin salgısını artırarak</li>
+                <li onclick="selectOption(this, true)">B) Adenozin reseptörlerini bloke ederek</li>
+                <li onclick="selectOption(this, false)">C) GABA aktivitesini artırarak</li>
+                <li onclick="selectOption(this, false)">D) Serotonin yıkımını hızlandırarak</li>
+                <li onclick="selectOption(this, false)">E) Hipotalamust doğrudan etkileyerek</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol9')">Çözümü Göster</button>
+            <div id="sol9" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Adenozin reseptörlerini bloke ederek</div>
+                <p><strong>Açıklama:</strong> Kafein, adenozin reseptörlerini (özellikle A2A) bloke ederek etkisini gösterir. Adenozin uyanıklık sırasında birikir ve uyku baskısı oluşturur. Kafein bu reseptörleri bloke ederek uyku baskısını azaltır ve uyanıklığı sürdürür. Bu nedenle akşam kafein tüketimi uyku kalitesini bozabilir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 10:</div>
+            <div class="question-text">Uyku apnesi sendromunda görülen temel sorun nedir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) REM uykusunun eksikliği</li>
+                <li onclick="selectOption(this, false)">B) Aşırı melatonin salgısı</li>
+                <li onclick="selectOption(this, true)">C) Solunum yolunda tıkanma ve oksijen desatürasyonu</li>
+                <li onclick="selectOption(this, false)">D) Hipokretin eksikliği</li>
+                <li onclick="selectOption(this, false)">E) Sirkadiyen ritim bozukluğu</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol10')">Çözümü Göster</button>
+            <div id="sol10" class="solution">
+                <div class="solution-title">Doğru Cevap: C) Solunum yolunda tıkanma ve oksijen desatürasyonu</div>
+                <p><strong>Açıklama:</strong> Uyku apnesi, uyku sırasında üst solunum yolunun kısmi veya tam tıkanması sonucu nefes alma durması veya azalmasıdır. Bu oksijen seviyesinde düşüş, karbondioksit artışı ve sık uyanmalara yol açar. Sonuçta uyku kalitesi bozulur, gündüz uykululuğu, kardiyovasküler problemler ve bilişsel bozukluklar gelişir.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function selectOption(element, isCorrect) {
+            // Remove previous selections in this question
+            const options = element.parentElement.children;
+            for (let option of options) {
+                option.classList.remove('correct-answer');
+                option.style.background = '';
+                option.style.borderColor = '';
+            }
+            
+            // Highlight selected option
+            if (isCorrect) {
+                element.classList.add('correct-answer');
+            } else {
+                element.style.background = '#ffebee';
+                element.style.borderColor = '#f44336';
+            }
+        }
+
+        function toggleSolution(solutionId) {
+            const solution = document.getElementById(solutionId);
+            if (solution.style.display === 'none' || solution.style.display === '') {
+                solution.style.display = 'block';
+            } else {
+                solution.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

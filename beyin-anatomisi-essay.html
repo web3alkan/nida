@@ -1,0 +1,1696 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beyin Anatomisi - Klasik Sorular</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .back-link:hover {
+            background: #5a67d8;
+        }
+        .question {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-left: 5px solid #388e3c;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #388e3c;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .question-text {
+            margin: 15px 0;
+            font-size: 1.1em;
+            font-weight: 500;
+            color: #333;
+        }
+        .essay-area {
+            width: 100%;
+            min-height: 150px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 1em;
+            font-family: Arial, sans-serif;
+            resize: vertical;
+            margin-top: 10px;
+        }
+        .essay-area:focus {
+            border-color: #388e3c;
+            outline: none;
+            box-shadow: 0 0 5px rgba(56, 142, 60, 0.3);
+        }
+        .solution {
+            background: #e8f5e8;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 15px;
+            border-left: 5px solid #4caf50;
+            display: none;
+        }
+        .solution-title {
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        .solution-content {
+            line-height: 1.8;
+        }
+        .solution h4 {
+            color: #2e7d32;
+            margin-top: 15px;
+            margin-bottom: 8px;
+        }
+        .solution ul {
+            margin-left: 20px;
+        }
+        .solution li {
+            margin-bottom: 5px;
+        }
+        .show-solution {
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-size: 1em;
+        }
+        .show-solution:hover {
+            background: #45a049;
+        }
+        .difficulty-indicator {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .easy { background: #c8e6c9; color: #2e7d32; }
+        .medium { background: #fff3e0; color: #ef6c00; }
+        .hard { background: #ffcdd2; color: #d32f2f; }
+        .word-count {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+        .tips {
+            background: #e3f2fd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 25px;
+            border-left: 5px solid #2196f3;
+        }
+        .tips-title {
+            font-weight: bold;
+            color: #1976d2;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Ana Sayfaya Dön</a>
+        
+        <div class="header">
+            <h1>🧠 Beyin Anatomisi</h1>
+            <h2>Klasik Sorular (Uzun Cevaplı)</h2>
+        </div>
+
+        <div class="tips">
+            <div class="tips-title">💡 Cevaplama İpuçları:</div>
+            <ul>
+                <li>Anatomik yapıları sistematik olarak açıklayın</li>
+                <li>Yapı-işlev ilişkilerini vurgulayın</li>
+                <li>Gelişimsel ve evolüsyoner perspektif ekleyin</li>
+                <li>Klinik korelasyonları belirtin</li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <div class="difficulty-indicator easy">Kolay</div>
+            <div class="question-number">Soru 1:</div>
+            <div class="question-text">
+                Beynin temel anatomik bölümlenmesini (prosensefalon, mesensefalon, rombensefalon) açıklayınız. Her bölümün alt yapıları ve temel işlevleri nelerdir?
+            </div>
+            <textarea class="essay-area" placeholder="Cevabınızı buraya yazın..." onkeyup="updateWordCount(this)"></textarea>
+            <div class="word-count">Kelime sayısı: 0 (Tavsiye edilen: 300-400 kelime)</div>
+            <button class="show-solution" onclick="toggleSolution('sol1')">Örnek Cevabı Göster</button>
+            <div id="sol1" class="solution">
+                <div class="solution-title">Örnek Cevap ve Değerlendirme Kriterleri:</div>
+                <div class="solution-content">
+                    <h4>Embriyolojik Gelişim ve Temel Bölümlenme:</h4>
+                    <ul>
+                        <li>Nöral tüpün gelişimi sırasında üç ana beyin kesimi oluşur</li>
+                        <li>Gelişimsel süreçte beş ana bölüme ayrılır</li>
+                        <li>Rostral-kaudal eksende organizasyon</li>
+                    </ul>
+
+                    <h4>1. Prosensefalon (Ön Beyin):</h4>
+                    <ul>
+                        <li><strong>Telensefalon:</strong>
+                            <ul>
+                                <li>Serebral korteks (neokorteks)</li>
+                                <li>Bazal ganglia (kaudat, putamen, globus pallidus)</li>
+                                <li>Limbik yapılar (hippokampus, amigdala)</li>
+                                <li>Olfaktor yapılar</li>
+                                <li>İşlevler: Üst düzey bilişsel fonksiyonlar, hareket kontrolü, duygu</li>
+                            </ul>
+                        </li>
+                        <li><strong>Dienensefalon:</strong>
+                            <ul>
+                                <li>Talamus: Duyusal relay merkezi</li>
+                                <li>Hipotalamus: Homeostaz, otonom fonksiyonlar</li>
+                                <li>Epithalamus: Pineal bez, habenula</li>
+                                <li>Subthalamus: Hareket kontrolü</li>
+                                <li>İşlevler: Duyusal işleme, hormonal kontrol, uyku-uyanıklık</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>2. Mesensefalon (Orta Beyin):</h4>
+                    <ul>
+                        <li><strong>Tektum:</strong>
+                            <ul>
+                                <li>Superior kollikulus: Görsel refleksler</li>
+                                <li>Inferior kollikulus: İşitsel işleme</li>
+                            </ul>
+                        </li>
+                        <li><strong>Tegmentum:</strong>
+                            <ul>
+                                <li>Substantia nigra: Dopamin üretimi</li>
+                                <li>Ventral tegmental area: Ödül sistemi</li>
+                                <li>Okulomotor nükleus: Göz hareketleri</li>
+                                <li>Reticular formation: Bilinç, uyarılma</li>
+                            </ul>
+                        </li>
+                        <li><strong>İşlevler:</strong> Göz hareketleri, işitsel-görsel refleksler, uyarılma</li>
+                    </ul>
+
+                    <h4>3. Rombensefalon (Arka Beyin):</h4>
+                    <ul>
+                        <li><strong>Metensefalon:</strong>
+                            <ul>
+                                <li>Serebellum: Hareket koordinasyonu, denge, motor öğrenme</li>
+                                <li>Pons: Uyku, arousal, motor kontrole katkı</li>
+                                <li>Trigeminal, abducens, facial, vestibulocochlear nükleuslar</li>
+                            </ul>
+                        </li>
+                        <li><strong>Myelensefalon:</strong>
+                            <ul>
+                                <li>Medulla oblongata: Vital fonksiyonlar</li>
+                                <li>Solunum merkezi, kardiyovasküler kontrol</li>
+                                <li>Kranial sinir nükleusları (IX, X, XI, XII)</li>
+                                <li>Olivary complex: Motor öğrenme</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Fonksiyonel Organizasyon:</h4>
+                    <ul>
+                        <li><strong>Hiyerarşik Kontrol:</strong> Rostral → Kaudal komplekslik</li>
+                        <li><strong>Phylogenetik Gelişim:</strong> Eski → Yeni beyin</li>
+                        <li><strong>Ventriküler Sistem:</strong> BOS dolaşımı</li>
+                        <li><strong>Vasküler Anatomi:</strong> Anterior, middle, posterior serebral arterler</li>
+                    </ul>
+
+                    <h4>Klinik Korelasyonlar:</h4>
+                    <ul>
+                        <li><strong>Prosensefalon Lezyonları:</strong> Kognitif bozukluklar, hareket bozuklukları</li>
+                        <li><strong>Mesensefalon Lezyonları:</strong> Göz hareket bozuklukları, bilinç bozuklukları</li>
+                        <li><strong>Rombensefalon Lezyonları:</strong> Ataksi, vital fonksiyon bozuklukları</li>
+                    </ul>
+
+                    <h4>Değerlendirme Kriterleri:</h4>
+                    <p><strong>Mükemmel (90-100):</strong> Tüm bölümler detaylı, embriyoloji, işlevler ve klinik korelasyonlar</p>
+                    <p><strong>İyi (70-89):</strong> Ana bölümler doğru, bazı alt yapılar eksik</p>
+                    <p><strong>Orta (50-69):</strong> Temel bölümlenme var, detaylar yetersiz</p>
+                    <p><strong>Zayıf (0-49):</strong> Anatomik hatalar, eksik bilgi</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="difficulty-indicator medium">Orta</div>
+            <div class="question-number">Soru 2:</div>
+            <div class="question-text">
+                Serebral korteksin katmanlı yapısını (6 katman) detaylarıyla açıklayınız. Her katmanın hücre türleri, bağlantıları ve işlevsel özelliklerini karşılaştırınız. Farklı korteks alanlarında bu katmanların nasıl değiştiğini tartışınız.
+            </div>
+            <textarea class="essay-area" placeholder="Cevabınızı buraya yazın..." onkeyup="updateWordCount(this)"></textarea>
+            <div class="word-count">Kelime sayısı: 0 (Tavsiye edilen: 400-500 kelime)</div>
+            <button class="show-solution" onclick="toggleSolution('sol2')">Örnek Cevabı Göster</button>
+            <div id="sol2" class="solution">
+                <div class="solution-title">Örnek Cevap ve Değerlendirme Kriterleri:</div>
+                <div class="solution-content">
+                    <h4>Neokorteksin Genel Organizasyonu:</h4>
+                    <ul>
+                        <li>Kalınlık: 2-4 mm arası</li>
+                        <li>6 katmanlı sitoarkitektonik organizasyon</li>
+                        <li>Kolumnar (sütunsal) fonksiyonel organizasyon</li>
+                        <li>Radial ve tangensiyel bağlantılar</li>
+                    </ul>
+
+                    <h4>Katman I (Moleküler Katman):</h4>
+                    <ul>
+                        <li><strong>Hücre Kompozisyonu:</strong>
+                            <ul>
+                                <li>Az sayıda Cajal-Retzius hücresi</li>
+                                <li>Çok sayıda nöropil (dendrit ve akson)</li>
+                                <li>Horizontal hücreler</li>
+                            </ul>
+                        </li>
+                        <li><strong>Bağlantılar:</strong>
+                            <ul>
+                                <li>Apikal dendritlerin terminal dallanmaları</li>
+                                <li>Talamo-kortikal afferentler</li>
+                                <li>Interkorteks bağlantıları</li>
+                            </ul>
+                        </li>
+                        <li><strong>İşlev:</strong> Korteks-wide modulasyon, dikkat kontrolü</li>
+                    </ul>
+
+                    <h4>Katman II/III (Granüler Katmanlar):</h4>
+                    <ul>
+                        <li><strong>Hücre Tipleri:</strong>
+                            <ul>
+                                <li>Küçük ve orta piramidal hücreler</li>
+                                <li>Stellat hücreler</li>
+                                <li>Basket ve chandelier internöronlar</li>
+                            </ul>
+                        </li>
+                        <li><strong>Bağlantılar:</strong>
+                            <ul>
+                                <li>Korteks-korteks komisural bağlantılar</li>
+                                <li>İpsilateral asosiyasyon bağlantıları</li>
+                                <li>Katmanlar arası lokal devreler</li>
+                            </ul>
+                        </li>
+                        <li><strong>İşlev:</strong> Korteks alanları arası bilgi entegrasyonu</li>
+                    </ul>
+
+                    <h4>Katman IV (İç Granüler Katman):</h4>
+                    <ul>
+                        <li><strong>Hücre Tipleri:</strong>
+                            <ul>
+                                <li>Stellat (yıldız) hücreler</li>
+                                <li>Küçük piramidal hücreler</li>
+                                <li>Spiny internöronlar</li>
+                            </ul>
+                        </li>
+                        <li><strong>Bağlantılar:</strong>
+                            <ul>
+                                <li>Talamo-kortikal duyusal afferentlerin ana hedefi</li>
+                                <li>Katman II/III'e çıkan projektörleri</li>
+                                <li>Katman V/VI'ya inen projektörleri</li>
+                            </ul>
+                        </li>
+                        <li><strong>İşlev:</strong> Talamo-kortikal duyusal bilgi dağılımı</li>
+                    </ul>
+
+                    <h4>Katman V (İç Piramidal Katman):</h4>
+                    <ul>
+                        <li><strong>Hücre Tipleri:</strong>
+                            <ul>
+                                <li>Büyük piramidal hücreler (Betz hücreleri motor kortekste)</li>
+                                <li>Çok sayıda internöron</li>
+                                <li>Subtyp-spesifik piramidal hücreler</li>
+                            </ul>
+                        </li>
+                        <li><strong>Bağlantılar:</strong>
+                            <ul>
+                                <li>Subkortikal yapılara çıkan projektörleri</li>
+                                <li>Brainstem ve spinal korda projektörleri</li>
+                                <li>Bazal ganglia ve pontin nükleuslarına çıkış</li>
+                            </ul>
+                        </li>
+                        <li><strong>İşlev:</strong> Motor kontrol, subkortikal modülasyon</li>
+                    </ul>
+
+                    <h4>Katman VI (Multiform Katman):</h4>
+                    <ul>
+                        <li><strong>Hücre Tipleri:</strong>
+                            <ul>
+                                <li>Fusiform (iğsi) hücreler</li>
+                                <li>Modifiye piramidal hücreler</li>
+                                <li>Çeşitli internöron tipleri</li>
+                            </ul>
+                        </li>
+                        <li><strong>Bağlantılar:</strong>
+                            <ul>
+                                <li>Talamusa kortikal geri bildirim</li>
+                                <li>Claustrum bağlantıları</li>
+                                <li>Kontralateral kortekse projektörleri</li>
+                            </ul>
+                        </li>
+                        <li><strong>İşlev:</strong> Talamokortikal geri bildirim, korteks modülasyonu</li>
+                    </ul>
+
+                    <h4>Korteks Alanları Arası Farklılıklar:</h4>
+                    <ul>
+                        <li><strong>Primary Sensory Cortex (S1, V1, A1):</strong>
+                            <ul>
+                                <li>Belirgin Katman IV (granüler korteks)</li>
+                                <li>Yoğun talamo-kortikal innervation</li>
+                                <li>Topografik organizasyon</li>
+                            </ul>
+                        </li>
+                        <li><strong>Motor Cortex (M1):</strong>
+                            <ul>
+                                <li>Kalın Katman V (agranülar korteks)</li>
+                                <li>Büyük Betz hücreleri</li>
+                                <li>Zayıf Katman IV</li>
+                            </ul>
+                        </li>
+                        <li><strong>Association Areas:</strong>
+                            <ul>
+                                <li>Dengeli katman organizasyonu</li>
+                                <li>Geniş Katman II/III</li>
+                                <li>Karmaşık interkorteks bağlantıları</li>
+                            </ul>
+                        </li>
+                        <li><strong>Frontal Cortex:</strong>
+                            <ul>
+                                <li>Genişlemiş supragranülar katmanlar</li>
+                                <li>Yoğun prefrontal bağlantılar</li>
+                                <li>Von Economo nöronları (ACC)</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Fonksiyonel Devre Organizasyonu:</h4>
+                    <ul>
+                        <li><strong>Canonical Microcircuit:</strong>
+                            <ul>
+                                <li>Talamokortikal input → L4 → L2/3 → L5/6</li>
+                                <li>Feedback loop: L6 → Thalamus</li>
+                                <li>Lateral inhibition: Interneuron ağları</li>
+                            </ul>
+                        </li>
+                        <li><strong>Kolumnar Organizasyon:</strong>
+                            <ul>
+                                <li>Minikolumnlar (~100 nöron)</li>
+                                <li>Hyperkolumnlar (fonksiyonel üniteler)</li>
+                                <li>Cross-laminar connectivity</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Değerlendirme Kriterleri:</h4>
+                    <p><strong>Mükemmel:</strong> Tüm katmanlar detaylı, hücre tipleri, bağlantılar ve bölgesel farklılıklar</p>
+                    <p><strong>İyi:</strong> Ana katmanlar doğru, bazı hücre tipi bilgileri eksik</p>
+                    <p><strong>Orta:</strong> Temel katman yapısı, yüzeysel işlevsel bilgi</p>
+                    <p><strong>Zayıf:</strong> Katman bilgisi yetersiz, hatalı anatomik bilgi</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="difficulty-indicator hard">Zor</div>
+            <div class="question-number">Soru 3:</div>
+            <div class="question-text">
+                Bazal ganglia devreleri ve işlevlerini kapsamlı olarak analiz ediniz. Direct, indirect ve hyperdirect pathway'lerin hareket kontrollü üzerindeki etkilerini açıklayınız. Parkinson ve Huntington hastalıklarının patofizyolojisini bu devreler üzerinden değerlendiriniz.
+            </div>
+            <textarea class="essay-area" placeholder="Cevabınızı buraya yazın..." onkeyup="updateWordCount(this)"></textarea>
+            <div class="word-count">Kelime sayısı: 0 (Tavsiye edilen: 500-600 kelime)</div>
+            <button class="show-solution" onclick="toggleSolution('sol3')">Örnek Cevabı Göster</button>
+            <div id="sol3" class="solution">
+                <div class="solution-title">Örnek Cevap ve Değerlendirme Kriterleri:</div>
+                <div class="solution-content">
+                    <h4>Bazal Ganglia Anatomik Yapıları:</h4>
+                    <ul>
+                        <li><strong>Input Nükleusları:</strong>
+                            <ul>
+                                <li>Caudate nucleus: Kognitif işlev, goal-directed behavior</li>
+                                <li>Putamen: Motor kontrol, procedural learning</li>
+                                <li>Nucleus accumbens: Motivasyon, ödül işleme</li>
+                            </ul>
+                        </li>
+                        <li><strong>Output Nükleusları:</strong>
+                            <ul>
+                                <li>Globus pallidus interna (GPi)</li>
+                                <li>Substantia nigra pars reticulata (SNr)</li>
+                                <li>Tonik GABAerjik inhibisyon</li>
+                            </ul>
+                        </li>
+                        <li><strong>İntrinsik Nükleuslar:</strong>
+                            <ul>
+                                <li>Globus pallidus externa (GPe)</li>
+                                <li>Subthalamic nucleus (STN)</li>
+                                <li>Substantia nigra pars compacta (SNc)</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Direct Pathway (Go Pathway):</h4>
+                    <ul>
+                        <li><strong>Devre Anatomisi:</strong>
+                            <ul>
+                                <li>Cortex → Striatum (D1 reseptörleri) → GPi/SNr → Thalamus → Cortex</li>
+                                <li>Dopamin: Facilitatory effect (D1 aktivasyonu)</li>
+                                <li>Net etki: Talamokortikal disinhibition</li>
+                            </ul>
+                        </li>
+                        <li><strong>Fonksiyonel Rol:</strong>
+                            <ul>
+                                <li>İstenilen hareketlerin kolaylaştırılması</li>
+                                <li>Motor program başlatma</li>
+                                <li>Ödül tabanlı öğrenme</li>
+                            </ul>
+                        </li>
+                        <li><strong>Nörotransmitter Sinyalizasyonu:</strong>
+                            <ul>
+                                <li>Glutamat (excitatör): Cortex → Striatum</li>
+                                <li>GABA (inhibitör): Striatum → GPi/SNr</li>
+                                <li>Dopamin (modulatör): SNc → Striatum</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Indirect Pathway (NoGo Pathway):</h4>
+                    <ul>
+                        <li><strong>Devre Anatomisi:</strong>
+                            <ul>
+                                <li>Cortex → Striatum (D2 reseptörleri) → GPe → STN → GPi/SNr → Thalamus → Cortex</li>
+                                <li>Dopamin: Inhibitory effect (D2 inhibisyonu)</li>
+                                <li>Net etki: Talamokortikal inhibition artışı</li>
+                            </ul>
+                        </li>
+                        <li><strong>Fonksiyonel Rol:</strong>
+                            <ul>
+                                <li>İstenmeyen hareketlerin engellenmesi</li>
+                                <li>Competing motor programs inhibition</li>
+                                <li>Response inhibition</li>
+                            </ul>
+                        </li>
+                        <li><strong>GPe-STN Döngüsü:</strong>
+                            <ul>
+                                <li>GPe: Spontan pacemaker aktivite</li>
+                                <li>STN: High-frequency discharge</li>
+                                <li>Dinamik balance: Activating vs. inhibiting</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Hyperdirect Pathway:</h4>
+                    <ul>
+                        <li><strong>Devre Anatomisi:</strong>
+                            <ul>
+                                <li>Cortex → STN → GPi/SNr (direkte bağlantı)</li>
+                                <li>En hızlı pathway (1-2 ms)</li>
+                                <li>Monosinaptik korteks-STN bağlantısı</li>
+                            </ul>
+                        </li>
+                        <li><strong>Fonksiyonel Rol:</strong>
+                            <ul>
+                                <li>Hızlı global motor inhibition</li>
+                                <li>Movement cancellation</li>
+                                <li>Stop signal processing</li>
+                                <li>Cognitive control</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Dengeli Bazal Ganglia Fonksiyonu:</h4>
+                    <ul>
+                        <li><strong>Action Selection Model:</strong>
+                            <ul>
+                                <li>Competing motor programs arası seçim</li>
+                                <li>Winner-takes-all mechanism</li>
+                                <li>Context-dependent selection</li>
+                            </ul>
+                        </li>
+                        <li><strong>Reinforcement Learning:</strong>
+                            <ul>
+                                <li>Prediction error coding (dopamin)</li>
+                                <li>Procedural memory formation</li>
+                                <li>Habit formation</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Parkinson Hastalığı Patofizyolojisi:</h4>
+                    <ul>
+                        <li><strong>Nöropatoloji:</strong>
+                            <ul>
+                                <li>SNc dopaminerjik nöron kaybı</li>
+                                <li>Lewy body formation (α-synuclein)</li>
+                                <li>Striatal dopamin depletion</li>
+                            </ul>
+                        </li>
+                        <li><strong>Devre Değişiklikleri:</strong>
+                            <ul>
+                                <li>Direct pathway: Azalmış aktivite (D1 downregulation)</li>
+                                <li>Indirect pathway: Artmış aktivite (D2 disinhibition)</li>
+                                <li>Net etki: GPi/SNr hyperactivity → Thalamic inhibition</li>
+                            </ul>
+                        </li>
+                        <li><strong>Patofizyolojik Aktivite Patternleri:</strong>
+                            <ul>
+                                <li>Beta oscillations (13-30 Hz) artışı</li>
+                                <li>STN-GPe synchronization</li>
+                                <li>Reduced movement amplitude</li>
+                            </ul>
+                        </li>
+                        <li><strong>Klinik Belirtiler:</strong>
+                            <ul>
+                                <li>Bradykinesia: Hareket yavaşlığı</li>
+                                <li>Rigidity: Kas sertliği</li>
+                                <li>Tremor: İstirahatte titreme</li>
+                                <li>Postural instability: Denge sorunları</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Huntington Hastalığı Patofizyolojisi:</h4>
+                    <ul>
+                        <li><strong>Nöropatoloji:</strong>
+                            <ul>
+                                <li>Huntingtin gen mutasyonu (CAG repeats)</li>
+                                <li>Striatal medium spiny neuron degenerationı</li>
+                                <li>İlk indirect pathway nöronları etkilenir</li>
+                            </ul>
+                        </li>
+                        <li><strong>Devre Değişiklikleri:</strong>
+                            <ul>
+                                <li>Indirect pathway: Erken dönem kaybı</li>
+                                <li>GPe disinhibition → STN hypoactivity</li>
+                                <li>GPi/SNr reduced inhibition → Thalamic disinhibition</li>
+                            </ul>
+                        </li>
+                        <li><strong>Progresiv Devre Bozukluğu:</strong>
+                            <ul>
+                                <li>Erken evre: Indirect pathway loss (chorea)</li>
+                                <li>Geç evre: Direct pathway loss (akinesia)</li>
+                                <li>Cognitive striatal circuits etkilenir</li>
+                            </ul>
+                        </li>
+                        <li><strong>Klinik Belirtiler:</strong>
+                            <ul>
+                                <li>Chorea: İstemsiz writhing movements</li>
+                                <li>Dystonia: Sürekli kas kontraksiyonları</li>
+                                <li>Cognitive decline: Executive dysfunction</li>
+                                <li>Psychiatric symptoms: Depression, irritability</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Tedavi Yaklaşımları:</h4>
+                    <ul>
+                        <li><strong>Parkinson İçin:</strong>
+                            <ul>
+                                <li>L-DOPA: Dopamin precursor</li>
+                                <li>Deep Brain Stimulation (STN-DBS)</li>
+                                <li>Dopamin agonistleri</li>
+                            </ul>
+                        </li>
+                        <li><strong>Huntington İçin:</strong>
+                            <ul>
+                                <li>Tetrabenazine: Dopamin depletion</li>
+                                <li>Antipsychotikler</li>
+                                <li>Gene therapy approaches</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Değerlendirme Kriterleri:</h4>
+                    <p><strong>Mükemmel:</strong> Tüm pathway'ler detaylı, patofizyoloji doğru, klinik korelasyon</p>
+                    <p><strong>İyi:</strong> Ana devreler açık, hastalık mekanizmaları temel düzeyde</p>
+                    <p><strong>Orta:</strong> Temel anatomi var, patofizyoloji yüzeysel</p>
+                    <p><strong>Zayıf:</strong> Devre bilgisi eksik, hastalık ilişkisi kurulmamış</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="difficulty-indicator medium">Orta</div>
+            <div class="question-number">Soru 4:</div>
+            <div class="question-text">
+                Serebellumun anatomik yapısını ve fonksiyonel bölümlenme dütünmeleri açıklayınız. Serebellumun motor kontrol, motor öğrenme ve bilişsel işlevlerdeki rollerini detaylandırınız.
+            </div>
+            <textarea class="essay-area" placeholder="Cevabınızı buraya yazın..." onkeyup="updateWordCount(this)"></textarea>
+            <div class="word-count">Kelime sayısı: 0 (Tavsiye edilen: 400-500 kelime)</div>
+            <button class="show-solution" onclick="toggleSolution('sol4')">Örnek Cevabı Göster</button>
+            <div id="sol4" class="solution">
+                <div class="solution-title">Örnek Cevap ve Değerlendirme Kriterleri:</div>
+                <div class="solution-content">
+                    <h4>Serebellar Anatomik Organizasyon:</h4>
+                    <ul>
+                        <li><strong>Makroskopik Yapı:</strong>
+                            <ul>
+                                <li>Cerebellar cortex: Dış gri madde (3 katman)</li>
+                                <li>Beyaz madde: Medullary core</li>
+                                <li>Deep cerebellar nuclei: 4 çift nükleus</li>
+                                <li>Folia: Korteksi paralel katlantılar</li>
+                            </ul>
+                        </li>
+                        <li><strong>Anatomik Bölümler:</strong>
+                            <ul>
+                                <li>Anterior lobe: I-V lobül</li>
+                                <li>Posterior lobe: VI-IX lobül</li>
+                                <li>Flocculonodular lobe: X lobül</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Cerebellar Cortex Mikroanatomisi:</h4>
+                    <ul>
+                        <li><strong>Molecular Layer:</strong>
+                            <ul>
+                                <li>Basket hücreler: Purkinje cell inhibition</li>
+                                <li>Stellate hücreler: Local inhibition</li>
+                                <li>Parallel fiberlar: Granule cell aksonları</li>
+                            </ul>
+                        </li>
+                        <li><strong>Purkinje Cell Layer:</strong>
+                            <ul>
+                                <li>Tek sıra büyük Purkinje hücreleri</li>
+                                <li>Dendritic tree: Parasagittal düzlem</li>
+                                <li>Tek çıkış: Deep nuclei'ya GABAerjik</li>
+                            </ul>
+                        </li>
+                        <li><strong>Granular Layer:</strong>
+                            <ul>
+                                <li>Granule cells: En yoğun nöron (~60 milyar)</li>
+                                <li>Golgi cells: Feedback inhibition</li>
+                                <li>Unipolar brush cells: Vestibular input</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Deep Cerebellar Nuclei:</h4>
+                    <ul>
+                        <li><strong>Fastigial Nucleus:</strong>
+                            <ul>
+                                <li>Medial zone bağlantısı</li>
+                                <li>Postural kontrol, denge</li>
+                                <li>Vestibular ve reticular connections</li>
+                            </ul>
+                        </li>
+                        <li><strong>Interposed Nuclei (Globose + Emboliform):</strong>
+                            <ul>
+                                <li>Intermediate zone bağlantısı</li>
+                                <li>Limb movement control</li>
+                                <li>Rubrospinal pathway</li>
+                            </ul>
+                        </li>
+                        <li><strong>Dentate Nucleus:</strong>
+                            <ul>
+                                <li>Lateral zone bağlantısı</li>
+                                <li>Motor planning, cognitive functions</li>
+                                <li>Thalamo-cortical projection</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Fonksiyonel Bölümlenme:</h4>
+                    <ul>
+                        <li><strong>Vestibulocerebellum (Archicerebellum):</strong>
+                            <ul>
+                                <li>Flocculonodular lobe</li>
+                                <li>Vestibular inputs</li>
+                                <li>Balance, eye movements, VOR</li>
+                                <li>Output: Vestibular nuclei</li>
+                            </ul>
+                        </li>
+                        <li><strong>Spinocerebellum (Paleocerebellum):</strong>
+                            <ul>
+                                <li>Vermis + intermediate zone</li>
+                                <li>Spinal, trigeminal, visual inputs</li>
+                                <li>Gait, posture, proximal muscle control</li>
+                                <li>Output: Brainstem, spinal cord</li>
+                            </ul>
+                        </li>
+                        <li><strong>Cerebrocerebellum (Neocerebellum):</strong>
+                            <ul>
+                                <li>Lateral hemispheres</li>
+                                <li>Cortical inputs via pontine nuclei</li>
+                                <li>Motor planning, cognitive functions</li>
+                                <li>Output: Thalamus → motor cortex</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Motor Kontrol Fonksiyonları:</h4>
+                    <ul>
+                        <li><strong>Motor Adaptation:</strong>
+                            <ul>
+                                <li>Error-based learning</li>
+                                <li>Climbing fiber = error signal</li>
+                                <li>Long-term depression (LTD)</li>
+                                <li>Prism adaptation, VOR adaptation</li>
+                            </ul>
+                        </li>
+                        <li><strong>Movement Coordination:</strong>
+                            <ul>
+                                <li>Multi-joint coordination</li>
+                                <li>Timing and sequencing</li>
+                                <li>Force regulation</li>
+                                <li>Smoothness of movement</li>
+                            </ul>
+                        </li>
+                        <li><strong>Postural Control:</strong>
+                            <ul>
+                                <li>Antigravity muscle tone</li>
+                                <li>Balance maintenance</li>
+                                <li>Anticipatory postural adjustments</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Motor Öğrenme Mekanizmaları:</h4>
+                    <ul>
+                        <li><strong>Synaptic Plasticity:</strong>
+                            <ul>
+                                <li>Parallel fiber-Purkinje cell LTD</li>
+                                <li>Climbing fiber-instructed learning</li>
+                                <li>LTP at granule cell-Purkinje cell</li>
+                            </ul>
+                        </li>
+                        <li><strong>Procedural Learning:</strong>
+                            <ul>
+                                <li>Skill acquisition</li>
+                                <li>Motor sequence learning</li>
+                                <li>Adaptation to perturbations</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Bilişsel İşlevler:</h4>
+                    <ul>
+                        <li><strong>Non-motor Functions:</strong>
+                            <ul>
+                                <li>Executive functions</li>
+                                <li>Language processing</li>
+                                <li>Working memory</li>
+                                <li>Attention regulation</li>
+                            </ul>
+                        </li>
+                        <li><strong>Cerebellar Cognitive Affective Syndrome:</strong>
+                            <ul>
+                                <li>Executive dysfunction</li>
+                                <li>Language deficits</li>
+                                <li>Visuospatial impairment</li>
+                                <li>Personality changes</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Klinik Korelasyonlar:</h4>
+                    <ul>
+                        <li><strong>Cerebellar Ataxia:</strong>
+                            <ul>
+                                <li>Dysmetria: Overreaching</li>
+                                <li>Dysdiadochokinesia: Alternating movements</li>
+                                <li>Tremor: İntention tremor</li>
+                                <li>Dysarthria: Konuşma koordinasyonu</li>
+                            </ul>
+                        </li>
+                        <li><strong>Lezyonlara Özgü Bulgular:</strong>
+                            <ul>
+                                <li>Midline: Truncal ataxia, gait disturbance</li>
+                                <li>Hemisphere: İpsilateral limb ataxia</li>
+                                <li>Flocculonodular: Vestibular symptoms</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Değerlendirme Kriterleri:</h4>
+                    <p><strong>Mükemmel:</strong> Detaylı anatomi, fonksiyonel bölümlenme, motor ve kognitif işlevler</p>
+                    <p><strong>İyi:</strong> Ana yapılar doğru, temel işlevler açık</p>
+                    <p><strong>Orta:</strong> Temel anatomi, yüzeysel işlev bilgisi</p>
+                    <p><strong>Zayıf:</strong> Anatomik bilgi eksik, işlev ilişkisi kurulmamış</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="difficulty-indicator hard">Zor</div>
+            <div class="question-number">Soru 5:</div>
+            <div class="question-text">
+                Beyin kan akışı düzenlenmesi ve kan-beyin bariyerinin yapısını detaylarıyla açıklayınız. Serebral perfüzyon otorregülasyonu nasıl çalışır? İskemik ve hemorajik inme patofizyolojisini vasküler anatomi temelinde analiz ediniz.
+            </div>
+            <textarea class="essay-area" placeholder="Cevabınızı buraya yazın..." onkeyup="updateWordCount(this)"></textarea>
+            <div class="word-count">Kelime sayısı: 0 (Tavsiye edilen: 500-600 kelime)</div>
+            <button class="show-solution" onclick="toggleSolution('sol5')">Örnek Cevabı Göster</button>
+            <div id="sol5" class="solution">
+                <div class="solution-title">Örnek Cevap ve Değerlendirme Kriterleri:</div>
+                <div class="solution-content">
+                    <h4>Serebral Vasküler Anatomi:</h4>
+                    <ul>
+                        <li><strong>Arteriyel Sistem:</strong>
+                            <ul>
+                                <li>Internal carotid arteries: Anterior circulation (80%)</li>
+                                <li>Vertebrobasilar system: Posterior circulation (20%)</li>
+                                <li>Circle of Willis: Anastomotic network</li>
+                                <li>Lenticulostriate arteries: Deep penetrating vessels</li>
+                            </ul>
+                        </li>
+                        <li><strong>Venöz Sistem:</strong>
+                            <ul>
+                                <li>Superficial cerebral veins → Superior sagittal sinus</li>
+                                <li>Deep cerebral veins → Vein of Galen → Straight sinus</li>
+                                <li>Dural sinuses → Internal jugular veins</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Mikrovasküler Yapı ve Kan-Beyin Bariyeri:</h4>
+                    <ul>
+                        <li><strong>Endotelyal Bariyerin Bileşenleri:</strong>
+                            <ul>
+                                <li>Tight junctions: Claudin-5, occludin, ZO-1</li>
+                                <li>Adherens junctions: VE-cadherin, β-catenin</li>
+                                <li>Continuous basement membrane</li>
+                                <li>Pericytes: Contractile ve signaling functions</li>
+                            </ul>
+                        </li>
+                        <li><strong>Astrocyte End-Feet:</strong>
+                            <ul>
+                                <li>Perivascular sheath: %99 kapillar coverage</li>
+                                <li>AQP4 water channels: Edema regulation</li>
+                                <li>K+ homeostasis: Kir4.1 channels</li>
+                                <li>Neurovascular coupling signals</li>
+                            </ul>
+                        </li>
+                        <li><strong>Transport Mechanisms:</strong>
+                            <ul>
+                                <li>Passive diffusion: Lipophilic molecules</li>
+                                <li>Carrier-mediated: Glucose (GLUT1), amino acids</li>
+                                <li>Receptor-mediated transcytosis: Insulin, transferrin</li>
+                                <li>Efflux pumps: P-glycoprotein, BCRP</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Serebral Kan Akış Düzenlenmesi:</h4>
+                    <ul>
+                        <li><strong>Cerebral Blood Flow (CBF) Parametreleri:</strong>
+                            <ul>
+                                <li>Normal CBF: 50-60 mL/100g/min</li>
+                                <li>Gray matter: 80 mL/100g/min</li>
+                                <li>White matter: 20 mL/100g/min</li>
+                                <li>Critical threshold: <20 mL/100g/min</li>
+                            </ul>
+                        </li>
+                        <li><strong>Metabolic Coupling:</strong>
+                            <ul>
+                                <li>CBF-CMRO2 coupling (cerebral metabolic rate of O2)</li>
+                                <li>Neuronal activity → Astrocyte activation</li>
+                                <li>Vasoactive mediators: NO, adenosine, K+</li>
+                                <li>Capillary recruitment</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Serebral Perfüzyon Otorregülasyonu:</h4>
+                    <ul>
+                        <li><strong>Otorregülasyon Mekanizmaları:</strong>
+                            <ul>
+                                <li>Myogenic response: Smooth muscle contraction</li>
+                                <li>Metabolic regulation: CO2, O2, pH</li>
+                                <li>Neurogenic control: Sympathetic innervation</li>
+                                <li>Endothelial factors: NO, endothelin, prostacyclin</li>
+                            </ul>
+                        </li>
+                        <li><strong>Pressure Autoregulation:</strong>
+                            <ul>
+                                <li>Effective range: 60-160 mmHg MAP</li>
+                                <li>Constant CBF maintenance</li>
+                                <li>Ischemic ve pressure-passive zones</li>
+                                <li>Autoregulation index (ARI)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Chemical Regulation:</strong>
+                            <ul>
+                                <li>CO2 responsiveness: 2-4% CBF change per mmHg</li>
+                                <li>O2 sensitivity: Significant at <50 mmHg</li>
+                                <li>pH effects: H+ ion vasodilatation</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>İskemik İnme Patofizyolojisi:</h4>
+                    <ul>
+                        <li><strong>Tromboembolic Subtypes:</strong>
+                            <ul>
+                                <li>Large artery atherosclerosis: Carotid stenosis</li>
+                                <li>Cardioembolic: Atrial fibrillation, valve disease</li>
+                                <li>Small vessel disease: Lacunar infarcts</li>
+                                <li>Cryptogenic: ESUS (embolic stroke of undetermined source)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Ischemic Cascade:</strong>
+                            <ul>
+                                <li>Energy failure: ATP depletion</li>
+                                <li>Membrane depolarization: Na+/K+ pump failure</li>
+                                <li>Excitotoxicity: Glutamate release</li>
+                                <li>Ca2+ influx: Mitochondrial dysfunction</li>
+                                <li>Free radical formation: Oxidative stress</li>
+                                <li>Apoptosis activation: Caspase cascades</li>
+                            </ul>
+                        </li>
+                        <li><strong>Ischemic Penumbra:</strong>
+                            <ul>
+                                <li>Core: Irreversible damage (<10 mL/100g/min)</li>
+                                <li>Penumbra: Salvageable tissue (10-20 mL/100g/min)</li>
+                                <li>Oligemia: Benign hypoperfusion (>20 mL/100g/min)</li>
+                                <li>Time-dependent evolution</li>
+                            </ul>
+                        </li>
+                        <li><strong>Reperfusion Injury:</strong>
+                            <ul>
+                                <li>Blood-brain barrier disruption</li>
+                                <li>Hemorrhagic transformation</li>
+                                <li>Inflammatory response activation</li>
+                                <li>No-reflow phenomenon</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Hemorajik İnme Patofizyolojisi:</h4>
+                    <ul>
+                        <li><strong>İntraserebral Hemoraji (ICH):</strong>
+                            <ul>
+                                <li>Primary: Hipertansif arteriopati, amyloid angiopati</li>
+                                <li>Secondary: AVM, aneurysm, koagulopati</li>
+                                <li>Predilection sites: Basal ganglia, thalamus, pons, cerebellum</li>
+                                <li>Hematoma expansion: İlk 6 saat kritik</li>
+                            </ul>
+                        </li>
+                        <li><strong>Subaraknoid Hemoraji (SAH):</strong>
+                            <ul>
+                                <li>Aneurysmal SAH: %85 olguda</li>
+                                <li>Anterior communicating artery: En sık lokalizasyon</li>
+                                <li>Vasospasm: Delayed cerebral ischemia</li>
+                                <li>Hydrocephalus: BOS reabsorption impairment</li>
+                            </ul>
+                        </li>
+                        <li><strong>Mass Effect ve İkincil Hasarlar:</strong>
+                            <ul>
+                                <li>Perilesyonel edema: Cytotoxic ve vasogenic</li>
+                                <li>Intrakraniyal basınç artışı</li>
+                                <li>Midline shift ve herniation</li>
+                                <li>Hydrocephalus development</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Çeşitli Düzenleme Mekanizmaları:</h4>
+                    <ul>
+                        <li><strong>Collateral Circulation:</strong>
+                            <ul>
+                                <li>Circle of Willis variations</li>
+                                <li>Leptomeningeal anastomoses</li>
+                                <li>Intracranial-extracranial connections</li>
+                                <li>Genetic determinants of collateral flow</li>
+                            </ul>
+                        </li>
+                        <li><strong>Age-Related Changes:</strong>
+                            <ul>
+                                <li>Vessel stiffening: Pulse wave velocity</li>
+                                <li>Endothelial dysfunction</li>
+                                <li>Autoregulation impairment</li>
+                                <li>Blood-brain barrier integrity loss</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Klinik İmplications:</h4>
+                    <ul>
+                        <li><strong>Stroke Treatment:</strong>
+                            <ul>
+                                <li>Thrombolysis: tPA within 4.5 hours</li>
+                                <li>Mechanical thrombectomy: Large vessel occlusion</li>
+                                <li>Blood pressure management: Permissive hypertension</li>
+                                <li>Neuroprotection strategies</li>
+                            </ul>
+                        </li>
+                        <li><strong>Monitoring:</strong>
+                            <ul>
+                                <li>Transcranial Doppler: Flow velocity</li>
+                                <li>Near-infrared spectroscopy: Tissue oxygenation</li>
+                                <li>Perfusion imaging: CT/MR perfusion</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Değerlendirme Kriterleri:</h4>
+                    <p><strong>Mükemmel:</strong> Vasküler anatomi detaylı, otorregülasyon mekanizmaları, inme patofizyolojisi</p>
+                    <p><strong>İyi:</strong> Ana vasküler yapılar, temel düzenleme, inme tipleri</p>
+                    <p><strong>Orta:</strong> Vasküler bilgi yüzeysel, patofizyoloji basit</p>
+                    <p><strong>Zayıf:</strong> Anatomi yetersiz, mekanizma bilgisi eksik</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="difficulty-indicator medium">Orta</div>
+            <div class="question-number">Soru 6:</div>
+            <div class="question-text">
+                Hipokampus ve limbik sistemin anatomik yapısını ve bellek oluşumundaki rollerini açıklayınız. Declarative ve procedural bellek sistemleri arasındaki anatomik ve işlevsel farkları değerlendiriniz.
+            </div>
+            <textarea class="essay-area" placeholder="Cevabınızı buraya yazın..." onkeyup="updateWordCount(this)"></textarea>
+            <div class="word-count">Kelime sayısı: 0 (Tavsiye edilen: 400-500 kelime)</div>
+            <button class="show-solution" onclick="toggleSolution('sol6')">Örnek Cevabı Göster</button>
+            <div id="sol6" class="solution">
+                <div class="solution-title">Örnek Cevap ve Değerlendirme Kriterleri:</div>
+                <div class="solution-content">
+                    <h4>Hipokampus Anatomik Yapısı:</h4>
+                    <ul>
+                        <li><strong>Hippocampal Formation:</strong>
+                            <ul>
+                                <li>Cornu Ammonis (CA1, CA2, CA3 alanları)</li>
+                                <li>Dentate gyrus: Granule cells</li>
+                                <li>Subicular complex: Subiculum, presubiculum, parasubiculum</li>
+                                <li>Entorhinal cortex: Major input/output gateway</li>
+                            </ul>
+                        </li>
+                        <li><strong>Trisynaptic Circuit:</strong>
+                            <ul>
+                                <li>Entorhinal cortex → Dentate gyrus (perforant path)</li>
+                                <li>Dentate → CA3 (mossy fibers)</li>
+                                <li>CA3 → CA1 (Schaffer collaterals)</li>
+                                <li>CA1 → Subiculum → Entorhinal cortex</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Limbik Sistem Bileşenleri:</h4>
+                    <ul>
+                        <li><strong>Cortical Structures:</strong>
+                            <ul>
+                                <li>Cingulate cortex: Anterior (emotion), posterior (memory)</li>
+                                <li>Parahippocampal cortex: Spatial context</li>
+                                <li>Orbitofrontal cortex: Value representation</li>
+                                <li>Retrosplenial cortex: Navigation</li>
+                            </ul>
+                        </li>
+                        <li><strong>Subcortical Structures:</strong>
+                            <ul>
+                                <li>Amygdala: Fear conditioning, emotional memory</li>
+                                <li>Septal nuclei: Modulation of hippocampal activity</li>
+                                <li>Mammillary bodies: Papez circuit</li>
+                                <li>Anterior thalamic nuclei: Thalamic relay</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Hipokampusun Bellek Fonksiyonları:</h4>
+                    <ul>
+                        <li><strong>Encoding:</strong>
+                            <ul>
+                                <li>Pattern separation: Dentate gyrus</li>
+                                <li>Pattern completion: CA3 recurrent connections</li>
+                                <li>Novelty detection: CA1 comparator function</li>
+                            </ul>
+                        </li>
+                        <li><strong>Consolidation:</strong>
+                            <ul>
+                                <li>Systems consolidation: Hippocampus → Neocortex</li>
+                                <li>Replay during sleep: Sharp wave ripples</li>
+                                <li>Time-limited role: Ribot's gradient</li>
+                            </ul>
+                        </li>
+                        <li><strong>Retrieval:</strong>
+                            <ul>
+                                <li>Cue-dependent recall</li>
+                                <li>Episodic memory reconstruction</li>
+                                <li>Spatial navigation: Cognitive map</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Declarative Bellek Sistemi:</h4>
+                    <ul>
+                        <li><strong>Anatomik Substrat:</strong>
+                            <ul>
+                                <li>Medial temporal lobe: Hippocampus, entorhinal cortex</li>
+                                <li>Diencephalic structures: Mammillary bodies, anterior thalamus</li>
+                                <li>Prefrontal cortex: Working memory, retrieval</li>
+                                <li>Posterior parietal cortex: Attention, binding</li>
+                            </ul>
+                        </li>
+                        <li><strong>Alt Kategoriler:</strong>
+                            <ul>
+                                <li>Episodic memory: Personal experiences, context</li>
+                                <li>Semantic memory: General knowledge, facts</li>
+                                <li>Autobiographical memory: Personal semantic</li>
+                            </ul>
+                        </li>
+                        <li><strong>Özellikleri:</strong>
+                            <ul>
+                                <li>Conscious recollection</li>
+                                <li>Flexible use of information</li>
+                                <li>Rapid acquisition possible</li>
+                                <li>Hippocampus-dependent initially</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Procedural Bellek Sistemi:</h4>
+                    <ul>
+                        <li><strong>Anatomik Substrat:</strong>
+                            <ul>
+                                <li>Basal ganglia: Skill learning, habits</li>
+                                <li>Cerebellum: Motor learning, conditioning</li>
+                                <li>Motor cortex: Motor sequence learning</li>
+                                <li>Premotor areas: Action selection</li>
+                            </ul>
+                        </li>
+                        <li><strong>Alt Kategoriler:</strong>
+                            <ul>
+                                <li>Motor skills: Bicycle riding, piano playing</li>
+                                <li>Cognitive skills: Reading, puzzle solving</li>
+                                <li>Habits: Automatic behavioral routines</li>
+                                <li>Conditioning: Classical, operant</li>
+                            </ul>
+                        </li>
+                        <li><strong>Özellikleri:</strong>
+                            <ul>
+                                <li>Implicit, unconscious</li>
+                                <li>Gradual acquisition through practice</li>
+                                <li>Inflexible, context-specific</li>
+                                <li>Hippocampus-independent</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Sistem Karşılaştırması:</h4>
+                    <ul>
+                        <li><strong>Anatomik Ayrım:</strong>
+                            <ul>
+                                <li>Declarative: Medial temporal lobe dominant</li>
+                                <li>Procedural: Basal ganglia-cerebellar dominant</li>
+                                <li>Parallel processing sistemleri</li>
+                                <li>Competitive interaction</li>
+                            </ul>
+                        </li>
+                        <li><strong>Temporal Dynamics:</strong>
+                            <ul>
+                                <li>Declarative: Fast encoding, gradual consolidation</li>
+                                <li>Procedural: Slow acquisition, stable retention</li>
+                                <li>Sleep-dependent consolidation: Both systems</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Klinik Korelasyonlar:</h4>
+                    <ul>
+                        <li><strong>Hipokampus Lezyonları:</strong>
+                            <ul>
+                                <li>Anterograde amnesia: Yeni bellek oluşumunda bozukluk</li>
+                                <li>Retrograde amnesia: Temporal gradyentli</li>
+                                <li>Episodic > semantic memory impairment</li>
+                                <li>H.M. case: Bilateral hippocampal removal</li>
+                            </ul>
+                        </li>
+                        <li><strong>Basal Ganglia Lezyonları:</strong>
+                            <ul>
+                                <li>Parkinson: Procedural learning deficits</li>
+                                <li>Huntington: Skill acquisition problems</li>
+                                <li>Habit formation impairment</li>
+                                <li>Preserved declarative memory</li>
+                            </ul>
+                        </li>
+                        <li><strong>Cerebellar Lezyonları:</strong>
+                            <ul>
+                                <li>Motor learning deficits</li>
+                                <li>Classical conditioning impairment</li>
+                                <li>Cognitive procedural learning</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Gelişimsel Perspektif:</h4>
+                    <ul>
+                        <li><strong>Ontogeny:</strong>
+                            <ul>
+                                <li>Procedural systems: Erken gelişim</li>
+                                <li>Declarative systems: Geç maturasyon</li>
+                                <li>Infantile amnesia: Hipokampus immaturity</li>
+                            </ul>
+                        </li>
+                        <li><strong>Aging Effects:</strong>
+                            <ul>
+                                <li>Hippocampal atrophy: Declarative memory decline</li>
+                                <li>Procedural systems: Relatively preserved</li>
+                                <li>Compensation mechanisms</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Değerlendirme Kriterleri:</h4>
+                    <p><strong>Mükemmel:</strong> Hipokampus anatomisi detaylı, her iki bellek sistemi karşılaştırmalı</p>
+                    <p><strong>İyi:</strong> Ana yapılar doğru, bellek tipleri ayrıştırılmış</p>
+                    <p><strong>Orta:</strong> Temel anatomi, bellek sistemleri yüzeysel</p>
+                    <p><strong>Zayıf:</strong> Anatomik bilgi eksik, sistem farkları net değil</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="difficulty-indicator easy">Kolay</div>
+            <div class="question-number">Soru 7:</div>
+            <div class="question-text">
+                Beyin gelişiminin temel aşamalarını (neurogenesis, migration, synaptogenesis, pruning) açıklayınız. Critical period kavramını örneklerle tartışınız.
+            </div>
+            <textarea class="essay-area" placeholder="Cevabınızı buraya yazın..." onkeyup="updateWordCount(this)"></textarea>
+            <div class="word-count">Kelime sayısı: 0 (Tavsiye edilen: 350-450 kelime)</div>
+            <button class="show-solution" onclick="toggleSolution('sol7')">Örnek Cevabı Göster</button>
+            <div id="sol7" class="solution">
+                <div class="solution-title">Örnek Cevap ve Değerlendirme Kriterleri:</div>
+                <div class="solution-content">
+                    <h4>1. Neurogenesis (Nöron Üretimi):</h4>
+                    <ul>
+                        <li><strong>Zamanlaması:</strong> Gebeliğin 3-20. haftaları arası</li>
+                        <li><strong>Lokalizasyon:</strong> Ventriküler ve subventriküler zone</li>
+                        <li><strong>Süreç:</strong>
+                            <ul>
+                                <li>Neural progenitor hücrelerin mitotik bölünmesi</li>
+                                <li>Symmetric ve asymmetric division</li>
+                                <li>Cell cycle regulation (cyclin-CDK)</li>
+                                <li>Notch signaling pathway</li>
+                            </ul>
+                        </li>
+                        <li><strong>Düzenleme:</strong> Growth factors (FGF, EGF), morphogens (SHH, BMPs)</li>
+                    </ul>
+
+                    <h4>2. Migration (Nöron Göçü):</h4>
+                    <ul>
+                        <li><strong>Zamanlaması:</strong> Gebeliğin 6-24. haftaları</li>
+                        <li><strong>Migration Patterns:</strong>
+                            <ul>
+                                <li>Radial migration: Cortical layering (inside-out)</li>
+                                <li>Tangential migration: Interneuron distribution</li>
+                                <li>Chain migration: Rostral migratory stream</li>
+                            </ul>
+                        </li>
+                        <li><strong>Guidance Mechanisms:</strong>
+                            <ul>
+                                <li>Radial glia: Scaffold for migration</li>
+                                <li>Reelin protein: Cortical lamination</li>
+                                <li>Chemotaxis: Netrin, semaphorin, slit proteins</li>
+                                <li>Cell adhesion molecules</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>3. Synaptogenesis (Sinaps Oluşumu):</h4>
+                    <ul>
+                        <li><strong>Zamanlaması:</strong> Gebelik sonrası - erken childhood</li>
+                        <li><strong>Aşamalar:</strong>
+                            <ul>
+                                <li>Axon pathfinding: Growth cone navigation</li>
+                                <li>Target recognition: Cell adhesion molecules</li>
+                                <li>Synaptic differentiation: Pre/postsynaptic specialization</li>
+                                <li>Functional maturation: Receptor clustering</li>
+                            </ul>
+                        </li>
+                        <li><strong>Molecular Mechanisms:</strong>
+                            <ul>
+                                <li>Neurexin-neuroligin adhesion</li>
+                                <li>NMDA receptor-dependent plasticity</li>
+                                <li>BDNF-TrkB signaling</li>
+                                <li>Activity-dependent gene expression</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>4. Pruning (Sinaps Budanması):</h4>
+                    <ul>
+                        <li><strong>Zamanlaması:</strong> Childhood - adolescence</li>
+                        <li><strong>Mechanisms:</strong>
+                            <ul>
+                                <li>Activity-dependent competition</li>
+                                <li>Complement-mediated elimination (C1q, C3)</li>
+                                <li>Microglial phagocytosis</li>
+                                <li>Apoptotic signaling</li>
+                            </ul>
+                        </li>
+                        <li><strong>Functional Significance:</strong>
+                            <ul>
+                                <li>Circuit refinement</li>
+                                <li>Efficiency optimization</li>
+                                <li>Use-it-or-lose-it principle</li>
+                                <li>Experience-dependent sculpting</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Critical Period Kavramı:</h4>
+                    <ul>
+                        <li><strong>Tanım:</strong> Belirli gelişimsel süreçlerin gerçekleşebileceği sınırlı zaman penceresi</li>
+                        <li><strong>Characteristics:</strong>
+                            <ul>
+                                <li>Heightened plasticity</li>
+                                <li>Experience-dependent refinement</li>
+                                <li>Irreversible changes if missed</li>
+                                <li>Inhibitory circuit maturation</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Critical Period Örnekleri:</h4>
+                    <ul>
+                        <li><strong>Visual System:</strong>
+                            <ul>
+                                <li>Ocular dominance columns: Postnatal 2-8 hafta (fare)</li>
+                                <li>Monocular deprivation effects</li>
+                                <li>Amblyopia development</li>
+                                <li>Binocular vision establishment</li>
+                            </ul>
+                        </li>
+                        <li><strong>Auditory System:</strong>
+                            <ul>
+                                <li>Tonotopic map refinement</li>
+                                <li>Sound localization: İlk 2 yıl</li>
+                                <li>Language acquisition: 0-7 yaş</li>
+                                <li>Phoneme discrimination</li>
+                            </ul>
+                        </li>
+                        <li><strong>Language Development:</strong>
+                            <ul>
+                                <li>First language: 0-puberty</li>
+                                <li>Second language: Accent-free before 7 yaş</li>
+                                <li>Syntax acquisition</li>
+                                <li>Feral children cases</li>
+                            </ul>
+                        </li>
+                        <li><strong>Social-Emotional:</strong>
+                            <ul>
+                                <li>Attachment formation: İlk 2 yıl</li>
+                                <li>Fear extinction learning</li>
+                                <li>Social behavior patterns</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Critical Period Mechanizmaları:</h4>
+                    <ul>
+                        <li><strong>Opening Factors:</strong>
+                            <ul>
+                                <li>BDNF-TrkB signaling increase</li>
+                                <li>GABAergic system maturation</li>
+                                <li>Perineuronal net degradation</li>
+                                <li>Myelin-associated inhibitors decrease</li>
+                            </ul>
+                        </li>
+                        <li><strong>Closing Factors:</strong>
+                            <ul>
+                                <li>Perineuronal net formation</li>
+                                <li>Inhibitory circuit strengthening</li>
+                                <li>Lynx1 expression increase</li>
+                                <li>Structural stabilization</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Klinik İmplications:</h4>
+                    <ul>
+                        <li><strong>Developmental Disorders:</strong>
+                            <ul>
+                                <li>Autism spectrum disorders</li>
+                                <li>Developmental language disorders</li>
+                                <li>Amblyopia treatment timing</li>
+                            </ul>
+                        </li>
+                        <li><strong>Therapeutic Interventions:</strong>
+                            <ul>
+                                <li>Early intervention programs</li>
+                                <li>Critical period reopening strategies</li>
+                                <li>Environmental enrichment</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Değerlendirme Kriterleri:</h4>
+                    <p><strong>Mükemmel:</strong> Tüm gelişim aşamaları detaylı, critical period örnekleri ve mekanizmaları</p>
+                    <p><strong>İyi:</strong> Ana aşamalar doğru, critical period örnekleri var</p>
+                    <p><strong>Orta:</strong> Temel gelişim bilgisi, critical period yüzeysel</p>
+                    <p><strong>Zayıf:</strong> Gelişim aşamaları eksik, kavramsal karışıklık</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="difficulty-indicator medium">Orta</div>
+            <div class="question-number">Soru 8:</div>
+            <div class="question-text">
+                Beyinin lateralizasyon özelliklerini ve hemisferik uzmanlaşmayı açıklayınız. Dil dominansı, el tercihi ve split-brain çalışmalarının bulguları üzerinden hemisferik işlevlerin farklılaşmasını değerlendiriniz.
+            </div>
+            <textarea class="essay-area" placeholder="Cevabınızı buraya yazın..." onkeyup="updateWordCount(this)"></textarea>
+            <div class="word-count">Kelime sayısı: 0 (Tavsiye edilen: 400-500 kelime)</div>
+            <button class="show-solution" onclick="toggleSolution('sol8')">Örnek Cevabı Göster</button>
+            <div id="sol8" class="solution">
+                <div class="solution-title">Örnek Cevap ve Değerlendirme Kriterleri:</div>
+                <div class="solution-content">
+                    <h4>Beyin Lateralizasyonun Genel İlkeleri:</h4>
+                    <ul>
+                        <li><strong>Anatomik Asimetri:</strong>
+                            <ul>
+                                <li>Planum temporale: Sol hemisfer daha büyük</li>
+                                <li>Sylvian fissure: Sol daha horizontal</li>
+                                <li>Frontal ve occipital petalia</li>
+                                <li>Torque pattern: Rightward frontal, leftward occipital</li>
+                            </ul>
+                        </li>
+                        <li><strong>Fonksiyonel Asimetri:</strong>
+                            <ul>
+                                <li>Sol hemisfer: Analitik, sequential, verbal</li>
+                                <li>Sağ hemisfer: Holistik, spatial, visuospatial</li>
+                                <li>Komplementer uzmanlaşma</li>
+                                <li>Interhemisferík coordination</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Dil Dominansı:</h4>
+                    <ul>
+                        <li><strong>Klasik Dil Alanları:</strong>
+                            <ul>
+                                <li>Broca's area (BA 44/45): Konuşma üretimi</li>
+                                <li>Wernicke's area (BA 22): Konuşma anlama</li>
+                                <li>Angular gyrus: Lexical processing</li>
+                                <li>Arcuate fasciculus: Phonological loop</li>
+                            </ul>
+                        </li>
+                        <li><strong>Dominans Dağılımı:</strong>
+                            <ul>
+                                <li>Sağ elli: %95 sol dil dominansı</li>
+                                <li>Sol elli: %70 sol, %20 sağ, %10 bilateral</li>
+                                <li>Wada testi: Hemisferik anestezi</li>
+                                <li>fMRI lateralization index</li>
+                            </ul>
+                        </li>
+                        <li><strong>Sağ Hemisfer Dil Fonksiyonları:</strong>
+                            <ul>
+                                <li>Prosody: Vurgu, ritim, melodi</li>
+                                <li>Pragmatik: Context, humor, metaphor</li>
+                                <li>Discourse processing</li>
+                                <li>Emotional communication</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>El Tercihi (Handedness):</h4>
+                    <ul>
+                        <li><strong>Prevalence ve Genetics:</strong>
+                            <ul>
+                                <li>%90 sağ elli populasyon</li>
+                                <li>Polygenic inheritance: LRRTM1, PCSK6</li>
+                                <li>Prenatal factors: Testosterone, birth stress</li>
+                                <li>Familial aggregation patterns</li>
+                            </ul>
+                        </li>
+                        <li><strong>Motor Korteks Asimetrisi:</strong>
+                            <ul>
+                                <li>Left M1: Sağ elli bireylerde daha büyük</li>
+                                <li>Corticospinal tract asymmetry</li>
+                                <li>Basal ganglia lateralization</li>
+                                <li>Cerebellar asymmetry</li>
+                            </ul>
+                        </li>
+                        <li><strong>Geschwind-Behan-Galaburda Hypothesis:</strong>
+                            <ul>
+                                <li>Testosterone effects on brain development</li>
+                                <li>Sol elli: Immune disorders, learning disabilities</li>
+                                <li>Controversial findings</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Split-Brain Çalışmaları:</h4>
+                    <ul>
+                        <li><strong>Callosotomy Procedure:</strong>
+                            <ul>
+                                <li>Corpus callosum kesimi: Refrakter epilepsi</li>
+                                <li>Interhemisferık bağlantının kesilmesi</li>
+                                <li>Sperry ve Gazzaniga çalışmaları</li>
+                                <li>Nobel Prize 1981</li>
+                            </ul>
+                        </li>
+                        <li><strong>Experimental Paradigms:</strong>
+                            <ul>
+                                <li>Tachistoscopic presentation</li>
+                                <li>Unilateral visual field stimulation</li>
+                                <li>Dichotic listening</li>
+                                <li>Tactile lateralization</li>
+                            </ul>
+                        </li>
+                        <li><strong>Ana Bulgular:</strong>
+                            <ul>
+                                <li>Sol visual field → Sağ hemisfer → Nonverbal response</li>
+                                <li>Sağ visual field → Sol hemisfer → Verbal response</li>
+                                <li>"Mute" right hemisphere concept</li>
+                                <li>Independent consciousness debate</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Hemisferik Uzmanlaşma Alanları:</h4>
+                    <ul>
+                        <li><strong>Sol Hemisfer Dominansı:</strong>
+                            <ul>
+                                <li>Language: Syntax, phonology, semantics</li>
+                                <li>Sequential processing: Temporal order</li>
+                                <li>Analytical thinking: Logic, mathematics</li>
+                                <li>Fine motor control: Skilled movements</li>
+                                <li>Categorical perception</li>
+                            </ul>
+                        </li>
+                        <li><strong>Sağ Hemisfer Dominansı:</strong>
+                            <ul>
+                                <li>Visuospatial processing: Mental rotation</li>
+                                <li>Face recognition: Holistic processing</li>
+                                <li>Attention: Spatial attention, neglect</li>
+                                <li>Emotional processing: Negative emotions</li>
+                                <li>Music: Melody, timbre</li>
+                                <li>Navigation: Spatial memory</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Interhemisferık Bağlantılar:</h4>
+                    <ul>
+                        <li><strong>Corpus Callosum:</strong>
+                            <ul>
+                                <li>200 milyon komisural fiber</li>
+                                <li>Homotopic ve heterotopic connections</li>
+                                <li>Topographic organization</li>
+                                <li>Developmental myelination</li>
+                            </ul>
+                        </li>
+                        <li><strong>Diğer Komisurlar:</strong>
+                            <ul>
+                                <li>Anterior commissure: Temporal lobe</li>
+                                <li>Hippocampal commissure: Limbic</li>
+                                <li>Habenular commissure: Diencephalic</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Gelişimsel ve Klinik Perspektifler:</h4>
+                    <ul>
+                        <li><strong>Lateralization Development:</strong>
+                            <ul>
+                                <li>Prenatal asymmetries: Sylvian fissure</li>
+                                <li>Postnatal strengthening</li>
+                                <li>Language acquisition critical periods</li>
+                                <li>Plasticity ve compensation</li>
+                            </ul>
+                        </li>
+                        <li><strong>Klinik Durumlar:</strong>
+                            <ul>
+                                <li>Hemispheric neglect: Sağ parietal lesion</li>
+                                <li>Aphasia: Sol hemisfer lesions</li>
+                                <li>Aprosodia: Sağ hemisfer lesions</li>
+                                <li>Alien hand syndrome: Corpus callosum</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Modern Görüşler:</h4>
+                    <ul>
+                        <li><strong>Network Approaches:</strong>
+                            <ul>
+                                <li>Bilateral language networks</li>
+                                <li>Interhemisферік cooperation</li>
+                                <li>Context-dependent lateralization</li>
+                                <li>Individual differences</li>
+                            </ul>
+                        </li>
+                        <li><strong>Yeniden Değerlendirme:</strong>
+                            <ul>
+                                <li>"Complementary processing" model</li>
+                                <li>Frequency-based lateralization</li>
+                                <li>Hemispheric interaction hypothesis</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Değerlendirme Kriterleri:</h4>
+                    <p><strong>Mükemmel:</strong> Lateralizasyon detaylı, split-brain bulgular, hemisferik uzmanlaşma</p>
+                    <p><strong>İyi:</strong> Ana asimetriler doğru, dil dominansı açık</p>
+                    <p><strong>Orta:</strong> Temel lateralizasyon, yüzeysel split-brain bilgisi</p>
+                    <p><strong>Zayıf:</strong> Kavramsal karışıklık, hemisferik fark belirsiz</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function updateWordCount(textarea) {
+            const words = textarea.value.trim().split(/\s+/).filter(word => word.length > 0);
+            const wordCount = words.length;
+            const wordCountElement = textarea.nextElementSibling;
+            wordCountElement.textContent = `Kelime sayısı: ${wordCount} (Tavsiye edilen: ${wordCountElement.textContent.match(/\d+-\d+/)[0]} kelime)`;
+        }
+
+        function toggleSolution(solutionId) {
+            const solution = document.getElementById(solutionId);
+            if (solution.style.display === 'none' || solution.style.display === '') {
+                solution.style.display = 'block';
+            } else {
+                solution.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

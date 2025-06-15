@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nöroplastisite - Klasik Sorular</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .back-link:hover {
+            background: #5a67d8;
+        }
+        .question {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-left: 5px solid #388e3c;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #388e3c;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .question-text {
+            margin: 15px 0;
+            font-size: 1.1em;
+            font-weight: 500;
+            color: #333;
+        }
+        .essay-area {
+            width: 100%;
+            min-height: 150px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 1em;
+            font-family: Arial, sans-serif;
+            resize: vertical;
+            margin-top: 10px;
+        }
+        .essay-area:focus {
+            border-color: #388e3c;
+            outline: none;
+            box-shadow: 0 0 5px rgba(56, 142, 60, 0.3);
+        }
+        .solution {
+            background: #e8f5e8;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 15px;
+            border-left: 5px solid #4caf50;
+            display: none;
+        }
+        .solution-title {
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        .solution-content {
+            line-height: 1.8;
+        }
+        .solution h4 {
+            color: #2e7d32;
+            margin-top: 15px;
+            margin-bottom: 8px;
+        }
+        .solution ul {
+            margin-left: 20px;
+        }
+        .solution li {
+            margin-bottom: 5px;
+        }
+        .show-solution {
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-size: 1em;
+        }
+        .show-solution:hover {
+            background: #45a049;
+        }
+        .difficulty-indicator {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .easy { background: #c8e6c9; color: #2e7d32; }
+        .medium { background: #fff3e0; color: #ef6c00; }
+        .hard { background: #ffcdd2; color: #d32f2f; }
+        .word-count {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+        .tips {
+            background: #e3f2fd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 25px;
+            border-left: 5px solid #2196f3;
+        }
+        .tips-title {
+            font-weight: bold;
+            color: #1976d2;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Ana Sayfaya Dön</a>
+        
+        <div class="header">
+            <h1>🧠 Nöroplastisite</h1>
+            <h2>Klasik Sorular (Uzun Cevaplı)</h2>
+        </div>
+
+        <div class="tips">
+            <div class="tips-title">💡 Cevaplama İpuçları:</div>
+            <ul>
+                <li>LTP/LTD mekanizmalarını moleküler düzeyde açıklayın</li>
+                <li>Structural ve functional plastisyte ayrımını yapın</li>
+                <li>Critical period örnekleri verin</li>
+                <li>Rehabilitation ve learning ilişkisini kurun</li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <div class="difficulty-indicator easy">Kolay</div>
+            <div class="question-number">Soru 1:</div>
+            <div class="question-text">
+                Nöroplastisite kavramını tanımlayınız ve türlerini (structural, functional, synaptic) açıklayınız. Yaşam boyu nöroplastisitenin önemi nedir?
+            </div>
+            <textarea class="essay-area" placeholder="Cevabınızı buraya yazın..." onkeyup="updateWordCount(this)"></textarea>
+            <div class="word-count">Kelime sayısı: 0 (Tavsiye edilen: 300-400 kelime)</div>
+            <button class="show-solution" onclick="toggleSolution('sol1')">Örnek Cevabı Göster</button>
+            <div id="sol1" class="solution">
+                <div class="solution-title">Örnek Cevap ve Değerlendirme Kriterleri:</div>
+                <div class="solution-content">
+                    <h4>Nöroplastisite Tanımı:</h4>
+                    <ul>
+                        <li><strong>Kavram:</strong> Beynin yapı ve işlevini deneyime bağlı olarak değiştirme kapasitesi</li>
+                        <li><strong>Süreç:</strong> Hayat boyu devam eden adaptif mekanizma</li>
+                        <li><strong>Düzeyler:</strong> Moleküler → Sinaptik → Hücresel → Network</li>
+                    </ul>
+
+                    <h4>Nöroplastisite Türleri:</h4>
+                    <ul>
+                        <li><strong>Structural Plasticity:</strong>
+                            <ul>
+                                <li>Dendritic spine değişiklikleri</li>
+                                <li>Axonal sprouting</li>
+                                <li>Adult neurogenesis</li>
+                                <li>Myelination değişiklikleri</li>
+                            </ul>
+                        </li>
+                        <li><strong>Functional Plasticity:</strong>
+                            <ul>
+                                <li>Cortical map reorganization</li>
+                                <li>Cross-modal plasticity</li>
+                                <li>Compensatory mechanisms</li>
+                            </ul>
+                        </li>
+                        <li><strong>Synaptic Plasticity:</strong>
+                            <ul>
+                                <li>LTP (Long-term potentiation)</li>
+                                <li>LTD (Long-term depression)</li>
+                                <li>Homeostatic scaling</li>
+                                <li>Metaplasticity</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Yaşam Boyu Plastisite:</h4>
+                    <ul>
+                        <li><strong>Development:</strong> Critical period plasticity</li>
+                        <li><strong>Learning:</strong> Skill acquisition, memory formation</li>
+                        <li><strong>Recovery:</strong> Injury rehabilitation</li>
+                        <li><strong>Aging:</strong> Cognitive reserve, compensation</li>
+                    </ul>
+
+                    <h4>Klinik Önemi:</h4>
+                    <ul>
+                        <li><strong>Rehabilitation:</strong> Stroke recovery, spinal injury</li>
+                        <li><strong>Education:</strong> Optimal learning strategies</li>
+                        <li><strong>Mental health:</strong> Therapy-induced changes</li>
+                        <li><strong>Neurodegeneration:</strong> Compensation mechanisms</li>
+                    </ul>
+
+                    <h4>Değerlendirme:</h4>
+                    <p><strong>Mükemmel:</strong> Tüm plastisite türleri detaylı, yaşam boyu önem</p>
+                    <p><strong>İyi:</strong> Ana türler bilinir, temel önem</p>
+                    <p><strong>Orta:</strong> Plastisite kavramı var, sınıflandırma basit</p>
+                    <p><strong>Zayıf:</strong> Plastisite tanımı yetersiz</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="difficulty-indicator medium">Orta</div>
+            <div class="question-number">Soru 2:</div>
+            <div class="question-text">
+                LTP (Long-term potentiation) ve LTD (Long-term depression) mekanizmalarını moleküler düzeyde karşılaştırınız. NMDA ve AMPA reseptörlerinin rollerini açıklayınız.
+            </div>
+            <textarea class="essay-area" placeholder="Cevabınızı buraya yazın..." onkeyup="updateWordCount(this)"></textarea>
+            <div class="word-count">Kelime sayısı: 0 (Tavsiye edilen: 400-500 kelime)</div>
+            <button class="show-solution" onclick="toggleSolution('sol2')">Örnek Cevabı Göster</button>
+            <div id="sol2" class="solution">
+                <div class="solution-title">Örnek Cevap ve Değerlendirme Kriterleri:</div>
+                <div class="solution-content">
+                    <h4>LTP Mekanizması:</h4>
+                    <ul>
+                        <li><strong>Induksiyon:</strong>
+                            <ul>
+                                <li>High-frequency stimulation (100 Hz)</li>
+                                <li>Strong postsynaptic depolarization</li>
+                                <li>NMDA receptor activation</li>
+                                <li>Ca2+ influx (coincidence detection)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Expression:</strong>
+                            <ul>
+                                <li>AMPA receptor insertion</li>
+                                <li>Receptor phosphorylation</li>
+                                <li>Spine enlargement</li>
+                                <li>Presynaptic changes</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>LTD Mekanizması:</h4>
+                    <ul>
+                        <li><strong>Induksiyon:</strong>
+                            <ul>
+                                <li>Low-frequency stimulation (1-5 Hz)</li>
+                                <li>Modest Ca2+ elevation</li>
+                                <li>Phosphatase activation (PP1, PP2A)</li>
+                                <li>mGluR activation (Group I)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Expression:</strong>
+                            <ul>
+                                <li>AMPA receptor endocytosis</li>
+                                <li>Receptor dephosphorylation</li>
+                                <li>Spine shrinkage</li>
+                                <li>Synaptic weakening</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>NMDA Reseptörü:</h4>
+                    <ul>
+                        <li><strong>Yapı:</strong> Heteromeric (NR1 + NR2A/B/C/D)</li>
+                        <li><strong>Properties:</strong>
+                            <ul>
+                                <li>Voltage-dependent Mg2+ block</li>
+                                <li>Ca2+ permeability</li>
+                                <li>Coincidence detector</li>
+                                <li>Slow kinetics</li>
+                            </ul>
+                        </li>
+                        <li><strong>Plastisitedeki rolü:</strong> Induction mechanism</li>
+                    </ul>
+
+                    <h4>AMPA Reseptörü:</h4>
+                    <ul>
+                        <li><strong>Yapı:</strong> GluA1-4 subunits</li>
+                        <li><strong>Properties:</strong>
+                            <ul>
+                                <li>Fast kinetics</li>
+                                <li>Na+/K+ conductance</li>
+                                <li>Variable Ca2+ permeability</li>
+                                <li>Trafficking dynamics</li>
+                            </ul>
+                        </li>
+                        <li><strong>Plastisitedeki rolü:</strong> Expression mechanism</li>
+                    </ul>
+
+                    <h4>Moleküler Sinyal Yolları:</h4>
+                    <ul>
+                        <li><strong>LTP pathways:</strong>
+                            <ul>
+                                <li>CaMKII autophosphorylation</li>
+                                <li>PKA activation</li>
+                                <li>CREB-mediated gene expression</li>
+                                <li>Protein synthesis</li>
+                            </ul>
+                        </li>
+                        <li><strong>LTD pathways:</strong>
+                            <ul>
+                                <li>Calcineurin activation</li>
+                                <li>PP1/PP2A dephosphorylation</li>
+                                <li>AMPAR endocytosis</li>
+                                <li>Structural modifications</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>BCM Theory:</h4>
+                    <ul>
+                        <li><strong>Sliding threshold:</strong> θm = f(postsynaptic activity)</li>
+                        <li><strong>LTP:</strong> Activity > θm</li>
+                        <li><strong>LTD:</strong> Activity < θm</li>
+                        <li><strong>Homeostasis:</strong> Stable learning rule</li>
+                    </ul>
+
+                    <h4>Değerlendirme:</h4>
+                    <p><strong>Mükemmel:</strong> Detaylı moleküler mechanism, receptor rolleri, sinyal yolları</p>
+                    <p><strong>İyi:</strong> LTP/LTD ayrımı net, receptor özellikleri bilinir</p>
+                    <p><strong>Orta:</strong> Temel LTP/LTD bilgisi, receptor bilgisi yüzeysel</p>
+                    <p><strong>Zayıf:</strong> Mekanizma karışık, receptor rolleri net değil</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional questions would continue... -->
+
+    </div>
+
+    <script>
+        function updateWordCount(textarea) {
+            const words = textarea.value.trim().split(/\s+/).filter(word => word.length > 0);
+            const wordCount = words.length;
+            const wordCountElement = textarea.nextElementSibling;
+            wordCountElement.textContent = `Kelime sayısı: ${wordCount} (Tavsiye edilen: ${wordCountElement.textContent.match(/\d+-\d+/)[0]} kelime)`;
+        }
+
+        function toggleSolution(solutionId) {
+            const solution = document.getElementById(solutionId);
+            if (solution.style.display === 'none' || solution.style.display === '') {
+                solution.style.display = 'block';
+            } else {
+                solution.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limbik Sistem - Klasik Sorular</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .back-link:hover {
+            background: #5a67d8;
+        }
+        .question {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-left: 5px solid #388e3c;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #388e3c;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .question-text {
+            margin: 15px 0;
+            font-size: 1.1em;
+            font-weight: 500;
+            color: #333;
+        }
+        .essay-area {
+            width: 100%;
+            min-height: 150px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 1em;
+            font-family: Arial, sans-serif;
+            resize: vertical;
+            margin-top: 10px;
+        }
+        .essay-area:focus {
+            border-color: #388e3c;
+            outline: none;
+            box-shadow: 0 0 5px rgba(56, 142, 60, 0.3);
+        }
+        .solution {
+            background: #e8f5e8;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 15px;
+            border-left: 5px solid #4caf50;
+            display: none;
+        }
+        .solution-title {
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        .solution-content {
+            line-height: 1.8;
+        }
+        .solution h4 {
+            color: #2e7d32;
+            margin-top: 15px;
+            margin-bottom: 8px;
+        }
+        .solution ul {
+            margin-left: 20px;
+        }
+        .solution li {
+            margin-bottom: 5px;
+        }
+        .show-solution {
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-size: 1em;
+        }
+        .show-solution:hover {
+            background: #45a049;
+        }
+        .difficulty-indicator {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .easy { background: #c8e6c9; color: #2e7d32; }
+        .medium { background: #fff3e0; color: #ef6c00; }
+        .hard { background: #ffcdd2; color: #d32f2f; }
+        .word-count {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+        .tips {
+            background: #e3f2fd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 25px;
+            border-left: 5px solid #2196f3;
+        }
+        .tips-title {
+            font-weight: bold;
+            color: #1976d2;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Ana Sayfaya Dön</a>
+        
+        <div class="header">
+            <h1>🧠 Limbik Sistem</h1>
+            <h2>Klasik Sorular (Uzun Cevaplı)</h2>
+        </div>
+
+        <div class="tips">
+            <div class="tips-title">💡 Cevaplama İpuçları:</div>
+            <ul>
+                <li>Emotion-memory bağlantısını vurgulayın</li>
+                <li>HPA axis düzenlenme süreçlerini açıklayın</li>
+                <li>Fear conditioning paradigmalarını kullanın</li>
+                <li>Papez circuit ve güncel modelleri karşılaştırın</li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <div class="difficulty-indicator easy">Kolay</div>
+            <div class="question-number">Soru 1:</div>
+            <div class="question-text">
+                Limbik sistemin ana bileşenlerini ve işlevlerini açıklayınız. Papez circuit nedir ve güncel limbik sistem modellerinden nasıl farklıdır?
+            </div>
+            <textarea class="essay-area" placeholder="Cevabınızı buraya yazın..." onkeyup="updateWordCount(this)"></textarea>
+            <div class="word-count">Kelime sayısı: 0 (Tavsiye edilen: 300-400 kelime)</div>
+            <button class="show-solution" onclick="toggleSolution('sol1')">Örnek Cevabı Göster</button>
+            <div id="sol1" class="solution">
+                <div class="solution-title">Örnek Cevap ve Değerlendirme Kriterleri:</div>
+                <div class="solution-content">
+                    <h4>Limbik Sistem Bileşenleri:</h4>
+                    <ul>
+                        <li><strong>Hippocampus:</strong> Memory formation, spatial navigation</li>
+                        <li><strong>Amygdala:</strong> Fear, threat detection, emotional memory</li>
+                        <li><strong>Cingulate cortex:</strong> Anterior (emotion), posterior (memory)</li>
+                        <li><strong>Hypothalamus:</strong> Autonomic regulation, hormonal control</li>
+                        <li><strong>Septal nuclei:</strong> Reward, hippocampal modulation</li>
+                        <li><strong>Mammillary bodies:</strong> Memory circuit relay</li>
+                    </ul>
+
+                    <h4>Papez Circuit (1937):</h4>
+                    <ul>
+                        <li><strong>Klasik yolak:</strong> Hippocampus → Fornix → Mammillary body → Anterior thalamus → Cingulate → Entorhinal → Hippocampus</li>
+                        <li><strong>Ana fokus:</strong> Emotion processing</li>
+                        <li><strong>Sınırlılık:</strong> Amygdala dahil değil</li>
+                    </ul>
+
+                    <h4>Modern Limbik Model:</h4>
+                    <ul>
+                        <li><strong>Amygdala-centered networks:</strong> Fear ve anxiety circuits</li>
+                        <li><strong>Reward circuits:</strong> VTA-NAcc-PFC</li>
+                        <li><strong>Stress response:</strong> HPA axis integration</li>
+                        <li><strong>Memory-emotion interaction:</strong> Amygdala-hippocampus</li>
+                    </ul>
+
+                    <h4>Değerlendirme:</h4>
+                    <p><strong>Mükemmel:</strong> Tüm bileşenler detaylı, tarihsel gelişim açık</p>
+                    <p><strong>İyi:</strong> Ana yapılar bilinir, Papez circuit tanımlanmış</p>
+                    <p><strong>Orta:</strong> Temel limbik bilgi, circuit bilgisi eksik</p>
+                    <p><strong>Zayıf:</strong> Limbik kavramı net değil</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="difficulty-indicator medium">Orta</div>
+            <div class="question-number">Soru 2:</div>
+            <div class="question-text">
+                Amygdala'nın korku işlemesindeki rolünü açıklayınız. Fear conditioning paradigması nedir ve hangi neural circuit'ler dahildir? Korku belleğinin söndürülmesi nasıl gerçekleşir?
+            </div>
+            <textarea class="essay-area" placeholder="Cevabınızı buraya yazın..." onkeyup="updateWordCount(this)"></textarea>
+            <div class="word-count">Kelime sayısı: 0 (Tavsiye edilen: 400-500 kelime)</div>
+            <button class="show-solution" onclick="toggleSolution('sol2')">Örnek Cevabı Göster</button>
+            <div id="sol2" class="solution">
+                <div class="solution-title">Örnek Cevap ve Değerlendirme Kriterleri:</div>
+                <div class="solution-content">
+                    <h4>Amygdala Anatomisi:</h4>
+                    <ul>
+                        <li><strong>Lateral nucleus (LA):</strong> Sensory input, plasticity</li>
+                        <li><strong>Basal nucleus (BA):</strong> Context processing</li>
+                        <li><strong>Central nucleus (CeA):</strong> Output, behavioral responses</li>
+                        <li><strong>Intercalated cells:</strong> Inhibitory control</li>
+                    </ul>
+
+                    <h4>Fear Conditioning:</h4>
+                    <ul>
+                        <li><strong>Paradigm:</strong> CS (tone) + US (shock) → CR (freezing)</li>
+                        <li><strong>Acquisition:</strong>
+                            <ul>
+                                <li>Sensory input → LA (auditory thalamus, auditory cortex)</li>
+                                <li>LTP at CS-US synapses</li>
+                                <li>NMDA receptor-dependent</li>
+                            </ul>
+                        </li>
+                        <li><strong>Expression:</strong>
+                            <ul>
+                                <li>LA → CeA → Brainstem</li>
+                                <li>Freezing, autonomic responses</li>
+                                <li>HPA axis activation</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Fear Extinction:</h4>
+                    <ul>
+                        <li><strong>Paradigm:</strong> CS presentation without US</li>
+                        <li><strong>Inhibitory learning:</strong>
+                            <ul>
+                                <li>Yeni CS-no US memory formation</li>
+                                <li>Prefrontal cortex (IL) aktivasyonu</li>
+                                <li>Intercalated cells aracılı inhibisyon</li>
+                            </ul>
+                        </li>
+                        <li><strong>Neural mechanism:</strong>
+                            <ul>
+                                <li>IL-PFC → Intercalated cells → CeA inhibition</li>
+                                <li>Context-dependent retrieval</li>
+                                <li>BDNF-dependent plasticity</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Klinik Relevans:</h4>
+                    <ul>
+                        <li><strong>PTSD:</strong> Extinction learning deficit</li>
+                        <li><strong>Phobias:</strong> Overactive fear conditioning</li>
+                        <li><strong>Exposure therapy:</strong> Extinction-based treatment</li>
+                    </ul>
+
+                    <h4>Değerlendirme:</h4>
+                    <p><strong>Mükemmel:</strong> Detaylı circuit, conditioning ve extinction</p>
+                    <p><strong>İyi:</strong> Ana amygdala işlev, temel conditioning</p>
+                    <p><strong>Orta:</strong> Korku işleme bilgisi, circuit basit</p>
+                    <p><strong>Zayıf:</strong> Amygdala bilgisi yetersiz</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional questions would continue... -->
+
+    </div>
+
+    <script>
+        function updateWordCount(textarea) {
+            const words = textarea.value.trim().split(/\s+/).filter(word => word.length > 0);
+            const wordCount = words.length;
+            const wordCountElement = textarea.nextElementSibling;
+            wordCountElement.textContent = `Kelime sayısı: ${wordCount} (Tavsiye edilen: ${wordCountElement.textContent.match(/\d+-\d+/)[0]} kelime)`;
+        }
+
+        function toggleSolution(solutionId) {
+            const solution = document.getElementById(solutionId);
+            if (solution.style.display === 'none' || solution.style.display === '') {
+                solution.style.display = 'block';
+            } else {
+                solution.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

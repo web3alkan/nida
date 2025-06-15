@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nöroplastisite - Çoktan Seçmeli Sorular</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .back-link:hover {
+            background: #5a67d8;
+        }
+        .question {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 5px solid #667eea;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.1em;
+        }
+        .question-text {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+        .options {
+            list-style: none;
+            padding: 0;
+        }
+        .options li {
+            padding: 8px 15px;
+            margin: 5px 0;
+            background: #fff;
+            border-radius: 5px;
+            border: 2px solid #e9ecef;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .options li:hover {
+            background: #e3f2fd;
+            border-color: #2196f3;
+        }
+        .solution {
+            background: #e8f5e8;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            border-left: 5px solid #4caf50;
+            display: none;
+        }
+        .solution-title {
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+        .show-solution {
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .show-solution:hover {
+            background: #45a049;
+        }
+        .correct-answer {
+            background: #c8e6c9 !important;
+            border-color: #4caf50 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Ana Sayfaya Dön</a>
+        
+        <div class="header">
+            <h1>🔄 Nöroplastisite</h1>
+            <h2>Çoktan Seçmeli Sorular</h2>
+            <p><em>Her sorudan sonra "Çözümü Göster" butonuna tıklayarak detaylı açıklamayı görebilirsiniz.</em></p>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 1:</div>
+            <div class="question-text">Nöroplastisite terimi hangi kavramı ifade eder?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Nöronların fiziksel esnekliği</li>
+                <li onclick="selectOption(this, true)">B) Sinir sisteminin deneyimler sonucu değişme yeteneği</li>
+                <li onclick="selectOption(this, false)">C) Nöronların elektriksel iletkenliği</li>
+                <li onclick="selectOption(this, false)">D) Beyinin sertlik derecesi</li>
+                <li onclick="selectOption(this, false)">E) Nöron membranının geçirgenliği</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol1')">Çözümü Göster</button>
+            <div id="sol1" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Sinir sisteminin deneyimler sonucu değişme yeteneği</div>
+                <p><strong>Açıklama:</strong> Nöroplastisite, sinir sisteminin deneyimler, öğrenme, hasar veya çevresel değişikliklere yanıt olarak yapısal ve işlevsel değişiklikler gösterme yeteneğidir. Bu değişiklikler sinaps güçlenmesi, yeni sinaps oluşumu, dendrit dallanması ve hatta yeni nöron üretimi şeklinde gerçekleşebilir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 2:</div>
+            <div class="question-text">Uzun süreli potansiyasyon (LTP) hangi öğrenme kuralına dayanır?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Use it or lose it</li>
+                <li onclick="selectOption(this, true)">B) Hebb kuralı - "Birlikte ateşlenen nöronlar birbirine bağlanır"</li>
+                <li onclick="selectOption(this, false)">C) Spike-timing dependent plasticity</li>
+                <li onclick="selectOption(this, false)">D) Homeostatic plasticity</li>
+                <li onclick="selectOption(this, false)">E) Metaplasticity</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol2')">Çözümü Göster</button>
+            <div id="sol2" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Hebb kuralı - "Birlikte ateşlenen nöronlar birbirine bağlanır"</div>
+                <p><strong>Açıklama:</strong> LTP, Donald Hebb'in öne sürdüğü kuralı temel alır: Eğer iki nöron sık sık birlikte aktive olursa, aralarındaki sinaps güçlenir. Bu mekanizma öğrenme ve hafıza oluşumunun temelini oluşturur. NMDA reseptörleri bu süreçte kritik rol oynar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 3:</div>
+            <div class="question-text">NMDA reseptörlerinin LTP'deki rolü nedir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Sadece potasyum geçişi sağlar</li>
+                <li onclick="selectOption(this, true)">B) Kalsiyum girişi ile sinaptik güçlenmeyi başlatır</li>
+                <li onclick="selectOption(this, false)">C) Inhibisyon sağlar</li>
+                <li onclick="selectOption(this, false)">D) Sadece GABA'ya yanıt verir</li>
+                <li onclick="selectOption(this, false)">E) Nöron ölümünü engeller</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol3')">Çözümü Göster</button>
+            <div id="sol3" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Kalsiyum girişi ile sinaptik güçlenmeyi başlatır</div>
+                <p><strong>Açıklama:</strong> NMDA reseptörleri, glutamat bağlandığında ve membran depolarize olduğunda kalsiyum girişine izin verir. Kalsiyum, CaMKII gibi enzimleri aktive ederek AMPA reseptörlerinin sinaptik membrana eklenmesini sağlar ve böylece sinaps güçlenir. Bu, LTP'nin moleküler temelini oluşturur.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 4:</div>
+            <div class="question-text">Yetişkin beyninde nörogenez (yeni nöron üretimi) hangi bölgelerde gerçekleşir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Tüm beyin bölgelerinde</li>
+                <li onclick="selectOption(this, false)">B) Sadece motor kortekste</li>
+                <li onclick="selectOption(this, true)">C) Hipokampus ve olfaktör bulb</li>
+                <li onclick="selectOption(this, false)">D) Sadece beyin sapında</li>
+                <li onclick="selectOption(this, false)">E) Hiçbir yerde gerçekleşmez</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol4')">Çözümü Göster</button>
+            <div id="sol4" class="solution">
+                <div class="solution-title">Doğru Cevap: C) Hipokampus ve olfaktör bulb</div>
+                <p><strong>Açıklama:</strong> Yetişkin beyninde nörogenez öncelikle hipokampusun dentat girusunda ve olfaktör bulbda gerçekleşir. Hipokampal nörogenez öğrenme ve hafıza ile ilişkili iken, olfaktör nörogenez koku işleme ile bağlantılıdır. Ancak insan beyninde yetişkin nörogenezin varlığı hala tartışmalıdır.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 5:</div>
+            <div class="question-text">Kritik dönem plastisitesi ile ilgili aşağıdakilerden hangisi doğrudur?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Yaşam boyu sürer</li>
+                <li onclick="selectOption(this, true)">B) Belirli yaş aralığında en yüksek seviyededir</li>
+                <li onclick="selectOption(this, false)">C) Sadece motor becerilerle ilgilidir</li>
+                <li onclick="selectOption(this, false)">D) Hasardan sonra başlar</li>
+                <li onclick="selectOption(this, false)">E) Sadece prenatal dönemde görülür</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol5')">Çözümü Göster</button>
+            <div id="sol5" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Belirli yaş aralığında en yüksek seviyededir</div>
+                <p><strong>Açıklama:</strong> Kritik dönem plastisitesi, belirli yaş aralıklarında sinir sisteminin değişikliklere karşı en duyarlı olduğu dönemleri ifade eder. Örneğin, görme sistemi için kritik dönem erken çocuklukta, dil edinimi için ise ergenlik öncesi dönemde en yüksektir. Bu dönemler dışında plastisite azalır ancak tamamen kaybolmaz.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 6:</div>
+            <div class="question-text">Beyin hasarı sonrası iyileşme sürecinde hangi mekanizma rol oynamaz?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Kollateral sprouting (yandal filizlenme)</li>
+                <li onclick="selectOption(this, false)">B) Fonksiyonel reorganizasyon</li>
+                <li onclick="selectOption(this, false)">C) Diaschisis'in azalması</li>
+                <li onclick="selectOption(this, true)">D) Nöron sayısının ikiye katlanması</li>
+                <li onclick="selectOption(this, false)">E) Sinaptik güçlenme</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol6')">Çözümü Göster</button>
+            <div id="sol6" class="solution">
+                <div class="solution-title">Doğru Cevap: D) Nöron sayısının ikiye katlanması</div>
+                <p><strong>Açıklama:</strong> Beyin hasarı sonrası iyileşmede nöron sayısı dramatik olarak artmaz. İyileşme mekanizmaları şunlardır: Kollateral sprouting (sağlam aksonların yeni dallar çıkarması), fonksiyonel reorganizasyon (diğer beyin bölgelerinin işlevi üstlenmesi), diaschisis'in azalması (uzak bölgelerdeki geçici işlev kaybının düzelmesi) ve var olan sinapsların güçlenmesi.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 7:</div>
+            <div class="question-text">Deneyim bağımlı plastisite ile deneyim beklentili plastisite arasındaki fark nedir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Hiçbir fark yoktur</li>
+                <li onclick="selectOption(this, true)">B) Deneyim beklentili plastisite belirli yaşlarda, deneyim bağımlı ise yaşam boyu</li>
+                <li onclick="selectOption(this, false)">C) Deneyim bağımlı sadece motor becerilerde görülür</li>
+                <li onclick="selectOption(this, false)">D) Deneyim beklentili plastisite daha güçlüdür</li>
+                <li onclick="selectOption(this, false)">E) Sadece hasardan sonra görülür</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol7')">Çözümü Göster</button>
+            <div id="sol7" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Deneyim beklentili plastisite belirli yaşlarda, deneyim bağımlı ise yaşam boyu</div>
+                <p><strong>Açıklama:</strong> Deneyim beklentili plastisite, beynin belirli yaşlarda (kritik dönemlerde) belirli deneyimleri "beklediği" ve bu deneyimler olmadan normal gelişimin gerçekleşmediği plastisitedir (örn: görme, dil). Deneyim bağımlı plastisite ise yaşam boyu süren ve yeni deneyimlerle beynin değiştiği plastisitedir (örn: öğrenme, beceri edinimi).</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 8:</div>
+            <div class="question-text">"Use it or lose it" prensibi hangi durumu açıklar?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Nöron ölümü</li>
+                <li onclick="selectOption(this, true)">B) Kullanılmayan sinapsların zayıflaması</li>
+                <li onclick="selectOption(this, false)">C) Yeni nöron üretimi</li>
+                <li onclick="selectOption(this, false)">D) Hormon salınımı</li>
+                <li onclick="selectOption(this, false)">E) Gen ekspresyon değişiklikleri</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol8')">Çözümü Göster</button>
+            <div id="sol8" class="solution">
+                <div class="solution-title">Doğru Cevap: B) Kullanılmayan sinapsların zayıflaması</div>
+                <p><strong>Açıklama:</strong> "Kullan ya da kaybet" prensibi, aktif olmayan veya az kullanılan nöral bağlantıların zayıfladığını ve sonunda kaybolduğunu ifade eder. Bu, sinaptik budama (synaptic pruning) sürecinin temelini oluşturur. Ergenlik döneminde kortekste görülen sinaps kaybı bu prensebin bir örneğidir.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 9:</div>
+            <div class="question-text">Epigenetik mekanizmalar nöroplastisitede nasıl rol oynar?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) DNA dizisini değiştirir</li>
+                <li onclick="selectOption(this, true)">B) Gen ifadesini düzenleyerek plastisiteyle ilgili proteinlerin üretimini kontrol eder</li>
+                <li onclick="selectOption(this, false)">C) Sadece hafıza oluşumunu engeller</li>
+                <li onclick="selectOption(this, false)">D) Nöron sayısını azaltır</li>
+                <li onclick="selectOption(this, false)">E) Elektriksel aktiviteyi durdurur</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol9')">Çözümü Göster</button>
+            <div id="sol9" solution">
+                <div class="solution-title">Doğru Cevap: B) Gen ifadesini düzenleyerek plastisiteyle ilgili proteinlerin üretimini kontrol eder</div>
+                <p><strong>Açıklama:</strong> Epigenetik mekanizmalar (DNA metilasyonu, histon modifikasyonları) DNA dizisini değiştirmeden gen ifadesini düzenler. Öğrenme ve hafıza süreçlerinde, bu mekanizmalar CREB, BDNF gibi plastisiteyle ilgili genlerin ifadesini kontrol ederek uzun süreli hafıza oluşumu ve sinaptik değişiklikleri mümkün kılar.</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="question-number">Soru 10:</div>
+            <div class="question-text">BDNF (Brain-Derived Neurotrophic Factor) nöroplastisitedeki rolü nedir?</div>
+            <ul class="options">
+                <li onclick="selectOption(this, false)">A) Nöron ölümünü hızlandırır</li>
+                <li onclick="selectOption(this, false)">B) Sinaptik iletimi bloke eder</li>
+                <li onclick="selectOption(this, true)">C) Nöron büyümesi, sinaps oluşumu ve LTP'yi destekler</li>
+                <li onclick="selectOption(this, false)">D) Sadece embriyo döneminde aktiftir</li>
+                <li onclick="selectOption(this, false)">E) İnflamasyonu artırır</li>
+            </ul>
+            <button class="show-solution" onclick="toggleSolution('sol10')">Çözümü Göster</button>
+            <div id="sol10" class="solution">
+                <div class="solution-title">Doğru Cevap: C) Nöron büyümesi, sinaps oluşumu ve LTP'yi destekler</div>
+                <p><strong>Açıklama:</strong> BDNF, nöroplastisitenin ana düzenleyicilerinden biridir. Nöron büyümesi ve sağkalımını destekler, yeni sinaps oluşumunu teşvik eder, LTP'yi güçlendirir ve öğrenme-hafıza süreçlerini kolaylaştırır. Egzersiz BDNF seviyelerini artırır ve bu da bilişsel performansı iyileştirebilir. Depresyonda BDNF seviyeleri azalmıştır.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function selectOption(element, isCorrect) {
+            // Remove previous selections in this question
+            const options = element.parentElement.children;
+            for (let option of options) {
+                option.classList.remove('correct-answer');
+                option.style.background = '';
+                option.style.borderColor = '';
+            }
+            
+            // Highlight selected option
+            if (isCorrect) {
+                element.classList.add('correct-answer');
+            } else {
+                element.style.background = '#ffebee';
+                element.style.borderColor = '#f44336';
+            }
+        }
+
+        function toggleSolution(solutionId) {
+            const solution = document.getElementById(solutionId);
+            if (solution.style.display === 'none' || solution.style.display === '') {
+                solution.style.display = 'block';
+            } else {
+                solution.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

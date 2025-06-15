@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gelişimsel Nöropsikoloji - Klasik Sorular</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .back-link:hover {
+            background: #5a67d8;
+        }
+        .question {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-left: 5px solid #388e3c;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #388e3c;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .question-text {
+            margin: 15px 0;
+            font-size: 1.1em;
+            font-weight: 500;
+            color: #333;
+        }
+        .essay-area {
+            width: 100%;
+            min-height: 150px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 1em;
+            font-family: Arial, sans-serif;
+            resize: vertical;
+            margin-top: 10px;
+        }
+        .essay-area:focus {
+            border-color: #388e3c;
+            outline: none;
+            box-shadow: 0 0 5px rgba(56, 142, 60, 0.3);
+        }
+        .solution {
+            background: #e8f5e8;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 15px;
+            border-left: 5px solid #4caf50;
+            display: none;
+        }
+        .solution-title {
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        .solution-content {
+            line-height: 1.8;
+        }
+        .solution h4 {
+            color: #2e7d32;
+            margin-top: 15px;
+            margin-bottom: 8px;
+        }
+        .solution ul {
+            margin-left: 20px;
+        }
+        .solution li {
+            margin-bottom: 5px;
+        }
+        .show-solution {
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-size: 1em;
+        }
+        .show-solution:hover {
+            background: #45a049;
+        }
+        .difficulty-indicator {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .easy { background: #c8e6c9; color: #2e7d32; }
+        .medium { background: #fff3e0; color: #ef6c00; }
+        .hard { background: #ffcdd2; color: #d32f2f; }
+        .word-count {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+        .tips {
+            background: #e3f2fd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 25px;
+            border-left: 5px solid #2196f3;
+        }
+        .tips-title {
+            font-weight: bold;
+            color: #1976d2;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Ana Sayfaya Dön</a>
+        
+        <div class="header">
+            <h1>🧠 Gelişimsel Nöropsikoloji</h1>
+            <h2>Klasik Sorular (Uzun Cevaplı)</h2>
+        </div>
+
+        <div class="tips">
+            <div class="tips-title">💡 Cevaplama İpuçları:</div>
+            <ul>
+                <li>Gelişimsel süreçleri zaman çizelgesi ile açıklayın</li>
+                <li>Beyin matürasyon paternlerini detaylandırın</li>
+                <li>Klinik populasyonlarla ilişkilendirin</li>
+                <li>Plastisyte örnekleri verin</li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <div class="difficulty-indicator easy">Kolay</div>
+            <div class="question-number">Soru 1:</div>
+            <div class="question-text">
+                Beyin gelişiminin prenatal ve postnatal dönemlerini açıklayınız. Critical period kavramını gelişimsel nöropsikoloji bağlamında tartışınız.
+            </div>
+            <textarea class="essay-area" placeholder="Cevabınızı buraya yazın..." onkeyup="updateWordCount(this)"></textarea>
+            <div class="word-count">Kelime sayısı: 0 (Tavsiye edilen: 300-400 kelime)</div>
+            <button class="show-solution" onclick="toggleSolution('sol1')">Örnek Cevabı Göster</button>
+            <div id="sol1" class="solution">
+                <div class="solution-title">Örnek Cevap ve Değerlendirme Kriterleri:</div>
+                <div class="solution-content">
+                    <h4>Prenatal Beyin Gelişimi:</h4>
+                    <ul>
+                        <li><strong>Neurulation (3-4. hafta):</strong> Neural tube formation</li>
+                        <li><strong>Neurogenesis (5-20. hafta):</strong> Nöron üretimi</li>
+                        <li><strong>Migration (6-24. hafta):</strong> Cortical layer formation</li>
+                        <li><strong>Differentiation:</strong> Neuron specialization</li>
+                    </ul>
+
+                    <h4>Postnatal Gelişim:</h4>
+                    <ul>
+                        <li><strong>Synaptogenesis:</strong> Doğumdan 2 yaşa kadar pik</li>
+                        <li><strong>Myelination:</strong> Adolesans dönemine kadar</li>
+                        <li><strong>Synaptic pruning:</strong> Use-it-or-lose-it principle</li>
+                        <li><strong>Experience-dependent plasticity</strong></li>
+                    </ul>
+
+                    <h4>Critical Periods:</h4>
+                    <ul>
+                        <li><strong>Visual system:</strong> İlk 8 yıl</li>
+                        <li><strong>Language:</strong> 0-puberty</li>
+                        <li><strong>Attachment:</strong> İlk 2 yıl</li>
+                    </ul>
+
+                    <h4>Değerlendirme:</h4>
+                    <p><strong>Mükemmel:</strong> Tüm dönemler detaylı, critical period örnekleri</p>
+                    <p><strong>İyi:</strong> Ana gelişim aşamaları doğru</p>
+                    <p><strong>Orta:</strong> Temel bilgi var, detay eksik</p>
+                    <p><strong>Zayıf:</strong> Gelişim süreçleri karışık</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="difficulty-indicator medium">Orta</div>
+            <div class="question-number">Soru 2:</div>
+            <div class="question-text">
+                Adolesans döneminde beyin gelişimi ve davranışsal değişiklikleri analiz ediniz. Prefrontal korteksin matürasyonu risk alma davranışlarını nasıl etkiler?
+            </div>
+            <textarea class="essay-area" placeholder="Cevabınızı buraya yazın..." onkeyup="updateWordCount(this)"></textarea>
+            <div class="word-count">Kelime sayısı: 0 (Tavsiye edilen: 400-500 kelime)</div>
+            <button class="show-solution" onclick="toggleSolution('sol2')">Örnek Cevabı Göster</button>
+            <div id="sol2" class="solution">
+                <div class="solution-title">Örnek Cevap ve Değerlendirme Kriterleri:</div>
+                <div class="solution-content">
+                    <h4>Adolesans Beyin Değişiklikleri:</h4>
+                    <ul>
+                        <li><strong>Structural changes:</strong> Gray matter decrease, white matter increase</li>
+                        <li><strong>Synaptic pruning:</strong> Efficiency artışı</li>
+                        <li><strong>Myelination:</strong> Processing speed artışı</li>
+                        <li><strong>Hormonal effects:</strong> Puberty hormones</li>
+                    </ul>
+
+                    <h4>Prefrontal Korteks Matürasyonu:</h4>
+                    <ul>
+                        <li><strong>Executive functions:</strong> Son olgunlaşan alan</li>
+                        <li><strong>Impulse control:</strong> 25 yaşına kadar gelişim</li>
+                        <li><strong>Decision making:</strong> Risk-benefit analysis</li>
+                        <li><strong>Social cognition:</strong> Theory of mind refinement</li>
+                    </ul>
+
+                    <h4>Risk Alma Davranışları:</h4>
+                    <ul>
+                        <li><strong>Dual systems model:</strong> Emotional vs. cognitive systems</li>
+                        <li><strong>Reward sensitivity:</strong> Dopamine system changes</li>
+                        <li><strong>Peer influence:</strong> Social brain networks</li>
+                        <li><strong>Sensation seeking:</strong> Novelty preference</li>
+                    </ul>
+
+                    <h4>Değerlendirme:</h4>
+                    <p><strong>Mükemmel:</strong> Detaylı beyin değişiklikleri, davranış ilişkisi kurulmuş</p>
+                    <p><strong>İyi:</strong> Ana gelişimsel paternler doğru</p>
+                    <p><strong>Orta:</strong> Temel adolesans bilgisi</p>
+                    <p><strong>Zayıf:</strong> Beyin-davranış ilişkisi zayıf</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question">
+            <div class="difficulty-indicator hard">Zor</div>
+            <div class="question-number">Soru 3:</div>
+            <div class="question-text">
+                Otizm spektrum bozukluğunun gelişimsel nörobiyolojisini açıklayınız. Erken tanı belirteçleri ve müdahale stratejilerini beyin plastisitesi bağlamında değerlendiriniz.
+            </div>
+            <textarea class="essay-area" placeholder="Cevabınızı buraya yazın..." onkeyup="updateWordCount(this)"></textarea>
+            <div class="word-count">Kelime sayısı: 0 (Tavsiye edilen: 500-600 kelime)</div>
+            <button class="show-solution" onclick="toggleSolution('sol3')">Örnek Cevabı Göster</button>
+            <div id="sol3" class="solution">
+                <div class="solution-title">Örnek Cevap ve Değerlendirme Kriterleri:</div>
+                <div class="solution-content">
+                    <h4>OSB Nörobiyolojisi:</h4>
+                    <ul>
+                        <li><strong>Genetics:</strong> >1000 risk genes, synaptic proteins</li>
+                        <li><strong>Brain overgrowth:</strong> İlk 2 yılda aşırı büyüme</li>
+                        <li><strong>Connectivity:</strong> Local over, long-range under</li>
+                        <li><strong>Mirror neuron systems:</strong> Dysfunction</li>
+                    </ul>
+
+                    <h4>Erken Belirteçler:</h4>
+                    <ul>
+                        <li><strong>Social attention:</strong> 6-12 ay arası azalma</li>
+                        <li><strong>Joint attention:</strong> 12-18 ay eksikliği</li>
+                        <li><strong>Communication:</strong> Gecikmeli dil gelişimi</li>
+                        <li><strong>Repetitive behaviors:</strong> Stereotypic movements</li>
+                    </ul>
+
+                    <h4>Müdahale Stratejileri:</h4>
+                    <ul>
+                        <li><strong>Early intensive intervention:</strong> 2-5 yaş kritik</li>
+                        <li><strong>Applied Behavior Analysis (ABA)</strong></li>
+                        <li><strong>Social skills training</strong></li>
+                        <li><strong>Sensory integration therapy</strong></li>
+                    </ul>
+
+                    <h4>Değerlendirme:</h4>
+                    <p><strong>Mükemmel:</strong> Nörobiyoloji detaylı, erken müdahale vurgusu</p>
+                    <p><strong>İyi:</strong> Ana özellikler ve müdahaleler</p>
+                    <p><strong>Orta:</strong> Temel OSB bilgisi</p>
+                    <p><strong>Zayıf:</strong> Gelişimsel perspektif eksik</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional questions would follow the same pattern... -->
+
+    </div>
+
+    <script>
+        function updateWordCount(textarea) {
+            const words = textarea.value.trim().split(/\s+/).filter(word => word.length > 0);
+            const wordCount = words.length;
+            const wordCountElement = textarea.nextElementSibling;
+            wordCountElement.textContent = `Kelime sayısı: ${wordCount} (Tavsiye edilen: ${wordCountElement.textContent.match(/\d+-\d+/)[0]} kelime)`;
+        }
+
+        function toggleSolution(solutionId) {
+            const solution = document.getElementById(solutionId);
+            if (solution.style.display === 'none' || solution.style.display === '') {
+                solution.style.display = 'block';
+            } else {
+                solution.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
